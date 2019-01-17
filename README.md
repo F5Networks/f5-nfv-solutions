@@ -5,7 +5,7 @@ Consult the [F5 VNF Manager product document](https://clouddocs.f5.com/cloud/nfv
 
 Across all branches in this repository, there are two directories: *supported* and *experimental*.
 
-- **Supported** - The *supported* directory contains F5 VNFM plugins and blueprints created and fully tested by F5 Networks. These plugins and blueprints are fully supported by F5, and you can contact F5 Technical Support for assistance using your preferred methods.
+- **Supported** - The *supported* directory contains F5 VNFM plugins created and fully tested by F5 Networks. These plugins are fully supported by F5, and you can contact F5 Technical Support for assistance using your preferred methods.
 
 -	**Experimental** - The *experimental* directory also contains F5 VNFM blueprints created by F5 Networks. However, these blueprints have not completed full testing and are subject to change. F5 Networks does NOT offer technical support for blueprints in the *experimental* directory, so use these blueprints with caution.
 
