@@ -9,6 +9,6 @@ Download and install this plugin on your F5 VNF Manager to deploy <insert bluepr
 
 ### To install on your VNFM
 
-1. Step 1.
+1. Step one.
 2. Step two.
 3. Step three.
