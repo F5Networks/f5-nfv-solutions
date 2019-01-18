@@ -16,7 +16,7 @@ Download and install this plugin on your F5 VNF Manager to deploy (insert bluepr
 ### To upgrade this plugin
 
 1. Copy your VNFM instance.
-2. Download and install the newer version of this plugin.
-3. Tear down the old VNFM that was using the older plugin version.
+2. Download and install the newer version of this plugin on your VNF Manager.
+3. Tear down the old VNF Manager that was using the older plugin version.
 
 
