@@ -20,11 +20,20 @@ You must meet the following system requirements when downloading and installing 
 | f5-gilan-plugin 0.2.39        |                                           |                          |
 | f5-ric-plugin 0.4             |                                           |                          |
 
+#### Download plugins
+
+1. Step one.
+2. Step two.
+3. Step three.
+
+#### Manually upload plugins to VNF Manager
+
+1. Step one.
+2. Step two.
+3. Step three.
 
 #### Maintain multiple versions of plugins
-
 Use the following tips for maintaining multiple versions of the VNFM plugins files:
 
 - **f5-gilan-plugin** - 
 - **f5-ric-plugin** - 
-
