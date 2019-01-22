@@ -20,3 +20,6 @@ You must meet the following system requirements when downloading and installing 
 | ------------------------------|-------------------------------------------------|
 | f5-gilan-plugin 0.2.39        | Latest VNF Manager installed and configured.    | 
 | f5-ric-plugin 0.4             | Latest VNF Manager installed and configured.    | 
+
+
+
