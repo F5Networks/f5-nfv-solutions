@@ -1,22 +1,27 @@
-## Using f5-gilan-plugin-0.2.39 
-Download and install this plugin on your F5 VNF Manager to deploy (insert blueprint names it supports). These blueprints will do what?
+## About the f5-gilan-plugin
+You will find multiple versions of this plugin in this repository. Blueprints are programmed to use a specific plugin version, or later. 
+If you have downloaded multiple versions of this f5-gilan-plugin and you want the associated blueprint to use a specific version of the plugin, 
+then you must specify which version.
 
-### To download
+Consult the version readme files to learn more about version-specific changes and features.
 
-1. Step one.
-2. Step two.
-3. Steps three.
+### Download plugins
 
-### To install on your VNFM
-
-1. Step one.
-2. Step two.
+1. Download the zip file.
+2. Unzip the file, locally. Notice you have one .wgn file and on .yaml file. You must upload both files to your VNF Manager.
 3. Step three.
 
-### To upgrade this plugin
+### Manually upload plugins to VNF Manager
 
-1. Upload new plugin version to your VNF Manager. 
-2. Verify you do not have any deployments associated with the previous plugin version. If you do have existing deployments, then redeploy associated blueprints with the new plugin version.
-3. Delete the old version of the plugin.
+1. Open your VNF Manager, in the left menu click **System Resources**.
+2. In the **Plugins** pane, click **Upload**.
+3. In the **Upload plugin** dialog on the top row click :paperclip: browse for the downloaded .wgn file, and then click **Open**.
+4. In the bottom row, click :paperclip: browse for the downloaded .yaml file, and then click **Open**.
+5. Click **Upload**.
 
+### Maintain multiple versions of plugins
+Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
 
+1. Step one.
+2. Step two.
+3. Ste three. 
