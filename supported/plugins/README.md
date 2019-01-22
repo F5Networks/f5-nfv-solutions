@@ -8,8 +8,7 @@ Consult the version readme files to learn more about version-specific changes an
 ### Download plugins
 
 1. Download the zip file.
-2. Unzip the file, locally. Notice you have one .wgn file and on .yaml file. You must upload both files to your VNF Manager.
-3. Step three.
+2. Unzip the file, locally. Notice you have one .wgn file and one .yaml file. You must upload both files to your VNF Manager.
 
 ### Manually upload plugins to VNF Manager
 
@@ -24,4 +23,4 @@ Blueprints are programmed to use a specific plugin version, or later. Do the fol
 
 1. Step one.
 2. Step two.
-3. Ste three. 
+3. Step three. 
