@@ -7,12 +7,12 @@ Across all branches in this repository, there are two directories: *supported* a
 
 - **Supported** - The *supported* directory contains F5 VNFM plugins created and fully tested by F5 Networks. These plugins are fully supported by F5, and you can contact F5 Technical Support for assistance using your preferred methods.
 
--	**Experimental** - The *experimental* directory also contains F5 VNFM blueprints created by F5 Networks. However, these blueprints have not completed full testing and are subject to change. F5 Networks does NOT offer technical support for blueprints in the *experimental* directory, so use these blueprints with caution.
+- **Experimental** - The *experimental* directory also contains F5 VNFM blueprints created by F5 Networks. However, these blueprints have not completed full testing and are subject to change. F5 Networks does NOT offer technical support for blueprints in the *experimental* directory, so use these blueprints with caution.
 
-# Plugin and blueprint information
+## Plugin and blueprint information
 You can find descriptions and deployment instructions for each plugin and blueprint in the README file on the individual plugin and blueprint pages in this repository. Consult the following F5 VNFM plugin-blueprint matrix, describing which plugin version can deploy which blueprint.
 
-## Plugin-blueprint matrix
+### Plugin-blueprint matrix
 The following table discribes the plugin versions available in this repository, *supported* Vs. *experimental* status, and the corresponding blueprints you can deploy using that plugin.
 
 | Plugin Name & Version         | Status       | Blueprint                               | Status      |
@@ -22,7 +22,7 @@ The following table discribes the plugin versions available in this repository, 
 |                               |              | F5-VNF-Service-Layer-Base_master        | Supported   |
 | f5-ric-plugin 0.4             | Supported    | <insert corresponding blueprint>        | Supported   |
 
-### Copyright
+#### Copyright
 Copyright 2014-2019 F5 Networks Inc.
 
 #### License
