@@ -1,4 +1,4 @@
-## About the f5-gilan-plugin
+## About the F5-gilan-plugin
 You will find multiple versions of this plugin in this repository. Blueprints are programmed to use a specific plugin version, or later. If you have downloaded multiple versions of this f5-gilan-plugin and you want the associated blueprint to use a specific version of the plugin, then you must [specify which plugin version](#multiversions).
 
 Consult the individual version readme files to learn more about version-specific changes and features.
