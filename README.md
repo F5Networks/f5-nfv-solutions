@@ -1,7 +1,9 @@
 # Introduction
-Welcome to the GitHub repository for F5's Network Functions Virtualization plugins and blueprints that are deployed using the F5 VNF Manager. F5 Networks engineers developed all of the plugins and blueprints in this repository.
+Welcome to the GitHub repository for F5's Network Functions Virtualization plugins and blueprints that are deployed using the F5 VNF Manager. 
+F5 Networks engineers developed all of the plugins and blueprints in this repository.
 
-Consult the [F5 VNF Manager product document](https://clouddocs.f5.com/cloud/nfv/latest/) for complete user documentation.
+Consult the [F5 VNF Manager product document](https://clouddocs.f5.com/cloud/nfv/latest/) for complete user documentation. 
+Consult the [product compatibility matrix](https://support.f5.com/csp/article/K29047312), for a complete list of NFV-related plugins and blueprints. 
 
 Across all branches in this repository, there are two directories: *supported* and *experimental*.
 
