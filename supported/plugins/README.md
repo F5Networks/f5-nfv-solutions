@@ -6,16 +6,16 @@ you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices
 **Note**: Both plugins are required for ALL VNFM solutions.
 
 You can download and install the following supported plugins:
-  - **f5-gilan-plugin** - This plugin does what? You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the changes.
-  - **f5-ric-plugin** - This plugin does what? You will find multiple verisons of this plugin. Consult the readme files for each version to learn more about the changes.
+  - **f5-gilan-plugin** - This plugin deploys orchestration blueprints using the F5 VNF Manager. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the changes.
+  - **f5-ric-plugin** - This plugin does what? You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the changes.
 
-| Plugin Name & Version         | Deploys Blueprint                          
+| Plugin Name                   | Deploys Blueprint                          
 | ------------------------------|-------------------------------------------------------------------|
-| f5-gilan-plugin 0.2.39        | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |                          
+| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |                          
 |                               | F5-VNF-Service-Layer-GiLAN_master-2019-01-08-15-39-21-114497cb    | 
 |                               | F5-VNF-Service-Layer-Firewall_master-2019-01-08-15-39-21-114497cb |
 |                               |                                                                   |
-| f5-ric-plugin 0.4             | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |
+| f5-ric-plugin                 | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |
 |                               | F5-VNF-Service-Layer-GiLAN_master-2019-01-08-15-39-21-114497cb    |
 |                               | F5-VNF-Service-Layer-Firewall_master-2019-01-08-15-39-21-114497cb |
                           
@@ -24,8 +24,8 @@ You can download and install the following supported plugins:
 ### Prerequisites
 You must meet the following system requirements when downloading and installing the VNFM plugins.
 
-| Plugin Name & Version         | System Prerequisite                             | 
+| Plugin Name                   | System Prerequisite                             | 
 | ------------------------------|-------------------------------------------------|
-| f5-gilan-plugin 0.2.39        | Latest VNF Manager installed and configured.    | 
-| f5-ric-plugin 0.4             | Latest VNF Manager installed and configured.    | 
+| f5-gilan-plugin               | Latest VNF Manager installed and configured.    | 
+| f5-ric-plugin                 | Latest VNF Manager installed and configured.    | 
 
