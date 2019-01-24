@@ -1,4 +1,4 @@
-## Using f5-ric-plugin-0.4 
+## Using F5-ric-plugin-0.4 
 This version has the following changed features:
 
 - feature change 1
