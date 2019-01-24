@@ -3,11 +3,11 @@ F5 Networks created plugins that you can run in F5 VNF Manager to deploy bluepri
 and upgrade workflows for your BIG-IP VEs as needed by your application. When using any offering in the supported folder, 
 you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices#product-support) for help at anytime.
 
-**Note**: Both plugins are required for ALL VNFM solutions.
-
 You can download and install the following supported plugins:
   - **f5-gilan-plugin** - This plugin deploys orchestration blueprints using the F5 VNF Manager. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the changes.
   - **f5-ric-plugin** - This plugin does what? You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the changes.
+  
+**Note**: Both plugins are required for ALL VNFM solutions (Gi-lan, Gi-Firewall, and Base).
 
 | Plugin Name                   | Deploys Blueprint                          
 | ------------------------------|-------------------------------------------------------------------|
