@@ -1,5 +1,5 @@
 ## About the F5-ric-plugin
-The F5-ric-plugin does what? You require this plugin for deploying all VNFM solutions. 
+The F5-ric-plugin does what? You require this plugin for deploying all VNFM solution blueprints. 
 
 
 You will find multiple versions of this plugin in this repository. Blueprints are programmed to use a specific plugin version, or later. If you have downloaded multiple versions of this f5-gilan-plugin and you want the associated blueprint to use a specific version of the plugin, then you must [specify which plugin version](#multiversions).
