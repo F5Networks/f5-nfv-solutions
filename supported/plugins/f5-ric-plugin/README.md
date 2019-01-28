@@ -19,8 +19,8 @@ Consult the individual version readme files to learn more about version-specific
    - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
    
 2. In the **Upload plugin** dialog on the top row click :paperclip: browse for the downloaded .wgn file, and then click **Open**.
-4. In the bottom row, click :paperclip: browse for the downloaded .yaml file, and then click **Open**.
-5. Click **Upload**.
+3. In the bottom row, click :paperclip: browse for the downloaded .yaml file, and then click **Open**.
+4. Click **Upload**.
 
 ### <a name="multiversions"></a>Maintain multiple versions of plugins
 Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
