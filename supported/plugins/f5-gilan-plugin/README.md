@@ -15,9 +15,8 @@ Consult the individual version readme files to learn more about version-specific
 1. Open your VNF Manager, and do one of the following:
 
    - On the **Dashboard** click **Upload Plugin**.
-   - In the left menu click **System Resources**, in the **Plugins** pane, click **Upload**.
-   - In the left menu click **System Resources**, nd then in the **Plugins** pane, click **Upload**.
-   
+   - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
+      
 2. In the **Upload plugin** dialog on the top row click :paperclip: browse for the downloaded .wgn file, and then click **Open**.
 4. In the bottom row, click :paperclip: browse for the downloaded .yaml file, and then click **Open**.
 5. Click **Upload**.
