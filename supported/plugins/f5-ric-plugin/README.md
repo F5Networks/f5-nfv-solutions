@@ -8,14 +8,17 @@ Consult the individual version readme files to learn more about version-specific
 
 ### Download plugins
 
-1. Download the zip file.
-2. Unzip the file, locally. Notice you have one **.wgn** file and on **.yaml** file. You must upload both files to your VNF Manager.
+1. Download the zip file in this repository.
+2. Unzip the file, locally. Notice you have one **.wgn** file and one **.yaml** file. You must upload both files to your VNF Manager.
 
 ### Manually upload plugins to VNF Manager
 
-1. Open your VNF Manager, in the left menu click **System Resources**.
-2. In the **Plugins** pane, click **Upload**.
-3. In the **Upload plugin** dialog on the top row click :paperclip: browse for the downloaded .wgn file, and then click **Open**.
+1. Open your VNF Manager, and do one of the following:
+
+   - On the **Dashboard** click **Upload Plugin**.
+   - In the left menu click **System Resources**, in the **Plugins** pane, click **Upload**.
+   
+2. In the **Upload plugin** dialog on the top row click :paperclip: browse for the downloaded .wgn file, and then click **Open**.
 4. In the bottom row, click :paperclip: browse for the downloaded .yaml file, and then click **Open**.
 5. Click **Upload**.
 
