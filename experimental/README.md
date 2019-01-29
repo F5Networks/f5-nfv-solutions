@@ -1,26 +1,19 @@
 ## About experimental blueprints
-Use these blueprints to do what? You can deploy these blueprints using the following plugins:
+F5 Networks partners have created experimental blueprints that you can download and upload into the F5 VNF Manager for automating lifecycle workflows for your BIG-IP VEs as needed by your application. When using any offering in the experimental folder, F5 will NOT provide support. Use these blueprints at your own risk.
 
-| Plugin Name & Version         | Deploys Blueprint                         | For VNFM Solution        | 
+| Blueprint Name                | Decription                                | For VNFM Solution        | 
 | ------------------------------|-------------------------------------------|--------------------------|
-| f5-gilan-plugin 0.2.39        |                                           |                          |
-| f5-ric-plugin 0.4             |                                           |                          |
+| Blueprint name                |                                           |                          |
+| Blueprint name                |                                           |                          |
 |                               |                                           |                          | 
 
-### To download
+Each of these blueprints can have multiple versions. Consult the ReadMe files for each version for complete descriptions of features and changes.
 
-1. Step one.
-2. Step two.
-3. Step three.
+### Prerequisites
+You must meet the following system requirements when using the VNFM blueprint.
 
-### To install on your VNFM
-
-1. Step one.
-2. Step two.
-3. Step three.
-
-### To upgrade 
-
-1. Step one.
-2. Step two.
-3. Step three.
+| Blueprint Name                | System Prerequisite                             | 
+| ------------------------------|-------------------------------------------------|
+| Blueprint name                |                                                 | 
+| Blueprint name                |                                                 | 
+|                               |                                                 |
