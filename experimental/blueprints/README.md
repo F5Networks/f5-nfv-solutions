@@ -1,11 +1,11 @@
 ## Use experimental blueprints
 Use these blueprints to do what? You can deploy these blueprints using the following plugins:
 
-| Blueprint Name                | Deployed by                               | For VNFM solution        | 
-| ------------------------------|-------------------------------------------|--------------------------|
-| insert name                   | plugin name                               | solution name            |
-|                               |                                           |                          |
-|                               |                                           |                          | 
+| Blueprint Name                | Deployed by      | For VNFM solution        | Description         |  
+| ------------------------------|------------------|--------------------------|---------------------|
+| insert name                   | plugin name      | solution name            | insert description  |
+|                               |                  |                          |                     |
+
 
 ### Download blueprints
 
