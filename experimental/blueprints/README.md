@@ -1,4 +1,4 @@
-## About experimental blueprints
+## Use experimental blueprints
 Use these blueprints to do what? You can deploy these blueprints using the following plugins:
 
 | Plugin Name & Version         | Deploys Blueprint                         | For VNFM Solution        | 
