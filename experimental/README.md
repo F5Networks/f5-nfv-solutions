@@ -5,7 +5,7 @@ F5 Networks partners have created experimental blueprints that you can download 
 | ------------------------------| :-----------------------------------------| :------------------------|
 | Blueprint name                |                                           |                          |
 | Blueprint name                |                                           |                          |
-|                               |                                           |                          | 
+
 
 Each of these blueprints can have multiple versions. Consult the ReadMe files for each version for complete descriptions of features and changes.
 
@@ -16,4 +16,3 @@ You must meet the following system requirements when using the VNFM blueprint.
 | ------------------------------| :-----------------------------------------------|
 | Blueprint name                |                                                 | 
 | Blueprint name                |                                                 | 
-|                               |                                                 |
