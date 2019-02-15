@@ -22,11 +22,13 @@ You can find descriptions and deployment instructions for each plugin and bluepr
 The following table discribes the plugin versions available in this repository, *supported* Vs. *experimental* status, and the corresponding blueprints you can deploy using that plugin.
 
 | Plugin Name & Version         | Status       | Blueprint                               | Status      |
-| ------------------------------|--------------|-----------------------------------------|-------------|
+| ------------------------------| :------------| :---------------------------------------| :-----------|
 | f5-gilan-plugin 0.2.39        | Supported    | F5-VNF-Service-Layer-GiLAN_master       | Supported   |
 |                               |              | F5-VNF-Service-Layer-Firewall_master    | Supported   |
 |                               |              | F5-VNF-Service-Layer-Base_master        | Supported   |
-| f5-ric-plugin 0.4             | Supported    | <insert corresponding blueprint>        | Supported   |
+| f5-ric-plugin 0.4             | Supported    | F5-VNF-Service-Layer-GiLAN_master       | Supported   |
+|                               |              | F5-VNF-Service-Layer-Firewall_master    | Supported   |
+|                               |              | F5-VNF-Service-Layer-Base_master        | Supported   |
 
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
