@@ -6,7 +6,7 @@ F5 Networks engineers developed all of the plugins and blueprints in this reposi
 - **Gi-Firewall** - plugins and blueprints enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 - **VNFM Base** -  plugins and blueprints enabling you to instantiate a group of standalone BIG-IP VEs, on-boarding and licensing these VEs, and manually configure and run the full lifecycle management workflows.
 
-Consult the [F5 VNF Manager product document](https://clouddocs.f5.com/cloud/nfv/latest/) for complete user documentation. 
+Consult the [F5 VNF Manager product documents](https://clouddocs.f5.com/cloud/nfv/latest/) for complete user documentation. 
 Consult the [product compatibility matrix](https://support.f5.com/csp/article/K29047312), for a complete list of released, NFV-related plugins and blueprints. 
 
 Across all branches in this repository, there are two directories: *supported* and *experimental*.
