@@ -1,4 +1,10 @@
-# Introduction
+# F5 VNF Manager Blueprints and Plugins
+
+[![Slack Status](URL)
+[![Releases](URL)
+[![Issues](URL)
+
+## Introduction
 Welcome to the GitHub repository for F5's Network Functions Virtualization plugins and blueprints that are deployed using the F5 VNF Manager. 
 F5 Networks engineers developed all of the plugins and blueprints in this repository. F5 Networks provides the following solutions, and all plugin and blueprints accessible from this repository will work for all solutions unless otherwise noted:
 
