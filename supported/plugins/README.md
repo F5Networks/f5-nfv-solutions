@@ -24,5 +24,6 @@ You can download and install the following supported plugins:
 
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
-- Required [prerequesites](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites)  
-- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
+- Required [prerequesites](<a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank"></a>)  - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
+
+
