@@ -27,5 +27,5 @@ Visit the F5 VNFM product documentation for more details about:
 - Required [prerequesites](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites)  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 
-[go](http://stackoverflow.com){:target="_blank"}
+
 
