@@ -13,10 +13,9 @@ You can download and install the following supported plugins:
 
 | Plugin Name                   | Deploys Blueprint                                                 |                   
 | ------------------------------| :-----------------------------------------------------------------|
-| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |                         |                               |                                                                   | 
+| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |                         
 |                               | F5-VNF-Service-Layer-GiLAN_master-2019-01-08-15-39-21-114497cb    | 
 |                               | F5-VNF-Service-Layer-Firewall_master-2019-01-08-15-39-21-114497cb |
-                                                                                                 
 | f5-ric-plugin                 | F5-VNF-Service-Layer-Base_master-2019-01-08-15-39-21-114497cb     |
 |                               | F5-VNF-Service-Layer-GiLAN_master-2019-01-08-15-39-21-114497cb    |
 |                               | F5-VNF-Service-Layer-Firewall_master-2019-01-08-15-39-21-114497cb |
