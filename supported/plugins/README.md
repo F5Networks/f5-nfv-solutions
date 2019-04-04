@@ -13,12 +13,12 @@ You can download and install the following supported plugins:
 
 | Plugin Name                   | Deploys Blueprint                                                 |                   
 | ------------------------------| :-----------------------------------------------------------------|
-| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_v1.1.1.0                                |                        
-|                               | F5-VNF-Service-Layer-GiLAN_v1.1.1.0                               |
-|                               | F5-VNF-Service-Layer-Firewall_v1.1.1.0                            |
-| f5-ric-plugin                 | F5-VNF-Service-Layer-Base_v1.1.1.0                                |
-|                               | F5-VNF-Service-Layer-GiLAN_v1.1.1.0                               |
-|                               | F5-VNF-Service-Layer-Firewall_v1.1.1.0                            |
+| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_v1.X                                    |                        
+|                               | F5-VNF-Service-Layer-GiLAN_v1.X                                   |
+|                               | F5-VNF-Service-Layer-Firewall_v1.X                                |
+| f5-ric-plugin                 | F5-VNF-Service-Layer-Base_v1.X                                    |
+|                               | F5-VNF-Service-Layer-GiLAN_v1.X                                   |
+|                               | F5-VNF-Service-Layer-Firewall_v1.X                                |
                           
 
 
