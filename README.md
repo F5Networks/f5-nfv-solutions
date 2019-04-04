@@ -1,16 +1,16 @@
-# F5 VNF Manager Blueprints and Plugins
+# F5 VNF Manager plugins, inputs, and blueprints
  
 <!-- [![Slack Status](https://f5cloudsolutions.herokuapp.com/badge.svg)](https://f5cloudsolutions.herokuapp.com)
 [![Releases](https://img.shields.io/github/release/f5networks/f5-aws-cloudformation.svg)](https://github.com/f5networks/f5-aws-cloudformation/releases)
 [![Issues](https://img.shields.io/github/issues/f5networks/f5-aws-cloudformation.svg)](https://github.com/f5networks/f5-aws-cloudformation/issues) -->
 
 ## Introduction
-Welcome to the GitHub repository for F5's Network Functions Virtualization plugins and blueprints that are deployed using the F5 VNF Manager. 
-F5 Networks engineers developed all of the plugins and blueprints in this repository. F5 Networks provides the following solutions, and all plugins and blueprints accessible from this repository will work for all solutions unless otherwise noted:
+Welcome to the GitHub repository for F5's Network Functions Virtualization plugins, inputs, and blueprints that are deployed using the F5 VNF Manager. 
+F5 Networks engineers developed all of the plugins, inputs, and blueprints in this repository. F5 Networks provides the following solutions, and all plugins and blueprints accessible from this repository will work for all solutions unless otherwise noted:
 
-- **Gi-LAN** - plugins and blueprints enabling you to automatically deploy all the necessary pieces to create a highly-available set of services, deployed in service layers. These layers auto-scale virtual machines and services to provide a complete and fully configured lifecycle management workflow: install, scale, heal, update, upgrade, and delete. 
-- **Gi-Firewall** - plugins and blueprints enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
-- **VNFM Base** -  plugins and blueprints enabling you to instantiate a group of standalone BIG-IP VEs, on-boarding and licensing these VEs, and manually configure and run the full lifecycle management workflows.
+- **Gi-LAN** - plugins, inputs, and blueprints enabling you to automatically deploy all the necessary pieces to create a highly-available set of services, deployed in service layers. These layers auto-scale virtual machines and services to provide a complete and fully configured lifecycle management workflow: install, scale, heal, update, upgrade, and delete. 
+- **Gi-Firewall** - plugins, inputs, and blueprints enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
+- **VNFM Base** -  plugins, inputs, and blueprints enabling you to instantiate a group of standalone BIG-IP VEs, on-boarding and licensing these VEs, and manually configure and run the full lifecycle management workflows.
 
 Consult the [F5 VNF Manager product documents](https://clouddocs.f5.com/cloud/nfv/latest/) for complete user documentation. 
 Consult the [product compatibility matrix](https://support.f5.com/csp/article/K29047312), for a complete list of released, NFV-related plugins and blueprints. 
@@ -21,8 +21,8 @@ Across all branches in this repository, there are two directories: *supported* a
 
 - **Experimental** - The *experimental* directory also contains F5 VNFM blueprints created by F5 Networks. However, these blueprints have not completed full testing and are subject to change. F5 Networks does NOT offer technical support for blueprints in the *experimental* directory, so use these blueprints with caution.
 
-## Plugin and blueprint information
-You can find descriptions and deployment instructions for each plugin and blueprint in the README file on the individual plugin and blueprint pages in this repository. Consult the following F5 VNFM plugin-blueprint matrix, describing which plugin version can deploy which blueprint.
+## Plugin, inputs, and blueprint information
+You can find descriptions and deployment instructions for each plugin, inputs file, and blueprint in the README file on the individual plugin, inputs, and blueprint pages in this repository. Consult the following F5 VNFM plugin-blueprint matrix, describing which plugin version can deploy which blueprint.
 
 ### Plugin-blueprint matrix
 The following table discribes the plugin versions available in this repository, *supported* Vs. *experimental* status, and the corresponding blueprints you can deploy using that plugin.

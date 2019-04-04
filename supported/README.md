@@ -1,5 +1,5 @@
-## About supported plugins and blueprints
-This directory provides supported F5 VNF Manager plugins and blueprints developed by F5 Networks engineers. You can use these supported plugins to deploy supported blueprints that automate the use of cloud resources used by your application network. 
+## About supported plugins, inputs, and blueprints
+This directory provides supported F5 VNF Manager plugins, ibnputs files, and blueprints developed by F5 Networks engineers. You can use these supported plugins and inputs to deploy supported blueprints that automate the use of cloud resources used by your application network. 
 
 The contents in this directory is fully spported by F5 Networks Support, and for assistance, you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices#product-support) using your perferred methods.
 
