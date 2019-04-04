@@ -1,0 +1,19 @@
+plugins:
+  bigiq:
+    package_name: f5-bigiq-plugin
+    package_version: '0.1'
+    executor: central_deployment_agent
+
+node_types:
+    f5.bigiq.nodes.bigiq:
+        derived_from: cloudify.openstack.nodes.Server
+        interfaces:
+            cloudify.interfaces.lifecycle:
+                create:
+                    implementation: bigiq.plugin.tasks.create
+                configure:
+                    implementation: bigiq.plugin.tasks.status
+                start:
+                    implementation: bigiq.plugin.tasks.start
+                delete:
+                    implementation: bigiq.plugin.tasks.delete
