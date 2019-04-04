@@ -1,6 +1,6 @@
 ## About inputs files
 
-Inputs files are YAML or JSON files that contain a set of parameters that you must customize according to your system reqirements. During the blueprint deployment process, you can upload these inputs files to auto-complete the solution blueprint form in VNF Manager. Each solution blueprint has its own inputs file. 
+Inputs files are YAML or JSON files that contain a set of parameters that you must customize according to your system requirements. During the blueprint deployment process, you can upload these inputs files to auto-complete the solution blueprint form in VNF Manager. Each solution blueprint has its own inputs file. 
 
 Appended to the end of each inputs file is an [AS3 Declaration](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/3/userguide/components.html#as3-declaration) that you can use to define your application delivery controller for BIG-IP in tenant- and application-oriented terms. 
 
