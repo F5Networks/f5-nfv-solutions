@@ -7,4 +7,6 @@ Changes to this plugin include:
 
 This version is used to deploy the following blueprint versions:
 
-- 
+- v1.1.1/F5-VNF-Service-Layer-Base
+- v1.1.1/F5-VNF-Service-Layer-GiLAN
+- v1.1.1/F5-VNF-Service-Layer-Firewall
