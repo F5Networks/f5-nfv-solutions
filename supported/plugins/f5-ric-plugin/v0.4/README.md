@@ -1,5 +1,5 @@
 ## Use F5-ric-plugin-0.4 
-This is the initial version of the Resource Information Collector plugin, enabling  utility metric colleciton and report generation. This version deploys the following blueprint versions:
+This is the initial version of the Resource Information Collector plugin, enabling utility resource collection and report generation. This version deploys the following blueprint versions:
  
  - Gi LAN version 1.X
  - Gi Firewall 1.X
