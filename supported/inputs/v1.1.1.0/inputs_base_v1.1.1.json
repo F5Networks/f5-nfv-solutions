@@ -1,0 +1,28 @@
+{
+   "big_iq_host": "10.190.54.148",
+   "big_iq_lic_pool": "vnfm-4",
+   "ntp_server": "132.163.96.1",
+   "timezone": "string",
+   "default_ltm_number": "1",
+   "default_gateway": "10.10.12.1",
+   "manager_mgmt_host": "10.10.2.16",
+   "mgmt_net": "mgmt",
+   "mgmt_subnet": "mgmt",
+   "mgmt_sg_name": "allow_22",
+   "internal_net": "vnfs",
+   "internal_subnet": "vnfs",
+   "external_net": "vnfe",
+   "external_subnet": "vnfe",
+   "internal_sg_name": "allow_22",
+   "external_sg_name": "allow_22",
+   "sw_ref_ltm": {
+      "data": {
+         "image": "BIGIP-13.1.0.5-0.0.5.ALL_1SLOT",
+         "flavor": "f5.cloudify_medium",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "bigip_os_ssh_key": "mysshkey",
+   "vnf_as3_nsd_payload": ""
+}
