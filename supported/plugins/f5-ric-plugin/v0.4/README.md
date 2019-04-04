@@ -1,14 +1,10 @@
 ## Use F5-ric-plugin-0.4 
-This version has the following changed features:
-
-- feature change 1
-- feature change 2
-- feature change 3
+F5 Resource Information Collector plugin used to collect GiLAN Service Layer information and generate reports. Installation includes, uploading a wagon file (wagons/centos/f5_ric_plugin-0.4-py27-none-any-none-none.wgn) and ./plugin.yaml to your VNFM. Before running any deployment, you must run the required ./configure.sh file.
 
 This plugin deploys the following blueprint version:
  
- - blueprint name and version number
- - blueprint name and version number
+ - Gi LAN
+ - Gi Firewall
 
 ### To upgrade plugins
 
