@@ -1,0 +1,28 @@
+# Common inputs
+big_iq_host: 192.168.120.3
+default_gateway: 10.190.54.1
+manager_mgmt_host: 192.168.120.11
+mgmt_net: mgmt
+mgmt_subnet: mgmt-subnet
+mgmt_sg_name: mgmt_sg
+
+internal_net: lbs_vnf_net
+internal_subnet: lbs_vnf_subnet
+internal_subnet_cidr: 192.168.21.0/24
+external_net: vnf_lbs_net
+external_subnet: vnf_lbs_subnet
+external_subnet_cidr: 192.168.31.0/24
+internal_sg_name: pdn_sg
+external_sg_name: pgw_sg
+
+big_iq_lic_pool: registration_keys
+default_ltm_number: 2
+ntp_server: 132.163.96.4
+timezone: Pacific/Pago_Pago
+
+sw_ref_ltm:
+  data:
+    image: BIGIP-13.1.0.7-0.0.1.ALL_1SLOT
+    flavor: f5.cloudify_medium
+  revision: 0
+bigip_os_ssh_key: shimkus

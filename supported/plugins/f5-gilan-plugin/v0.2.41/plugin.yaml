@@ -1,0 +1,459 @@
+plugins:
+  gilan:
+    executor: central_deployment_agent
+    package_name: f5-gilan-plugin
+    package_version: '0.2.41'
+
+data_types:
+  f5.gilan.data_types.configuration.workflowparams.PoolMember:
+    properties:
+      enable:
+        type: boolean
+        default: true
+      adminState:
+        type: string
+        default: enable
+      serverAddresses:
+        default: []
+      servicePort:
+        type: integer
+        default: 0
+
+  f5.gilan.data_types.configuration.WorkflowParams:
+    properties:
+      configuration_node_id:
+        type: string
+        default: as3_declaration_config
+      node_types_to_update:
+        default: [f5.gilan.nodes.RestConfig]
+      merge_dict: 
+        type: boolean
+        default: true
+
+node_types:
+
+  f5.gilan.nodes.InputValidator:
+    derived_from: cloudify.nodes.Root
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: gilan.gilan_plugin.validation.validate
+
+  f5.gilan.nodes.NagiosCheckService:
+    derived_from: cloudify.nodes.Root
+    properties:
+      nagios_deployment_id:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: gilan.gilan_plugin.parallel_nagios.poll_nagios
+
+
+  f5.gilan.nodes.MasterCheckService:
+    derived_from: cloudify.nodes.Root
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: gilan.gilan_plugin.parallel_nagios.poll_master
+
+  f5.gilan.nodes.NagiosCertGenerator:
+    derived_from: cloudify.nodes.Root
+    properties:
+      nagios_ip:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: gilan.gilan_plugin.parallel_nagios.generate_cert
+
+  f5.gilan.nodes.Id:
+    derived_from: cloudify.nodes.Root
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: gilan.gilan_plugin.tasks.populate_ids
+ 
+  f5.gilan.nodes.SoftwareReference:
+    derived_from: cloudify.nodes.Root
+    properties:
+      sw_ref:
+        default: {}
+      upgrade_sw_ref:
+        default: {}
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create:
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties: 
+              default:
+                - name: sw_ref
+                  value: {get_property: [SELF, sw_ref]}
+                - name: upgrade_sw_ref
+                  value: {get_property: [SELF, upgrade_sw_ref]}
+      f5.gilan.interfaces.lifecycle:
+        upgrade_start: 
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties: 
+              default: []
+        upgrade_finish: 
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties: 
+              default: 
+                - name: sw_ref
+                  value: {get_attribute: [SELF, upgrade_sw_ref]}
+ 
+  f5.gilan.nodes.configuration.MemberRegistrar:
+    derived_from: f5.gilan.nodes.DeploymentProxy
+    properties:
+      client:
+        description: >
+          Client configuration, if empty will be reused manager client:
+            host: Host of Cloudify's management machine.
+            port: Port of REST API service on management machine.
+            protocol: Protocol of REST API service on management machine,
+                      defaults to http.
+            api_version: version of REST API service on management machine.
+            headers: Headers to be added to request.
+            query_params: Query parameters to be added to the request.
+            cert: Path to a copy of the server's self-signed certificate.
+            trust_all: if `False`, the server's certificate
+                       (self-signed or not) will be verified.
+            username: Cloudify User username.
+            password: Cloudify User password.
+            token: Cloudify User token.
+            tenant: Cloudify Tenant name.
+        default: {}
+      filter:
+        description: >
+          Filter deployemnts based on outputs values.
+        default: {}
+      workflow_id:
+        type: string
+        default: 'configuration_update'
+        description: >
+          Name of workflow to call
+      workflow_params:
+        type: f5.gilan.data_types.configuration.WorkflowParams
+        description: >
+          Requests params passed to Requests plugin	
+      params:
+        default: []
+      params_list:
+        default:
+          - pool_member_enable
+          - pool_member_admin_state
+          - pool_member_service_port
+          - pool_member_server_addresses
+          - map_record_name
+          - map_record_data
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create: gilan.gilan_plugin.registrar_tasks.create
+        configure: gilan.gilan_plugin.registrar_tasks.register
+        start: {}
+        stop: {}
+        delete: gilan.gilan_plugin.registrar_tasks.deregister
+        update: gilan.gilan_plugin.registrar_tasks.update
+        is_alive: {}
+      f5.gilan.interfaces.lifecycle:
+        disable: 
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties: 
+              default:
+                - name: disabled
+                  value: true
+
+  f5.gilan.nodes.DeploymentProxy:
+    derived_from: cloudify.nodes.DeploymentProxy
+    interfaces:
+      f5.gilan.interfaces.lifecycle:
+        disable: {}
+        enable: {}
+        adminStateDisable: {}
+        adminStateEnable: {}
+      cloudify.interfaces.lifecycle:
+        start:
+          implementation: cfy_util.cloudify_deployment_proxy.tasks.execute_start
+          inputs:
+            workflow_id:
+              type: string
+              default: install
+            timeout:
+              type: integer
+              description: How long (in seconds) to wait for execution to finish before timing out
+              default: -1
+            interval:
+              type: integer
+              description: Polling interval (seconds)
+              default: 10
+        stop:
+          implementation: cfy_util.cloudify_deployment_proxy.tasks.execute_start
+          inputs:
+            workflow_id:
+              default: uninstall
+            resource_config:
+              default:
+                executions_start_args:
+                  parameters:
+                    ignore_failure: true
+                  allow_custom_parameters: true
+
+  f5.gilan.nodes.deploymentproxy.Slave:
+    derived_from: f5.gilan.nodes.DeploymentProxy
+    properties:
+      max_instances:
+        default: {}
+      min_instances:
+        default: 1
+    interfaces:
+      f5.gilan.interfaces.lifecycle:
+        disable: 
+          implementation: cfy_util.cloudify_deployment_proxy.tasks.execute_start
+          inputs:
+            workflow_id:
+              default: disable
+          
+  f5.gilan.nodes.deploymentproxy.Master:
+    derived_from: f5.gilan.nodes.DeploymentProxy
+    interfaces:
+      f5.gilan.interfaces.lifecycle:
+        disable:
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties:
+              default:
+                - name: disabled
+                  value: true
+
+  f5.gilan.nodes.deploymentproxy.Nsd:
+    derived_from: f5.gilan.nodes.DeploymentProxy
+
+  f5.gilan.nodes.deploymentproxy.Vnfd:
+    derived_from: f5.gilan.nodes.DeploymentProxy
+
+  f5.gilan.nodes.deploymentproxy.Layer:
+    derived_from: f5.gilan.nodes.DeploymentProxy
+    interfaces:
+      f5.gilan.interfaces.lifecycle:
+        scale_out: 
+          implementation: cfy_util.cloudify_deployment_proxy.tasks.execute_start
+
+  f5.gilan.nodes.RestConfig:
+    derived_from: cloudify.rest.Requests
+    properties:
+      params_list:
+        default: []
+      params:
+        default: {}
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        update:
+          implementation: gilan.gilan_plugin.tasks.update_ltm
+          inputs:
+            params:
+              default: {}
+            template_file:
+              default: ''
+        is_alive: {}
+
+  f5.gilan.nodes.RestConfigLoader:
+    derived_from: configuration_loader
+    properties:
+      client:
+        description: >
+          Client configuration, if empty will be reused manager client:
+            host: Host of Cloudify's management machine.
+            port: Port of REST API service on management machine.
+            protocol: Protocol of REST API service on management machine,
+                      defaults to http.
+            api_version: version of REST API service on management machine.
+            headers: Headers to be added to request.
+            query_params: Query parameters to be added to the request.
+            cert: Path to a copy of the server's self-signed certificate.
+            trust_all: if `False`, the server's certificate
+                       (self-signed or not) will be verified.
+            username: Cloudify User username.
+            password: Cloudify User password.
+            token: Cloudify User token.
+            tenant: Cloudify Tenant name.
+        default: {}
+      filter:
+        description: >
+          Filter deployemnts based on outputs values.
+        default: {}
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: gilan.gilan_plugin.rest_config_loader_tasks.configure
+        start:
+          implementation: gilan.gilan_plugin.rest_config_loader_tasks.start
+
+  f5.gilan.nodes.BigIpState:
+    derived_from: configuration_loader
+    properties:
+      host:
+        description: >
+          AS3 service host address 
+        type: string
+        default: '' 
+      port:
+        description: >
+          AS3 service hort number. When -1 default ports are used
+          (80 for ssl = false and 443 for ssl = true)
+        type: integer
+        default: -1
+      ssl:
+        description: >
+          AS3 service protocol - http or https
+        type: boolean
+        default: false
+      verify:
+        description: >
+          A boolean which controls whether we verify the server's TLS
+          certificate of the AS3 service.
+        type: boolean
+        default: true
+      template_file:
+        description: >
+          AS3 service YAML temlate file to be used to fetch master status  
+      username:
+        description: >
+          AS3 service username
+      password:
+        description: >
+          AS3 service password
+      device_name:
+        description: >
+          AS3 device name
+        default: ''
+      parameters_json:
+        default: {}
+    interfaces:
+      f5.gilan.interfaces.lifecycle:
+        disable:
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties:
+              default:
+                - name: disabled
+                  value: true
+        update_failover_state:
+          implementation: gilan.gilan_plugin.tasks.update_failover_state
+          inputs:
+            template_file:
+              default: {get_property: [SELF, template_file] }
+            params:
+              default:
+                host: { get_attribute: [SELF, host] }
+                device_name: { get_attribute: [SELF, device_name] }
+                port: { get_property: [SELF, port] }
+                ssl: { get_property: [SELF, ssl] }
+                verify: { get_property: [SELF,  verify] }
+                username: { get_property: [SELF, username] }
+                password: { get_property: [SELF, password] }
+        update_scalable_entity_counter:
+          implementation: gilan.gilan_plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties:
+              default: []
+
+  f5.gilan.nodes.ThresholdCalculator:
+    derived_from: cloudify.nodes.Root
+    properties:
+      vnf_group_throughput:
+        description: >
+          The desired aggregate throughput (Gigabits In Out) for every layer in the group.
+          Example values: 5 for 5 gig, 10 for 10 gig, 0.5 for 500mb
+      vnf_group_throughput_threshold:
+        description: >
+          New layer is added to group when % of average aggregate layer throughput exceeds this number (ie. 75)
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create: gilan.gilan_plugin.tasks.calculate_threshold
+
+  f5.gilan.nodes.NetworkMaskCalculator:
+    derived_from: cloudify.nodes.Root
+    properties:
+      cidr:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create: gilan.gilan_plugin.tasks.calculate_mask
+
+
+relationships:
+  f5.gilan.relationships.set_runtime_properties:
+    derived_from: cloudify.relationships.depends_on
+    source_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: gilan.gilan_plugin.relationships.set_runtime_properties
+          inputs:
+            runtime_properties:
+              default:  []
+
+  f5.gilan.relationships.set_runtime_properties_to:
+    derived_from: cloudify.relationships.depends_on
+    source_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: gilan.gilan_plugin.relationships.set_runtime_properties_to
+          inputs:
+            runtime_properties:
+              default:  []
+
+
+  f5.gilan.relationships.slave_connected_to_master:
+    derived_from:  f5.gilan.relationships.set_runtime_properties
+
+
+  f5.gilan.relationships.upgrade:
+    derived_from: cloudify.relationships.depends_on
+    source_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: gilan.gilan_plugin.relationships.upgrade
+          inputs:
+            sw_ref: {}
+            upgrade_sw_ref: {}
+
+  f5.gilan.relationships.memberregistrar.load_from_config:
+    derived_from: load_from_config
+    target_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: gilan.gilan_plugin.relationships.load_from_config
+          inputs:
+            source_config:
+              default: { get_attribute: [TARGET , params ]  }
+            disabled:
+              default: { get_attribute: [SOURCE , disabled ]  }
+
+  f5.gilan.relationships.as3declaration.load_from_config:
+    derived_from: load_from_config
+    target_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: gilan.gilan_plugin.relationships.update_list_and_load_from_config
+          inputs:
+            params:
+              default: { get_attribute: [TARGET, params]}
+            remove_items:
+              default: []
+            add_items:
+              default: []
+
+  f5.gilan.relationships.set_source_runtime_property_to_instance_id:
+    derived_from: cloudify.relationships.depends_on
+    source_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: gilan.gilan_plugin.relationships.set_source_runtime_property_to_instance_id
+          inputs:
+            runtime_property:
+              default: instance_id
