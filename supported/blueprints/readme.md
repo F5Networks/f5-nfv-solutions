@@ -17,16 +17,9 @@ The following table provides a brief description of each solution blueprint:
 
 1. On the **Dashboard** click **Upload Blueprint**.      
 2. In the **Upload bluprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
-4. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
+3. In the **Blueprint name** text box, enter a descriptive name, ommitting spaces between words.  This is typically auto-populated for you.
+4. In the **Blueprint YAML file** text box, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**. This is typically auto-populated for you.
 5. Click **Upload**.
-
-### <a name="multiversions"></a>Maintain multiple versions of plugins
-Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
-
-1. Step one.
-2. Step two.
-3. Step three. 
-
 
 For complete blueprint descriptions, consult the [F5 VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html).
 
