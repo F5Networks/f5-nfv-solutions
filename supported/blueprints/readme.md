@@ -8,6 +8,11 @@ The following table provides a brief description of each solution blueprint:
 - **F5-VNF-Service-Layer-GiLAN_v1.X** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows.
 - **F5-VNF-Service-Layer-Firewall_v1.X** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 
+### Prerequisites and system requirements
+Visit the F5 VNFM product documentation for more details about:
+- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
+- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
+
 ### Download blueprints
 
 1. Download the zip file in this repository.
