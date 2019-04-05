@@ -27,6 +27,11 @@ Visit the F5 VNFM product documentation for more details about:
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 
+### Install F5-ric-plugin
+
+1. Upload a wagon file (``wagons/centos/f5_ric_plugin-0.4-py27-none-any-none-none.wgn``) and ``./plugin.yaml`` to your VNFM. 
+2. Before running any deployment, you must run the required ``./configure.sh`` file.  
+
 ### Download plugins
 
 1. Download the zip file in this repository.
@@ -38,10 +43,10 @@ Visit the F5 VNFM product documentation for more details about:
 
    - On the **Dashboard** click **Upload Plugin**.
    - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
-      
+   
 2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded .wgn file, and then click **Open**.
-4. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
-5. Click **Upload**.
+3. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
+4. Click **Upload**.
 
 ### <a name="multiversions"></a>Maintain multiple versions of plugins
 Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
