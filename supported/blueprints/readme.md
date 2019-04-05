@@ -8,6 +8,26 @@ The following table provides a brief description of each solution blueprint:
 - **F5-VNF-Service-Layer-GiLAN_v1.X** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows.
 - **F5-VNF-Service-Layer-Firewall_v1.X** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 
+### Download blueprints
+
+1. Download the zip file in this repository.
+2. Unzip the file, locally. 
+
+### Manually upload plugins to VNF Manager
+
+1. On the **Dashboard** click **Upload Blueprint**.      
+2. In the **Upload bluprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
+4. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
+5. Click **Upload**.
+
+### <a name="multiversions"></a>Maintain multiple versions of plugins
+Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
+
+1. Step one.
+2. Step two.
+3. Step three. 
+
+
 For complete blueprint descriptions, consult the [F5 VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html).
 
 #### Copyright
