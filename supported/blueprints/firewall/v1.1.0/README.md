@@ -3,7 +3,7 @@
 This blueprint contains the following changes:
 
 - Minimizes secrets and moves them to the accompanying inputs file.
-- Enables the designaiton of workflow execution start and end times.
+- Enables the designation of workflow execution start and end times.
 - Enables secrets encryption
 
 #### Copyright
