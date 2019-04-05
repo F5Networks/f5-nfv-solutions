@@ -4,20 +4,9 @@ directory you will find supported versions of each blueprint released with each 
 
 The following table provides a brief description of each solution blueprint:
 
-| Blueprint Name                       | Description                                                       |                   
-| -------------------------------------| :-----------------------------------------------------------------|
-| F5-VNF-Service-Layer-Base_v1.X       | Enables you to deploy BIG-IP VEs in an open configuration model.  |                        
-|                                      | This blueprint provides no automation, but you can execute        |                                                           |
-|                                      | workflows manuually.                                              |
-|                                      |                                                                   |
-| F5-VNF-Service-Layer-GiLAN_v1.X      | Enables you to deploy BIG-IP VEs that utilize                     |
-|                                      | firewall protection services only like, DDoS mitigation, DNS      |
-|                                      | security, and intrusion protection.                               |
-|                                      |                                                                   |
-| F5-VNF-Service-Layer-Firewall_v1.X   | Enables you to deploy BIG-IP VEs that utilize automated           |
-|                                      | deployment, creating a highly-available set of services,          |
-|                                      | deployed in service layers.                                       |
-|                                      |                                                                   |
+- F5-VNF-Service-Layer-Base_v1.X -- Enables you to deploy BIG-IP VEs in an open configuration model. This blueprint enables you to execute workflows manually.
+- F5-VNF-Service-Layer-GiLAN_v1.X -- Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows.
+- F5-VNF-Service-Layer-Firewall_v1.X -- Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 
 For complete blueprint descriptions, consult the [F5 VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html).
 
