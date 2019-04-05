@@ -1,4 +1,4 @@
-## About F5 VNFM solution blueprints
+## Use F5 VNFM solution blueprints
 In this directory you will find blueprints for each VNFM solution; Gi LAN, Gi Firewall, and Base. Within each solution 
 directory you will find supported versions of each blueprint released with each version of VNFM.
 
