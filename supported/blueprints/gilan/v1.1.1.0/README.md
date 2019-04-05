@@ -1,15 +1,8 @@
-## Use F5-ric-plugin-0.4 
-This is the initial version of the Resource Information Collector plugin, enabling utility resource collection and report generation. This version deploys the following blueprint versions:
- 
- - Gi LAN version 1.X
- - Gi Firewall 1.X
+## About the F5-VNF-Service-Layer-GiLAN_v.1.1.1 solution blueprint
+This version contains the following changes:
 
-### To upgrade plugins
-
-1. Upload new plugin version to your VNF Manager. 
-2. Verify you do not have any deployments associated with the previous plugin version. If you do have existing deployments, 
-then redeploy associated blueprints with the new plugin version.
-3. Delete the old version of the plugin.
+- Additional input parameters enabling you to define an availability zone in OpenStack VIM.
+- Fix for the Scaling workflows executed on a layer, preventing the Heal workflow from executing immediately after the new slave is created.
 
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.

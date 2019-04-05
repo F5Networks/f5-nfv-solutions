@@ -1,11 +1,5 @@
 ## Use f5-gilan-plugin-0.2.41 
-This version has the following features:
-
-- feature change 1
-- feature change 2
-- feature change 3
-
-This plugin deploys the following blueprint version:
+This is the initial version deploying F5 Service Layer infrastructure of BIG-IPs. This plugin deploys the following blueprint versions:
 
 - v1.1.0/F5-VNF-Service-Layer-Base
 - v1.1.0/F5-VNF-Service-Layer-GiLAN
