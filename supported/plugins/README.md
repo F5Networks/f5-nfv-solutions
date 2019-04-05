@@ -27,6 +27,29 @@ Visit the F5 VNFM product documentation for more details about:
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 
+### Download plugins
+
+1. Download the zip file in this repository.
+2. Unzip the file, locally. Notice you have one **.wgn** file and one **.yaml** file. You must upload both files to your VNF Manager.
+
+### Manually upload plugins to VNF Manager
+
+1. Open your VNF Manager, and do one of the following:
+
+   - On the **Dashboard** click **Upload Plugin**.
+   - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
+      
+2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded .wgn file, and then click **Open**.
+4. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
+5. Click **Upload**.
+
+### <a name="multiversions"></a>Maintain multiple versions of plugins
+Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
+
+1. Step one.
+2. Step two.
+3. Step three. 
+
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
 
