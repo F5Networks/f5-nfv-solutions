@@ -17,8 +17,8 @@ Consult the individual version readme files to learn more about version-specific
    - On the **Dashboard** click **Upload Plugin**.
    - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
       
-2. In the **Upload plugin** dialog on the top row click :paperclip: browse for the downloaded .wgn file, and then click **Open**.
-4. In the bottom row, click :paperclip: browse for the downloaded .yaml file, and then click **Open**.
+2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded .wgn file, and then click **Open**.
+4. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
 5. Click **Upload**.
 
 ### <a name="multiversions"></a>Maintain multiple versions of plugins
