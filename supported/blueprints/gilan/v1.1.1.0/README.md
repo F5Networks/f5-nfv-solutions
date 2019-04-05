@@ -1,4 +1,4 @@
-## About the F5-VNF-Service-Layer-GiLAN.1.1.1 solution blueprint
+## About the F5-VNF-Service-Layer-GiLAN_v.1.1.1 solution blueprint
 This version contains the following changes:
 
 - Additional input parameters enabling you to define an availability zone in OpenStack VIM.
