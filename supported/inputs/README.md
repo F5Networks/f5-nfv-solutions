@@ -6,6 +6,11 @@ Appended to the end of each inputs file is an [AS3 Declaration](https://clouddoc
 
 The inputs directory is organized by VNFM version. The sets of inputs can change from version to version of VNF Manager, and you must download and complete the inputs file specific for the version of F5 VNF Manager you are using.
 
+### Prerequisites and system requirements
+Visit the F5 VNFM product documentation for more details about:
+- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
+- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
+
 ### To use inputs files
 
 1. Open the inputs file for the solution (Gi Lan, Gi Firewall, or Base) you purchased specific to the VNFM version you are using.
