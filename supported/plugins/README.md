@@ -27,7 +27,7 @@ You can download and install the following supported plugins:
 3. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
 4. Click **Upload**.
 
-### <a name="multiversions"></a>Maintain multiple versions of plugins
+### <a name="multiversions">Maintain multiple versions of plugins</a>
 Blueprints are programmed to use a specific plugin version, or later. Do the following to program the blueprint to use a specific plugin:
 
 1. Step one.
