@@ -11,11 +11,6 @@ You can download and install the following supported plugins:
   
 **Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).                      
 
-### Prerequisites and system requirements
-Visit the F5 VNFM product documentation for more details about:
-- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
-- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
-
 ### Install F5-ric-plugin
 
 1. Upload a wagon file (``wagons/centos/f5_ric_plugin-0.4-py27-none-any-none-none.wgn``) and ``./plugin.yaml`` to your VNFM. 
