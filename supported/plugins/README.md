@@ -9,18 +9,7 @@ You can download and install the following supported plugins:
 - **f5-gilan-plugin** - This plugin deploys orchestration blueprints using the F5 VNF Manager. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
 - **f5-ric-plugin** - This plugin runs blueprints and funactions that manage the billing report feature. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
   
-**Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).
-
-| Plugin Name                   | Deploys Blueprint                                                 |                   
-| ------------------------------| :-----------------------------------------------------------------|
-| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_v1.X                                    |                        
-|                               | F5-VNF-Service-Layer-GiLAN_v1.X                                   |
-|                               | F5-VNF-Service-Layer-Firewall_v1.X                                |
-| f5-ric-plugin                 | F5-VNF-Service-Layer-Base_v1.X                                    |
-|                               | F5-VNF-Service-Layer-GiLAN_v1.X                                   |
-|                               | F5-VNF-Service-Layer-Firewall_v1.X                                |
-                          
-
+**Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).                      
 
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
