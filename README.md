@@ -32,6 +32,9 @@ The following table discribes the plugin versions available in this repository, 
 | f5-gilan-plugin 0.2.41        | Supported    | F5-VNF-Service-Layer-GiLAN_v1.1.0.0     | Supported   |
 |                               |              | F5-VNF-Service-Layer-Firewall_v1.1.0.0  | Supported   |
 |                               |              | F5-VNF-Service-Layer-Base_v1.1.0.0      | Supported   |
+| f5-gilan-plugin 0.2.42        | Supported    | F5-VNF-Service-Layer-GiLAN_v1.1.1.0     | Supported   |
+|                               |              | F5-VNF-Service-Layer-Firewall_v1.1.1.0  | Supported   |
+|                               |              | F5-VNF-Service-Layer-Base_v1.1.1.0      | Supported   |
 | f5-ric-plugin 0.4             | Supported    | F5-VNF-Service-Layer-GiLAN_v1.X         | Supported   |
 |                               |              | F5-VNF-Service-Layer-Firewall_v1.X      | Supported   |
 |                               |              | F5-VNF-Service-Layer-Base_v1.X          | Supported   |
