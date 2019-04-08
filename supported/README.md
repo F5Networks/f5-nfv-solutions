@@ -18,6 +18,7 @@ The following table discribes the supported plugin versions available in this re
 |                               | F5-VNF-Service-Layer-Firewall_v1.X         | inputs_firewall_v1.X                       |
 |                               | F5-VNF-Service-Layer-Base_v1.X             | inputs_base_v1.X                           |
 
+
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
