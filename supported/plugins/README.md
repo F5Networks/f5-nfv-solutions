@@ -11,11 +11,6 @@ You can download and install the following supported plugins:
   
 **Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).                      
 
-### Install F5-ric-plugin
-
-1. Upload a wagon file (``wagons/centos/f5_ric_plugin-0.4-py27-none-any-none-none.wgn``) and ``./plugin.yaml`` to your VNFM. 
-2. Before running any deployment, you must run the required ``./configure.sh`` file.  
-
 ### Download plugins
 
 1. Download the zip file in this repository.
