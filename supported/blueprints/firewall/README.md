@@ -1,6 +1,6 @@
 ## About the F5 Gi Firewall solution blueprint
 
-Use the F5 Gi Firewall solution blueprint for implementing components enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection:
+Use the F5 Gi Firewall solution blueprint for implementing components enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 
 
 #### Copyright
