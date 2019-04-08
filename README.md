@@ -24,18 +24,6 @@ Across all branches in this repository, there are two directories: *supported* a
 ## Plugin, inputs, and blueprint information
 You can find descriptions and deployment instructions for each plugin, inputs file, and blueprint in the README file on the individual plugin, inputs, and blueprint pages in this repository. Consult the following F5 VNFM plugin-blueprint matrix, describing which plugin version can deploy which blueprint.
 
-### Plugin-blueprint matrix
-The following table discribes the plugin versions available in this repository, *supported* Vs. *experimental* status, and the corresponding blueprints you can deploy using that plugin.
-
-| Plugin Name & Version         | Status       | Blueprint                               | Status      |
-| ------------------------------| :------------| :---------------------------------------| :-----------|
-| f5-gilan-plugin 0.2.39        | Supported    | F5-VNF-Service-Layer-GiLAN_v1.1.1.0     | Supported   |
-|                               |              | F5-VNF-Service-Layer-Firewall_v1.1.1.0  | Supported   |
-|                               |              | F5-VNF-Service-Layer-Base_v1.1.1.0      | Supported   |
-| f5-ric-plugin 0.4             | Supported    | F5-VNF-Service-Layer-GiLAN_v1.1.1.0     | Supported   |
-|                               |              | F5-VNF-Service-Layer-Firewall_v1.1.1.0  | Supported   |
-|                               |              | F5-VNF-Service-Layer-Base_v1.1.1.0      | Supported   |
-
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
 

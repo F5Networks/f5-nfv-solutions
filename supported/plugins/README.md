@@ -9,28 +9,7 @@ You can download and install the following supported plugins:
 - **f5-gilan-plugin** - This plugin deploys orchestration blueprints using the F5 VNF Manager. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
 - **f5-ric-plugin** - This plugin runs blueprints and funactions that manage the billing report feature. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
   
-**Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).
-
-| Plugin Name                   | Deploys Blueprint                                                 |                   
-| ------------------------------| :-----------------------------------------------------------------|
-| f5-gilan-plugin               | F5-VNF-Service-Layer-Base_v1.X                                    |                        
-|                               | F5-VNF-Service-Layer-GiLAN_v1.X                                   |
-|                               | F5-VNF-Service-Layer-Firewall_v1.X                                |
-| f5-ric-plugin                 | F5-VNF-Service-Layer-Base_v1.X                                    |
-|                               | F5-VNF-Service-Layer-GiLAN_v1.X                                   |
-|                               | F5-VNF-Service-Layer-Firewall_v1.X                                |
-                          
-
-
-### Prerequisites and system requirements
-Visit the F5 VNFM product documentation for more details about:
-- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
-- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
-
-### Install F5-ric-plugin
-
-1. Upload a wagon file (``wagons/centos/f5_ric_plugin-0.4-py27-none-any-none-none.wgn``) and ``./plugin.yaml`` to your VNFM. 
-2. Before running any deployment, you must run the required ``./configure.sh`` file.  
+**Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).                      
 
 ### Download plugins
 
