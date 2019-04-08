@@ -24,21 +24,6 @@ Across all branches in this repository, there are two directories: *supported* a
 ## Plugin, inputs, and blueprint information
 You can find descriptions and deployment instructions for each plugin, inputs file, and blueprint in the README file on the individual plugin, inputs, and blueprint pages in this repository. Consult the following F5 VNFM plugin-blueprint matrix, describing which plugin version can deploy which blueprint.
 
-### Plugin-blueprint-inputs matrix
-The following table discribes the supported plugin versions available in this repository, the corresponding blueprints you can deploy using that plugin, adn the correpsonding plugin file for cutomizing the blueprint.
-
-| Plugin Name & Version         | Blueprint                                  | Inputs file                                |
-| ------------------------------| :------------------------------------------| :------------------------------------------|
-| f5-gilan-plugin 0.2.41        | F5-VNF-Service-Layer-GiLAN_v1.1.0.0        | inputs_gilan_v1.1.0.0                      |
-|                               | F5-VNF-Service-Layer-Firewall_v1.1.0.0     | inputs_firewall_v1.1.0.0                   |
-|                               | F5-VNF-Service-Layer-Base_v1.1.0.0         | inputs_base_v1.1.0.0                       |
-| f5-gilan-plugin 0.2.42        | F5-VNF-Service-Layer-GiLAN_v1.1.1.0        | inputs_gilan_v1.1.1                        |
-|                               | F5-VNF-Service-Layer-Firewall_v1.1.1.0     | inputs_firewall_v1.1.1                     |
-|                               | F5-VNF-Service-Layer-Base_v1.1.1.0         | inputs_base_v1.1.1                         |
-| f5-ric-plugin 0.4             | F5-VNF-Service-Layer-GiLAN_v1.X            | inputs_gilan_v1.X                          |
-|                               | F5-VNF-Service-Layer-Firewall_v1.X         | inputs_firewall_v1.X                       |
-|                               | F5-VNF-Service-Layer-Base_v1.X             | inputs_base_v1.X                           |
-
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
 
