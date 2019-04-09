@@ -9,11 +9,11 @@ The following table discribes the supported plugin versions available in this re
 | f5-gilan-plugin 0.2.41 | ########################## | F5-VNF-Service-Layer-GiLAN_v1.1.0.0     | inputs_gilan_v1.1.0.0     |
 |                                                     | F5-VNF-Service-Layer-Firewall_v1.1.0.0  | inputs_firewall_v1.1.0.0  |
 |                                                     | F5-VNF-Service-Layer-Base_v1.1.0.0      | inputs_base_v1.1.0.0      |
-|                                                                                                                           |
+|                                                     |                                         |                           |
 | f5-gilan-plugin 0.2.42 | ########################## | F5-VNF-Service-Layer-GiLAN_v1.1.1.0     | inputs_gilan_v1.1.1       |
 |                                                     | F5-VNF-Service-Layer-Firewall_v1.1.1.0  | inputs_firewall_v1.1.1    |
 |                                                     | F5-VNF-Service-Layer-Base_v1.1.1.0      | inputs_base_v1.1.1        |
-|                                                                                                                           |
+|                                                     |                                         |                           |
 | f5-ric-plugin 0.4      | ########################## | F5-VNF-Service-Layer-GiLAN_v1.X         | inputs_gilan_v1.X         |
 |                                                     | F5-VNF-Service-Layer-Firewall_v1.X      | inputs_firewall_v1.X      |
 |                                                     | F5-VNF-Service-Layer-Base_v1.X          | inputs_base_v1.X          |
