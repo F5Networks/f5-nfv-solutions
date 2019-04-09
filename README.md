@@ -17,7 +17,7 @@ Consult the [product compatibility matrix](https://support.f5.com/csp/article/K2
 
 Across all branches in this repository, there are two directories: *supported* and *experimental*.
 
-- **Supported** - The *supported* directory contains F5 VNFM plugins created and fully tested by F5 Networks. These plugins are fully supported by F5, and you can contact F5 Technical Support for assistance using your preferred methods.
+- **Supported** - The *supported* directory contains F5 VNFM plugins, inputs, and blueprints created and fully tested by F5 Networks. These components are fully supported by F5, and you can contact F5 Technical Support for assistance using your preferred methods. When you acquire support from F5 Networks, you also require the VNFM product serial key received in email upon purchaing F5 VNF Manager.
 
 - **Experimental** - The *experimental* directory also contains F5 VNFM blueprints created by F5 Networks. However, these blueprints have not completed full testing and are subject to change. F5 Networks does NOT offer technical support for blueprints in the *experimental* directory, so use these blueprints with caution.
 
