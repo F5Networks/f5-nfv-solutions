@@ -23,7 +23,7 @@ The following table discribes the supported plugin versions available in this re
 Visit the F5 VNFM product documentation for more details about:
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
-- VNFM serial number received in an email upon purchase.
+- VNFM serial number (ric_vnfm_serial) received in an email upon purchase.
 
 The contents in this directory is fully spported by F5 Networks Support, and for assistance, you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices#product-support) using your perferred methods.
 
