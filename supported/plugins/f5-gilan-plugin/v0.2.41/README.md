@@ -7,7 +7,7 @@ This is the initial version deploying F5 Service Layer infrastructure of BIG-IPs
 
 ### To upgrade plugins
 
-1. Upload new plugin version to your VNF Manager. 
+1. [Upload new plugin version to your VNF Manager](https://github.com/gabetellier/nfv-solutions/tree/master/supported/plugins#manually-upload-plugins-to-vnf-manager). 
 2. Verify you do not have any deployments associated with the previous plugin version. If you do have existing deployments, 
 then redeploy associated blueprints with the new plugin version.
 3. Delete the old version of the plugin.
