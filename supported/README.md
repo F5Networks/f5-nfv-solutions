@@ -2,7 +2,7 @@
 This directory provides supported F5 VNF Manager plugins, inputs files, and blueprints developed by F5 Networks engineers. You can use these supported plugins and inputs to deploy supported blueprints that automate the use of cloud resources used by your application network. 
 
 ### Plugin-blueprint-inputs matrix
-The following table discribes the supported plugin versions available in this repository, the corresponding blueprints you can deploy using that plugin, and the corresponding plugin file for customizing the blueprint.
+The following table discribes the supported plugin versions available in this repository, the corresponding blueprints you can deploy using that plugin, and the corresponding inputs file for customizing the blueprint.
 
 | Plugin Name & Version     | Blueprint                                    | Inputs file               |
 | --------------------------| :--------------------------------------------| :-------------------------|
