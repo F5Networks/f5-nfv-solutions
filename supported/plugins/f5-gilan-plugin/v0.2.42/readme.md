@@ -10,6 +10,13 @@ This version is used to deploy the following blueprint versions:
 - v1.1.1/F5-VNF-Service-Layer-GiLAN
 - v1.1.1/F5-VNF-Service-Layer-Firewall
 
+### To upgrade plugins
+
+1. [Upload new plugin version to your VNF Manager](https://github.com/gabetellier/nfv-solutions/tree/master/supported/plugins#manually-upload-plugins-to-vnf-manager). 
+2. Verify you do not have any deployments associated with the previous plugin version. If you do have existing deployments, 
+then redeploy associated blueprints with the new plugin version.
+3. Delete the old version of the plugin.
+
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
 
