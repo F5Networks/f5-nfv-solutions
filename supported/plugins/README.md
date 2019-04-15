@@ -27,11 +27,11 @@ You can download and install the following supported plugins:
 3. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
 4. Click **Upload**.
 
-[comment]: <> (### <a name="multiversions">Maintain multiple versions of plugins</a>)
+<!---### <a name="multiversions">Maintain multiple versions of plugins</a>)
 [comment]: <> (Blueprints are programmed to use a specific plugin version, or later. Do the following to program the) [comment]: <> (blueprint to use a specific plugin:)
 [comment]: <> (1. Step one.)
 [comment]: <> (2. Step two.)
-[comment]: <> (3. Step three.) 
+[comment]: <> (3. Step three.) --->
 
 
 
