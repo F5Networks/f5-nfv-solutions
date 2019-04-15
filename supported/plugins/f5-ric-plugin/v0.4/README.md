@@ -4,12 +4,6 @@ This is the initial version of the Resource Information Collector plugin, enabli
  - Gi LAN version 1.X
  - Gi Firewall 1.X
 
-### To upgrade plugins
-
-1. Upload new plugin version to your VNF Manager. 
-2. Verify you do not have any deployments associated with the previous plugin version. If you do have existing deployments, 
-then redeploy associated blueprints with the new plugin version.
-3. Delete the old version of the plugin.
 
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
