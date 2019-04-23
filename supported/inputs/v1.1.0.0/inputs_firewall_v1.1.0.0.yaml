@@ -1,25 +1,25 @@
   # VNF Resource Information Collector inputs
-ric_throughput: "5"	# Desired throughput for the VNF layer, in Gbps (options include: 5, 10, 50 Gbps).
+ric_throughput: "5"			# Desired throughput for the VNF layer, in Gbps (options include: 5, 10, 50 Gbps).
 ric_purchasing_model: subscription	# Purchasing model for licensing (options include: subscription or perpetual).
-ric_vnfm_serial: "12345"	# VNFM license key provided in your email from F5 (used for support purposes only).
-auto_last_hop: "disabled"	# Controls how the DAG receives return traffic from the internet. Enable this input, if using an F5 device to NAT outbound connections; otherwise, disable.
+ric_vnfm_serial: "12345"		# VNFM license key provided in your email from F5 (used for support purposes only).
+auto_last_hop: "disabled"		# Controls how the DAG receives return traffic from the internet. Enable this input, if using an F5 device to NAT outbound connections; otherwise, disable.
 
 # VNF inputs
-ctrl_net: control	# Name of the control network, where F5 NFV solutions connect to processes, like subscriber service-charging.
-ctrl_subnet: control_subnet	# Name of the control network subnet.
-ha_net: ha_net	# Name of the high availability network (for config. sync and network failover purposes).
-ha_subnet: ha_net_subnet	# Name of the high availability network subnet.
+ctrl_net: control			# Name of the control network, where F5 NFV solutions connect to processes, like subscriber service-charging.
+ctrl_subnet: control_subnet		# Name of the control network subnet.
+ha_net: ha_net				# Name of the high availability network (for config. sync and network failover purposes).
+ha_subnet: ha_net_subnet		# Name of the high availability network subnet.
 
 # Max number of 'instances' that can be created during scale out
 # Max instances of DAG VE
-max_scale_dag_group: '10'	# Maximum number of layers to which the DAG group will scale.
+max_scale_dag_group: '10'		# Maximum number of layers to which the DAG group will scale.
 # Max instances of VNF Layers
-max_scale_vnf_group: '10'	# Maximum number of layers to which the VNF group will scale.
+max_scale_vnf_group: '10'		# Maximum number of layers to which the VNF group will scale.
 
 # Max number of 'instances' that can be created during heal
-max_heal_vnfd_dag_ve: '10'	# Maximum number of times a DAG VE will heal before it stops trying and shows an error.
-max_heal_vnf_layer: '10'	# Maximum number of times a layer will heal before it stops trying and returns an error.
-max_heal_vnf_slave_ve: '10'	# Maximum number of times a slave VE will heal before it stops trying and returns an error.
+max_heal_vnfd_dag_ve: '10'		# Maximum number of times a DAG VE will heal before it stops trying and shows an error.
+max_heal_vnf_layer: '10'		# Maximum number of times a layer will heal before it stops trying and returns an error.
+max_heal_vnf_slave_ve: '10'		# Maximum number of times a slave VE will heal before it stops trying and returns an error.
 
 # Nagios inputs
 floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41	# The OpenStack ID or name of the external network where you assigned a floating IP addresses (for example, external_net).
