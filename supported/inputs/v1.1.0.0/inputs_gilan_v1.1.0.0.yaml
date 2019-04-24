@@ -1,92 +1,89 @@
 # Gilan inputs
-pgw_dag_subnet_mask: '/24'
-default_gateway: 192.168.31.1	# Next hop IP address for outbound traffic egressing the VNF.
-
- # VNF Resource Information Collector inputs
-ric_throughput: "5"	# Desired throughput for the VNF layer, in Gbps (options include: 5, 10, 50 Gbps).
-ric_purchasing_model: subscription	# Purchasing model for licensing (options include: subscription or perpetual).
-ric_vnfm_serial: "12345"	# VNFM license key provided in your email from F5 (used for support purposes only).
-auto_last_hop: "disabled"	# Controls how the DAG receives return traffic from the internet. Enable this input, if using an F5 device to NAT outbound connections; otherwise, disable.
+# VNF Resource Information Collector inputs
+ric_throughput: "5"                             # Desired throughput for the VNF layer, in Gbps (options include: 5, 10, 50 Gbps).
+ric_purchasing_model: subscription              # Purchasing model for licensing (options include: subscription or perpetual).
+ric_vnfm_serial: "12345"                        # VNFM license key provided in your email from F5 (used for support purposes only).
+auto_last_hop: "disabled"                       # Controls how the DAG receives return traffic from the internet. Enable this input, if using an F5 device to NAT outbound connections; otherwise, disable.
 
 # VNF inputs
-ctrl_net: control	# Name of the control network, where F5 NFV solutions connect to processes, like subscriber service-charging.
-ctrl_subnet: control_subnet	# Name of the control network subnet.
-ha_net: ha_net	# Name of the high availability network (for config. sync and network failover purposes).
-ha_subnet: ha_net_subnet	# Name of the high availability network subnet.
+ctrl_net: control                               # Control network name, where F5 NFV solutions connect to processes, like subscriber service-charging.
+ctrl_subnet: control_subnet	                    # Control network subnet name.
+ha_net: ha_net                                  # High availability network name (for config. sync and network failover purposes).
+ha_subnet: ha_net_subnet                        # High availability network subnet name.
 
 # Max number of 'instances' that can be created during scale out
 # Max instances of DAG VE
-max_scale_dag_group: '10'	# Maximum number of layers to which the DAG group will scale.
+max_scale_dag_group: '10'                       # Maximum number of layers to which the DAG group will scale.
 # Max instances of VNF Layers
-max_scale_vnf_group: '10'	# Maximum number of layers to which the VNF group will scale.
+max_scale_vnf_group: '10'                       # Maximum number of layers to which the VNF group will scale.
 
 # Max number of 'instances' that can be created during heal
-max_heal_vnfd_dag_ve: '10'	# Maximum number of times a DAG VE will heal before it stops trying and shows an error.
-max_heal_vnf_layer: '10'	# Maximum number of times a layer will heal before it stops trying and returns an error.
-max_heal_vnf_slave_ve: '10'	# Maximum number of times a slave VE will heal before it stops trying and returns an error.
+max_heal_vnfd_dag_ve: '10'                      # Maximum number of times a DAG VE will heal before it stops trying and shows an error.
+max_heal_vnf_layer: '10'                        # Maximum number of times a layer will heal before it stops trying and returns an error.
+max_heal_vnf_slave_ve: '10'                     # Maximum number of times a slave VE will heal before it stops trying and returns an error.
 
 # Nagios inputs
-floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41	# The OpenStack ID or name of the external network where you assigned a floating IP addresses (for example, external_net).
-centos_image_id: c32f9684-aed0-455f-ab25-76035a21be56		# The OpenStack ID of the CentOS image to use when creating the monitoring nodes.
-nagios_flavor_id: e752819a-095c-450f-a3c7-87c10cd7ae25		# The OpenStack ID of the flavor to use when creating the monitoring nodes.
+floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41   # OpenStack ID or name of the external network where you assigned a floating IP addresses (for example, external_net).
+centos_image_id: c32f9684-aed0-455f-ab25-76035a21be56       # OpenStack ID of the CentOS image to use when creating the monitoring nodes.
+nagios_flavor_id: e752819a-095c-450f-a3c7-87c10cd7ae25      # OpenStack ID of the flavor to use when creating the monitoring nodes.
 
 # VNF Layer scaling inputs
-vnf_layer_cpu_threshold: '85'					# Maximum number of times a slave VE will heal before it stops trying and returns an error.
-vnf_layer_cpu_threshold_check_interval: '1'			# Interval between checks, in minutes.		
+vnf_layer_cpu_threshold: '85'                   # Maximum number of times a slave VE will heal before it stops trying and returns an error.
+vnf_layer_cpu_threshold_check_interval: '1'     # Interval between checks, in minutes.
 # VNF Group scaling inputs
-vnf_group_throughput: '20'					# The desired aggregate throughput (Gigabits In Out) for every layer in the group. Example values: 5 for 5 gig, 0 for 10 gig, 0.5 for 500mb.
-vnf_group_throughput_threshold: '75'				# New layer is added to group when the percentage of average aggregate layer throughput exceeds this value (for example, 75).
-vnf_group_throughput_check_interval: '1'			# Interval between checks, in minutes.
+vnf_group_throughput: '20'                      # The desired aggregate throughput (Gigabits In Out) for every layer in the group. Example values: 5 for 5 gig, 0 for 10 gig, 0.5 for 500mb.
+vnf_group_throughput_threshold: '75'            # New layer is added to group when the percentage of average aggregate layer throughput exceeds this value (for example, 75).
+vnf_group_throughput_check_interval: '1'        # Interval between checks, in minutes.
 # DAG Group scaling inputs
-dag_group_cpu_threshold: '89'					# New instance is added to group when the percentage of average aggregate Global TMM CPU usage of all DAG group instances exceeds this value (for example, 75).
-dag_group_cpu_threshold_check_interval: '1'			# Interval between checks, in minutes.
+dag_group_cpu_threshold: '89'                   # New instance is added to group when the percentage of average aggregate Global TMM CPU usage of all DAG group instances exceeds this value (for example, 75).
+dag_group_cpu_threshold_check_interval: '1'     # Interval between checks, in minutes.
 
 # Common inputs
-manager_mgmt_host: 192.168.120.11	# The internal IP address of the VNF Manager instance.
-sw_ref_dag:				# A dictionary that defines the OpenStack image name, flavor name, and revision number to use for the BIG-IP VE disaggregation instances.
+manager_mgmt_host: 192.168.120.11               # The internal IP address of the VNF Manager instance.
+sw_ref_dag:                                     # Dictionary that defines the OpenStack image name, flavor name, and revision number to use for the BIG-IP VE disaggregation instances.
   data:
     image: BIGIP-13.1.0.5-0.0.5.ALL_1SLOT
     flavor: f5.cloudify_small
   revision: 0
-sw_ref_vnf:				# A dictionary that defines the OpenStack image name, flavor name, and revision number to use for the BIG-IP VE virtual network functions instances.
+sw_ref_vnf:	                                    # Dictionary that defines the OpenStack image name, flavor name, and revision number to use for the BIG-IP VE virtual network functions instances.
   data:
     image: BIGIP-13.1.0.5-0.0.5.ALL_1SLOT
     flavor: f5.cloudify_medium
   revision: 0
-bigip_os_ssh_key: my_key		# The name of the OpenStack SSH key that you will import into the BIG-IP VE instances.
+bigip_os_ssh_key: my_key        # The name of the OpenStack SSH key that you will import into the BIG-IP VE instances.
 
-big_iq_host: 192.168.120.3		# The IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
-big_iq_lic_pool: elav12			# The name of the BIG-IQ key or pool that will be used to assign licenses to the BIG-IP VE instances.
-ntp_server: 132.163.96.4		# The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used.
-timezone: Pacific/Pago_Pago		# Local timezone using the TZ database name for the location of your application server. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+big_iq_host: 192.168.120.3      # IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
+big_iq_lic_pool: elav12         # BIG-IQ key or pool name used to assign licenses to the BIG-IP VE instances.
+ntp_server: 132.163.96.4        # IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used.
+timezone: Pacific/Pago_Pago     # Local timezone using the TZ database name for the location of your application server. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
-ctrl_sg_name: control_sg		# The name of the pre-existing control security group.
-mgmt_sg_name: mgmt_sg			# The name of the pre-existing management security group.
-pgw_sg_name: pgw_sg			# The name of the pre-existing packet gateway (PGW) security group.
-pdn_sg_name: pdn_sg			# The name of the pre-existing provider data network (PDN) security group.
-snmp_sg_name: snmp_sg			# The name of the pre-existing SNMP security group.
+ctrl_sg_name: control_sg        # Control security group name.
+mgmt_sg_name: mgmt_sg           # Management security group name.
+pgw_sg_name: pgw_sg             # Packet gateway (PGW) security group name.
+pdn_sg_name: pdn_sg             # Provider data network (PDN) security group name.
+snmp_sg_name: snmp_sg           # SNMP security group name.
 
-mgmt_net: mgmt				# The name of the pre-existing management network in OpenStack, connecting the BIG-IQ licensing utility and more, orchestrating the BIG-IP VE service layers.
-mgmt_subnet: mgmt-subnet		# The name of the pre-existing management network subnet.
+mgmt_net: mgmt                  # Management network name in OpenStack, connecting the BIG-IQ licensing utility and more, orchestrating the BIG-IP VE service layers.
+mgmt_subnet: mgmt-subnet        # Management network subnet name.
 
-pgw_net: pgw				# The name of the pre-existing PGW network.
-pgw_subnet: pgw-subnet			# The name of the pre-existing PGW sub-network.
-pdn_net: pdn				# The name of the pre-existing PDN network.
-pdn_subnet: pdn-subnet			# The name of the pre-existing PDN network subnet.
+pgw_net: pgw                    # PGW network name.
+pgw_subnet: pgw-subnet          # PGW sub-network name.
+pdn_net: pdn                    # PDN network name.
+pdn_subnet: pdn-subnet          # PDN network subnet name.
 
-pgw_dag_net: lbs_vnf_net		# The name of the pre-existing PGW-DAG (VNF ingress) network.
-pgw_dag_subnet: lbs_vnf_subnet		# The name of the pre-existing PGW-DAG network subnet.
+pgw_dag_net: lbs_vnf_net        # PGW-DAG (VNF ingress) network name.
+pgw_dag_subnet: lbs_vnf_subnet  # PGW-DAG network subnet name.
 pgw_dag_subnet_cidr: 192.168.21.0/24
 
-pdn_dag_net: vnf_lbs_net		# The name of the pre-existing PDN-DAG (VNF egress) network.
-pdn_dag_subnet: vnf_lbs_subnet		# The name of the pre-existing PDN-DAG network subnet.
+pdn_dag_net: vnf_lbs_net        # PDN-DAG (VNF egress) network name.
+pdn_dag_subnet: vnf_lbs_subnet  # PDN-DAG network subnet name.
 pdn_dag_subnet_cidr: 192.168.31.0/24
 
-# bgp_dag_pgw_peer_ip: 192.168.1.103	# If using Border Gateway Protocol (BGP) on the client-side, then enter the neighbor address of the PGW to which the DAG BIG-IPs will advertise their default routes.
-# bgp_vnf_pgw_peer_ip: 192.168.21.11	# If using BGP on the client-side, then enter the neighbor address of the PGW, enabling the VNF to send traffic directly back to the client without passing it back through the DAG.
-# bgp_pgw_peer_as: '200'		# If using BGP on the client-side, then enter the autonomous system number (ASN) for the BGP neighbor.
-# bgp_dag_egw_peer_ip: 192.168.11.104	# If using BGP on the external-side, then enter the BGP neighbor address.
-# bgp_egw_peer_as: '300'		# If using BGP on the external-side, then enter the BGP ASN.
+# bgp_dag_pgw_peer_ip: 192.168.1.103    # OPTIONAL-If using Border Gateway Protocol (BGP) on the client-side, enter the neighbor address of the PGW to which the DAG BIG-IPs will advertise their default routes.
+# bgp_vnf_pgw_peer_ip: 192.168.21.11    # OPTIONAL-If using BGP on the client-side, enter the neighbor address of the PGW, enabling the VNF to send traffic directly back to the client without passing it back through the DAG.
+# bgp_pgw_peer_as: '200'                # OPTIONAL-If using BGP on the client-side, enter the autonomous system number (ASN) for the BGP neighbor.
+# bgp_dag_egw_peer_ip: 192.168.11.104   # OPTIONAL-If using BGP on the external-side, enter the BGP neighbor address.
+# bgp_egw_peer_as: '300'                # OPTIONAL-If using BGP on the external-side, enter the BGP ASN.
 
 vnf_as3_nsd_payload:
   class: ADC

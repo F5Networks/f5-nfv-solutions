@@ -1,28 +1,28 @@
 {
-    "big_iq_host": "192.168.120.3\t\t# IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.",
-    "default_gateway": "10.190.54.1\t\t# Next hop IP address for outbound traffic egressing the VNF.",
-    "manager_mgmt_host": "192.168.120.11\t# iInternal IP address of the VNF Manager instance.",
-    "mgmt_net": "mgmt\t\t\t\t# Management network name in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.",
-    "mgmt_subnet": "mgmt-subnet\t\t# Management network subnet name.",
-    "mgmt_sg_name": "mgmt_sg\t\t\t# Management security group name.",
-    "internal_net": "lbs_vnf_net\t\t# Internal network name that connects to your servers.",
-    "internal_subnet": "lbs_vnf_subnet\t\t# Subnet name for the pre-existing internal network.",
-    "internal_subnet_cidr": "192.168.21.0/24",
-    "external_net": "vnf_lbs_net\t\t# External network name that connects to your users.",
-    "external_subnet": "vnf_lbs_subnet\t\t# Subnet name for the pre-existing external network.",
-    "external_subnet_cidr": "192.168.31.0/24",
-    "internal_sg_name": "pdn_sg\t\t# Name of the pre-existing internal security group.",
-    "external_sg_name": "pgw_sg\t\t# Name of the pre-existing external security group.",
-    "big_iq_lic_pool": "registration_keys\t# Name of the BIG-IQ key or pool used to assign licenses to the BIG-IP VE instances.",
-    "default_ltm_number": "2\t# Default number of BIG-IPs that will get deployed by this blueprint, matching the number of license keys defined in the registration key pool.",
-    "ntp_server": "132.163.96.4\t\t# IP address or DNS name of the NTP server. If not specified, the default 132.163.96.4 value is used.",
-    "timezone": null,
-    "sw_ref_ltm": {
-        "data": {
-            "image": "BIGIP-13.1.0.7-0.0.1.ALL_1SLOT",
-            "flavor": "f5.cloudify_medium"
-        },
-        "revision": 0
-    },
-    "bigip_os_ssh_key": "my_key"
+	"big_iq_host": "192.168.120.3",
+	"default_gateway": "10.190.54.1",
+	"manager_mgmt_host": "192.168.120.11",
+	"mgmt_net": "mgmt",
+	"mgmt_subnet": "mgmt-subnet",
+	"mgmt_sg_name": "mgmt_sg",
+	"internal_net": "lbs_vnf_net",
+	"internal_subnet": "lbs_vnf_subnet",
+	"internal_subnet_cidr": "192.168.21.0/24",
+	"external_net": "vnf_lbs_net",
+	"external_subnet": "vnf_lbs_subnet",
+	"external_subnet_cidr": "192.168.31.0/24",
+	"internal_sg_name": "pdn_sg",
+	"external_sg_name": "pgw_sg",
+	"big_iq_lic_pool": "registration_keys",
+	"default_ltm_number": 2,
+	"ntp_server": "132.163.96.4",
+	"timezone": null,
+	"sw_ref_ltm": {
+		"data": {
+			"image": "BIGIP-13.1.0.7-0.0.1.ALL_1SLOT",
+			"flavor": "f5.cloudify_medium"
+		},
+		"revision": 0
+	},
+	"bigip_os_ssh_key": "mykey"
 }
