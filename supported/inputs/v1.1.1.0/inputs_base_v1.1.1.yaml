@@ -1,31 +1,31 @@
 # Inputs
-big_iq_host: 192.168.120.3		# IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
-default_gateway: 10.190.54.1		# Next hop IP address for outbound traffic egressing the VNF.
-manager_mgmt_host: 192.168.120.11	# Internal IP address of the VNF Manager instance.
-mgmt_net: mgmt				# Management network name in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
-mgmt_subnet: mgmt-subnet		# Management network subnet name.
-mgmt_sg_name: mgmt_sg			# Management security group name.
+big_iq_host: 192.168.120.3          # IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
+default_gateway: 10.190.54.1        # Next hop IP address for outbound traffic egressing the VNF.
+manager_mgmt_host: 192.168.120.11   # Internal IP address of the VNF Manager instance.
+mgmt_net: mgmt                      # Management network name in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+mgmt_subnet: mgmt-subnet            # Management network subnet name.
+mgmt_sg_name: mgmt_sg               # Management security group name.
 
-internal_net: lbs_vnf_net		# Internal network name that connects to your servers.
-internal_subnet: lbs_vnf_subnet		# Subnet name for the pre-existing internal network.
+internal_net: lbs_vnf_net           # Internal network name that connects to your servers.
+internal_subnet: lbs_vnf_subnet     # Subnet name for the pre-existing internal network.
 internal_subnet_cidr: 192.168.21.0/24
-external_net: vnf_lbs_net		# External network name that connects to your users.
-external_subnet: vnf_lbs_subnet		# Subnet name for the pre-existing external network.
+external_net: vnf_lbs_net           # External network name that connects to your users.
+external_subnet: vnf_lbs_subnet     # Subnet name for the pre-existing external network.
 external_subnet_cidr: 192.168.31.0/24
-internal_sg_name: pdn_sg		# Name of the pre-existing internal security group.
-external_sg_name: pgw_sg		# Name of the pre-existing external security group.
+internal_sg_name: pdn_sg            # Name of the pre-existing internal security group.
+external_sg_name: pgw_sg            # Name of the pre-existing external security group.
 
 big_iq_lic_pool: registration_keys	# Name of the BIG-IQ key or pool used to assign licenses to the BIG-IP VE instances.
-default_ltm_number: 2			# Default number of BIG-IPs that will get deployed by this blueprint, matching the number of license keys defined in the registration key pool. 
-ntp_server: 132.163.96.4		# IP address or DNS name of the NTP server. If not specified, the default 132.163.96.4 value is used.
-timezone: 				# Local timezone using the TZ database name for the location of your application server. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+default_ltm_number: 2               # Default number of BIG-IPs that will get deployed by this blueprint, matching the number of license keys defined in the registration key pool.
+ntp_server: 132.163.96.4            # IP address or DNS name of the NTP server. If not specified, the default 132.163.96.4 value is used.
+timezone:                           # Local timezone using the TZ database name for the location of your application server. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
-sw_ref_ltm:	# Dictionary that defines the image, flavor name, and revision number to use for the BIG-IP VE instances.
+sw_ref_ltm:                        # Dictionary that defines the image, flavor name, and revision number to use for the BIG-IP VE instances.
   data:
     image: BIGIP-13.1.0.7-0.0.1.ALL_1SLOT
     flavor: f5.cloudify_medium
   revision: 0
-bigip_os_ssh_key: 'my_key'	# Name of the OpenStack SSH key into which you will import.
+bigip_os_ssh_key: 'my_key'        # Name of the OpenStack SSH key into which you will import.
 
 # Configuration of the F5 VNF Service Layers in AS3 Declaration format vnf_as3_nsd_payload: ""
