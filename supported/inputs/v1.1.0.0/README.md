@@ -1,7 +1,7 @@
 ## Inputs for VNFM version 1.1
 
-The inputs for this version of VNFM were changed to accommodate:
+In this folder you have YAML file format for use with the VNF Manager console and JSON file format for use with the REST API. The inputs for this version of VNFM were changed to accommodate the following:
 
-- Minimizes secrets and moves them to the accompanying inputs file.
-- Enables the designation of workflow execution start and end times.
-- Enables secrets encryption
+- Minimize secrets and move them to the accompanying inputs file.
+- Enable the designation of workflow execution start and end times.
+- Enable secrets encryption.
