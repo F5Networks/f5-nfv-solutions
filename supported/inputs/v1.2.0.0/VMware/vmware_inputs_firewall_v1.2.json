@@ -1,0 +1,358 @@
+{
+    "default_gateway": "10.0.0.254",
+    "ric_purchasing_model": null,
+    "mgmt_default_gw": "10.146.131.254",
+    "mgmt_dns": "string",
+    "nagios_user": "string",
+    "nagios_pass": "string",
+    "dag_group_cpu_threshold_check_interval": "string",
+    "dag_group_cpu_threshold": "string",
+    "bgp_vnf_pgw_peer_ip": "string",
+    "bgp_pgw_peer_as": "string",
+    "bgp_egw_peer_as": "string",
+    "bgp_dag_pgw_peer_ip": "string",
+    "bgp_dag_egw_peer_ip": "string",
+    "auto_last_hop": "string",
+    "agent_user": "string",
+    "sw_ref_vnf": "string",
+    "sw_ref_nagios": "string",
+    "sw_ref_dag": "string",
+    "ric_vnfm_serial": "string",
+    "pgw_subnet_cidr": "string",
+    "max_scale_vnf_group": "string",
+    "max_scale_dag_group": "string",
+    "max_heal_vnfd_dag_ve": "string",
+    "max_heal_vnf_slave_ve": "string",
+    "max_heal_vnf_layer": "string",
+    "ctrl_subnet_cidr": "string",
+    "manager_mgmt_host": "10.0.0.106\t\t# The internal IP address of the VNF Manager instance.",
+    "mgmt_ip_range": "string",
+    "big_iq_host": "10.190.55.202\t\t# The IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.",
+    "big_iq_lic_pool": "BIGIP_4\t\t\t# Name of the BIG-IQ key or pool that will be used to assign licenses to the BIG-IP VE instances.",
+    "bigip_ssh_key": null,
+    "pgw_ip_range": "string",
+    "pdn_ip_range": "string",
+    "pdn_net": "string",
+    "pdn_net_sw_dist": "string",
+    "ctrl_ip_range": "string",
+    "ctrl_net_sw_dist": "string",
+    "ctrl_net": "string",
+    "pgw_dag_ip_range": "string",
+    "pgw_dag_net": "string",
+    "pgw_dag_net_sw_dist": "string",
+    "pgw_net": "string",
+    "pgw_net_sw_dist": "string",
+    "pdn_dag_ip_range": "string",
+    "pdn_dag_net_sw_dist": "string",
+    "pdn_dag_net": "string",
+    "pgw_dag_subnet_cidr": "string",
+    "pdn_subnet_cidr": null,
+    "pdn_dag_subnet_cidr": null,
+    "mgmt_subnet_cidr": null,
+    "ha_ip_range": "string",
+    "ha_net_sw_dist": "string",
+    "ha_subnet_cidr": null,
+    "ha_net": "string",
+    "mgmt_net_sw_dist": "true\t\t\t# The name of the pre-existing management network in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.",
+    "ntp_server": "string",
+    "timezone": "America/Los_Angeles\t# Enter the local timezone using the TZ database name for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC.",
+    "vnf_layer_cpu_threshold": "string",
+    "vnf_layer_cpu_threshold_check_interval": null,
+    "vnf_group_throughput_check_interval": null,
+    "vnf_group_throughput": "string",
+    "vnf_group_throughput_threshold": "string",
+    "vnf_as3_nsd_payload": null
+}
+{
+    "vnf_as3_nsd_payload": {
+        "class": "AS3",
+        "action": "deploy",
+        "persist": true,
+        "declaration": {
+            "class": "ADC",
+            "schemaVersion": "3.0.0",
+            "id": "cfy_vnf_01",
+            "label": "vnf",
+            "remark": "VNF",
+            "f5vnf": {
+                "class": "Tenant",
+                "Shared": {
+                    "class": "Application",
+                    "template": "shared",
+                    "fwAllowedAddressList": {
+                        "addresses": [
+                                      "10.0.0.0/8",
+                                      "172.20.0.0/16",
+                                      "192.168.0.0/16"
+                                      ],
+                        "class": "Firewall_Address_List"
+                    },
+                    "fwAllowedPortList": {
+                        "class": "Firewall_Port_List",
+                        "ports": [
+                                  "8080-8081",
+                                  22,
+                                  443,
+                                  53,
+                                  80
+                                  ]
+                    },
+                    "fwDefaultDenyAddressList": {
+                        "addresses": [
+                                      "0.0.0.0/0"
+                                      ],
+                        "class": "Firewall_Address_List"
+                    },
+                    "fwLogDestinationHsl": {
+                        "class": "Log_Destination",
+                        "distribution": "adaptive",
+                        "pool": {
+                            "use": "poolHsl"
+                        },
+                        "protocol": "tcp",
+                        "type": "remote-high-speed-log"
+                    },
+                    "fwLogDestinationSyslog": {
+                        "class": "Log_Destination",
+                        "format": "rfc5424",
+                        "remoteHighSpeedLog": {
+                            "use": "fwLogDestinationHsl"
+                        },
+                        "type": "remote-syslog"
+                    },
+                    "fwLogPublisher": {
+                        "class": "Log_Publisher",
+                        "destinations": [
+                                         {
+                                         "use": "fwLogDestinationSyslog"
+                                         }
+                                         ]
+                    },
+                    "fwPolicy": {
+                        "class": "Firewall_Policy",
+                        "rules": [
+                                  {
+                                  "use": "fwRuleList"
+                                  }
+                                  ]
+                    },
+                    "fwRuleList": {
+                        "class": "Firewall_Rule_List",
+                        "rules": [
+                                  {
+                                  "action": "accept",
+                                  "destination": {
+                                  "portLists": [
+                                                {
+                                                "use": "fwAllowedPortList"
+                                                }
+                                                ]
+                                  },
+                                  "loggingEnabled": true,
+                                  "name": "tcpAllow",
+                                  "protocol": "tcp",
+                                  "source": {
+                                  "addressLists": [
+                                                   {
+                                                   "use": "fwAllowedAddressList"
+                                                   }
+                                                   ]
+                                  }
+                                  },
+                                  {
+                                  "action": "accept",
+                                  "loggingEnabled": true,
+                                  "name": "udpAllow",
+                                  "protocol": "udp",
+                                  "source": {
+                                  "addressLists": [
+                                                   {
+                                                   "use": "fwAllowedAddressList"
+                                                   }
+                                                   ]
+                                  }
+                                  },
+                                  {
+                                  "action": "drop",
+                                  "loggingEnabled": true,
+                                  "name": "defaultDeny",
+                                  "protocol": "any",
+                                  "source": {
+                                  "addressLists": [
+                                                   {
+                                                   "use": "fwDefaultDenyAddressList"
+                                                   }
+                                                   ]
+                                  }
+                                  }
+                                  ]
+                    },
+                    "fwSecurityLogProfile": {
+                        "class": "Security_Log_Profile",
+                        "network": {
+                            "logIpErrors": true,
+                            "logRuleMatchAccepts": true,
+                            "logRuleMatchDrops": true,
+                            "logRuleMatchRejects": true,
+                            "logTcpErrors": true,
+                            "logTcpEvents": true,
+                            "logTranslationFields": true,
+                            "publisher": {
+                                "use": "fwLogPublisher"
+                            },
+                            "storageFormat": {
+                                "fields": [
+                                           "action",
+                                           "bigip-hostname",
+                                           "context-name",
+                                           "context-type",
+                                           "date-time",
+                                           "dest-ip",
+                                           "dest-port",
+                                           "drop-reason",
+                                           "protocol",
+                                           "src-ip",
+                                           "src-port"
+                                           ]
+                            }
+                        }
+                    },
+                    "poolHsl": {
+                        "class": "Pool",
+                        "members": [
+                                    {
+                                    "enable": true,
+                                    "serverAddresses": [
+                                                        "255.255.255.254"
+                                                        ],
+                                    "servicePort": 514
+                                    }
+                                    ],
+                        "monitors": [
+                                     {
+                                     "bigip": "/Common/udp"
+                                     }
+                                     ]
+                    },
+                    "lbSelectedRule": {
+                        "class": "iRule",
+                        "iRule": "when LB_SELECTED {log local0. \"Selected server [LB::server]\"}",
+                        "remark": "Log load balanced server"
+                    },
+                    "profileL4": {
+                        "class": "L4_Profile"
+                    },
+                    "serviceAddress": {
+                        "class": "Service_Address",
+                        "arpEnabled": false,
+                        "icmpEcho": "disable",
+                        "spanningEnabled": true,
+                        "virtualAddress": "0.0.0.0"
+                    }
+                },
+                "firewall_any": {
+                    "class": "Application",
+                    "template": "generic",
+                    "serviceMain": {
+                        "allowVlans": [
+                                       {
+                                       "bigip": "/Common/vnfs"
+                                       }
+                                       ],
+                        "class": "Service_Generic",
+                        "iRules": [
+                                   "/f5vnf/Shared/lbSelectedRule"
+                                   ],
+                        "layer4": "any",
+                        "policyFirewallEnforced": {
+                            "use": "/f5vnf/Shared/fwPolicy"
+                        },
+                        "profileL4": {
+                            "use": "/f5vnf/Shared/profileL4"
+                        },
+                        "securityLogProfiles": [
+                                                {
+                                                "use": "/f5vnf/Shared/fwSecurityLogProfile"
+                                                }
+                                                ],
+                        "snat": "none",
+                        "lastHop": "disable",
+                        "translateServerAddress": false,
+                        "translateServerPort": false,
+                        "virtualAddresses": [
+                                             {
+                                             "use": "/f5vnf/Shared/serviceAddress"
+                                             }
+                                             ],
+                        "virtualPort": 0
+                    }
+                },
+                "firewall_fastL4": {
+                    "class": "Application",
+                    "template": "l4",
+                    "serviceMain": {
+                        "class": "Service_L4",
+                        "layer4": "tcp",
+                        "allowVlans": [
+                                       {
+                                       "bigip": "/Common/vnfs"
+                                       }
+                                       ],
+                        "profileL4": {
+                            "use": "/f5vnf/Shared/profileL4"
+                        },
+                        "virtualAddresses": [
+                                             {
+                                             "use": "/f5vnf/Shared/serviceAddress"
+                                             }
+                                             ],
+                        "virtualPort": 0,
+                        "translateServerAddress": false,
+                        "translateServerPort": false,
+                        "snat": "none",
+                        "lastHop": "disable",
+                        "iRules": [
+                                   "/f5vnf/Shared/lbSelectedRule"
+                                   ],
+                        "policyFirewallEnforced": {
+                            "use": "/f5vnf/Shared/fwPolicy"
+                        },
+                        "securityLogProfiles": [
+                                                {
+                                                "use": "/f5vnf/Shared/fwSecurityLogProfile"
+                                                }
+                                                ]
+                    }
+                },
+                "firewall_inbound": {
+                    "class": "Application",
+                    "template": "generic",
+                    "serviceMain": {
+                        "allowVlans": [
+                                       {
+                                       "bigip": "/Common/vnfe"
+                                       }
+                                       ],
+                        "class": "Service_Generic",
+                        "iRules": [
+                                   "/f5vnf/Shared/lbSelectedRule"
+                                   ],
+                        "layer4": "any",
+                        "profileL4": {
+                            "use": "/f5vnf/Shared/profileL4"
+                        },
+                        "snat": "none",
+                        "translateServerAddress": false,
+                        "translateServerPort": false,
+                        "virtualAddresses": [
+                                             {
+                                             "use": "/f5vnf/Shared/serviceAddress"
+                                             }
+                                             ],
+                        "virtualPort": 0
+                    }
+                }
+            }
+        }
+    }
+}

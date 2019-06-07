@@ -1,0 +1,34 @@
+{
+    "default_gateway": "10.0.0.254",
+    "mgmt_default_gw": "10.146.131.254",
+    "manager_mgmt_host": "10.0.0.106",
+    "big_iq_host": "10.190.55.202",
+    "big_iq_lic_pool": "BIGIP_4",
+    "bigip_ssh_key": null,
+    "default_ltm_number": "1",
+    "sw_ref_ltm": {
+        "data": {
+            "template": "BIGIP-13.1.0.1.0.0.8-scsi.ovf",
+            "configuration": "quadcpu"
+        },
+        "revision": 0
+    },
+    "mgmt_sg_name": "mgmt_sg",
+    "internal_net": "internal",
+    "internal_subnet": "pgw_dag-subnet",
+    "internal_subnet_cidr": "10.6.0.0/24",
+    "external_subnet": "pdn_dag-subnet",
+    "external_net": "external",
+    "external_subnet_cidr": "10.5.0.0/24",
+    "internal_sg_name": "pgw_sg",
+    "external_sg_name": "pgw_sg",
+    "mgmt_net": "mgmt",
+    "mgmt_subnet": "mgmt-subnet",
+    "mgmt_subnet_cidr": "string",
+    "mgmt_dns": "string",
+    "internal_net_sw_dist": true,
+    "mgmt_net_sw_dist": true,
+    "external_net_sw_dist": true,
+    "ntp_server": "pool.ntp.org",
+    "timezone": "America/Los_Angeles"
+}
