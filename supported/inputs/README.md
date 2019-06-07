@@ -8,6 +8,7 @@ The inputs directory is organized by VNFM version. The sets of inputs can change
 
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
+
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 

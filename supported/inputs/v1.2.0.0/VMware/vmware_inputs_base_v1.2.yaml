@@ -1,0 +1,40 @@
+default_gateway: 10.0.0.254		          # Next hop IP address for outbound traffic egressing the VNF.
+mgmt_default_gw: 10.146.131.254                   # Default gateway used for management network.
+
+manager_mgmt_host: 10.0.0.106                     # The internal IP address of the VNF Manager instance.
+bigip_ssh_key: 				  # Name of the OpenStack SSH key that you will import into the BIG-IP VE instances.
+
+big_iq_host: 10.190.55.202		          # The IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
+big_iq_lic_pool: BIGIP_4			  # Name of the BIG-IQ key or pool that will be used to assign licenses to the BIG-IP VE instances.
+
+default_ltm_number: '1'   # The default number of BIG-IPs that will get deployed by this blueprint. Verify that the same number of license keys defined in the registration key pool matches this input value.
+mgmt_dns: 'string'        # DNS server address used for management network.
+
+sw_ref_ltm:   #The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE instances.
+  data:
+    configuration: quadcpu
+    template: BIGIP-13.1.0.1.0.0.8-scsi.ovf
+  revision: 0
+
+mgmt_sg_name: mgmt_sg     # The name of the pre-existing management security group.
+
+internal_net: internal  # The name of the pre-existing internal network that connects to your servers.
+internal_subnet: pgw_dag-subnet # The subnet name for the pre-existing internal network.
+internal_subnet_cidr: 10.6.0.0/24 # The subnet and netmask for the internal network; for example, 10.6.0.0/24.
+external_subnet: pdn_dag-subnet # The subnet name for the pre-existing external network.
+
+external_net: external  # Name of the external network.
+external_subnet_cidr: 10.5.0.0/24 # The subnet and netmask for the external network; for example, 10.5.0.0/24.
+internal_sg_name: pgw_sg  # The name of the pre-existing internal security group.
+external_sg_name: pgw_sg  # The name of the pre-existing external security group.
+mgmt_net: mgmt   # The name of the pre-existing management network in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+mgmt_subnet: mgmt-subnet   # The subnet and netmask for the management network; for example, 10.146.130.0/23.
+mgmt_subnet_cidr: 'string'  # The subnet and netmask for the management network; for example, 10.146.130.0/23.
+
+
+internal_net_sw_dist: true  # The vSphere switch distributed flag for internal network. Set to true if your system uses a distributed switch on this network or false if not.
+mgmt_net_sw_dist: true      # The name of the pre-existing management network in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+external_net_sw_dist: true  # The vSphere switch distributed flag for external network. Set to true if your system uses a distributed switch on this network or false if not.
+
+ntp_server: pool.ntp.org  # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used (for example, pool.ntp.org).
+timezone: America/Los_Angeles   # Enter the local timezone using the TZ database name for the location of your application server; for example, America/Los_Angeles.
