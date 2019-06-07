@@ -4,7 +4,7 @@ F5 VNFM version 1.2 release adds no new funtionality, but adds support for an ad
 In this folder you will find two subfolders containing inputs files for these two supported VIMS: 
 
 - OpenStack (Newton) 
-- VMware vSphere ESXi version 6.5.  
+- VMware vSphere ESXi version 6.5  
 
 
 #### Copyright
