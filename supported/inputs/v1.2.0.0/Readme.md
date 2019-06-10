@@ -6,6 +6,7 @@ In this folder you will find two subfolders containing inputs files for these tw
 - OpenStack (Newton) 
 - VMware vSphere ESXi version 6.5  
 
+For complete set up instructions, see the [product documentation](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#set-up-your-vim).
 
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
