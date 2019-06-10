@@ -9,6 +9,8 @@ The inputs files for OpenStack virtualization infrastructure manager (VIM) suppo
 - [inputs gilan v1.1.1.json](https://github.com/F5Networks/f5-nfv-solutions/blob/master/supported/inputs/v1.1.1.0/inputs_gilan_v1.1.1.json) - used with F5 VNFM REST API.
 - [inputs gilan v1.1.1.yaml](https://github.com/F5Networks/f5-nfv-solutions/blob/master/supported/inputs/v1.1.1.0/inputs_gilan_v1.1.1.yaml) - used with the F5 VNFM web console.
 
+Use the .yaml file with the [F5 VNFM web console](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html) and the .json files with the [REST API](https://clouddocs.f5.com/cloud/nfv/latest/CM-REST-API.html).
+
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
 
