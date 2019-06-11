@@ -12,7 +12,7 @@ This version is used to deploy the following blueprint versions:
 
 ### To upgrade plugins
 
-1. [Upload new plugin version to your VNF Manager](https://github.com/gabetellier/nfv-solutions/tree/master/supported/plugins#manually-upload-plugins-to-vnf-manager). 
+1. [Upload new plugin version to your VNF Manager](https://github.com/F5Networks/f5-nfv-solutions/tree/master/supported/plugins#manually-upload-plugins-to-vnf-manager). 
 2. Verify you do not have any deployments associated with the previous plugin version. If you do have existing deployments, 
 then redeploy associated blueprints with the new plugin version.
 3. Delete the old version of the plugin.
