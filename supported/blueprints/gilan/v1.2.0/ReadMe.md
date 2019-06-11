@@ -1,4 +1,4 @@
-## About the F5-VNF-Service-Layer-Gilan_v1.2.0 solution blueprint
+## About the F5-VNF-Service-Layer-GiLAN_v1.2.0 solution blueprint
 This version contains the following changes:
 
 - Support for the VMware vSphere ESXi version 6.5 VIM
