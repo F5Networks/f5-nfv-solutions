@@ -3,11 +3,11 @@ F5 Networks created plugins that communicate with external services, such as: cl
 
 Use these plugins to run in F5 VNF Manager and deploy blueprints that automate the scaling, healing, 
 and upgrade workflows for your BIG-IP VEs as needed by your application. When using any offering in the supported folder, 
-you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices#product-support) for help at anytime.
+you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices#product-support) for help at any time.
 
 You can download and install the following supported plugins:
 - **f5-gilan-plugin** - This plugin deploys orchestration blueprints using the F5 VNF Manager. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
-- **f5-ric-plugin** - This plugin runs blueprints and funactions that manage the billing report feature. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
+- **f5-ric-plugin** - This plugin runs blueprints and functions that manage the billing report feature. You will find multiple versions of this plugin. Consult the readme files for each version to learn more about the features and changes.
   
 **Note**: Both plugins are required for ALL VNFM solutions (Gi-LAN, Gi-Firewall, and VNFM Base).                      
 
