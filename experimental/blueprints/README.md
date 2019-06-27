@@ -19,10 +19,10 @@ Use these blueprints to do what? You can deploy these blueprints using the follo
    - On the **Dashboard** click **Upload Blueprint**.
    - In the left menu click **Local Blueprints**, and then in the top-right corner click **Upload**.
    
-2. In the **Upload blueprint** dialog, in the **Blueprint package** text biox click **Browse** and navigate to the downloaded .yaml file, and then click **Open**.
+2. In the **Upload blueprint** dialog, in the **Blueprint package** text box click **Browse** and navigate to the downloaded .yaml file, and then click **Open**.
 3. In the **Blueprint name** text box, enter a unique name.
 4. In the **Blueprint YAML file** text box, expand the drop-down and select the YAML inputs file you completed during the [VNFM Deployment](https://clouddocs.f5.com/cloud/nfv/latest/deploy.html#yaml) process.
-5. In the **Blueprint icon** text box, click **Browse**, navigate to the png file you want top use, and then click **Open**.
+5. In the **Blueprint icon** text box, click **Browse**, navigate to the png file you want to use, and then click **Open**.
 6. Click **Upload**.
 
 
