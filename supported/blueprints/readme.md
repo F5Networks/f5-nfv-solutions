@@ -10,7 +10,7 @@ The following table provides a brief description of each solution blueprint:
 
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
-- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
+- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequisites</a>  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 
 ### Download blueprints
@@ -21,7 +21,7 @@ Visit the F5 VNFM product documentation for more details about:
 ### Manually upload plugins to VNF Manager
 
 1. On the **Dashboard** click **Upload Blueprint**.      
-2. In the **Upload bluprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
+2. In the **Upload blueprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
 3. In the **Blueprint name** text box, enter a descriptive name.  This is typically auto-populated for you.
 4. In the **Blueprint YAML file** text box, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**. This is typically auto-populated for you.
 5. Click **Upload**.
