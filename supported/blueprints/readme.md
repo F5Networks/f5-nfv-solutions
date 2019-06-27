@@ -11,7 +11,7 @@ The following table provides a brief description of each solution blueprint:
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequisites</a>  
-- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
+- OpenStack Newton 10 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 - VMware vSphere ESXi 6.5 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
 
 ### Download blueprints
