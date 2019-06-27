@@ -1,8 +1,4 @@
 # F5 VNF Manager plugins, inputs, and blueprints
- 
-<!-- [![Slack Status](https://f5cloudsolutions.herokuapp.com/badge.svg)](https://f5cloudsolutions.herokuapp.com)
-[![Releases](https://img.shields.io/github/release/f5networks/f5-aws-cloudformation.svg)](https://github.com/f5networks/f5-aws-cloudformation/releases)
-[![Issues](https://img.shields.io/github/issues/f5networks/f5-aws-cloudformation.svg)](https://github.com/f5networks/f5-aws-cloudformation/issues) -->
 
 ## Introduction
 Welcome to the GitHub repository for F5's Network Functions Virtualization plugins, inputs, and blueprints that are deployed using the F5 VNF Manager. 
@@ -22,7 +18,7 @@ Across all branches in this repository, there are two directories: *supported* a
 - **Experimental** - The *experimental* directory also contains F5 VNFM blueprints created by F5 Networks. However, these blueprints have not completed full testing and are subject to change. F5 Networks does NOT offer technical support for blueprints in the *experimental* directory, so use these blueprints with caution.
 
 ## Plugin, inputs, and blueprint information
-You can find descriptions and deployment instructions for each plugin, inputs file, and blueprint in the README file on the individual plugin, inputs, and blueprint pages in this repository. Consult the [F5 VNFM plugin-blueprint-inputs matrix](https://github.com/F5Networks/f5-nfv-solutions/tree/master/supported#plugin-blueprint-inputs-matrix), describing which plugin version can deploy which blueprint, and which inputs file cutomizes which blueprint.
+You can find descriptions and deployment instructions for each plugin, inputs file, and blueprint in the README file on the individual plugin, inputs, and blueprint pages in this repository. Consult the [F5 VNFM plugin-blueprint-inputs matrix](https://github.com/F5Networks/f5-nfv-solutions/tree/master/supported#plugin-blueprint-inputs-matrix), describing which plugin version can deploy which blueprint, and which inputs file customizes which blueprint.
 
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
