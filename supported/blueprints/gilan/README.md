@@ -1,7 +1,7 @@
 ## About the F5 Gi LAN solution blueprint
 
 Use the Gi LAN blueprint for implementing policy enforcement, subscriber-awareness, application-classification, 
-and other similar features. The blueprint enables you to to create a highly-available set of services, deployed 
+and other similar features. The blueprint enables you to create a highly-available set of services, deployed 
 in service layers. These layers auto-scale virtual machines and services to provide a complete and fully configured 
 set of lifecycle management workflows:
 
