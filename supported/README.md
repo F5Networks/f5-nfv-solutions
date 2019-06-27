@@ -27,7 +27,7 @@ The following table describes the supported plugin versions available in this re
 Visit the F5 VNFM product documentation for more details about:
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequisites</a>  
 - Red Hat OpenStack Newton Version 10 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
-- VMware vSphere ESXi 6.5 system requirements (TBD)
+- VMware vSphere ESXi 6.5 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
 - VNFM serial number (ric_vnfm_serial) received in an email upon purchase (required when acquiring support from F5 Networks).
 
 The contents in this directory is fully supported by F5 Networks Support, and for assistance, you can [contact F5 Support](https://www.f5.com/company/contact/regional-offices#product-support) using your preferred methods.
