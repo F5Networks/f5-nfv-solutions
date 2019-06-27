@@ -1,6 +1,6 @@
 ## Inputs for VNFM version 1.2
 
-F5 VNFM version 1.2 release adds no new funtionality, but adds support for an additional virtualized infrastucture manager (VIM).
+F5 VNFM version 1.2 release adds no new functionality, but adds support for an additional virtualized infrastucture manager (VIM).
 In this folder you will find two subfolders containing inputs files for these two supported VIMs: 
 
 - OpenStack (Newton) 
