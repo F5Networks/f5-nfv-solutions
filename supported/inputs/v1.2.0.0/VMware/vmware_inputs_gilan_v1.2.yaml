@@ -1,4 +1,4 @@
-default_gateway: 10.0.0.254		          # Next hop IP address for outbound traffic egressing the VNF.
+bgp_dag_pgw_peer_ipdefault_gateway: 10.0.0.254		          # Next hop IP address for outbound traffic egressing the VNF.
 ric_purchasing_model: 			          # The purchasing model for licensing (options include: subscription or perpetual).
 mgmt_default_gw: 10.146.131.254	          # Default gateway used for management network.
 mgmt_dns: 'string'				          # DNS server address used for management network.
@@ -41,7 +41,7 @@ manager_mgmt_host: 10.0.0.106		# The internal IP address of the VNF Manager inst
 mgmt_ip_range: 'string'			# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.50.50.2-10.50.50.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.50.50.2-10.50.50.20, 10.50.50.21-10.50.50.30, and so forth.
 big_iq_host: 10.190.55.202		# The IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
 big_iq_lic_pool: BIGIP_4		# Name of the BIG-IQ key or pool that will be used to assign licenses to the BIG-IP VE instances.
-bigip_ssh_key: 				    # Name of the OpenStack SSH key that you will import into the BIG-IP VE instances.
+bigip_ssh_key: 				    # Name of the VIM SSH key that you will import into the BIG-IP VE instances.
 
 #internal_net: 'string'
 pgw_ip_range: 'string'			# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.10.0.2-10.10.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.10.0.2-10.10.0.20, 10.10.0.21-10.10.0.30, and so forth.
@@ -67,7 +67,7 @@ ha_ip_range: 'string'			# The IP range defined for the high availability network
 ha_net_sw_dist: 'string'			# The vSphere switch distributed flag for HA network. Set to true if your system uses a distributed switch on this network or false if not.
 ha_subnet_cidr:  				# The subnet and netmask for the HA network; for example, 10.2.149.0/24.
 ha_net:	'string'				# The name of the high availability network (for config. sync and network failover purposes).
-mgmt_net_sw_dist: true			# The name of the pre-existing management network in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+mgmt_net_sw_dist: true			# The name of the pre-existing management network, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
 ntp_server: 'string'    	    # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used (for example, pool.ntp.org).
 timezone: America/Los_Angeles	# Enter the local timezone using the TZ database name for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC.
 vnf_layer_cpu_threshold: 'string'		# Maximum number of times a slave VE will heal before it stops trying and returns an error.
