@@ -1,80 +1,80 @@
-default_gateway: 10.0.0.254		          # Next hop IP address for outbound traffic egressing the VNF.
-ric_purchasing_model: 			          # The purchasing model for licensing (options include: subscription or perpetual).
-mgmt_default_gw: 10.146.131.254	          # Default gateway used for management network.
-mgmt_dns: 'string'				          # DNS server address used for management network.
-nagios_user: 'string'					  # Username for the Nagios server.
-nagios_pass: 'string'					   # Password for the Nagios server.
-dag_group_cpu_threshold_check_interval: 'string'	  # Interval between checks, in minutes.
-dag_group_cpu_threshold: 'string'			      # New instance is added to group when the percentage of average aggregate Global TMM CPU usage of all DAG group instances exceeds this value (for example, 75).
-bgp_vnf_pgw_peer_ip: 'string'			          # If using BGP on the client-side, then enter the neighbor address of the PGW, enabling the VNF to send traffic directly back to the client without passing it back through the DAG.
-bgp_pgw_peer_as: 'string'				          # If using BGP on the client-side, then enter the autonomous system number (ASN) for the BGP neighbor.
-bgp_egw_peer_as: 'string'				# If using BGP on the external-side, then enter the BGP ASN.
-bgp_dag_pgw_peer_ip: 'string'			# If your environment uses Border Gateway Protocol (BGP) on the client-side, then enter the neighbor address of the PGW to which the DAG BIG-IPs will advertise their default routes.
-bgp_dag_egw_peer_ip: 'string'			# If using BGP on the external-side, then enter the BGP neighbor address.
-auto_last_hop: 'string'					# Controls how the DAG receives return traffic from the internet. Enable this input, if you are using an F5 device to NAT outbound connections; otherwise, disable.
-agent_user : 'string'					# The user for the client agents.
-sw_ref_vnf: 'string'				    # The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE virtual network functions instances.
+bgp_dag_pgw_peer_ipdefault_gateway: 10.0.0.254             # Next hop IP address for outbound traffic egressing the VNF.
+ric_purchasing_model:                                      # The purchasing model for licensing (options include: subscription or perpetual).
+mgmt_default_gw: 10.146.131.254                            # Default gateway used for management network.
+mgmt_dns: 'string'                                         # DNS server address used for management network.
+nagios_user: 'string'                                      # Username for the Nagios server.
+nagios_pass: 'string'                                      # Password for the Nagios server.
+dag_group_cpu_threshold_check_interval: 'string'           # Interval between checks, in minutes.
+dag_group_cpu_threshold: 'string'                          # New instance is added to group when the percentage of average aggregate Global TMM CPU usage of all DAG group instances exceeds this value (for example, 75).
+bgp_vnf_pgw_peer_ip: 'string'                              # If using BGP on the client-side, then enter the neighbor address of the PGW, enabling the VNF to send traffic directly back to the client without passing it back through the DAG.
+bgp_pgw_peer_as: 'string'                                  # If using BGP on the client-side, then enter the autonomous system number (ASN) for the BGP neighbor.
+bgp_egw_peer_as: 'string'                                  # If using BGP on the external-side, then enter the BGP ASN.
+bgp_dag_pgw_peer_ip: 'string'                              # If your environment uses Border Gateway Protocol (BGP) on the client-side, then enter the neighbor address of the PGW to which the DAG BIG-IPs will advertise their default routes.
+bgp_dag_egw_peer_ip: 'string'                              # If using BGP on the external-side, then enter the BGP neighbor address.
+auto_last_hop: 'string'                                    # Controls how the DAG receives return traffic from the internet. Enable this input, if you are using an F5 device to NAT outbound connections; otherwise, disable.
+agent_user : 'string'                                      # The user for the client agents.
+sw_ref_vnf: 'string'                                       # The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE virtual network functions instances.
   data:
-    configuration: quadcpu              # The flavor/configuration name
-    template: BIGIP-13.1.0.5-0.0.5      # The image/template name
+    configuration: quadcpu                                 # The flavor/configuration name
+    template: BIGIP-13.1.0.5-0.0.5                         # The image/template name
   revision: 0
-sw_ref_nagios: 'string'					# The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the CentOS monitoring nodes.
+sw_ref_nagios: 'string'                                    # The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the CentOS monitoring nodes.
   data:
-    template: Centos7-GenericCloud      # The flavor/configuration name
-    configuration: dualcpu              # The image/template name
+    template: Centos7-GenericCloud                         # The flavor/configuration name
+    configuration: dualcpu                                 # The image/template name
   revision: 0
-sw_ref_dag:	'string'				    # The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE disaggregation instances.
+sw_ref_dag:	'string'                                       # The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE disaggregation instances.
   data:
-    template: BIGIP-13.1.0.5-0.0.5      # The flavor/configuration name
-    configuration: quadcpu              # The image/template name
+    template: BIGIP-13.1.0.5-0.0.5                         # The flavor/configuration name
+    configuration: quadcpu                                 # The image/template name
   revision: 0
 
-ric_vnfm_serial: 'string'				# The VNFM license key provided in your email from F5 (used for support purposes only).
-pgw_subnet_cidr: 'string'				# The subnet and netmask for the provider network for the DAG group; for example, 10.4.149.0/24.
-max_scale_vnf_group: 'string'			# The maximum number of layers to which the VNF group will scale.
-max_scale_dag_group: 'string'			# The maximum number of layers to which the DAG group will scale.
-max_heal_vnfd_dag_ve: 'string'			# Maximum number of times a DAG VE will heal before it stops trying and shows an error.
-max_heal_vnf_slave_ve: 'string'			# Maximum number of times a slave VE will heal before it stops trying and returns an error.
-max_heal_vnf_layer: 'string'				# Maximum number of times a layer will heal before it stops trying and returns an error.
+ric_vnfm_serial: 'string'                                  # The VNFM license key provided in your email from F5 (used for support purposes only).
+pgw_subnet_cidr: 'string'                                  # The subnet and netmask for the provider network for the DAG group; for example, 10.4.149.0/24.
+max_scale_vnf_group: 'string'                              # The maximum number of layers to which the VNF group will scale.
+max_scale_dag_group: 'string'                              # The maximum number of layers to which the DAG group will scale.
+max_heal_vnfd_dag_ve: 'string'                             # Maximum number of times a DAG VE will heal before it stops trying and shows an error.
+max_heal_vnf_slave_ve: 'string'                            # Maximum number of times a slave VE will heal before it stops trying and returns an error.
+max_heal_vnf_layer: 'string'                               # Maximum number of times a layer will heal before it stops trying and returns an error.
 ctrl_subnet_cidr: 'string'
-manager_mgmt_host: 10.0.0.106		# The internal IP address of the VNF Manager instance.
-mgmt_ip_range: 'string'			# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.50.50.2-10.50.50.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.50.50.2-10.50.50.20, 10.50.50.21-10.50.50.30, and so forth.
-big_iq_host: 10.190.55.202		# The IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
-big_iq_lic_pool: BIGIP_4		# Name of the BIG-IQ key or pool that will be used to assign licenses to the BIG-IP VE instances.
-bigip_ssh_key: 				    # Name of the OpenStack SSH key that you will import into the BIG-IP VE instances.
+manager_mgmt_host: 10.0.0.106                              # The internal IP address of the VNF Manager instance.
+mgmt_ip_range: 'string'                                    # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.50.50.2-10.50.50.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.50.50.2-10.50.50.20, 10.50.50.21-10.50.50.30, and so forth.
+big_iq_host: 10.190.55.202                                 # The IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
+big_iq_lic_pool: BIGIP_4                                   # Name of the BIG-IQ key or pool that will be used to assign licenses to the BIG-IP VE instances.
+bigip_ssh_key:                                             # Name of the VIM SSH key that you will import into the BIG-IP VE instances.
 
 #internal_net: 'string'
-pgw_ip_range: 'string'			# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.10.0.2-10.10.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.10.0.2-10.10.0.20, 10.10.0.21-10.10.0.30, and so forth.
-pdn_ip_range: 'string'			# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.0.0.2-10.0.0.20, 10.0.0.21-10.0.0.30, and so forth.
-pdn_net: 'string'				# The name of the pre-existing PDN network.
-pdn_net_sw_dist: 'string'		# The vSphere switch distributed flag for PDN network. Set to true if your system uses a distributed switch on this network or false if not.
-ctrl_ip_range: 'string'			# The IP range defined for the control network; for example, 10.30.0.2-10.30.0.100.
-ctrl_net_sw_dist: 'string'		# vSphere switch distributed flag for Control network. Set to true if your system uses a distributed switch on this network or false if not.
-ctrl_net: 'string'				# Name of the control network, where F5 NFV solutions connect to processes such as, your policy and control rules function engine, subscriber service-charging functions, signaling, and other similar processes.
-pgw_dag_ip_range: 'string'		# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.20.0.2-10.20.0.100, enabling you to assign 98 addresses. You can also creat multiple, smaller IP address groups with that larger range; for example, 10.20.0.2-10.20.0.20, 10.20.0.21-10.20.0.30, and so forth.
-pgw_dag_net: 'string'			# The name of the pre-existing PGW-DAG (VNF ingress) network.
-pgw_dag_net_sw_dist: 'string'		# The vSphere switch distributed flag for PGW DAG network. Set to true if your system uses a distributed switch on this network or false if not.
-pgw_net: 'string'				# The name of the pre-existing PGW network.
-pgw_net_sw_dist: 'string'		# The vSphere switch distributed flag for PGW network. Set to true if your system uses a distributed switch on this network or false if not.
-pdn_dag_ip_range: 'string'		# The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.15.0.2-10.15.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.15.0.2-10.15.0.20, 10.15.0.21-10.15.0.30, and so forth.
-pdn_dag_net_sw_dist: 'string'		# The vSphere switch distributed flag for PDN DAG network. Set to true if your system uses a distributed switch on this network or false if not.
-pdn_dag_net: 'string'			# The name of the pre-existing PDN-DAG (VNF egress) network.
-pgw_dag_subnet_cidr: 'string'		# The subnet and netmask for the package gateway network for the DAG group; for example, 10.6.149.0/24.
-pdn_subnet_cidr:				# The subnet and netmask for the provider network; for example, 10.3.149.0/24.
-pdn_dag_subnet_cidr:			# The subnet and netmask for the provider network; for example, 10.5.149.0/24.
-mgmt_subnet_cidr:				# The subnet and netmask for the management network; for example, 10.146.130.0/23.
-ha_ip_range: 'string'			# The IP range defined for the high availability network; for example, 10.40.0.2-10.40.0.100.
-ha_net_sw_dist: 'string'			# The vSphere switch distributed flag for HA network. Set to true if your system uses a distributed switch on this network or false if not.
-ha_subnet_cidr:  				# The subnet and netmask for the HA network; for example, 10.2.149.0/24.
-ha_net:	'string'				# The name of the high availability network (for config. sync and network failover purposes).
-mgmt_net_sw_dist: true			# The name of the pre-existing management network in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
-ntp_server: 'string'    	    # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used (for example, pool.ntp.org).
-timezone: America/Los_Angeles	# Enter the local timezone using the TZ database name for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC.
-vnf_layer_cpu_threshold: 'string'		# Maximum number of times a slave VE will heal before it stops trying and returns an error.
-vnf_layer_cpu_threshold_check_interval:	# Interval between checks, in minutes.
-vnf_group_throughput_check_interval :	# Interval between checks, in minutes.
-vnf_group_throughput: 'string'				# The desired aggregate throughput (Gigabits In Out) for every layer in the group. Example values: 5 for 5 gig, 0 for 10 gig, 0.5 for 500mb.
-vnf_group_throughput_threshold: 'string'		# New layer is added to group when the percentage of average aggregate layer throughput exceeds this value (for example, 75).
+pgw_ip_range: 'string'                                     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.10.0.2-10.10.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.10.0.2-10.10.0.20, 10.10.0.21-10.10.0.30, and so forth.
+pdn_ip_range: 'string'                                     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.0.0.2-10.0.0.20, 10.0.0.21-10.0.0.30, and so forth.
+pdn_net: 'string'                                          # The name of the pre-existing PDN network.
+pdn_net_sw_dist: 'string'                                  # The vSphere switch distributed flag for PDN network. Set to true if your system uses a distributed switch on this network or false if not.
+ctrl_ip_range: 'string'                                    # The IP range defined for the control network; for example, 10.30.0.2-10.30.0.100.
+ctrl_net_sw_dist: 'string'                                 # vSphere switch distributed flag for Control network. Set to true if your system uses a distributed switch on this network or false if not.
+ctrl_net: 'string'                                         # Name of the control network, where F5 NFV solutions connect to processes such as, your policy and control rules function engine, subscriber service-charging functions, signaling, and other similar processes.
+pgw_dag_ip_range: 'string'                                 # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.20.0.2-10.20.0.100, enabling you to assign 98 addresses. You can also creat multiple, smaller IP address groups with that larger range; for example, 10.20.0.2-10.20.0.20, 10.20.0.21-10.20.0.30, and so forth.
+pgw_dag_net: 'string'                                      # The name of the pre-existing PGW-DAG (VNF ingress) network.
+pgw_dag_net_sw_dist: 'string'                              # The vSphere switch distributed flag for PGW DAG network. Set to true if your system uses a distributed switch on this network or false if not.
+pgw_net: 'string'                                          # The name of the pre-existing PGW network.
+pgw_net_sw_dist: 'string'                                  # The vSphere switch distributed flag for PGW network. Set to true if your system uses a distributed switch on this network or false if not.
+pdn_dag_ip_range: 'string'                                 # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.15.0.2-10.15.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.15.0.2-10.15.0.20, 10.15.0.21-10.15.0.30, and so forth.
+pdn_dag_net_sw_dist: 'string'                              # The vSphere switch distributed flag for PDN DAG network. Set to true if your system uses a distributed switch on this network or false if not.
+pdn_dag_net: 'string'                                      # The name of the pre-existing PDN-DAG (VNF egress) network.
+pgw_dag_subnet_cidr: 'string'                              # The subnet and netmask for the package gateway network for the DAG group; for example, 10.6.149.0/24.
+pdn_subnet_cidr:                                           # The subnet and netmask for the provider network; for example, 10.3.149.0/24.
+pdn_dag_subnet_cidr:                                       # The subnet and netmask for the provider network; for example, 10.5.149.0/24.
+mgmt_subnet_cidr:                                          # The subnet and netmask for the management network; for example, 10.146.130.0/23.
+ha_ip_range: 'string'                                      # The IP range defined for the high availability network; for example, 10.40.0.2-10.40.0.100.
+ha_net_sw_dist: 'string'                                   # The vSphere switch distributed flag for HA network. Set to true if your system uses a distributed switch on this network or false if not.
+ha_subnet_cidr:                                            # The subnet and netmask for the HA network; for example, 10.2.149.0/24.
+ha_net:	'string'                                           # The name of the high availability network (for config. sync and network failover purposes).
+mgmt_net_sw_dist: true                                     # The name of the pre-existing management network, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+ntp_server: 'string'                                       # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used (for example, pool.ntp.org).
+timezone: America/Los_Angeles                              # Enter the local timezone using the TZ database name for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC.
+vnf_layer_cpu_threshold: 'string'                          # Maximum number of times a slave VE will heal before it stops trying and returns an error.
+vnf_layer_cpu_threshold_check_interval:                    # Interval between checks, in minutes.
+vnf_group_throughput_check_interval:                       # Interval between checks, in minutes.
+vnf_group_throughput: 'string'                             # The desired aggregate throughput (Gigabits In Out) for every layer in the group. Example values: 5 for 5 gig, 0 for 10 gig, 0.5 for 500mb.
+vnf_group_throughput_threshold: 'string'                   # New layer is added to group when the percentage of average aggregate layer throughput exceeds this value (for example, 75).
 
 vnf_as3_nsd_payload:
   class: ADC

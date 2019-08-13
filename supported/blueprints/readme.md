@@ -1,16 +1,17 @@
 ## Use F5 VNFM solution blueprints
-In this directory you will find blueprints for each VNFM solution; Gi LAN, Gi Firewall, and Base. Within each solution 
+In this directory you will find blueprints for each VNFM solution; Gi LAN, Gi Firewall, and Base as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution 
 directory you will find supported versions of each blueprint released with each version of VNFM.
 
 The following table provides a brief description of each solution blueprint:
 
+- **F5-VNF-BIG-IQ** - Enables you to auto-configure the BIG-IQ license manager utility. You can deploy this solution when launching an F5 VNF Manager version 1.2.1.
 - **F5-VNF-Service-Layer-Base_v1.X** - Enables you to deploy BIG-IP VEs in an open configuration model. This blueprint enables you to execute workflows manually.
 - **F5-VNF-Service-Layer-GiLAN_v1.X** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows.
 - **F5-VNF-Service-Layer-Firewall_v1.X** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 
 ### Prerequisites and system requirements
 Visit the F5 VNFM product documentation for more details about:
-- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequesites</a>  
+- Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequisites</a>  
 - OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 
 ### Download blueprints
@@ -21,7 +22,7 @@ Visit the F5 VNFM product documentation for more details about:
 ### Manually upload plugins to VNF Manager
 
 1. On the **Dashboard** click **Upload Blueprint**.      
-2. In the **Upload bluprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
+2. In the **Upload blueprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
 3. In the **Blueprint name** text box, enter a descriptive name.  This is typically auto-populated for you.
 4. In the **Blueprint YAML file** text box, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**. This is typically auto-populated for you.
 5. Click **Upload**.

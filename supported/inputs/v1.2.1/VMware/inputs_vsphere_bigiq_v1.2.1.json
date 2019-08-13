@@ -1,0 +1,23 @@
+{
+   "mgmt_net_sw_dist": null,
+   "mgmt_subnet_cidr": null,
+   "mgmt_ip_range": null,
+   "mgmt_default_gw": null,
+   "mgmt_dn": null,
+   "big_iq_primary_host_license": "H4506-500317-221-7034997-5602771",
+   "big_iq_secondary_host_license": "S3326-667683-640-3947832-4241547",
+   "big_iq_pool_license": "A7384-73903-90940-77131-5050602",
+   "sw_ref_bigiq": {
+      "data": {
+         "image": "BIG-IQ-6.0.1.0.0.813",
+         "flavor": "f5.large",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "big_iq_passphrase": "Test1234567890!?",
+   "big_iq_pool_name": "regkeys",
+   "mgmt_net": "mgmt",
+   "ntp_server": "0.north-america.pool.ntp.org",
+   "timezone": "America/Los_Angeles"
+}
