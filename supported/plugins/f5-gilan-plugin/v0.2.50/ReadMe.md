@@ -1,14 +1,14 @@
-## About F5 Gilan Plugin version 0.2.42
+## About F5 Gilan Plugin version 0.2.50
 Changes to this plugin include:
 
-- Ability to set the availability zone in an OpenStack VIM 
-- Fixing the Scaling workflow on a layer, so that the Heal workflow no longer executes immediately after the new slave is created.
+- Support for the VMware vSphere ESXi version 6.5 VIM 
+
 
 This version is used to deploy the following blueprint versions:
 
-- v1.1.1/F5-VNF-Service-Layer-Base
-- v1.1.1/F5-VNF-Service-Layer-GiLAN
-- v1.1.1/F5-VNF-Service-Layer-Firewall
+- v1.2.0/F5-VNF-Service-Layer-Base
+- v1.2.0/F5-VNF-Service-Layer-GiLAN
+- v1.2.0/F5-VNF-Service-Layer-Firewall
 
 ### To upgrade plugins
 
