@@ -1,0 +1,27 @@
+mgmt_net_sw_dist:                                                                      # vSphere value of switch dsitributed flag for Management network.
+
+mgmt_subnet_cidr:                                                                      # CIDR for Management network to allocate IPs
+
+mgmt_ip_range:                                                                         # Set of IPs that can be assigned to the given subnet.
+
+mgmt_default_gw:                                                                       #  IP address of the default gateway for Management network
+
+mgmt_dn:                                                                               # DNS server address used for management network.
+
+big_iq_primary_host_license: H4506-500317-221-7034997-5602771                          # Base registration key used to license the primary BIG-IQ system of an HA-pair. You received this key in email from F5 Networks after purchase.
+
+big_iq_secondary_host_license: S3326-667683-640-3947832-4241547                        # Base registration key used to license the secondary BIG-IQ system of an HA-pair. You received this key in email from F5 Networks after purchase.
+
+big_iq_pool_license: A7384-73903-90940-77131-5050602                                   # The base registration key code provided by F5 Networks after Purchase. Used to create RegKey Pool on the F5 BIG-IP system. You received this key in email from F5 Networks after purchase.
+
+sw_ref_bigiq: {"data":{"image":"BIG-IQ-6.0.1.0.0.813", "flavor":"f5.large", "availability_zone":"nova"}, "revision":0}             # The dictionary that defines the BIG-IQ image name, flavor name, availability zone (OpenStack only), and revision value to use for the BIG-IQ HA pair instance.
+
+big_iq_passphrase: Test1234567890!?                                                    # The passphrase value that BIG-IQ uses to generate a Master Key (minimum of 16-characters, 1 or more capital letters 1 or more lowercase letters, 1 or more numbers, and 1 or more special characters).
+
+big_iq_pool_name: regkeys                                                              # The base registration key code provided by F5 Networks after Purchase. Used to create RegKey Pool on the F5 BIG-IP system. You received this key in email from F5 Networks after purchase.
+
+mgmt_net: mgmt                                                                         # The name of the pre-existing management OpenStack network  or VMware port group, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+
+ntp_server: 0.north-america.pool.ntp.org                                               # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used.
+
+timezone: America/Los_Angeles                                                          # Enter the local timezone for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC. For acceptable values, consult https://en.wikipedia.org/wiki/List_of_tz_database_time_zones. 

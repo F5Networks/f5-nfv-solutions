@@ -1,0 +1,18 @@
+bigip_ssh_key: adas-key      # The name of the SSH key that you will import into the BIG-IP VE instances.
+default_gateway: 10.10.10.1    #The next hop IP address for outbound traffic egressing the VNF.
+default_ltm_number: 2        # The default number of BIG-IPs that will get deployed by this blueprint. Verify that the same number of license keys defined in the registration key pool matches this input value.
+external_net: pdn_dag_net    # The name of the pre-existing external network that connects to your users.
+external_sg_name: pgw_sg     # The name of the pre-existing external security group.
+external_subnet: pdn_dag_net_subnet    # The subnet name for the pre-existing external network.
+internal_net: pgw_dag_net    # The name of the pre-existing internal network that connects to your servers.
+internal_sg_name: pdn_sg     # The name of the pre-existing internal security group.
+internal_subnet: pgw_dag_net_subnet    # The subnet name for the pre-existing internal network.
+manager_mgmt_host: 10.10.10.6    # The internal IP address of the VNF Manager instance.
+mgmt_net: mgmt_vnfm          # The name of the pre-existing management OpenStack network  or VMware port group, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+mgmt_sg_name: mgmt_sg        # The name of the pre-existing management security group.
+mgmt_subnet: mgmt_vnfm_subnet    # The name of the pre-existing management network subnet.
+ntp_server: time.google.com      # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used.
+timezone: UTC                # Enter the local timezone for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC. For acceptable values, consult https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
+sw_ref_ltm:                  # The dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE instances.
+  data: {availability_zone: nova, flavor: f5.cloudify, image: BIGIP-13.1.0.7-0.0.1.ALL_1SLOT}
+  revision: 0
