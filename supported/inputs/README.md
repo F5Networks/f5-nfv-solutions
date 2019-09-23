@@ -15,8 +15,8 @@ Visit the F5 VNFM product documentation for more details about:
 
 ### To use inputs files
 
-1. Open the inputs file for the solution (Gi Lan, Gi Firewall, or Base) you purchased specific to the VNFM version you are using.
-2. Copy and paste the inputs into a local file and complete the parameters using values specific to your system requirements. For parameter definitions, see the [VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/deploy.html#yaml).
+1. Open the inputs file for the solution (Gi Lan, Gi Firewall, or Base) you purchased specific to the VNFM version you are using. 
+2. Copy and paste the inputs into a local file and complete the parameters using values specific to your system requirements. For help with input definitions, see the [Blueprint inputs reference guide](https://clouddocs.f5.com/cloud/nfv/latest/inputs-def.html).
 3. Save the file locally, and then upload this file when [deploying blueprints in VNFM](https://clouddocs.f5.com/cloud/nfv/latest/deploy.html#deployblueprint).
 
 #### Copyright
