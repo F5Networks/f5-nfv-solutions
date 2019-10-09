@@ -44,7 +44,7 @@ dag_group_cpu_threshold: '75'               # New instance is added to group whe
 dag_group_cpu_threshold_check_interval: '1' # Interval between checks, in minutes.
 
 # monitoring inputs
-floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41       # The OpenStack ID or external network name where you assigned a floating IP addresses (for example, external_net).
+floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41       # As of version 1.2.1.1 and later, this input is OPTIONAL. The OpenStack ID or external network name where you assigned a floating IP addresses (for example, external_net).
 
 # common inputs
 manager_mgmt_host: 10.10.2.16   # Internal IP address of the VNF Manager instance.
@@ -98,6 +98,7 @@ mgmt_sg_name: allow_22          # Management security group name.
 pgw_sg_name: allow_22           # Packet gateway (PGW) security group name.
 pdn_sg_name: allow_22           # Provider data network (PDN) security group name.
 snmp_sg_name: allow_22          # SNMP security group name.
+security_groups: enable         # String value to enable/disable security groups for Nagios, DAG, and VNF nodes. Enabling will include the appropriate security groups for Nagios, DAG, and VNF nodes, disabling will disable ALL security groups, including the default security group created for every instance in OpenStack.
 
 # networks in openstack
 mgmt_net: mgmt                  # Management network name in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
@@ -314,8 +315,4 @@ vnf_as3_nsd_payload:
                 translateServerPort: false
                 virtualAddresses:
                 - use: /f5vnf/Shared/serviceAddress
-<<<<<<< Updated upstream
                 virtualPort: 0
-=======
-                virtualPort: 0
->>>>>>> Stashed changes

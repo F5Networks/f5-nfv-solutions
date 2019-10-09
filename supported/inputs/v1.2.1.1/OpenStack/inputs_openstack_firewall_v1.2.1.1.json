@@ -75,6 +75,7 @@
     "pgw_sg_name": "allow_22",
     "pdn_sg_name": "allow_22",
     "snmp_sg_name": "allow_22",
+    "security_groups": "enable",
     "mgmt_net": "mgmt",
     "mgmt_subnet": "mgmt",
     "pgw_net": "pgl",
