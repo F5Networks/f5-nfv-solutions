@@ -1,7 +1,7 @@
 ## About the F5-VNF-Service-Layer-Base_v1.2.1.1 solution blueprint
 This version contains the following changes for OpenStack VIM ONLY:
 
-* New security_groups input to enable/disable any security gorups added and the default security group created by OpenStack for all instances.
+* New security_groups input to enable/disable any security groups added and the default security group created by OpenStack for all instances.
 * This input is now optional for verison 1.2.1.1 and later and the default value is empty for VNFM projects in OpenStack ONLY. 
 
 #### Copyright

@@ -9,7 +9,7 @@ Updated inputs files for all solution blueprints for OpenStack VIM:
 
 This version is used to deploy the following blueprint versions:
 
-- v1.2.1/F5-VNF-Service-Layer-Base
+- v1.2.1.1/F5-VNF-Service-Layer-Base
 - v1.2.1.1/F5-VNF-Service-Layer-GiLAN
 - v1.2.1.1/F5-VNF-Service-Layer-Firewall
 
