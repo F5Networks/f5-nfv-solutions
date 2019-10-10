@@ -4,7 +4,7 @@ In this folder you have YAML file format for use with the F5 VNFM web console an
 
 | VIM                       | New Inputs File                              | New Blueprint Solution         |
 | :-------------------------| :--------------------------------------------| :------------------------------| 
-| OpenStack (Newton 10)     | inputs_openstack_base_v1.2.1.1.yaml<br>inputs_openstack_base_v1.2.1.1.json <br> inputs_openstack_firewall_v1.2.1.1.yaml <br>  inputs_openstack_firewall_v1.2.1.1.json <br> inputs_openstack_gilan_v1.2.1.1.json <br> inputs_openstack_gilan_v1.2.1.1.yaml <br><br> **IMPORTANT:** The [VNFM-BIG-IQ blueprint][6] solution did NOT change for this release. Use the [1.2.1 version][7] input files.| F5-VNF-Service-Layer-Base_v1.2.1.1 <br> F5-VNF-Service-Layer-GiLAN_v1.2.1.1 <br> F5-VNF-Service-Layer-Firewall_v1.2.1.1|
+| OpenStack (Newton 10)     | inputs_openstack_base_v1.3.yaml<br>inputs_openstack_base_v1.3.json <br> inputs_openstack_firewall_v1.3.yaml <br>  inputs_openstack_firewall_v1.3.json <br> inputs_openstack_gilan_v1.3.json <br> inputs_openstack_gilan_v1.3.yaml <br><br> **IMPORTANT:** The [VNFM-BIG-IQ blueprint][6] solution did NOT change for this release. Use the [1.2.1 version][7] input files.| F5-VNF-Service-Layer-Base_v1.3 <br> F5-VNF-Service-Layer-GiLAN_v1.3 <br> F5-VNF-Service-Layer-Firewall_v1.3|
 | VMware vSphere ESXi 6.5   | No new inputs files for this release. Use version [1.2.1][1]. | F5-VNF-Service-Layer-GiLAN_v1.2.1 <br> F5-VNF-Service-Layer-Firewall_v1.2.1 <br> F5-VNF-Service-Layer-Base_v1.2.1 <br> F5-VNF-BIG-IQ_v1.2.1 |
  
 

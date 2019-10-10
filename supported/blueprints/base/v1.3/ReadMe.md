@@ -1,8 +1,8 @@
-## About the F5-VNF-Service-Layer-GiLAN_v1.2.1.1 solution blueprint
+## About the F5-VNF-Service-Layer-Base_v1.3 solution blueprint
 This version contains the following changes for OpenStack VIM ONLY:
 
-* New security_groups input to enable/disable any security gorups added and the default security group created by OpenStack for all instances.
-* This input is now optional for verison 1.2.1.1 and later and the default value is empty for VNFM projects in OpenStack ONLY. 
+* New security_groups input to enable/disable any security groups added and the default security group created by OpenStack for all instances.
+* This input is now optional for verison 1.3 and later and the default value is empty for VNFM projects in OpenStack ONLY. 
 
 #### Copyright
 Copyright 2014-2019 F5 Networks Inc.
