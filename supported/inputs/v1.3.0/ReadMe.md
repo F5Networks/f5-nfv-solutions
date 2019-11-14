@@ -1,18 +1,20 @@
-## Inputs for VNFM version 1.2.2
+## Inputs for VNFM version 1.3.0
 
 In this folder you have YAML file format for use with the F5 VNFM web console and the JSON files with the REST API. The inputs for this version of VNFM are new or changed for OpenStack VIM and the Gi LAN and Gi Firewall blueprint solutions ONLY: 
 
 | VIM                       | New Inputs File                              | New Blueprint Solution         |
 | :-------------------------| :--------------------------------------------| :------------------------------| 
-| OpenStack (Newton 10)     | inputs_openstack_bigiq_v1.2.2.yaml<br>inputs_openstack_bigiq_v1.2.2.json<br>inputs_openstack_base_v1.2.2.yaml<br>inputs_openstack_base_v1.2.2.json <br> inputs_openstack_firewall_v1.2.2.yaml <br>  inputs_openstack_firewall_v1.2.2.json <br> inputs_openstack_gilan_v1.2.2.json <br> inputs_openstack_gilan_v1.2.2.yaml <br><br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.2.2  <br> F5-VNF-Service-Layer-Firewall_v1.2.2<br> F5-VNF-Service-Layer-GiLAN_v1.2.2<br>F5-VNF-Service-Layer-CGNAT_v1.2.2|
-| VMware vSphere ESXi 6.5   | inputs_vmware_bigiq.yaml_v1.2.2 <br> inputs_vmware_bigiq.json_v1.2.2 <br>inputs_vmware_base_v1.2.2.yaml<br>inputs_vmware_base_v1.2.2.json<br>inputs_vmware_firewall_v1.2.2.yaml<br>inputs_vmware_firewall_v1.2.2.json <br>inputs_vmware_gilan_v1.2.2.yaml <br> inputs_vmware_gilan_v1.2.2.json | vSphere-F5-VNF-BIG-IQ.yaml_v1.2.2 <br> vSphere-F5-VNF-Service-Layer-Base.yaml_v1.2.2 <br> F5-VNF-Service-Layer-Firewall_v1.2.2 <br> vSphere-F5-VNF-Service-Layer-GiLAN_v1.2.2<br>vSphere-F5-VNF-Service-Layer-CGNAT_v1.2.2 |
+| OpenStack (Newton 10)     | inputs_openstack_bigiq_v1.3.0.yaml<br>inputs_openstack_bigiq_v1.3.0.json<br>inputs_openstack_base_v1.3.0.yaml<br>inputs_openstack_base_v1.3.0.json <br> inputs_openstack_firewall_v1.3.0.yaml <br>  inputs_openstack_firewall_v1.3.0.json <br> inputs_openstack_gilan_v1.3.0.json <br> inputs_openstack_gilan_v1.3.0.yaml <br><br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.3.0  <br> F5-VNF-Service-Layer-Firewall_v1.3.0<br> F5-VNF-Service-Layer-GiLAN_v1.3.0|
+| VMware vSphere ESXi 6.5   | Inputs for VMware vSphere implementaitons did not change for VNF Manager 1.3. Use the inputs released in version 1.2.1.  |Blueprints for VMware vSphere implementaitons did not change for VNF Manager 1.3. Use the blueprints released in version 1.2.1.  |
  
 
 ### What's new
 
-* **Security groups are optional**--for OpenStack VIM. New security_groups input for Gi LAN and Gi Firewall inputs file that enables/disables security groups including the default security group created by Openstack for all instances.
-* **floating_network_id input**--for OpenStack VIM is now OPTIONAL.
-* **OpenStack Queens version 13** -- Tested and verified compatibility with OpenStack Queens version 13.
+* New security_groups input to enable/disable any security groups added and the default security group created by OpenStack for all instances.
+* The floating_IP input is now optional for verison 1.2.2 and later and the default value is empty for VNFM projects in OpenStack ONLY. 
+* Tested and verified compatibility with OpenStack Queens version 13.
+* Enabling CGNAT capability.
+* Enhanced VNFM event logs.
 
 
 #### Copyright
