@@ -1,0 +1,529 @@
+{
+   "ric_purchasing_model": "subscription",
+   "ric_vnfm_serial": "12345",
+   "auto_last_hop": "disabled",
+   "ctrl_net": "control",
+   "ctrl_subnet": "control-subnet",
+   "ha_net": "ha_net",
+   "ha_subnet": "ha-subnet",
+   "max_scale_dag_group": "10",
+   "max_scale_vnf_group": "10",
+   "max_heal_vnfd_dag_ve": "10",
+   "max_heal_vnf_layer": "10",
+   "max_heal_vnf_slave_ve": "10",
+   "floating_network_id": "fa541932-4156-4185-8344-a961cf4c8e41",
+   "vnf_layer_cpu_threshold": "85",
+   "vnf_layer_cpu_threshold_check_interval": "1",
+   "vnf_group_throughput": "20",
+   "vnf_group_throughput_threshold": "75",
+   "vnf_group_throughput_check_interval": "1",
+   "dag_group_cpu_threshold": "89",
+   "dag_group_cpu_threshold_check_interval": "1",
+   "manager_mgmt_host": "10.0.0.106",
+   "security_groups": "enable",
+   "sw_ref_nagios": {
+      "data": {
+         "image": "CentOS-7-x86_64-GenericCloud",
+         "flavor": "m1.medium",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "sw_ref_dag": {
+      "data": {
+         "image": "BIGIP-13.1.0.5-0.0.5.ALL_1SLOT",
+         "flavor": "f5.cloudify_small",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "sw_ref_vnf": {
+      "data": {
+         "image": "BIGIP-13.1.0.5-0.0.5.ALL_1SLOT",
+         "flavor": "f5.cloudify_medium",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "bigip_ssh_key": "key_name",
+   "big_iq_host": "10.0.0.121",
+   "big_iq_lic_pool": "BIGIP_4",
+   "ctrl_sg_name": "control_sg",
+   "mgmt_sg_name": "mgmt_sg",
+   "pgw_sg_name": "pgw_sg",
+   "pdn_sg_name": "pgw_sg",
+   "snmp_sg_name": "snmp_sg",
+   "mgmt_net": "mgmt",
+   "mgmt_subnet": "mgmt-subnet",
+   "pgw_net": "pgw",
+   "pgw_subnet": "pgw-subnet",
+   "pdn_net": "pdn",
+   "pdn_subnet": "pdn-subnet",
+   "pgw_dag_net": "pgw_dag",
+   "pgw_dag_subnet": "pgw_dag-subnet",
+   "pdn_dag_net": "pdn_dag",
+   "pdn_dag_subnet": "pdn_dag-subnet",
+   "bgp_dag_pgw_peer_ip": "10.4.0.1",
+   "bgp_vnf_pgw_peer_ip": "10.6.0.1",
+   "bgp_pgw_peer_as": "65001",
+   "bgp_dag_egw_peer_ip": "10.3.0.1",
+   "bgp_egw_peer_as": "65002",
+   "default_gateway": "10.5.0.1",
+   "ntp_server": "pool.ntp.org",
+   "timezone": "America/Los_Angeles",
+   "cgnat_ip_ranges": [
+      "10.10.44.32-10.10.44.164"
+   ],
+   "cgnat_resource_id": "/f5vnf/gilan_http/natSourceTranslation/addresses",
+   "starting_ip_number": "5",
+   "increment_ip_number": "2",
+   "vnf_as3_nsd_payload": {
+      "class": "ADC",
+      "schemaVersion": "3.0.0",
+      "id": "cfy_vnf_01",
+      "label": "vnf",
+      "remark": "VNF",
+      "f5vnf": {
+         "class": "Tenant",
+         "Shared": {
+            "class": "Application",
+            "template": "shared",
+            "profileDiameterEndpointOcs": {
+               "class": "Enforcement_Diameter_Endpoint_Profile",
+               "supportedApps": [
+                  "Gy"
+               ],
+               "destinationRealm": "f5net.com",
+               "originHost": "pcef.f5net.com",
+               "originRealm": "f5net.com"
+            },
+            "profileDiameterEndpointPcrf": {
+               "class": "Enforcement_Diameter_Endpoint_Profile",
+               "supportedApps": [
+                  "Gx"
+               ],
+               "destinationRealm": "f5net.com",
+               "originHost": "pcef.f5net.com",
+               "originRealm": "f5net.com"
+            },
+            "endpointForwarding": {
+               "addressTranslationEnabled": false,
+               "class": "Enforcement_Forwarding_Endpoint",
+               "defaultPersistenceType": "disabled",
+               "fallbackPersistenceType": "disabled",
+               "persistenceHashSettings": {
+                  "length": 1024,
+                  "offset": 0
+               },
+               "pool": {
+                  "use": "poolForwarding"
+               },
+               "portTranslationEnabled": false,
+               "sourcePortAction": "preserve"
+            },
+            "endpointInterception": {
+               "class": "Enforcement_Interception_Endpoint",
+               "persistence": "disabled",
+               "pool": {
+                  "use": "poolInterception"
+               }
+            },
+            "endpointServiceChain": {
+               "class": "Enforcement_Service_Chain_Endpoint",
+               "serviceEndpoints": [
+                  {
+                     "forwardingEndpoint": {
+                        "use": "endpointForwarding"
+                     },
+                     "name": "myServiceEndpoint",
+                     "sourceVLAN": {
+                        "bigip": "/Common/pgw_dag_net"
+                     },
+                     "steeringPolicy": {
+                        "use": "policyEnforcement"
+                     }
+                  }
+               ]
+            },
+            "poolForwarding": {
+               "class": "Pool",
+               "members": [
+                  {
+                     "enable": true,
+                     "serverAddresses": [
+                        "255.255.255.2"
+                     ],
+                     "servicePort": 8081
+                  }
+               ]
+            },
+            "poolInterception": {
+               "class": "Pool",
+               "members": [
+                  {
+                     "enable": true,
+                     "serverAddresses": [
+                        "255.255.255.1"
+                     ],
+                     "servicePort": 8080
+                  }
+               ]
+            },
+            "lbSelectedRule": {
+               "class": "iRule",
+               "iRule": "when LB_SELECTED {log local0. \"Selected server [LB::server]\"}",
+               "remark": "Log load balanced server"
+            },
+            "policyEnforcement": {
+               "allTransactions": false,
+               "class": "Enforcement_Policy",
+               "enable": true,
+               "rules": [
+                  {
+                     "name": "testPolicyRule1",
+                     "precedence": 1,
+                     "modifyHttpHeader": {
+                        "headerName": "myHeaderName",
+                        "operation": "insert",
+                        "valueContent": "myHeaderValue",
+                        "valueType": "string"
+                     },
+                     "tcpAnalyticsEnabled": true,
+                     "tcpOptimizationDownlink": {
+                        "use": "profileTcpClient"
+                     },
+                     "tcpOptimizationUplink": {
+                        "use": "profileTcpServer"
+                     }
+                  },
+                  {
+                     "name": "testPolicyRule2",
+                     "precedence": 1,
+                     "dscpMarkingDownlink": 0,
+                     "dscpMarkingUplink": 0,
+                     "classificationFilters": [
+                        {
+                           "application": {
+                              "bigip": "/Common/acrobat"
+                           },
+                           "invertMatch": true,
+                           "name": "testClassFilter1"
+                        },
+                        {
+                           "category": {
+                              "bigip": "/Common/Audio"
+                           },
+                           "invertMatch": true,
+                           "name": "testClassFilter2"
+                        }
+                     ],
+                     "gateStatusEnabled": true
+                  }
+               ]
+            },
+            "policyEnforcementDefault": {
+               "class": "Enforcement_Policy",
+               "rules": [
+                  {
+                     "name": "enforcementPolicyRuleDefault",
+                     "precedence": 10
+                  }
+               ]
+            },
+            "profileClassification": {
+               "class": "Classification_Profile",
+               "preset": {
+                  "bigip": "/Common/ce_pem"
+               }
+            },
+            "profileIPOther": {
+               "class": "IP_Other_Profile"
+            },
+            "profileSpm": {
+               "class": "Enforcement_Profile",
+               "connectionOptimizationEnabled": true,
+               "policiesGlobalHighPrecedence": [
+                  {
+                     "use": "policyEnforcement"
+                  }
+               ],
+               "policiesUnknownSubscribers": [
+                  {
+                     "use": "policyEnforcementDefault"
+                  }
+               ]
+            },
+            "profileSubscriberManagement": {
+               "class": "Enforcement_Subscriber_Management_Profile",
+               "serverSideSessionsEnabled": true
+            },
+            "profileTcpClient": {
+               "autoProxyBufferSize": true,
+               "autoReceiveWindowSize": true,
+               "autoSendBufferSize": true,
+               "class": "TCP_Profile",
+               "congestionControl": "woodside",
+               "earlyRetransmit": true,
+               "enhancedLossRecovery": true,
+               "fastOpen": true,
+               "fastOpenCookieExpiration": 21600,
+               "idleTimeout": 300,
+               "initCwnd": 16,
+               "initRwnd": 16,
+               "maxSegmentSize": 0,
+               "minimumRto": 1000,
+               "mptcp": "passthrough",
+               "proxyBufferHigh": 262144,
+               "proxyBufferLow": 196608,
+               "proxyMSS": true,
+               "receiveWindowSize": 131072,
+               "sendBufferSize": 262144,
+               "synRtoBase": 3000,
+               "tailLossProbe": true,
+               "verifiedAccept": false
+            },
+            "profileTcpServer": {
+               "autoProxyBufferSize": true,
+               "autoReceiveWindowSize": true,
+               "autoSendBufferSize": true,
+               "class": "TCP_Profile",
+               "congestionControl": "woodside",
+               "earlyRetransmit": true,
+               "enhancedLossRecovery": true,
+               "fastOpen": true,
+               "fastOpenCookieExpiration": 21600,
+               "idleTimeout": 300,
+               "initCwnd": 16,
+               "initRwnd": 16,
+               "maxSegmentSize": 0,
+               "minimumRto": 1000,
+               "mptcp": "passthrough",
+               "proxyBufferHigh": 262144,
+               "proxyBufferLow": 196608,
+               "proxyMSS": true,
+               "receiveWindowSize": 131072,
+               "sendBufferSize": 262144,
+               "synRtoBase": 3000,
+               "tailLossProbe": true,
+               "verifiedAccept": false
+            },
+            "profileL4": {
+               "class": "L4_Profile"
+            },
+            "serviceAddress": {
+               "class": "Service_Address",
+               "arpEnabled": false,
+               "icmpEcho": "disable",
+               "spanningEnabled": true,
+               "virtualAddress": "0.0.0.0",
+               "trafficGroup": "/Common/traffic-group-local-only"
+            }
+         },
+         "gilan_any": {
+            "class": "Application",
+            "template": "generic",
+            "serviceMain": {
+               "allowVlans": [
+                  {
+                     "bigip": "/Common/pgw_dag_net"
+                  }
+               ],
+               "class": "Service_Generic",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "any",
+               "profileClassification": {
+                  "use": "/f5vnf/Shared/profileClassification"
+               },
+               "profileEnforcement": {
+                  "use": "/f5vnf/Shared/profileSpm"
+               },
+               "profileIPOther": {
+                  "use": "/f5vnf/Shared/profileIPOther"
+               },
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "snat": "none",
+               "lastHop": "disable",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0
+            }
+         },
+         "gilan_http": {
+            "class": "Application",
+            "template": "http",
+            "serviceMain": {
+               "allowVlans": [
+                  {
+                     "bigip": "/Common/pgw_dag_net"
+                  }
+               ],
+               "class": "Service_HTTP",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "tcp",
+               "profileClassification": {
+                  "use": "/f5vnf/Shared/profileClassification"
+               },
+               "profileEnforcement": {
+                  "use": "/f5vnf/Shared/profileSpm"
+               },
+               "profileHTTP": {
+                  "bigip": "/Common/http-transparent"
+               },
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "profileTCP": {
+                  "bigip": "/Common/f5-tcp-mobile"
+               },
+               "snat": "none",
+               "lastHop": "disable",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 80,
+               "policyNAT": {
+                  "use": "/f5vnf/gilan_http/natPolicy"
+               }
+            },
+            "natDestinationAddressList": {
+               "addresses": [
+                  "0.0.0.0/0"
+               ],
+               "class": "Firewall_Address_List"
+            },
+            "natDestinationPortList": {
+               "class": "Firewall_Port_List",
+               "ports": [
+                  "1-65535"
+               ]
+            },
+            "natPolicy": {
+               "class": "NAT_Policy",
+               "rules": [
+                  {
+                     "destination": {
+                        "addressLists": [
+                           {
+                              "use": "/f5vnf/gilan_http/natDestinationAddressList"
+                           }
+                        ],
+                        "portLists": [
+                           {
+                              "use": "/f5vnf/gilan_http/natDestinationPortList"
+                           }
+                        ]
+                     },
+                     "name": "nat_tcp",
+                     "protocol": "tcp",
+                     "source": {
+                        "addressLists": [
+                           {
+                              "use": "/f5vnf/gilan_http/natSourceAddressList"
+                           }
+                        ],
+                        "portLists": [
+                           {
+                              "use": "/f5vnf/gilan_http/natSourcePortList"
+                           }
+                        ]
+                     },
+                     "sourceTranslation": {
+                        "use": "/f5vnf/gilan_http/natSourceTranslation"
+                     }
+                  }
+               ]
+            },
+            "natSourceAddressList": {
+               "addresses": [
+                  "10.200.200.0/24"
+               ],
+               "class": "Firewall_Address_List"
+            },
+            "natSourcePortList": {
+               "class": "Firewall_Port_List",
+               "ports": [
+                  "1-65535"
+               ]
+            },
+            "natSourceTranslation": {
+               "addresses": [
+                  "255.255.255.255/32"
+               ],
+               "class": "NAT_Source_Translation",
+               "clientConnectionLimit": 0,
+               "hairpinModeEnabled": false,
+               "inboundMode": "explicit",
+               "mapping": {
+                  "mode": "address-pooling-paired",
+                  "timeout": 300
+               },
+               "patMode": "pba",
+               "portBlockAllocation": {
+                  "blockIdleTimeout": 3600,
+                  "blockLifetime": 0,
+                  "blockSize": 64,
+                  "clientBlockLimit": 1,
+                  "zombieTimeout": 0
+               },
+               "ports": [
+                  "1-65535"
+               ],
+               "routeAdvertisement": true,
+               "type": "dynamic-pat"
+            }
+         },
+         "gilan_inbound": {
+            "class": "Application",
+            "template": "generic",
+            "serviceMain": {
+               "allowVlans": [
+                  {
+                     "bigip": "/Common/pdn_dag_net"
+                  }
+               ],
+               "class": "Service_Generic",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "any",
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "snat": "none",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0
+            }
+         }
+      }
+   }
+}

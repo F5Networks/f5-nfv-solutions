@@ -1,0 +1,98 @@
+{
+   "ric_purchasing_model": "perpetual",
+   "ric_vnfm_serial": null,
+   "ric_throughput": "10",
+   "auto_last_hop": "disabled",
+   "ctrl_net": "control",
+   "ctrl_subnet": "control",
+   "ha_net": "ha_net",
+   "ha_subnet": "ha_net_subnet\t\t\t# High availability network subnet name.",
+   "bgp_dag_pgw_peer_ip": "192.168.1.103",
+   "bgp_vnf_pgw_peer_ip": "192.168.21.11",
+   "bgp_pgw_peer_as": "200",
+   "bgp_dag_egw_peer_ip": "192.168.11.104",
+   "bgp_egw_peer_as": "300",
+   "max_scale_dag_group": "1000",
+   "max_scale_vnf_group": "1000",
+   "max_heal_vnfd_dag_ve": "5",
+   "max_heal_vnf_layer": "5",
+   "max_heal_vnf_slave_ve": "5",
+   "vnf_layer_cpu_threshold": "75",
+   "vnf_layer_cpu_threshold_check_interval": "1",
+   "vnf_group_throughput": "10",
+   "vnf_group_throughput_threshold": "75",
+   "vnf_group_throughput_check_interval": "1",
+   "dag_group_cpu_threshold": "75",
+   "dag_group_cpu_threshold_check_interval": "1",
+   "floating_network_id": "fa541932-4156-4185-8344-a961cf4c8e41",
+   "manager_mgmt_host": "10.10.2.16",
+   "default_gateway": "10.10.12.1",
+   "external_net": null,
+   "external_subnet": null,
+   "internal_net": null,
+   "internal_subnet": null,
+   "default_ltm_number": null,
+   "sw_ref_dag": {
+      "data": {
+         "image": "bigip-13.1.0.5-0.0.5.all_1slot",
+         "flavor": "f5.cloudify_small",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "sw_ref_vnf": {
+      "data": {
+         "image": "bigip-13.1.0.5-0.0.5.all_1slot",
+         "flavor": "f5.cloudify_medium",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "sw_ref_nagios": {
+      "data": {
+         "image": "CentOS-7-x86_64-GenericCloud",
+         "flavor": "f5.cloudify_small",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "bigip_ssh_key": "mysshkey",
+   "tenant": null,
+   "sw_ref_ltm": {
+      "data": {
+         "image": "BIGIP-13.1.0.7-0.0.1.ALL_1SLOT",
+         "flavor": "f5.cloudify",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "big_iq_host": "10.190.54.148",
+   "big_iq_lic_pool": "vnfm-4",
+   "ctrl_sg_name": "allow_22",
+   "external_sg_name": "allow_22",
+   "internal_sg_name": null,
+   "mgmt_sg_name": "allow_22",
+   "pgw_sg_name": "allow_22",
+   "pdn_sg_name": "allow_22",
+   "snmp_sg_name": "allow_22",
+   "security_groups": "enable",
+   "mgmt_net": "mgmt",
+   "mgmt_subnet": "mgmt",
+   "pgw_net": "pgl",
+   "pgw_subnet": "pgl",
+   "pdn_net": "pdn",
+   "pdn_subnet": "pdn",
+   "pgw_dag_net": "vnfs",
+   "pgw_dag_subnet": "vnfs",
+   "pdn_dag_net": "vnfe",
+   "pdn_dag_subnet": "vnfe",
+   "ntp_server": "132.163.96.1",
+   "timezone": "string",
+   "cgnat_ip_ranges": [
+      "10.10.44.32-10.10.44.164"
+   ],
+   "cgnat_resource_id": "/f5vnf/gilan_http/natSourceTranslation/addresses",
+   "starting_ip_number": "5",
+   "increment_ip_number": "2",
+   "vnf_as3_nsd_payload": null
+}
