@@ -149,7 +149,7 @@ vnf_as3_nsd_payload:
             use: endpointForwarding
           name: myServiceEndpoint
           sourceVLAN:
-            bigip: /Common/pgw_dag_net
+            bigip: /Common/pgw_dag
           steeringPolicy:
             use: policyEnforcement
       poolForwarding:
@@ -275,26 +275,22 @@ vnf_as3_nsd_payload:
       serviceAddress:
         class: Service_Address
         arpEnabled: False
-        icmpEcho: disable 
+        icmpEcho: disable
         spanningEnabled: True
-        virtualAddress: 0.0.0.0
-        #inheritedTrafficGroup: false
         trafficGroup: /Common/traffic-group-local-only
-        
+        virtualAddress: 0.0.0.0
     gilan_any:
       class: Application
       template: generic
       serviceMain:
         allowVlans:
-        - bigip: /Common/pgw_dag_net
+        - bigip: /Common/pgw_dag
         class: Service_Generic
         iRules:
         - /f5vnf/Shared/lbSelectedRule
         layer4: any
         profileClassification:
           use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
         profileIPOther:
           use: /f5vnf/Shared/profileIPOther
         profileL4:
@@ -313,15 +309,13 @@ vnf_as3_nsd_payload:
       template: http
       serviceMain:
         allowVlans:
-        - bigip: /Common/pgw_dag_net
+        - bigip: /Common/pgw_dag
         class: Service_HTTP
         iRules:
         - /f5vnf/Shared/lbSelectedRule
         layer4: tcp
         profileClassification:
           use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
         profileHTTP:
           bigip: /Common/http-transparent
         profileL4:
@@ -366,12 +360,12 @@ vnf_as3_nsd_payload:
             use: /f5vnf/gilan_http/natSourceTranslation
       natSourceAddressList:
         addresses:
-        - 10.200.200.0/24
+        - 10.8.0.0/24
         class: Firewall_Address_List
       natSourcePortList:
         class: Firewall_Port_List
         ports:
-        - 1-65535    
+        - 1-65535
       natSourceTranslation:
         addresses:
         - 255.255.255.255/32
@@ -393,23 +387,3 @@ vnf_as3_nsd_payload:
         - 1-65535
         routeAdvertisement: true
         type: dynamic-pat
-    gilan_inbound:
-      class: Application
-      template: generic
-      serviceMain:
-        allowVlans:
-        - bigip: /Common/pdn_dag_net
-        class: Service_Generic
-        iRules:
-        - /f5vnf/Shared/lbSelectedRule
-        layer4: any
-        profileL4:
-          use: /f5vnf/Shared/profileL4
-        profileSubscriberManagement:
-          use: /f5vnf/Shared/profileSubscriberManagement
-        snat: none
-        translateServerAddress: False
-        translateServerPort: False
-        virtualAddresses:
-        - use: /f5vnf/Shared/serviceAddress
-        virtualPort: 0

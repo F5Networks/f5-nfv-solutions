@@ -137,7 +137,7 @@
                      },
                      "name": "myServiceEndpoint",
                      "sourceVLAN": {
-                        "bigip": "/Common/pgw_dag_net"
+                        "bigip": "/Common/pgw_dag"
                      },
                      "steeringPolicy": {
                         "use": "policyEnforcement"
@@ -315,8 +315,8 @@
                "arpEnabled": false,
                "icmpEcho": "disable",
                "spanningEnabled": true,
-               "virtualAddress": "0.0.0.0",
-               "trafficGroup": "/Common/traffic-group-local-only"
+               "trafficGroup": "/Common/traffic-group-local-only",
+               "virtualAddress": "0.0.0.0"
             }
          },
          "gilan_any": {
@@ -325,7 +325,7 @@
             "serviceMain": {
                "allowVlans": [
                   {
-                     "bigip": "/Common/pgw_dag_net"
+                     "bigip": "/Common/pgw_dag"
                   }
                ],
                "class": "Service_Generic",
@@ -335,9 +335,6 @@
                "layer4": "any",
                "profileClassification": {
                   "use": "/f5vnf/Shared/profileClassification"
-               },
-               "profileEnforcement": {
-                  "use": "/f5vnf/Shared/profileSpm"
                },
                "profileIPOther": {
                   "use": "/f5vnf/Shared/profileIPOther"
@@ -366,7 +363,7 @@
             "serviceMain": {
                "allowVlans": [
                   {
-                     "bigip": "/Common/pgw_dag_net"
+                     "bigip": "/Common/pgw_dag"
                   }
                ],
                "class": "Service_HTTP",
@@ -376,9 +373,6 @@
                "layer4": "tcp",
                "profileClassification": {
                   "use": "/f5vnf/Shared/profileClassification"
-               },
-               "profileEnforcement": {
-                  "use": "/f5vnf/Shared/profileSpm"
                },
                "profileHTTP": {
                   "bigip": "/Common/http-transparent"
@@ -456,7 +450,7 @@
             },
             "natSourceAddressList": {
                "addresses": [
-                  "10.200.200.0/24"
+                  "10.8.0.0/24"
                ],
                "class": "Firewall_Address_List"
             },
@@ -491,37 +485,6 @@
                ],
                "routeAdvertisement": true,
                "type": "dynamic-pat"
-            }
-         },
-         "gilan_inbound": {
-            "class": "Application",
-            "template": "generic",
-            "serviceMain": {
-               "allowVlans": [
-                  {
-                     "bigip": "/Common/pdn_dag_net"
-                  }
-               ],
-               "class": "Service_Generic",
-               "iRules": [
-                  "/f5vnf/Shared/lbSelectedRule"
-               ],
-               "layer4": "any",
-               "profileL4": {
-                  "use": "/f5vnf/Shared/profileL4"
-               },
-               "profileSubscriberManagement": {
-                  "use": "/f5vnf/Shared/profileSubscriberManagement"
-               },
-               "snat": "none",
-               "translateServerAddress": false,
-               "translateServerPort": false,
-               "virtualAddresses": [
-                  {
-                     "use": "/f5vnf/Shared/serviceAddress"
-                  }
-               ],
-               "virtualPort": 0
             }
          }
       }
