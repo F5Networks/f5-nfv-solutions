@@ -1,0 +1,23 @@
+{
+   "big_iq_primary_host_license": "H4506-500317-221-7034997-5602771",
+   "big_iq_secondary_host_license": "S3326-667683-640-3947832-4241547",
+   "big_iq_pool_license": "A7384-73903-90940-77131-5050602",
+   "sw_ref_bigiq": {
+      "data": {
+         "image": "BIG-IQ-6.0.1.0.0.813",
+         "flavor": "f5.large",
+         "availability_zone": "nova"
+      },
+      "revision": 0
+   },
+   "big_iq_passphrase": "Test1234567890!?",
+   "big_iq_pool_name": "regkeys",
+   "default_sg_name": "default",
+   "floating_network_id": "fa541932-4156-4185-8344-a961cf4c8e41",
+   "key_name": "mykey",
+   "mgmt_net": "mgmt",
+   "mgmt_sg_name": "mgmt_sg",
+   "mgmt_subnet": "mgmt",
+   "ntp_server": "0.north-america.pool.ntp.org",
+   "timezone": "America/Los_Angeles"
+}
