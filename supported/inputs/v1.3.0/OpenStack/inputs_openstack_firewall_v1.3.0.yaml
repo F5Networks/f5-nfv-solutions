@@ -363,39 +363,34 @@ vnf_as3_nsd_payload:
                 fwPolicy:
                     class: Firewall_Policy
                     rules:
-                        -
-                            use: fwRuleList
+                        - use: fwRuleList
                 fwRuleList:
                     class: Firewall_Rule_List
                     rules:
-                        -
-                            action: accept
-                            destination:
-                                portLists:
-                                    -
-                                        use: fwAllowedPortList
-                            loggingEnabled: true
-                            name: tcpAllow
-                            protocol: tcp
-                            source:
-                                addressLists:
-                                    - use: fwAllowedAddressList
-                        -
-                            action: accept
-                            loggingEnabled: true
-                            name: udpAllow
-                            protocol: udp
-                            source:
-                                addressLists:
-                                    - use: fwAllowedAddressList
-                        -
-                            action: drop
-                            loggingEnabled: true
-                            name: defaultDeny
-                            protocol: any
-                            source:
-                                addressLists:
-                                    - use: fwDefaultDenyAddressList
+                    - action: accept
+                      destination:
+                        portLists:
+                            - use: fwAllowedPortList
+                        loggingEnabled: true
+                        name: tcpAllow
+                        protocol: tcp
+                        source:
+                            addressLists:
+                                - use: fwAllowedAddressList
+                    - action: accept
+                      loggingEnabled: true
+                      name: udpAllow
+                      protocol: udp
+                      source:
+                          addressLists:
+                              - use: fwAllowedAddressList
+                    - action: drop
+                      loggingEnabled: true
+                      name: defaultDeny
+                      protocol: any
+                      source:
+                          addressLists:
+                              - use: fwDefaultDenyAddressList
                 fwSecurityLogProfile:
                     class: Security_Log_Profile
                     network:
@@ -424,14 +419,12 @@ vnf_as3_nsd_payload:
                 poolHsl:
                     class: Pool
                     members:
-                        -
-                            enable: true
-                            serverAddresses:
-                                - 255.255.255.254
-                            servicePort: 514
+                    - enable: true
+                      serverAddresses:
+                        - 255.255.255.254
+                      servicePort: 514
                     monitors:
-                        -
-                            bigip: /Common/udp
+                        - bigip: /Common/udp
                 lbSelectedRule:
                     class: iRule
                     iRule: when LB_SELECTED {log local0. "Selected server [LB::server]"}
@@ -444,6 +437,7 @@ vnf_as3_nsd_payload:
                     icmpEcho: disable
                     spanningEnabled: True
                     virtualAddress: 0.0.0.0
+                    trafficGroup: /Common/traffic-group-local-only
             firewall_any:
                 class: Application
                 template: generic
@@ -476,7 +470,7 @@ vnf_as3_nsd_payload:
                     allowVlans:
                         - bigip: /Common/network_PGW_DAG
                     profileL4:
-                        use: /f5vnf/Shared/profileL4
+                        - use: /f5vnf/Shared/profileL4
                     virtualAddresses:
                         - use: /f5vnf/Shared/serviceAddress
                     virtualPort: 0
@@ -526,26 +520,26 @@ vnf_as3_nsd_payload:
                     ports:
                     - 1-65535
                 natSourceTranslation:
-                    addresses:
-                    - 255.255.255.255/32
-                    class: NAT_Source_Translation
-                    clientConnectionLimit: 0
-                    hairpinModeEnabled: false
-                    inboundMode: explicit
-                    mapping:
-                      mode: address-pooling-paired
-                      timeout: 300
-                    patMode: pba
-                    portBlockAllocation:
-                      blockIdleTimeout: 3600
-                      blockLifetime: 0
-                      blockSize: 64
-                      clientBlockLimit: 1
-                      zombieTimeout: 0
-                    ports:
-                    - 1-65535
-                    routeAdvertisement: false
-                    type: dynamic-pat
+                 addresses:
+                 - 255.255.255.255/32
+                 class: NAT_Source_Translation
+                 clientConnectionLimit: 0
+                 hairpinModeEnabled: false
+                 inboundMode: explicit
+                 mapping:
+                   mode: address-pooling-paired
+                   timeout: 300
+                 patMode: pba
+                 portBlockAllocation:
+                  blockIdleTimeout: 3600
+                  blockLifetime: 0
+                  blockSize: 64
+                  clientBlockLimit: 1
+                  zombieTimeout: 0
+                 ports:
+                 - 1-65535
+                 routeAdvertisement: true
+                 type: dynamic-pat
             firewall_inbound:
               class: Application
               template: generic
