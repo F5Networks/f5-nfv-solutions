@@ -1,11 +1,11 @@
 ## Inputs for VNFM version 1.3.0
 
-In this folder you have YAML file format for use with the F5 VNFM web console and the JSON files with the REST API. The inputs for this version of VNFM are new or changed for OpenStack VIM and the Gi LAN and Gi Firewall blueprint solutions ONLY: 
+In this folder you have YAML file format for use with the F5 VNFM web console and the JSON files with the REST API.  
 
 | VIM                       | New Inputs File                              | New Blueprint Solution         |
 | :-------------------------| :--------------------------------------------| :------------------------------| 
-| OpenStack (Newton 10)     | inputs_openstack_bigiq_v1.3.0.yaml<br>inputs_openstack_bigiq_v1.3.0.json<br>inputs_openstack_base_v1.3.0.yaml<br>inputs_openstack_base_v1.3.0.json <br> inputs_openstack_firewall_v1.3.0.yaml <br>  inputs_openstack_firewall_v1.3.0.json <br> inputs_openstack_gilan_v1.3.0.json <br> inputs_openstack_gilan_v1.3.0.yaml <br><br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.3.0  <br> F5-VNF-Service-Layer-Firewall_v1.3.0<br> F5-VNF-Service-Layer-GiLAN_v1.3.0|
-| VMware vSphere ESXi 6.5   | Inputs for VMware vSphere implementaitons did not change for VNF Manager 1.3. Use the inputs released in version 1.2.1.  |Blueprints for VMware vSphere implementaitons did not change for VNF Manager 1.3. Use the blueprints released in version 1.2.1.  |
+| OpenStack (Newton 10) <br>  OpenStack (Queens 13)   | inputs_openstack_bigiq_v1.3.0.yaml<br>inputs_openstack_bigiq_v1.3.0.json<br>inputs_openstack_base_v1.3.0.yaml<br>inputs_openstack_base_v1.3.0.json <br> inputs_openstack_firewall_v1.3.0.yaml <br>  inputs_openstack_firewall_v1.3.0.json <br> inputs_openstack_gilan_v1.3.0.json <br> inputs_openstack_gilan_v1.3.0.yaml <br><br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.3.0  <br> F5-VNF-Service-Layer-Firewall_v1.3.0<br> F5-VNF-Service-Layer-GiLAN_v1.3.0|
+| VMware vSphere ESXi 6.5   | inputs_vsphere_base_v1.3.yaml<br>inputs_vsphere_base_v1.3.json<br>inputs_vsphere_bigiq_v1.3.yaml<br>inputs_vsphere_bigiq_v1.3.json<br>inputs_vsphere_firewall_v1.3.yaml<br>inputs_vsphere_firewall_v1.3.json<br>inputs_vsphere_gilan_v1.3.yaml<br>inputs_vsphere_gilan_v1.3.json  | F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.3.0  <br> vSphere-F5-VNF-Service-Layer-Firewall_v1.3.0<br> vSphere-F5-VNF-Service-Layer-GiLAN_v1.3.0 |
  
 
 ### What's new

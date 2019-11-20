@@ -1,5 +1,5 @@
 ## About the F5-VNF-Service-Layer-Base_v1.3.0 solution blueprint
-This version contains the following changes for OpenStack VIM ONLY:
+This version contains the following changes:
 
 * New security_groups input to enable/disable any security groups added and the default security group created by OpenStack for all instances.
 * The floating_IP input is now optional for verison 1.3.0 and later and the default value is empty for VNFM projects in OpenStack ONLY. 
