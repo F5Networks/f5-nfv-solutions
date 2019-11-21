@@ -310,7 +310,7 @@ declaration:
 
 
 # Example AS3 declaration for CGNAT implementations
-vnf_as3_nsd_payload:
+# vnf_as3_nsd_payload:
     class: AS3
     action: deploy
     persist: true

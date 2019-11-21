@@ -357,7 +357,7 @@ vnf_as3_nsd_payload:
 
 ##  AS3 declaration for CGNAT implementations ## 
 
-vnf_as3_nsd_payload:
+# vnf_as3_nsd_payload:
   class: ADC
   schemaVersion: 3.0.0
   id: cfy_vnf_01

@@ -307,8 +307,8 @@ vnf_as3_nsd_payload:
                 virtualPort: 0
 
 
-# AS3 declaration for non-CGNAT implementation
-vnf_as3_nsd_payload:
+# AS3 declaration for CGNAT implementation
+# vnf_as3_nsd_payload:
     class: AS3
     action: deploy
     persist: true
