@@ -1,24 +1,23 @@
 {
-   "big_iq_passphrase": "Test1234567890!?",
-   "big_iq_pool_license": "W1708-AAA-BBB-CCC",
-   "big_iq_pool_name": "pool_vnfm",
-   "big_iq_primary_host_license": "O0485-AAA-BBB-CCC",
-   "big_iq_secondary_host_license": "O0487-AAA-BBB-CCC",
-   "mgmt_default_gw": "10.10.131.254",
-   "mgmt_dns": "8.8.8.8",
-   "mgmt_ip_range": [
-      "10.10.130.5-10.10.130.20"
-   ],
-   "mgmt_net": "external",
-   "mgmt_net_sw_dist": true,
-   "mgmt_subnet_cidr": "10.10.130.0/23",
+   "big_iq_primary_host_license": "H4506-500317-221-7034997-5602771",
+   "big_iq_secondary_host_license": "S3326-667683-640-3947832-4241547",
+   "big_iq_pool_license": "A7384-73903-90940-77131-5050602",
    "sw_ref_bigiq": {
       "data": {
-         "configuration": "quadcpu",
-         "template": "BIG-IQ-6.1.0.0.0.1224"
+         "image": "BIG-IQ-6.0.1.0.0.813",
+         "flavor": "f5.large",
+         "availability_zone": "nova"
       },
       "revision": 0
    },
-   "ntp_server": "pool.ntp.org",
-   "timezone": "UTC"
+   "big_iq_passphrase": "Test1234567890!?",
+   "big_iq_pool_name": "regkeys",
+   "default_sg_name": "default",
+   "floating_network_id": "fa541932-4156-4185-8344-a961cf4c8e41",
+   "key_name": "mykey",
+   "mgmt_net": "mgmt",
+   "mgmt_sg_name": "mgmt_sg",
+   "mgmt_subnet": "mgmt",
+   "ntp_server": "0.north-america.pool.ntp.org",
+   "timezone": "America/Los_Angeles"
 }

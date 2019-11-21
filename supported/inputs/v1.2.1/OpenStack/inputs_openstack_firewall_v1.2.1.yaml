@@ -314,4 +314,8 @@ vnf_as3_nsd_payload:
                 translateServerPort: false
                 virtualAddresses:
                 - use: /f5vnf/Shared/serviceAddress
+<<<<<<< Updated upstream
                 virtualPort: 0
+=======
+                virtualPort: 0
+>>>>>>> Stashed changes

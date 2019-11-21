@@ -22,11 +22,17 @@ The following table describes the supported plugin versions available in this re
 |                           | F5-VNF-Service-Layer-Firewall_v1.2.1.0       | inputs_firewall_v1.2.1    |
 |                           | F5-VNF-Service-Layer-Base_v1.2.1.0           | inputs_base_v1.2.1.0      |
 |                           |                                              |                           |
+| f5-gilan-plugin 0.2.52    | F5-VNF-Service-Layer-GiLAN_v1.3              | inputs_gilan_v1.3         |
+|                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.3      |                           |
+|                           | F5-VNF-Service-Layer-Firewall_v1.3           | inputs_firewall_v1.3      |
+|                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.3   |                           | 
+|                           | F5-VNF-Service-Layer-Base_v1.3               | inputs_base_v1.3          |
+|                           |                                              |                           | 
 | f5-ric-plugin 0.4         | F5-VNF-Service-Layer-GiLAN_v1.X              | inputs_gilan_v1.X         |
 |                           | F5-VNF-Service-Layer-Firewall_v1.X           | inputs_firewall_v1.X      |
 |                           | F5-VNF-Service-Layer-Base_v1.X               | inputs_base_v1.X          |
 |                           |                                              |                           | 
-| f5-bigiq-plugin 0.1       | F5-VNF-BIG-IQ_v1.2.1                         | inputs_bigiq.yaml_v1.2.1  |
+| f5-bigiq-plugin 0.1       | F5-VNF-BIG-IQ_v1.2.1 and later               | inputs_bigiq.yaml_v1.2.1  |
 
 **NOTE**: You can ONLY use the F5-bigiq-plugin 0.1 and F5-VNF-BIG-IQ_v1.2.1 blueprint when launching the F5 VNF Manager Version 1.2.1 and later.
 
@@ -35,7 +41,7 @@ The following table describes the supported plugin versions available in this re
 Visit the F5 VNFM product documentation for more details about:
 
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequisites</a>  
-- Red Hat OpenStack Newton Version 10 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
+- Red Hat OpenStack Newton version 10 and Queens version 13 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
 - VMware vSphere ESXi 6.5 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
 - VNFM serial number (ric_vnfm_serial) received in an email upon purchase (required when acquiring support from F5 Networks).
 

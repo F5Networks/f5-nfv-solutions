@@ -14,7 +14,7 @@ default_sg_name: default                                                        
 
 floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41                              # The OpenStack ID or name of the external network where you assigned a floating IP addresses (for example, external_net).
 
-key_name: tellierkey                                                                   # The name of the local, private SSH key used for connecting to BIG-IQ.
+key_name: mykey                                                                   # The name of the local, private SSH key used for connecting to BIG-IQ.
 
 mgmt_net: mgmt                                                                         # The name of the pre-existing management OpenStack network  or VMware port group, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
 
