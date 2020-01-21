@@ -5,7 +5,7 @@ This version contains the following changes:
 - Gi Firewall for both OpenStack and vSphere has a new [AS3 Declaration version 3.13.0 (non-LTS)](https://clouddocs.f5.com/products/extensions/f5-appsvcs-extension/3/userguide/components.html#as3-declaration)
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 

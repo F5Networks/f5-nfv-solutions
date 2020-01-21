@@ -1,11 +1,11 @@
-## Inputs for VNFM version 1.4.0
+## Inputs for VNFM version 1.3.1
 
 In this folder you have YAML file format for use with the F5 VNFM web console and the JSON files with the REST API.  
 
 | VIM                       | New Inputs File                              | New Blueprint Solution         |
 | :-------------------------| :--------------------------------------------| :------------------------------| 
-| OpenStack (Newton 10) <br>  OpenStack (Queens 13)   | inputs_openstack_bigiq_v1.4.0.yaml<br>inputs_openstack_bigiq_v1.4.0.json<br>inputs_openstack_base_v1.4.0.yaml<br>inputs_openstack_base_v1.4.0.json <br> inputs_openstack_firewall_v1.4.0.yaml <br>  inputs_openstack_firewall_v1.4.0.json <br> inputs_openstack_gilan_v1.4.0.json <br> inputs_openstack_gilan_v1.4.0.yaml <br> inputs_openstack_dns_v1.4.0.yaml<br> inputs_openstack_dns_security_v1.4.0.yaml<br><br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.4.0  <br> F5-VNF-Service-Layer-Firewall_v1.4.0<br> F5-VNF-Service-Layer-GiLAN_v1.4.0<br> F5-VNF-Service-Layer-DNS_v1.4.0<br> F5-VNF-Service-Layer-DNS_Security_v1.4.0|
-| VMware vSphere ESXi 6.5   | inputs_vsphere_base_v1.3.yaml<br>inputs_vsphere_base_v1.3.json<br>inputs_vsphere_bigiq_v1.3.yaml<br>inputs_vsphere_bigiq_v1.4.json<br>inputs_vsphere_firewall_v1.4.yaml<br>inputs_vsphere_firewall_v1.4.json<br>inputs_vsphere_gilan_v1.4.yaml<br>inputs_vsphere_gilan_v1.4.json<br>inputs_vsphere_dns_v1.4.json<br>inputs_vsphere_dns_security_v1.4.json  | F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.4.0  <br> vSphere-F5-VNF-Service-Layer-Firewall_v1.4.0<br> vSphere-F5-VNF-Service-Layer-GiLAN_v1.4.0<br> vSphere-F5-VNF-Service-Layer-DNS_v1.4.0<br> vSphere-F5-VNF-Service-Layer-DNS-Security_v1.4.0 |
+| OpenStack (Newton 10) <br>  OpenStack (Queens 13)   | inputs_openstack_bigiq_v1.3.1.yaml<br>inputs_openstack_bigiq_v1.3.1.json<br>inputs_openstack_base_v1.3.1.yaml<br>inputs_openstack_base_v1.3.1.json <br> inputs_openstack_firewall_v1.3.1.yaml <br>  inputs_openstack_firewall_v1.3.1.json <br> inputs_openstack_gilan_v1.3.1.json <br> inputs_openstack_gilan_v1.3.1.yaml <br> inputs_openstack_dns_v1.3.1.yaml<br> inputs_openstack_dns_security_v1.3.1.yaml<br><br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.3.1  <br> F5-VNF-Service-Layer-Firewall_v1.3.1<br> F5-VNF-Service-Layer-GiLAN_v1.3.1<br> F5-VNF-Service-Layer-DNS_v1.3.1<br> F5-VNF-Service-Layer-DNS_Security_v1.3.1|
+| VMware vSphere ESXi 6.5   | inputs_vsphere_base_v1.3.yaml<br>inputs_vsphere_base_v1.3.json<br>inputs_vsphere_bigiq_v1.3.yaml<br>inputs_vsphere_bigiq_v1.3.1.json<br>inputs_vsphere_firewall_v1.3.1.yaml<br>inputs_vsphere_firewall_v1.3.1.json<br>inputs_vsphere_gilan_v1.3.1.yaml<br>inputs_vsphere_gilan_v1.3.1.json<br>inputs_vsphere_dns_v1.3.1.json<br>inputs_vsphere_dns_security_v1.3.1.json  | F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v1.3.1  <br> vSphere-F5-VNF-Service-Layer-Firewall_v1.3.1<br> vSphere-F5-VNF-Service-Layer-GiLAN_v1.3.1<br> vSphere-F5-VNF-Service-Layer-DNS_v1.3.1<br> vSphere-F5-VNF-Service-Layer-DNS-Security_v1.3.1 |
  
 
 ### What's new
@@ -21,7 +21,7 @@ In this folder you have YAML file format for use with the F5 VNFM web console an
 
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 

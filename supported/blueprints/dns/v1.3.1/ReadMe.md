@@ -1,9 +1,9 @@
-## About the F5-Service-Layer-VNF-DNS_v1.4.0 solution blueprint
+## About the F5-Service-Layer-VNF-DNS_v1.3.1 solution blueprint
 
-This is the inital release of the VNF DNS solution blueprint.
+This is the inital release of the standalone VNF DNS solution blueprint.
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 

@@ -18,7 +18,7 @@ then redeploy associated blueprints with the new plugin version.
 3. Delete the old version of the plugin.
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 

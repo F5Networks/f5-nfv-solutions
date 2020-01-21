@@ -6,7 +6,7 @@ This is the initial version of the Resource Information Collector plugin, enabli
 
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 
