@@ -3,12 +3,11 @@ In this directory you will find blueprints for each VNFM solution for both OpenS
 
 The following list provides a brief description of each solution blueprint:
 
-- **F5-VNF-BIG-IQ** - Enables you to auto-configure the BIG-IQ license manager utility. You can deploy this solution when launching an F5 VNF Manager version 1.2.1 and later.
+- **F5-VNF-BIG-IQ_v1.2.1** - Enables you to auto-configure the BIG-IQ license manager utility. You can deploy this solution when launching an F5 VNF Manager version 1.2.1 and later.
 - **F5-VNF-Service-Layer-Base_v1.X** - Enables you to deploy BIG-IP VEs in an open configuration model. This blueprint enables you to execute workflows manually.
 - **F5-VNF-Service-Layer-GiLAN_v1.X** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
 - **F5-VNF-Service-Layer-Firewall_v1.X** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
-- **F5-VNF-DNS** - plugins, inputs, and blueprints enabling you to query and translate names for client requests. This DNS solution translates top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
-- **F5-VNF-DNS-Security** - plugins, inputs, and blueprints providing the VNF DNS service layer, as well as enabling you to clean the DNS queries.
+- **F5-VNF-DNS_v1.3.1** - plugins, inputs, and blueprints enabling you to query and translate names for client requests. This DNS solution and be used with VNFM v1.3.1 and later and will translate top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
 
 
 ### Prerequisites and system requirements
