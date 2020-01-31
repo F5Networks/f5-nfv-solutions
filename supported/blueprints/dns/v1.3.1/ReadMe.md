@@ -1,6 +1,6 @@
 ## About the F5-Service-Layer-VNF-DNS_v1.3.1 solution blueprint
 
-This is the inital release of the standalone VNF DNS solution blueprint.
+This is the inital PREVIEW release of the standalone VNF DNS solution blueprint. This PREVIEW standalone F5 DNS solution blueprint queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org.
 
 #### Copyright
 Copyright 2014-2020 F5 Networks Inc.

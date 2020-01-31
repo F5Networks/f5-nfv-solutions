@@ -96,6 +96,8 @@ dag_group_cpu_threshold_check_interval: '1'   # Interval between checks, in minu
 bigip_ssh_key: mykey                # Name of the VIM SSH key that you will import into the BIG-IP VE instances.
 ntp_server: 'string'    	    # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used (for example, pool.ntp.org) 
 timezone: America/Los_Angeles	    # Enter the local timezone using the TZ database name for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC.
+datacenter:  'string'               # String value used multi-VIM configuration, defining the target data center for this deployment, and identifying the group of secrets to use in a multi-VIM configuration (for example, datacenter_southwest-region).
+
 
 # AS3 declaration for DNS
 vnf_as3_nsd_payload:

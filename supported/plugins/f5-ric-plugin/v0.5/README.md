@@ -1,10 +1,9 @@
 ## Use F5-ric-plugin-0.5 
-This is the 0.5 version of the Resource Information Collector plugin, enabling utility resource collection and report generation for the DNS blueprints 1.4. This version deploys the following blueprint versions:
+This is the 0.5 version of the Resource Information Collector plugin, enabling utility resource collection and report generation for the DNS blueprint 1.3.1. This version deploys the following blueprint versions:
  
- - Gi LAN version 1.4 and later
- - Gi Firewall 1.4 and later
- - DNS  1.4 and later
- - DNS-Security 1.4 and later
+ - Gi LAN version 1.3.1 and later
+ - Gi Firewall 1.3.1 and later
+ - DNS  1.3.1 and later
 
 
 #### Copyright

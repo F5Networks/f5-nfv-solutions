@@ -1,18 +1,27 @@
+
 ## About F5 Gilan Plugin version 0.2.53
 Changes to this plugin include support for the following:
 
-- Updated inputs files for all solution blueprints for supporting the following: 
+- Updated inputs files for all solution blueprints for supporting the following new features: 
 
-  - DNS  blueprint
-  - DNS-Security blueprint
+* **DNS blueprint PREVIEW** - A PREVIEW version of the standalone F5 DNS solution blueprint that queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org.
+* **Upgraded to AS3 extension v3.16.0** - The Gi LAN, Gi Firewall, DNS-enabled, and CGNAT-enabled blueprints now use an updated F5 AS3 Extension. A sample AS3 declaration is included in the supported NFV solution inputs files on GitHub. 
+* **Support a dark environment for Nagios** - You can now run F5 VNF Manager with a prebuilt Nagios image NOT connected to the Internet. You must upload the prebuilt Nagios image directly into your VIM environment instead of a CentOS image. Obtain this prebuilt Nagios image with your F5 VNF Manager purchase confirmation email.
+* **Support deployment to multiple VIMs (multi-VIM or -hypervisor)** - You can use one VNFM manager cluster provisioned in a VMware/OpenStack hypervisor that deploys solutions to other VMware or OpenStack hypervisors. This setup requires a new datacenter input defined for all blueprint solutions. Regardless of which VIM you use, you will now see blueprints for both OpenStack and VMware on the VNFM dashboard.
+* **Support for OpenStack without DHCP** - You can now provision F5 VNF Manager in your OpenStack VIM implemented without DHCP when NOT using security groups.
+* **Support for BIG-IP VE 14.1.X** - You can now download BIG-IP VE 14.1.X for use with all F5 NFV solution blueprints.
+* Management network MTU value (OpenStack) - If the OpenStack/VIO API does not set the MTU value for your management network, then VNF Manager will use 1500 as the default value.
+* **Renamed and added secrets** - Renamed all existing VIM-specific secrets appending ``_default`` to distinguish the VNFM’s secret from other similar secrets added to accommodate multi-VIM configurations. Added two new OpenStack, keystone secrets; ``keystone_allow_insecure_default`` and ``keystone_ca_cert_default``.
+
+ 
 
 - This version is used to deploy the following blueprint versions:
 
-   - v1.4/F5-VNF-Service-Layer-Base
-   - v1.4/F5-VNF-Service-Layer-GiLAN
-   - v1.4/F5-VNF-Service-Layer-Firewall
-   - v1.4/F5-VNF-Service-Layer-DNS
-   - v1.4/F5-VNF-Service-Layer-DNS-Security
+   - v1.3.1/F5-VNF-Service-Layer-Base
+   - v1.3.1/F5-VNF-Service-Layer-GiLAN
+   - v1.3.1/F5-VNF-Service-Layer-Firewall
+   - v1.3.1/F5-VNF-Service-Layer-DNS
+   - v1.3.1/F5-VNF-Service-Layer-DNS-Security
 
 ### To upgrade plugins
 

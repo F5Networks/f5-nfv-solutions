@@ -77,142 +77,358 @@
    "bigip_ssh_key": "mykey",
    "ntp_server": "string",
    "timezone": "America/Los_Angeles",
+   "datacenter": "string",
+   "cgnat_ip_ranges": [
+      "10.9.200.32-10.9.200.64",
+      "10.9.201.32-10.9.201.64"
+   ],
+   "cgnat_resource_id": "/f5vnf/gilan_http/natSourceTranslation/addresses",
+   "starting_ip_number": "5",
+   "increment_ip_number": "2",
    "vnf_as3_nsd_payload": {
       "class": "ADC",
-      "updateMode": "selective",
-      "schemaVersion": "3.16.0",
-      "id": "DNS",
-      "DNS_Test": {
+      "schemaVersion": "3.0.0",
+      "id": "cfy_vnf_01",
+      "label": "vnf",
+      "remark": "VNF",
+      "f5vnf": {
          "class": "Tenant",
          "Shared": {
             "class": "Application",
             "template": "shared",
             "lbSelectedRule": {
                "class": "iRule",
-               "iRule": "when DNS_REQUEST {log local0. \"DNS REQUEST\"}",
+               "iRule": "when LB_SELECTED {log local0. \"Selected server [LB::server]\"}",
                "remark": "Log load balanced server"
+            },
+            "policyEnforcement": {
+               "allTransactions": false,
+               "class": "Enforcement_Policy",
+               "enable": true,
+               "rules": [
+                  {
+                     "name": "testPolicyRule1",
+                     "precedence": 1,
+                     "modifyHttpHeader": {
+                        "headerName": "myHeaderName",
+                        "operation": "insert",
+                        "valueContent": "myHeaderValue",
+                        "valueType": "string"
+                     },
+                     "tcpAnalyticsEnabled": true,
+                     "tcpOptimizationDownlink": {
+                        "use": "profileTcpClient"
+                     },
+                     "tcpOptimizationUplink": {
+                        "use": "profileTcpServer"
+                     }
+                  },
+                  {
+                     "name": "testPolicyRule2",
+                     "precedence": 1,
+                     "dscpMarkingDownlink": 0,
+                     "dscpMarkingUplink": 0,
+                     "classificationFilters": [
+                        {
+                           "application": {
+                              "bigip": "/Common/acrobat"
+                           },
+                           "invertMatch": true,
+                           "name": "testClassFilter1"
+                        },
+                        {
+                           "category": {
+                              "bigip": "/Common/Audio"
+                           },
+                           "invertMatch": true,
+                           "name": "testClassFilter2"
+                        }
+                     ],
+                     "gateStatusEnabled": true
+                  }
+               ]
+            },
+            "policyEnforcementDefault": {
+               "class": "Enforcement_Policy",
+               "rules": [
+                  {
+                     "name": "enforcementPolicyRuleDefault",
+                     "precedence": 10
+                  }
+               ]
+            },
+            "profileClassification": {
+               "class": "Classification_Profile",
+               "preset": {
+                  "bigip": "/Common/ce_pem"
+               }
+            },
+            "profileIPOther": {
+               "class": "IP_Other_Profile"
+            },
+            "profileSpm": {
+               "class": "Enforcement_Profile",
+               "connectionOptimizationEnabled": true,
+               "policiesGlobalHighPrecedence": [
+                  {
+                     "use": "policyEnforcement"
+                  }
+               ],
+               "policiesUnknownSubscribers": [
+                  {
+                     "use": "policyEnforcementDefault"
+                  }
+               ]
+            },
+            "profileSubscriberManagement": {
+               "class": "Enforcement_Subscriber_Management_Profile",
+               "serverSideSessionsEnabled": true
+            },
+            "profileTcpClient": {
+               "autoProxyBufferSize": true,
+               "autoReceiveWindowSize": true,
+               "autoSendBufferSize": true,
+               "class": "TCP_Profile",
+               "congestionControl": "woodside",
+               "earlyRetransmit": true,
+               "enhancedLossRecovery": true,
+               "fastOpen": true,
+               "fastOpenCookieExpiration": 21600,
+               "idleTimeout": 300,
+               "initCwnd": 16,
+               "initRwnd": 16,
+               "maxSegmentSize": 0,
+               "minimumRto": 1000,
+               "mptcp": "passthrough",
+               "proxyBufferHigh": 262144,
+               "proxyBufferLow": 196608,
+               "proxyMSS": true,
+               "receiveWindowSize": 131072,
+               "sendBufferSize": 262144,
+               "synRtoBase": 3000,
+               "tailLossProbe": true,
+               "verifiedAccept": false
+            },
+            "profileTcpServer": {
+               "autoProxyBufferSize": true,
+               "autoReceiveWindowSize": true,
+               "autoSendBufferSize": true,
+               "class": "TCP_Profile",
+               "congestionControl": "woodside",
+               "earlyRetransmit": true,
+               "enhancedLossRecovery": true,
+               "fastOpen": true,
+               "fastOpenCookieExpiration": 21600,
+               "idleTimeout": 300,
+               "initCwnd": 16,
+               "initRwnd": 16,
+               "maxSegmentSize": 0,
+               "minimumRto": 1000,
+               "mptcp": "passthrough",
+               "proxyBufferHigh": 262144,
+               "proxyBufferLow": 196608,
+               "proxyMSS": true,
+               "receiveWindowSize": 131072,
+               "sendBufferSize": 262144,
+               "synRtoBase": 3000,
+               "tailLossProbe": true,
+               "verifiedAccept": false
+            },
+            "profileL4": {
+               "class": "L4_Profile"
             },
             "serviceAddress": {
                "class": "Service_Address",
                "arpEnabled": false,
+               "icmpEcho": "disable",
                "spanningEnabled": true,
                "virtualAddress": "0.0.0.0"
-            },
-            "dnsProfile": {
-               "class": "DNS_Profile",
-               "label": "profileDns",
-               "remark": "DNS Profile test",
-               "parentProfile": {
-                  "bigip": "/Common/dns"
-               },
-               "dnsExpressEnabled": true,
-               "localBindServerEnabled": false,
-               "zoneTransferEnabled": true,
-               "cacheEnabled": true,
-               "cache": {
-                  "use": "/DNS_Test/Shared/dnsCache"
-               }
-            },
-            "dnsCache": {
-               "class": "DNS_Cache",
-               "type": "transparent",
-               "localZones": {
-                  "faryna.lablocal": {
-                     "type": "transparent",
-                     "records": [
-                        "s1.faryna.lablocal 300 IN A 10.9.0.1",
-                        "s2.faryna.lablocal 300 IN A 10.9.0.2",
-                        "s3.faryna.lablocal 300 IN A 10.9.0.3",
-                        "s4.faryna.lablocal 300 IN A 10.9.0.4"
-                     ]
-                  }
-               }
             }
          },
-         "TEST_DNS_Zone": {
+         "gilan_any": {
             "class": "Application",
             "template": "generic",
-            "faryna.lab": {
-               "class": "DNS_Zone",
-               "label": "dnsZone",
-               "remark": "DNS Zone test",
-               "dnsExpress": {
-                  "enabled": true,
-                  "nameserver": {
-                     "use": "master_dns"
-                  },
-                  "notifyAction": "consume",
-                  "allowNotifyFrom": [
-                     "10.7.0.50"
-                  ],
-                  "verifyNotifyTsig": false
-               },
-               "responsePolicyEnabled": true,
-               "transferClients": [
+            "serviceMain": {
+               "allowVlans": [
                   {
-                     "use": "slave_dns"
+                     "bigip": "/Common/network_PGW_DAG"
                   }
-               ]
-            },
-            "master_dns": {
-               "class": "DNS_Nameserver",
-               "address": "10.7.0.50",
-               "port": 53,
-               "routeDomain": {
-                  "bigip": "/Common/0"
-               }
-            },
-            "slave_dns": {
-               "class": "DNS_Nameserver",
-               "address": "10.7.0.51",
-               "port": 53,
-               "routeDomain": {
-                  "bigip": "/Common/0"
-               }
+               ],
+               "class": "Service_Generic",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "any",
+               "profileClassification": {
+                  "use": "/f5vnf/Shared/profileClassification"
+               },
+               "profileIPOther": {
+                  "use": "/f5vnf/Shared/profileIPOther"
+               },
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "snat": "none",
+               "lastHop": "disable",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0
             }
          },
-         "dns_resolver": {
+         "gilan_tcp": {
+            "class": "Application",
+            "template": "tcp",
+            "serviceMain": {
+               "allowVlans": [
+                  {
+                     "bigip": "/Common/network_PGW_DAG"
+                  }
+               ],
+               "class": "Service_TCP",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "tcp",
+               "profileClassification": {
+                  "use": "/f5vnf/Shared/profileClassification"
+               },
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileTCP": {
+                  "bigip": "/Common/f5-tcp-mobile"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "snat": "none",
+               "lastHop": "disable",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0
+            }
+         },
+         "gilan_udp": {
             "class": "Application",
             "template": "udp",
             "serviceMain": {
                "allowVlans": [
                   {
-                     "bigip": "/Common/norbert_PGW_DAG"
+                     "bigip": "/Common/network_PGW_DAG"
                   }
                ],
                "class": "Service_UDP",
-               "layer4": "udp",
-               "profileUDP": {
-                  "bigip": "/Common/udp"
-               },
-               "profileDNS": {
-                  "use": "/DNS_Test/Shared/dnsProfile"
-               },
                "iRules": [
-                  "/DNS_Test/Shared/lbSelectedRule"
+                  "/f5vnf/Shared/lbSelectedRule"
                ],
-               "snat": "auto",
+               "layer4": "udp",
+               "profileClassification": {
+                  "use": "/f5vnf/Shared/profileClassification"
+               },
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "profileUDP": {
+                  "bigip": "/Common/udp_decrement_ttl"
+               },
+               "snat": "none",
                "lastHop": "disable",
-               "translateServerAddress": true,
-               "translateServerPort": true,
+               "translateServerAddress": false,
+               "translateServerPort": false,
                "virtualAddresses": [
                   {
-                     "use": "/DNS_Test/Shared/serviceAddress"
+                     "use": "/f5vnf/Shared/serviceAddress"
                   }
                ],
-               "virtualPort": 0,
-               "pool": "dns_pool"
-            },
-            "dns_pool": {
-               "class": "Pool",
-               "members": [
+               "virtualPort": 0
+            }
+         },
+         "gilan_http": {
+            "class": "Application",
+            "template": "http",
+            "serviceMain": {
+               "allowVlans": [
                   {
-                     "servicePort": 53,
-                     "serverAddresses": [
-                        "10.7.0.100"
-                     ]
+                     "bigip": "/Common/network_PGW_DAG"
                   }
-               ]
+               ],
+               "class": "Service_HTTP",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "tcp",
+               "profileClassification": {
+                  "use": "/f5vnf/Shared/profileClassification"
+               },
+               "profileHTTP": {
+                  "bigip": "/Common/http-transparent"
+               },
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "profileTCP": {
+                  "bigip": "/Common/f5-tcp-mobile"
+               },
+               "snat": "none",
+               "lastHop": "disable",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 80
+            }
+         },
+         "gilan_inbound": {
+            "class": "Application",
+            "template": "generic",
+            "serviceMain": {
+               "allowVlans": [
+                  {
+                     "bigip": "/Common/network_PDN_DAG"
+                  }
+               ],
+               "class": "Service_Generic",
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "layer4": "any",
+               "profileL4": {
+                  "use": "/f5vnf/Shared/profileL4"
+               },
+               "profileSubscriberManagement": {
+                  "use": "/f5vnf/Shared/profileSubscriberManagement"
+               },
+               "snat": "none",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0
             }
          }
       }

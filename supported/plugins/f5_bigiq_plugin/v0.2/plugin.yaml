@@ -1,0 +1,71 @@
+plugins:
+  bigiq:
+    executor: central_deployment_agent
+    package_name: f5-bigiq-plugin
+    package_version: '0.1'
+
+node_types:
+    f5.bigiq.nodes.inputs_validator:
+      derived_from: cloudify.nodes.Root
+      interfaces:
+        cloudify.interfaces.lifecycle:
+          configure:
+            implementation: bigiq.plugin.validation.validate
+
+    f5.bigiq.nodes.SoftwareReference:
+      derived_from: cloudify.nodes.Root
+      properties:
+        sw_ref:
+          default: {}
+        upgrade_sw_ref:
+          default: {}
+      interfaces:
+        cloudify.interfaces.lifecycle:
+          create:
+            implementation: bigiq.plugin.tasks.set_runtime_properties
+            inputs:
+              runtime_properties:
+                default:
+                  - name: sw_ref
+                    value: {get_property: [SELF, sw_ref]}
+                  - name: upgrade_sw_ref
+                    value: {get_property: [SELF, upgrade_sw_ref]}
+          upgrade_start:
+            implementation: bigiq.plugin.tasks.set_runtime_properties
+            inputs:
+              runtime_properties:
+                default: []
+          upgrade_finish:
+            implementation: bigiq.plugin.tasks.set_runtime_properties
+            inputs:
+              runtime_properties:
+                default:
+                  - name: sw_ref
+                    value: {get_attribute: [SELF, upgrade_sw_ref]}
+
+    f5.bigiq.nodes.Id:
+      derived_from: cloudify.nodes.Root
+      interfaces:
+        cloudify.interfaces.lifecycle:
+          configure:
+            implementation: bigiq.plugin.tasks.populate_ids
+
+    f5.bigiq.nodes.NetworkMaskCalculator:
+      derived_from: cloudify.nodes.Root
+      properties:
+        cidr:
+          type: string
+      interfaces:
+        cloudify.interfaces.lifecycle:
+          create: gilan.gilan_plugin.tasks.calculate_mask
+
+relationships:
+  f5.bigiq.relationships.set_runtime_properties:
+    derived_from: cloudify.relationships.depends_on
+    source_interfaces:
+      cloudify.interfaces.relationship_lifecycle:
+        preconfigure:
+          implementation: bigiq.plugin.relationships.set_runtime_properties
+          inputs:
+            runtime_properties:
+              default:  []
