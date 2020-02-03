@@ -9,7 +9,9 @@ F5 Networks engineers developed all of the plugins, inputs, and blueprints in th
 - **F5-Gi-Firewall** - plugins, inputs, and blueprints enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 - **F5-Base** -  plugins, inputs, and blueprints enabling you to instantiate a group of standalone BIG-IP VEs, on-boarding and licensing these VEs, and manually configure and run the full lifecycle management workflows.
 - **F5-VNF-DNS** - plugins, inputs, and blueprints enabling you to query and translate names for client requests. This DNS solution translates top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
-- **F5-VNF-DNS-Security** - plugins, inputs, and blueprints providing the VNF DNS service layer, as well as enabling you to clean the DNS queries.
+
+<!--  - **F5-VNF-DNS-Security** - plugins, inputs, and blueprints providing the VNF DNS service layer, as well as enabling you to clean the DNS queries.    -->
+
 
 Consult the [F5 VNF Manager product documents](https://clouddocs.f5.com/cloud/nfv/latest/) for complete user documentation. 
 Consult the [product compatibility matrix](https://support.f5.com/csp/article/K29047312), for a complete list of released, NFV-related plugins and blueprints. 
@@ -35,3 +37,6 @@ Unless required by applicable law or agreed to in writing, software distributed 
 
 ##### Contributor License Agreement
 Individuals or business entities who contribute to this project must have completed and submitted the F5 Contributor License Agreement.
+
+
+ 
