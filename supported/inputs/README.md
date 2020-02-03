@@ -10,7 +10,7 @@ The inputs directory is organized by VNFM version. The sets of inputs can change
 Visit the F5 VNFM product documentation for more details about:
 
 - Required <a href="https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites" target="_blank">prerequisites</a>  
-- OpenStack Newton 10 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/openstack-setup.html)
+- OpenStack system requirements for [Newton v10](https://clouddocs.f5.com/cloud/nfv/latest/openstack-setup.html) and [Queens v13](https://docs.openstack.org/releasenotes/openstack-manuals/queens.html) (for F5 VNFM 1.3.X)
 - VMware vSphere ESXi 6.5 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
 
 ### To use inputs files

@@ -1,6 +1,6 @@
 ## About the F5-VNF-Service-Layer-Base_v1.3.1 solution blueprint
 
-This version contains the following new features:
+This version contains support for following new features:
 
 * **DNS blueprint PREVIEW** - A PREVIEW version of the standalone F5 DNS solution blueprint that queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org.
 * **Upgraded to AS3 extension v3.16.0** - The Gi LAN, Gi Firewall, DNS-enabled, and CGNAT-enabled blueprints now use an updated F5 AS3 Extension. A sample AS3 declaration is included in the supported NFV solution inputs files on GitHub. 
@@ -8,8 +8,10 @@ This version contains the following new features:
 * **Support deployment to multiple VIMs (multi-VIM or -hypervisor)** - You can use one VNFM manager cluster provisioned in a VMware/OpenStack hypervisor that deploys solutions to other VMware or OpenStack hypervisors. This setup requires a new datacenter input defined for all blueprint solutions. Regardless of which VIM you use, you will now see blueprints for both OpenStack and VMware on the VNFM dashboard.
 * **Support for OpenStack without DHCP** - You can now provision F5 VNF Manager in your OpenStack VIM implemented without DHCP when NOT using security groups.
 * **Support for BIG-IP VE 14.1.X** - You can now download BIG-IP VE 14.1.X for use with all F5 NFV solution blueprints.
-* Management network MTU value (OpenStack) - If the OpenStack/VIO API does not set the MTU value for your management network, then VNF Manager will use 1500 as the default value.
+* **Management network MTU value (OpenStack)** - If the OpenStack/VIO API does not set the **MTU** value for your management network, then VNF Manager will use **1500** as the default value.
 * **Renamed and added secrets** - Renamed all existing VIM-specific secrets appending ``_default`` to distinguish the VNFM’s secret from other similar secrets added to accommodate multi-VIM configurations. Added two new OpenStack, keystone secrets; ``keystone_allow_insecure_default`` and ``keystone_ca_cert_default``.
+
+Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
 #### Copyright
 Copyright 2014-2020 F5 Networks Inc.

@@ -14,7 +14,7 @@ The following list provides a brief description of each solution blueprint:
 Visit the F5 VNFM product documentation for more details about:
 
 - Required [prerequisites](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites)  
-- OpenStack [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/openstack-setup.html)
+- OpenStack system requirements for [Newton v10](https://clouddocs.f5.com/cloud/nfv/latest/openstack-setup.html) and [Queens v13](https://docs.openstack.org/releasenotes/openstack-manuals/queens.html) (for F5 VNFM 1.3.X)
 - VMware vSphere ESXi [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
 
 ### Download blueprints

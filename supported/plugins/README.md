@@ -12,7 +12,7 @@ You can download and install the following supported plugins:
 - **f5-bigiq-plugin** - This plugin runs blueprints and functions that auto-configure the BIG-IQ license manager utility. This plugin is new for 1.2.1 and later.  
 
 
-**Note**: F5 Gi LAN and F5 RIC plugins are required for the VNFM Gi-LAN, Gi-Firewall, and VNFM Base blueprint solutions.                      
+**Note**: F5 Gi LAN and F5 RIC plugins are required for the VNFM Gi-LAN, Gi-Firewall, VNFM-DNS, and VNFM Base blueprint solutions.                      
 
 ### Download plugins
 
