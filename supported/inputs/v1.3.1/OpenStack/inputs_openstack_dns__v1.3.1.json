@@ -1,6 +1,6 @@
 {
    "mgmt_net": "norbert_MGMT",
-   "mgmt_subnet_cidr": "10.0.0.0/24",
+   "mgmt_subnet": "10.0.0.0/24",
    "mgmt_default_gw": "10.0.0.254.",
    "mgmt_dns": "8.8.8.8",
    "mgmt_ip_range": "10.0.0.128/26",
@@ -8,13 +8,11 @@
    "ctrl_net": "changeme_CTRL",
    "ctrl_subnet_cidr": "10.1.0.0/24",
    "ctrl_ip_range": "10.1.0.128/26",
-   "ctrl_net_sw_dist": "true.",
    "ha_net": "changeme_HA",
    "ha_subnet_cidr": "10.2.0.0/24",
    "ha_ip_range": "10.2.0.128/26",
-   "ha_net_sw_dist": true,
    "pdn_net": "norbert_PDN",
-   "pdn_subnet_cidr": "10.3.0.0/24",
+   "pdn_subnet": "10.3.0.0/24",
    "pdn_ip_range": "10.3.0.128/26",
    "pdn_net_sw_dist": true,
    "pgw_net": "changeme_PGW",
@@ -22,11 +20,11 @@
    "pgw_ip_range": "10.4.0.128/26",
    "pgw_net_sw_dist": true,
    "pdn_dag_net": "changeme_PDN_DAG",
-   "pdn_dag_subnet_cidr": "10.5.0.0/24",
+   "pdn_dag_subnet": "changeme_pdn_dag-subnet",
    "pdn_dag_ip_range": "10.5.0.128/26",
    "pdn_dag_net_sw_dist": true,
-   "pgw_dag_net": "norbert_PGW_DAG",
-   "pgw_dag_subnet_cidr": "10.6.0.0/24",
+   "pgw_dag_net": "changeme_PGW_DAG",
+   "pgw_dag_subnet": "pgw_dag-subnet",
    "pgw_dag_ip_range": "10.6.0.128/26",
    "pgw_dag_net_sw_dist": true,
    "bgp_dag_pgw_peer_ip": "10.4.0.1",
@@ -59,6 +57,11 @@
    },
    "big_iq_host": "10.0.0.105",
    "big_iq_lic_pool": "BIGIP_1",
+   "ctrl_sg_name": "control_sg",
+   "mgmt_sg_name": "mgmt_sg",
+   "pgw_sg_name": "pgw_sg",
+   "pdn_sg_name": "pdn_sg",
+   "snmp_sg_name": "snmp_sg",
    "ric_purchasing_model": "subscription",
    "ric_vnfm_serial": "12345",
    "auto_last_hop": "disabled",
@@ -67,6 +70,7 @@
    "max_heal_vnfd_dag_ve": "10",
    "max_heal_vnf_layer": "10",
    "max_heal_vnf_slave_ve": "10",
+   "floating_network_id": "fa541932-4156-4185-8344-a961cf4c8e41",
    "vnf_layer_cpu_threshold": "85",
    "vnf_layer_cpu_threshold_check_interval": "1",
    "vnf_group_throughput": "20",
@@ -118,13 +122,13 @@
                "class": "DNS_Cache",
                "type": "transparent",
                "localZones": {
-                  "faryna.lablocal": {
+                  "testing.lablocal": {
                      "type": "transparent",
                      "records": [
-                        "s1.faryna.lablocal 300 IN A 10.9.0.1",
-                        "s2.faryna.lablocal 300 IN A 10.9.0.2",
-                        "s3.faryna.lablocal 300 IN A 10.9.0.3",
-                        "s4.faryna.lablocal 300 IN A 10.9.0.4"
+                        "s1.testing.lablocal 300 IN A 10.9.0.1",
+                        "s2.testing.lablocal 300 IN A 10.9.0.2",
+                        "s3.testing.lablocal 300 IN A 10.9.0.3",
+                        "s4.testing.lablocal 300 IN A 10.9.0.4"
                      ]
                   }
                }
@@ -133,7 +137,7 @@
          "TEST_DNS_Zone": {
             "class": "Application",
             "template": "generic",
-            "faryna.lab": {
+            "test.lab": {
                "class": "DNS_Zone",
                "label": "dnsZone",
                "remark": "DNS Zone test",
@@ -178,7 +182,7 @@
             "serviceMain": {
                "allowVlans": [
                   {
-                     "bigip": "/Common/norbert_PGW_DAG"
+                     "bigip": "/Common/pgw_dag"
                   }
                ],
                "class": "Service_UDP",

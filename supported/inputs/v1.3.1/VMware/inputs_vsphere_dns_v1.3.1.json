@@ -118,13 +118,13 @@
                "class": "DNS_Cache",
                "type": "transparent",
                "localZones": {
-                  "faryna.lablocal": {
+                  "testing.lablocal": {
                      "type": "transparent",
                      "records": [
-                        "s1.faryna.lablocal 300 IN A 10.9.0.1",
-                        "s2.faryna.lablocal 300 IN A 10.9.0.2",
-                        "s3.faryna.lablocal 300 IN A 10.9.0.3",
-                        "s4.faryna.lablocal 300 IN A 10.9.0.4"
+                        "s1.testing.lablocal 300 IN A 10.9.0.1",
+                        "s2.testing.lablocal 300 IN A 10.9.0.2",
+                        "s3.testing.lablocal 300 IN A 10.9.0.3",
+                        "s4.testing.lablocal 300 IN A 10.9.0.4"
                      ]
                   }
                }
@@ -133,7 +133,7 @@
          "TEST_DNS_Zone": {
             "class": "Application",
             "template": "generic",
-            "faryna.lab": {
+            "test.lab": {
                "class": "DNS_Zone",
                "label": "dnsZone",
                "remark": "DNS Zone test",
@@ -178,7 +178,7 @@
             "serviceMain": {
                "allowVlans": [
                   {
-                     "bigip": "/Common/norbert_PGW_DAG"
+                     "bigip": "/Common/test_PGW_DAG"
                   }
                ],
                "class": "Service_UDP",

@@ -96,10 +96,9 @@ dag_group_cpu_threshold_check_interval: '1'   # Interval between checks, in minu
 bigip_ssh_key: mykey                # Name of the VIM SSH key that you will import into the BIG-IP VE instances.
 ntp_server: 'string'    	    # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used (for example, pool.ntp.org) 
 timezone: America/Los_Angeles	    # Enter the local timezone using the TZ database name for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC.
-datacenter:  'string'               # String value used multi-VIM configuration, defining the target data center for this deployment, and identifying the group of secrets to use in a multi-VIM configuration (for example, datacenter_southwest-region).
+datacenter:  'string'               # Optional string value used for multi-VIM configuration, defining the target data center for this deployment, and identifying the group of secrets to use in a multi-VIM configuration (for example, datacenter_southwest-region).
 
 
-# AS3 declaration for DNS
 vnf_as3_nsd_payload:
   class: ADC
   updateMode: selective
@@ -130,23 +129,23 @@ vnf_as3_nsd_payload:
         zoneTransferEnabled: true
         localBindServerEnabled: false
         cacheEnabled: true
-        cache: 
+        cache:
           use: /DNS_Test/Shared/dnsCache
       dnsCache:
         class: DNS_Cache
         type: transparent
         localZones:
-          faryna.lablocal:
+          testing.lablocal:
             type: transparent
             records:
-            - s1.faryna.lablocal 300 IN A 10.9.0.1
-            - s2.faryna.lablocal 300 IN A 10.9.0.2
-            - s3.faryna.lablocal 300 IN A 10.9.0.3
-            - s4.faryna.lablocal 300 IN A 10.9.0.4        
+            - s1.testing.lablocal 300 IN A 10.9.0.1
+            - s2.testing.lablocal 300 IN A 10.9.0.2
+            - s3.testing.lablocal 300 IN A 10.9.0.3
+            - s4.testing.lablocal 300 IN A 10.9.0.4
     TEST_DNS_Zone:
       class: Application
       template: generic
-      faryna.lab:
+      test.lab:
         class: DNS_Zone
         label: dnsZone
         remark: DNS Zone test
@@ -178,7 +177,7 @@ vnf_as3_nsd_payload:
       template: udp
       serviceMain:
         allowVlans:
-        - bigip: /Common/norbert_PGW_DAG
+        - bigip: /Common/test_PGW_DAG
         class: Service_UDP
         layer4: udp
         profileUDP:
