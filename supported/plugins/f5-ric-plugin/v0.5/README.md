@@ -3,7 +3,7 @@ This is the 0.5 version of the Resource Information Collector plugin, enabling u
  
  - Gi LAN version 1.3.1 and later
  - Gi Firewall 1.3.1 and later
- - DNS  1.3.1 and later
+ - Standalione DNS (preview)  1.3.1 and later 
 
 
 #### Copyright

@@ -8,7 +8,7 @@ F5 Networks engineers developed all of the plugins, inputs, and blueprints in th
 - **F5-Gi-LAN** - plugins, inputs, and blueprints enabling you to automatically deploy all the necessary pieces to create a highly-available set of services, deployed in service layers. These layers auto-scale virtual machines and services to provide a complete and fully configured lifecycle management workflow: install, scale, heal, update, upgrade, and delete. 
 - **F5-Gi-Firewall** - plugins, inputs, and blueprints enabling you to utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection.
 - **F5-Base** -  plugins, inputs, and blueprints enabling you to instantiate a group of standalone BIG-IP VEs, on-boarding and licensing these VEs, and manually configure and run the full lifecycle management workflows.
-- **F5-VNF-DNS** - plugins, inputs, and blueprints enabling you to query and translate names for client requests. This DNS solution translates top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
+- **F5-VNF-DNS** - a preview of plugins, inputs, and blueprints enabling you to query and translate names for client requests. This preview DNS solution translates top-level Internet domains, such as .com, /net, .gov, .edu, and .org. 
 
 <!--  - **F5-VNF-DNS-Security** - plugins, inputs, and blueprints providing the VNF DNS service layer, as well as enabling you to clean the DNS queries.    -->
 

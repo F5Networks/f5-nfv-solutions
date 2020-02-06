@@ -1,6 +1,6 @@
 ## About the F5 VNF DNS solution blueprint
 
-The standalone F5 DNS solution is provided in F5 VNFM version 1.3.1 and later. This solution queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org. This solution blueprint will deploy into the same space as the Gi LAN solution; such as, between the packet gateway and the Internet. Scaling and usage-billing is based on queries cleaned/second, so once you reach the internally defined threshold, VNFM will auto-scale an additional layer to meet your system demands.
+A preview of the standalone F5 DNS solution is provided in F5 VNFM version 1.3.1 and later. This solution queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org. This solution blueprint will deploy into the same space as the Gi LAN solution; such as, between the packet gateway and the Internet. Scaling and usage-billing is based on queries cleaned/second, so once you reach the internally defined threshold, VNFM will auto-scale an additional layer to meet your system demands.
 
 #### Copyright
 Copyright 2014-2020 F5 Networks Inc.
