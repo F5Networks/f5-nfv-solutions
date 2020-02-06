@@ -25,5 +25,3 @@ sw_ref_bigiq: {"data":{"image":"BIG-IQ-6.0.1.0.0.813", "flavor":"f5.large", "ava
 ntp_server: 0.north-america.pool.ntp.org                                               # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used.
 
 timezone: America/Los_Angeles                                                          # Enter the local timezone for the location of your application server; for example, Pacific/Pago_Pago. Default value is UTC. For acceptable values, consult https://en.wikipedia.org/wiki/List_of_tz_database_time_zones.
-
-datacenter:  'string'               # String value used multi-VIM configuration, defining the target data center for this deployment, and identifying the group of secrets to use in a multi-VIM configuration (for example, datacenter_southwest-region).

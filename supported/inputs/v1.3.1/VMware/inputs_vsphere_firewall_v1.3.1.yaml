@@ -97,7 +97,6 @@ bigip_ssh_key: mykey                # Name of the VIM SSH key that you will impo
 ntp_server: 10.0.0.106.             # The IP address or DNS name of the NTP server.    
 timezone: America/Los_Angeles.      # Enter the local timezone for the location of your application server; for example, Pacific/Pago_Pago.
 
-datacenter:  'string'               # String value used multi-VIM configuration, defining the target data center for this deployment, and identifying the group of secrets to use in a multi-VIM configuration (for example, datacenter_southwest-region).
 
 
 ##  CGNAT Inputs ## 

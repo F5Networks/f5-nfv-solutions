@@ -71,7 +71,6 @@
    "ntp_server": "132.163.96.1",
    "timezone": "string",
    "security_groups": "enable",
-   "datacenter": "string",
    "cgnat_ip_ranges": [
       "10.10.44.32-10.10.44.164"
    ],

@@ -71,7 +71,6 @@
    "default_gateway": "10.5.0.1",
    "ntp_server": "pool.ntp.org",
    "timezone": "America/Los_Angeles",
-   "datacenter": "string",
    "cgnat_ip_ranges": [
       "10.10.44.32-10.10.44.164"
    ],

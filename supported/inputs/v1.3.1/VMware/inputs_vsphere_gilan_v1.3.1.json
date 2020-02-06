@@ -77,7 +77,6 @@
    "bigip_ssh_key": "mykey",
    "ntp_server": "string",
    "timezone": "America/Los_Angeles",
-   "datacenter": "string",
    "cgnat_ip_ranges": [
       "10.9.200.32-10.9.200.64",
       "10.9.201.32-10.9.201.64"

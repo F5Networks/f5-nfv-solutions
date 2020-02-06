@@ -20,5 +20,4 @@
    },
    "ntp_server": "0.north-america.pool.ntp.org",
    "timezone": "America/Los_Angeles",
-   "datacenter": "string"
 }

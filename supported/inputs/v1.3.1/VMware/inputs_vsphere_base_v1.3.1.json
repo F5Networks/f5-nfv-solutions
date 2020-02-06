@@ -32,5 +32,4 @@
    "external_net_sw_dist": true,
    "ntp_server": "pool.ntp.org",
    "timezone": "America/Los_Angeles",
-   "datacenter": "string"
 }

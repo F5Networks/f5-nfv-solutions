@@ -100,8 +100,6 @@ timezone: 'string'              # Local timezone using the TZ database name for 
 
 security_groups: enable         # String value to enable/disable security groups for Nagios, DAG, and VNF nodes. Enabling will include the appropriate security groups for Nagios, DAG, and VNF nodes, disabling will disable ALL security groups, including the default security group created for every instance in OpenStack.
 
-datacenter:  'string'               # String value used multi-VIM configuration, defining the target data center for this deployment, and identifying the group of secrets to use in a multi-VIM configuration (for example, datacenter_southwest-region).
-
 # CGNAT Inputs
 cgnat_ip_ranges:                      # Set for enabling CGNAT. Enter the IP address range for each address list. For example, '192.168.1.100-192.168.1.150' and '192.168.1.155-192.168.1.160'.
   - '10.10.44.32-10.10.44.164'
