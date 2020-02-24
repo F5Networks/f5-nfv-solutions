@@ -36,15 +36,15 @@ vnf_group_throughput_check_interval: '1'    # Interval between checks, in minute
 
 # vnic SR-IOV binding types
 vnic_binding_type: # Required dictionary used to define the type of NIC in OpenStack. Default value is set to "normal". Options include: normal, macvtap, direct, baremetal, direct-physical, virtio-forwarder, and smart-nic.
-  mgmt_port: normal
-  ha_port: normal
-  ctrl_port: normal
-  pdn_dag_port: direct
-  pgw_dag_port: direct
-  pgw_port: direct
-  pdn_port: direct
-  vip_pgw_dag_port: normal
-  vip_pdn_dag_port: normal
+  mgmt_port: "normal"
+  ha_port: "normal"
+  ctrl_port: "normal"
+  pdn_dag_port: "normal"
+  pgw_dag_port: "normal"
+  pgw_port: "normal"
+  pdn_port: "normal"
+  vip_pgw_dag_port: "normal"
+  vip_pdn_dag_port: "normal"
 
 
 
