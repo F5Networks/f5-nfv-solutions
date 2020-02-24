@@ -19,6 +19,17 @@
    "vnf_group_throughput_check_interval": "1",
    "dag_group_cpu_threshold": "89",
    "dag_group_cpu_threshold_check_interval": "1",
+   "vnic_binding_type": {
+      "mgmt_port": "normal",
+      "ha_port": "normal",
+      "ctrl_port": "normal",
+      "pdn_dag_port": "direct",
+      "pgw_dag_port": "direct",
+      "pgw_port": "direct",
+      "pdn_port": "direct",
+      "vip_pgw_dag_port": "normal",
+      "vip_pdn_dag_port": "normal"
+   },
    "manager_mgmt_host": "10.0.0.106",
    "security_groups": "enable",
    "sw_ref_nagios": {

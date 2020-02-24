@@ -34,6 +34,19 @@ vnf_group_throughput_check_interval: '1'    # Interval between checks, in minute
 dag_group_cpu_threshold: '89'         # New instance is added to group when the percentage of average aggregate Global TMM CPU usage of all DAG group instances exceeds this value (for example, 75).
 dag_group_cpu_threshold_check_interval: '1'    # Interval between checks, in minutes.
 
+# vnic SR-IOV binding types
+vnic_binding_type: # Required dictionary used to define the type of NIC in OpenStack. Default value is set to "normal". Options include: normal, macvtap, direct, baremetal, direct-physical, virtio-forwarder, and smart-nic.
+  mgmt_port: normal
+  ha_port: normal
+  ctrl_port: normal
+  pdn_dag_port: direct
+  pgw_dag_port: direct
+  pgw_port: direct
+  pdn_port: direct
+  vip_pgw_dag_port: normal
+  vip_pdn_dag_port: normal
+
+
 # Common inputs
 manager_mgmt_host: 10.0.0.106         # The internal IP address of the VNF Manager instance.
 security_groups: enable               # String value to enable/disable security groups for Nagios, DAG, and VNF nodes. Enabling will include the appropriate security groups for Nagios, DAG, and VNF nodes, disabling will disable ALL security groups, including the default security group created for every instance in OpenStack.
