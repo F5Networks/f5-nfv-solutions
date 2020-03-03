@@ -22,11 +22,11 @@ The following table describes the supported plugin versions available in this re
 |                           | F5-VNF-Service-Layer-Firewall_v1.2.1.0       | inputs_firewall_v1.2.1    |
 |                           | F5-VNF-Service-Layer-Base_v1.2.1.0           | inputs_base_v1.2.1.0      |
 |                           |                                              |                           |
-| f5-gilan-plugin 0.2.52    | F5-VNF-Service-Layer-GiLAN_v1.3              | inputs_gilan_v1.3         |
-|                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.3      | inputs_firewall_v1.3      |
+| f5-gilan-plugin 0.2.52    | F5-VNF-Service-Layer-GiLAN_v1.3.X            | inputs_gilan_v1.3         |
+|                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.3.X    | inputs_firewall_v1.3      |
 |                           | F5-VNF-Service-Layer-Firewall_v1.3           | inputs_base_v1.3          |
-|                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.3   | inputs_base_v1.3          | 
-|                           | F5-VNF-Service-Layer-Base_v1.3               | inputs_dns_v1.3.1         |
+|                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.3.X | inputs_base_v1.3          | 
+|                           | F5-VNF-Service-Layer-Base_v1.3.X             | inputs_dns_v1.3.1         |
 |                           | F5-VNF-Service-Layer-DNS_v1.3.1              |                           |
 |                           |                                              |                           |                                               | f5-ric-plugin 0.4         | F5-VNF-Service-Layer-GiLAN_v1.X              | inputs_gilan_v1.X         |
 |                           | F5-VNF-Service-Layer-Firewall_v1.X           | inputs_firewall_v1.X      |
