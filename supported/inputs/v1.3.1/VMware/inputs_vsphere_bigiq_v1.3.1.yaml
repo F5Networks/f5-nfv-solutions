@@ -20,7 +20,7 @@ mgmt_net_sw_dist:                                                               
 
 mgmt_subnet_cidr:                                                                      # CIDR for Management network to allocate IPs
 
-sw_ref_bigiq: {"data":{"image":"BIG-IQ-6.0.1.0.0.813", "flavor":"f5.large", "availability_zone":"nova"}, "revision":0}             # The dictionary that defines the BIG-IQ image name, flavor name, availability zone (OpenStack only), and revision value to use for the BIG-IQ HA pair instance.
+sw_ref_bigiq: {"data":{"configuration":"quadcpu","template":"BIG-IQ-6.1.0.0.0.1224"},"revision":0}             # The dictionary that defines the BIG-IQ image name, flavor name, availability zone (OpenStack only), and revision value to use for the BIG-IQ HA pair instance.
 
 ntp_server: 0.north-america.pool.ntp.org                                               # The IP address or DNS name of the NTP server. If not specified, the default 132.163.96.1 value is used.
 
