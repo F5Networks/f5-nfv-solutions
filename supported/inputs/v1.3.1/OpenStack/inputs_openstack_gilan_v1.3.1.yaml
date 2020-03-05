@@ -107,6 +107,7 @@ timezone: America/Los_Angeles         # Enter the local timezone for the locatio
 # CGNAT Inputs
 cgnat_ip_ranges:                      # Set for enabling CGNAT. Enter the IP address range for each address list. For example, '192.168.1.100-192.168.1.150' and '192.168.1.155-192.168.1.160'.
   - '10.10.44.32-10.10.44.164'
+  - '192.168.1.155-192.168.1.160' 
 cgnat_resource_id: '/f5vnf/gilan_http/natSourceTranslation/addresses'      # Set for enabling CGNAT. Value CANNOT be blank. Enter the reference to a NAT source translation pool that you want VNFM to manage and that you defined in your AS3 declaration. A pointer to the IP pool that you want VNFM to manage; for example, "/Sample_22/A1/natSourceTranslation/addresses".
 starting_ip_number: '5'               # Set for enabling CGNAT. Enter the number of IP addresses initially assigned to each VNF VE. Default value is 5.  
 increment_ip_number: '2'              # Set for enabling CGNAT. Enter the number of IP addresses to add during the Increment IPs workflow. Default value is 2.

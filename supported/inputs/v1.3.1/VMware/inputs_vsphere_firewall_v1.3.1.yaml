@@ -100,7 +100,7 @@ timezone: America/Los_Angeles.      # Enter the local timezone for the location 
 
 
 ##  CGNAT Inputs ## 
-cgnat_ip_ranges:                    # Change to your IP address range for each LSN pool list (for example, '192.168.1.100-192.168.1.150' and '192.168.1.155-192.168.1.160').            
+cgnat_ip_ranges:                    # Change to a list of IP address ranges for each LSN pool list (for example, '192.168.1.100-192.168.1.150' and '192.168.1.155-192.168.1.160').            
   - '10.9.200.32-10.9.200.64'
   - '10.9.201.32-10.9.201.64'
 cgnat_resource_id: '/f5vnf/gilan_http/natSourceTranslation/addresses'    # Change to your reference/pointer to your NAT source translation pool that you want VNFM to manage and that you defined in your AS3 declaration (policyNAT). For example, "/Sample_22/A1/natSourceTranslation/addresses"

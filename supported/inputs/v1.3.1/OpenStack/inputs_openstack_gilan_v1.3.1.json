@@ -83,7 +83,8 @@
    "ntp_server": "pool.ntp.org",
    "timezone": "America/Los_Angeles",
    "cgnat_ip_ranges": [
-      "10.10.44.32-10.10.44.164"
+      "10.10.44.32-10.10.44.164",
+      "192.168.1.155-192.168.1.160"
    ],
    "cgnat_resource_id": "/f5vnf/gilan_http/natSourceTranslation/addresses",
    "starting_ip_number": "5",

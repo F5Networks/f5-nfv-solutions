@@ -29,7 +29,7 @@ internal_net: network_PGW              # The name of the pre-existing internal n
 
 internal_subnet_cidr: 10.4.0.0/24      # The network ID and subnet mask for the applicable network; for example, 10.6.149.0/24.
 
-pgw_ip_range:                          # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses.
+internal_ip_range:                     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses.
   - '10.4.0.128-10.4.0.191'
 
 internal_net_sw_dist: true             # The vSphere switch distributed flag for internal network.
@@ -38,7 +38,7 @@ external_net: network_PDN              # The vSphere switch distributed flag for
 
 external_subnet_cidr: 10.3.0.0/24      # The network ID and subnet mask for the applicable network; for example, 10.6.149.0/24.
 
-pdn_ip_range:                          # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses.
+external_ip_range:                     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses.
   - '10.3.0.128-10.3.0.191'
 
 external_net_sw_dist: true             # The vSphere switch distributed flag for external network.
