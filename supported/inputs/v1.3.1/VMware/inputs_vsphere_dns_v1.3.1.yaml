@@ -1,5 +1,5 @@
 ## NETWORKING CONFIG ##
-mgmt_net: norbert_MGMT
+mgmt_net: my_MGMT
 mgmt_subnet_cidr: 10.0.0.0/24  # The subnet and netmask for the management network; for example, 10.146.130.0/23.
 mgmt_default_gw: 10.0.0.254.   # Default gateway used for management network.
 mgmt_dns: 8.8.8.8   # DNS server address used for management network.
@@ -16,7 +16,7 @@ ha_subnet_cidr: 10.2.0.0/24  # The subnet and netmask for the HA network; for ex
 ha_ip_range: 10.2.0.128/26   # The IP range defined for the high availability network; for example, 10.40.0.2-10.40.0.100.
 ha_net_sw_dist: true         # The vSphere switch distributed flag for HA network. Set to true if your system uses a distributed switch on this network or false if not.
 
-pdn_net: norbert_PDN
+pdn_net: my_PDN
 pdn_subnet_cidr: 10.3.0.0/24    # The subnet and netmask for the provider network; for example, 10.3.149.0/24.
 pdn_ip_range: 10.3.0.128/26     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.0.0.2-10.0.0.20, 10.0.0.21-10.0.0.30, and so forth.
 pdn_net_sw_dist: true           # The name of the pre-existing PDN network.
@@ -31,7 +31,7 @@ pdn_dag_subnet_cidr: 10.5.0.0/24  # The subnet and netmask for the provider netw
 pdn_dag_ip_range: 10.5.0.128/26   # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.15.0.2-10.15.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.15.0.2-10.15.0.20, 10.15.0.21-10.15.0.30, and so forth.  
 pdn_dag_net_sw_dist: true         # The vSphere switch distributed flag for PDN DAG network. Set to true if your system uses a distributed switch on this network or false if not.
 
-pgw_dag_net: norbert_PGW_DAG
+pgw_dag_net: my_PGW_DAG
 pgw_dag_subnet_cidr: 10.6.0.0/24  # The subnet and netmask for the package gateway network for the DAG group; for example, 10.6.149.0/24.
 pgw_dag_ip_range: 10.6.0.128/26   # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.20.0.2-10.20.0.100, enabling you to assign 98 addresses. You can also create multiple, smaller IP address groups with that larger range; for example, 10.20.0.2-10.20.0.20, 10.20.0.21-10.20.0.30, and so forth.  
 pgw_dag_net_sw_dist: true        # The vSphere switch distributed flag for PGW DAG network. Set to true if your system uses a distributed switch on this network or false if not.

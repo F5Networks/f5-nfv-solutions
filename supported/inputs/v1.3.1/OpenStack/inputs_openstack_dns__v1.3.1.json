@@ -1,5 +1,5 @@
 {
-   "mgmt_net": "norbert_MGMT",
+   "mgmt_net": "my_MGMT",
    "mgmt_subnet": "10.0.0.0/24",
    "mgmt_default_gw": "10.0.0.254.",
    "mgmt_dns": "8.8.8.8",
@@ -11,7 +11,7 @@
    "ha_net": "changeme_HA",
    "ha_subnet_cidr": "10.2.0.0/24",
    "ha_ip_range": "10.2.0.128/26",
-   "pdn_net": "norbert_PDN",
+   "pdn_net": "my_PDN",
    "pdn_subnet": "10.3.0.0/24",
    "pdn_ip_range": "10.3.0.128/26",
    "pdn_net_sw_dist": true,
