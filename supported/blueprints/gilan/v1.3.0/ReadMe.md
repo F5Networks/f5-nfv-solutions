@@ -13,7 +13,7 @@ Due to the changes added for enabling CGNAT, there are now two different bluepri
 * vSphere-F5-VNF-Service-Layer-GiLAN - VMware vSphere VIM
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 

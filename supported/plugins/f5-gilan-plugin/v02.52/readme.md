@@ -9,9 +9,10 @@ Updated inputs files for all solution blueprints for OpenStack VIM:
 
 This version is used to deploy the following blueprint versions:
 
-- v1.3/F5-VNF-Service-Layer-Base
-- v1.3/F5-VNF-Service-Layer-GiLAN
-- v1.3/F5-VNF-Service-Layer-Firewall
+- v1.3.0-1.3.1/F5-VNF-Service-Layer-Base
+- v1.3.0-1.3.1/F5-VNF-Service-Layer-GiLAN
+- v1.3.0-1.3.1/F5-VNF-Service-Layer-Firewall
+- v1.3.0-1.3.1/F5-VNF-Service-Layer-DNS (standalone PREVIEW)
 
 ### To upgrade plugins
 
@@ -21,7 +22,7 @@ then redeploy associated blueprints with the new plugin version.
 3. Delete the old version of the plugin.
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 

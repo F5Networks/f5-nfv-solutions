@@ -1,0 +1,575 @@
+# VNF Resource Information Collector inputs
+ric_purchasing_model: perpetual     # Purchasing model for licensing (options include: subscription or perpetual).
+ric_vnfm_serial:                    # VNFM license key provided in your email from F5 (used for support purposes only).
+auto_last_hop: "disabled"           # Controls how the DAG receives return traffic from the internet. Enable this input, if using an F5 device to NAT outbound connections; otherwise, disable.
+
+# vnf inputs
+ctrl_net: control                   # Control network name, where F5 NFV solutions connect to processes, like subscriber service-charging.
+ctrl_subnet: control                # Control network subnet name.
+ha_net: ha_net                      # Hgh availability network name (for config. sync and network failover purposes).
+ha_subnet: ha_net_subnet			# High availability network subnet name.
+
+# min/max total number of 'instances' that can be created during scale out
+
+#   min/max dag group members
+max_scale_dag_group: '1000'         # Maximum number of layers to which the DAG group will scale.
+
+#   min/max
+max_scale_vnf_group: '1000'         # Maximum number of layers to which the VNF group will scale.
+
+# max number of times that a heal can be tried before giving up.
+max_heal_vnfd_dag_ve: '5'           # Maximum number of times a DAG VE will heal before it stops trying and shows an error.
+max_heal_vnf_layer: '5'             # Maximum number of times a layer will heal before it stops trying and returns an error.
+max_heal_vnf_slave_ve: '5'          # Maximum number of times a slave VE will heal before it stops trying and returns an error.
+
+# monitoring inputs
+floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41       # As of version 1.3.0 and later, this input is OPTIONAL. The OpenStack ID or external network name where you assigned a floating IP addresses (for example, external_net).
+
+# vnf layer scaling inputs
+vnf_layer_cpu_threshold: '75'       # Maximum number of times a slave VE will heal before it stops trying and returns an error.
+vnf_layer_cpu_threshold_check_interval: '1' # Interval between checks, in minutes.
+
+# vnf group scaling inputs
+vnf_group_throughput: '10'                  # The desired aggregate throughput (Gigabits In Out) for every layer in the group. Example values: 5 for 5 gig, 0 for 10 gig, 0.5 for 500mb.
+vnf_group_throughput_threshold: '75'        # New layer is added to group when the percentage of average aggregate layer throughput exceeds this value (for example, 75).
+vnf_group_throughput_check_interval: '1'    # Interval between checks, in minutes.
+
+# vnic SR-IOV binding types
+vnic_binding_type: # Required dictionary used to define the type of NIC in OpenStack. Default value is set to "normal". Options include: normal, macvtap, direct, baremetal, direct-physical, virtio-forwarder, and smart-nic.
+  mgmt_port: "normal"
+  ha_port: "normal"
+  ctrl_port: "normal"
+  pdn_dag_port: "normal"
+  pgw_dag_port: "normal"
+  pgw_port: "normal"
+  pdn_port: "normal"
+  vip_pgw_dag_port: "normal"
+  vip_pdn_dag_port: "normal"
+
+
+
+# dag group scaling inputs
+dag_group_cpu_threshold: '75'               # New instance is added to group when the percentage of average aggregate Global TMM CPU usage of all DAG group instances exceeds this value (for example, 75).
+dag_group_cpu_threshold_check_interval: '1' # Interval between checks, in minutes.
+
+
+# common inputs
+manager_mgmt_host: 10.10.2.16   # Internal IP address of the VNF Manager instance.
+
+sw_ref_nagios:                  # A dictionary that defines the OpenStack image name, flavor name, and availability zone (version 1.2) to use for the CentOS monitoring nodes.
+  data:
+      image: CentOS-7-x86_64-GenericCloud
+      flavor: f5.cloudify_small
+      availability_zone: nova
+  revision: 0
+
+sw_ref_dag:                     # Dictionary that defines the OpenStack image name, flavor name, and revision number to use for the BIG-IP VE disaggregation instances.
+  data:
+      image: bigip-13.1.0.5-0.0.5.all_1slot
+      flavor: f5.cloudify_small
+      availability_zone: nova
+  revision: 0
+
+sw_ref_vnf:                     # A dictionary that defines the OpenStack image name, flavor name, and revision number to use for the BIG-IP VE virtual network functions instances.
+  data:
+      image: bigip-13.1.0.5-0.0.5.all_1slot
+      flavor: f5.cloudify_medium
+      availability_zone: nova
+  revision: 0
+
+
+bigip_ssh_key: mysshkey         # Name of the OpenStack SSH key into which you will import.
+big_iq_host: 10.190.54.148      # IP address of the BIG-IQ VE instance that will assign licenses to the BIG-IP VE instances.
+big_iq_lic_pool: vnfm-4         # BIG-IQ key or pool name used to assign licenses to the BIG-IP VE instances.
+
+#    security groups in openstack
+ctrl_sg_name: allow_22
+mgmt_sg_name: allow_22          # Management security group name.
+pgw_sg_name: allow_22           # Packet gateway (PGW) security group name.
+pdn_sg_name: allow_22           # Provider data network (PDN) security group name.
+snmp_sg_name: allow_22          # SNMP security group name.
+mgmt_net: mgmt                  # Management network name in OpenStack, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+mgmt_subnet: mgmt               # Management network subnet name.
+
+pgw_net: pgl                    # PGW network name.
+pgw_subnet: pgl                 # PGW sub-network name.
+pdn_net: pdn                    # PDN network name.
+pdn_subnet: pdn                 # PDN network subnet name.
+pgw_dag_net: vnfs               # PGW-DAG (VNF ingress) network name.
+pgw_dag_subnet: vnfs            # GW-DAG network subnet name.
+pdn_dag_net: vnfe               # PDN-DAG (VNF egress) network name.
+pdn_dag_subnet: vnfe            # PDN-DAG network subnet name.
+
+# optional inputs:
+bgp_dag_pgw_peer_ip: 192.168.1.103  # If using Border Gateway Protocol (BGP) on the client-side, then enter the neighbor address of the PGW to which the DAG BIG-IPs will advertise their default routes.
+bgp_vnf_pgw_peer_ip: 192.168.21.11  # If using BGP on the client-side, then enter the neighbor address of the PGW, enabling the VNF to send traffic directly back to the client without passing it back through the DAG.
+bgp_pgw_peer_as: '200'              # If using BGP on the client-side, then enter the autonomous system number (ASN) for the BGP neighbor.
+bgp_dag_egw_peer_ip: 192.168.11.104 # If using BGP on the external-side, then enter the BGP neighbor address.
+bgp_egw_peer_as: '300'              # If using BGP on the external-side, then enter the BGP ASN.
+
+default_gateway: 10.10.12.1     # Next hop IP address for outbound traffic egressing the VNF.
+
+ntp_server: 132.163.96.1        # IP address or DNS name of the NTP server. If not specified, the default 132.163.96.4 value is used.
+timezone: 'string'              # Local timezone using the TZ database name for the location of your application server. https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+security_groups: enable         # String value to enable/disable security groups for Nagios, DAG, and VNF nodes. Enabling will include the appropriate security groups for Nagios, DAG, and VNF nodes, disabling will disable ALL security groups, including the default security group created for every instance in OpenStack.
+
+# CGNAT Inputs
+cgnat_ip_ranges:                      # Set for enabling CGNAT. Enter the IP address range for each address list. For example, '192.168.1.100-192.168.1.150' and '192.168.1.155-192.168.1.160'.
+  - '10.10.44.32-10.10.44.164'
+  - '192.168.1.155-192.168.1.160'
+cgnat_resource_id: '/f5vnf/gilan_http/natSourceTranslation/addresses'      # Set for enabling CGNAT. Value CANNOT be blank. Enter the reference to a NAT source translation pool that you want VNFM to manage and that you defined in your AS3 declaration. A pointer to the IP pool that you want VNFM to manage; for example, "/Sample_22/A1/natSourceTranslation/addresses".
+starting_ip_number: '5'               # Set for enabling CGNAT. Enter the number of IP addresses initially assigned to each VNF VE. Default value is 5.  
+increment_ip_number: '2'              # Set for enabling CGNAT. Enter the number of IP addresses to add during the Increment IPs workflow. Default value is 2.
+
+
+# Example AS3 declaration for non-CGNAT implementations
+vnf_as3_nsd_payload:
+class: AS3
+action: deploy
+persist: true
+declaration:
+    class: ADC
+    schemaVersion: 3.0.0
+    id: cfy_vnf_01
+    label: vnf
+    remark: VNF
+    f5vnf:
+        class: Tenant
+        Shared:
+            class: Application
+            template: shared
+            fwAllowedAddressList:
+                addresses:
+                    - 10.0.0.0/8
+                    - 172.20.0.0/16
+                    - 192.168.0.0/16
+                class: Firewall_Address_List
+            fwAllowedPortList:
+                class: Firewall_Port_List
+                ports:
+                    - 8080-8081
+                    - 22
+                    - 443
+                    - 53
+                    - 80
+            fwDefaultDenyAddressList:
+                addresses:
+                    - 0.0.0.0/0
+                class: Firewall_Address_List
+            fwLogDestinationHsl:
+                class: Log_Destination
+                distribution: adaptive
+                pool:
+                    use: poolHsl
+                protocol: tcp
+                type: remote-high-speed-log
+            fwLogDestinationSyslog:
+                class: Log_Destination
+                format: rfc5424
+                remoteHighSpeedLog:
+                    use: fwLogDestinationHsl
+                type: remote-syslog
+            fwLogPublisher:
+                class: Log_Publisher
+                destinations:
+                    - use: fwLogDestinationSyslog
+            fwPolicy:
+                class: Firewall_Policy
+                rules:
+                    -
+                        use: fwRuleList
+            fwRuleList:
+                class: Firewall_Rule_List
+                rules:
+                    -
+                        action: accept
+                        destination:
+                            portLists:
+                                -
+                                    use: fwAllowedPortList
+                        loggingEnabled: true
+                        name: tcpAllow
+                        protocol: tcp
+                        source:
+                            addressLists:
+                                - use: fwAllowedAddressList
+                    -
+                        action: accept
+                        loggingEnabled: true
+                        name: udpAllow
+                        protocol: udp
+                        source:
+                            addressLists:
+                                - use: fwAllowedAddressList
+                    -
+                        action: drop
+                        loggingEnabled: true
+                        name: defaultDeny
+                        protocol: any
+                        source:
+                            addressLists:
+                                - use: fwDefaultDenyAddressList
+            fwSecurityLogProfile:
+                class: Security_Log_Profile
+                network:
+                    logIpErrors: true
+                    logRuleMatchAccepts: true
+                    logRuleMatchDrops: true
+                    logRuleMatchRejects: true
+                    logTcpErrors: true
+                    logTcpEvents: true
+                    logTranslationFields: true
+                    publisher:
+                        use: fwLogPublisher
+                    storageFormat:
+                        fields:
+                            - action
+                            - bigip-hostname
+                            - context-name
+                            - context-type
+                            - date-time
+                            - dest-ip
+                            - dest-port
+                            - drop-reason
+                            - protocol
+                            - src-ip
+                            - src-port
+            poolHsl:
+                class: Pool
+                members:
+                    -
+                        enable: true
+                        serverAddresses:
+                            - 255.255.255.254
+                        servicePort: 514
+                monitors:
+                    -
+                        bigip: /Common/udp
+            lbSelectedRule:
+                class: iRule
+                iRule: when LB_SELECTED {log local0. "Selected server [LB::server]"}
+                remark: Log load balanced server
+            profileL4:
+                class: L4_Profile
+            serviceAddress:
+                class: Service_Address
+                arpEnabled: False
+                icmpEcho: disable
+                spanningEnabled: True
+                virtualAddress: 0.0.0.0
+        firewall_any:
+            class: Application
+            template: generic
+            serviceMain:
+                allowVlans:
+                    - bigip: /Common/network_PGW_DAG
+                class: Service_Generic
+                iRules:
+                    - /f5vnf/Shared/lbSelectedRule
+                layer4: any
+                policyFirewallEnforced:
+                    use: /f5vnf/Shared/fwPolicy
+                profileL4:
+                    use: /f5vnf/Shared/profileL4
+                securityLogProfiles:
+                    - use: /f5vnf/Shared/fwSecurityLogProfile
+                snat: none
+                lastHop: disable
+                translateServerAddress: false
+                translateServerPort: false
+                virtualAddresses:
+                    - use: /f5vnf/Shared/serviceAddress
+                virtualPort: 0
+        firewall_fastL4:
+            class: Application
+            template: l4
+            serviceMain:
+                class: Service_L4
+                layer4: tcp
+                allowVlans:
+                    - bigip: /Common/network_PGW_DAG
+                profileL4:
+                    use: /f5vnf/Shared/profileL4
+                virtualAddresses:
+                    - use: /f5vnf/Shared/serviceAddress
+                virtualPort: 0
+                translateServerAddress: false
+                translateServerPort: false
+                snat: none
+                lastHop: disable
+                iRules:
+                    - /f5vnf/Shared/lbSelectedRule
+                policyFirewallEnforced:
+                    use: /f5vnf/Shared/fwPolicy
+                securityLogProfiles:
+                  - use: /f5vnf/Shared/fwSecurityLogProfile
+        firewall_inbound:
+          class: Application
+          template: generic
+          serviceMain:
+            allowVlans:
+            - bigip: /Common/network_PDN_DAG
+            class: Service_Generic
+            iRules:
+            - /f5vnf/Shared/lbSelectedRule
+            layer4: any
+            profileL4:
+              use: /f5vnf/Shared/profileL4
+            snat: none
+            translateServerAddress: false
+            translateServerPort: false
+            virtualAddresses:
+            - use: /f5vnf/Shared/serviceAddress
+            virtualPort: 0
+
+
+# Example AS3 declaration for CGNAT implementations
+# vnf_as3_nsd_payload:
+    class: AS3
+    action: deploy
+    persist: true
+    declaration:
+        class: ADC
+        schemaVersion: 3.0.0
+        id: cfy_vnf_01
+        label: vnf
+        remark: VNF
+        f5vnf:
+            class: Tenant
+            Shared:
+                class: Application
+                template: shared
+                fwAllowedAddressList:
+                    addresses:
+                        - 10.0.0.0/8
+                        - 172.20.0.0/16
+                        - 192.168.0.0/16
+                    class: Firewall_Address_List
+                fwAllowedPortList:
+                    class: Firewall_Port_List
+                    ports:
+                        - 8080-8081
+                        - 22
+                        - 443
+                        - 53
+                        - 80
+                fwDefaultDenyAddressList:
+                    addresses:
+                        - 0.0.0.0/0
+                    class: Firewall_Address_List
+                fwLogDestinationHsl:
+                    class: Log_Destination
+                    distribution: adaptive
+                    pool:
+                        use: poolHsl
+                    protocol: tcp
+                    type: remote-high-speed-log
+                fwLogDestinationSyslog:
+                    class: Log_Destination
+                    format: rfc5424
+                    remoteHighSpeedLog:
+                        use: fwLogDestinationHsl
+                    type: remote-syslog
+                fwLogPublisher:
+                    class: Log_Publisher
+                    destinations:
+                        - use: fwLogDestinationSyslog
+                fwPolicy:
+                    class: Firewall_Policy
+                    rules:
+                        - use: fwRuleList
+                fwRuleList:
+                    class: Firewall_Rule_List
+                    rules:
+                    - action: accept
+                      destination:
+                        portLists:
+                            - use: fwAllowedPortList
+                        loggingEnabled: true
+                        name: tcpAllow
+                        protocol: tcp
+                        source:
+                            addressLists:
+                                - use: fwAllowedAddressList
+                    - action: accept
+                      loggingEnabled: true
+                      name: udpAllow
+                      protocol: udp
+                      source:
+                          addressLists:
+                              - use: fwAllowedAddressList
+                    - action: drop
+                      loggingEnabled: true
+                      name: defaultDeny
+                      protocol: any
+                      source:
+                          addressLists:
+                              - use: fwDefaultDenyAddressList
+                fwSecurityLogProfile:
+                    class: Security_Log_Profile
+                    network:
+                        logIpErrors: true
+                        logRuleMatchAccepts: true
+                        logRuleMatchDrops: true
+                        logRuleMatchRejects: true
+                        logTcpErrors: true
+                        logTcpEvents: true
+                        logTranslationFields: true
+                        publisher:
+                            use: fwLogPublisher
+                        storageFormat:
+                            fields:
+                                - action
+                                - bigip-hostname
+                                - context-name
+                                - context-type
+                                - date-time
+                                - dest-ip
+                                - dest-port
+                                - drop-reason
+                                - protocol
+                                - src-ip
+                                - src-port
+                poolHsl:
+                    class: Pool
+                    members:
+                    - enable: true
+                      serverAddresses:
+                        - 255.255.255.254
+                      servicePort: 514
+                    monitors:
+                        - bigip: /Common/udp
+                lbSelectedRule:
+                    class: iRule
+                    iRule: when LB_SELECTED {log local0. "Selected server [LB::server]"}
+                    remark: Log load balanced server
+                profileL4:
+                    class: L4_Profile
+                serviceAddress:
+                    class: Service_Address
+                    arpEnabled: False
+                    icmpEcho: disable
+                    spanningEnabled: True
+                    virtualAddress: 0.0.0.0
+                    trafficGroup: /Common/traffic-group-local-only
+            firewall_any:
+                class: Application
+                template: generic
+                serviceMain:
+                    allowVlans:
+                        - bigip: /Common/network_PGW_DAG
+                    class: Service_Generic
+                    iRules:
+                        - /f5vnf/Shared/lbSelectedRule
+                    layer4: any
+                    policyFirewallEnforced:
+                        use: /f5vnf/Shared/fwPolicy
+                    profileL4:
+                        use: /f5vnf/Shared/profileL4
+                    securityLogProfiles:
+                        - use: /f5vnf/Shared/fwSecurityLogProfile
+                    snat: none
+                    lastHop: disable
+                    translateServerAddress: false
+                    translateServerPort: false
+                    virtualAddresses:
+                        - use: /f5vnf/Shared/serviceAddress
+                    virtualPort: 0
+            firewall_fastL4:
+                class: Application
+                template: l4
+                serviceMain:
+                    class: Service_L4
+                    layer4: tcp
+                    allowVlans:
+                        - bigip: /Common/network_PGW_DAG
+                    profileL4:
+                        - use: /f5vnf/Shared/profileL4
+                    virtualAddresses:
+                        - use: /f5vnf/Shared/serviceAddress
+                    virtualPort: 0
+                    translateServerAddress: false
+                    translateServerPort: false
+                    snat: none
+                    lastHop: disable
+                    iRules:
+                        - /f5vnf/Shared/lbSelectedRule
+                    policyFirewallEnforced:
+                        use: /f5vnf/Shared/fwPolicy
+                    securityLogProfiles:
+                      - use: /f5vnf/Shared/fwSecurityLogProfile
+                    policyNAT:
+                      use: /f5vnf/firewall_fastL4/natPolicy
+                natDestinationAddressList:
+                    addresses:
+                    - 0.0.0.0/0
+                    class: Firewall_Address_List
+                natDestinationPortList:
+                    class: Firewall_Port_List
+                    ports:
+                    - 1-65535
+                natPolicy:
+                    class: NAT_Policy
+                    rules:
+                    - destination:
+                        addressLists:
+                        - use: /f5vnf/firewall_fastL4/natDestinationAddressList
+                        portLists:
+                        - use: /f5vnf/firewall_fastL4/natDestinationPortList
+                      name: nat_tcp
+                      protocol: tcp
+                      source:
+                        addressLists:
+                        - use: /f5vnf/firewall_fastL4/natSourceAddressList
+                        portLists:
+                        - use: /f5vnf/firewall_fastL4/natSourcePortList
+                      sourceTranslation:
+                        use: /f5vnf/firewall_fastL4/natSourceTranslation
+                natSourceAddressList:
+                    addresses:
+                    - 10.8.0.0/24
+                    class: Firewall_Address_List
+                natSourcePortList:
+                    class: Firewall_Port_List
+                    ports:
+                    - 1-65535
+                natSourceTranslation:
+                 addresses:
+                 - 255.255.255.255/32
+                 class: NAT_Source_Translation
+                 clientConnectionLimit: 0
+                 hairpinModeEnabled: false
+                 inboundMode: explicit
+                 mapping:
+                   mode: address-pooling-paired
+                   timeout: 300
+                 patMode: pba
+                 portBlockAllocation:
+                  blockIdleTimeout: 3600
+                  blockLifetime: 0
+                  blockSize: 64
+                  clientBlockLimit: 1
+                  zombieTimeout: 0
+                 ports:
+                 - 1-65535
+                 routeAdvertisement: true
+                 type: dynamic-pat
+            firewall_inbound:
+              class: Application
+              template: generic
+              serviceMain:
+                allowVlans:
+                - bigip: /Common/network_PDN_DAG
+                class: Service_Generic
+                iRules:
+                - /f5vnf/Shared/lbSelectedRule
+                layer4: any
+                profileL4:
+                  use: /f5vnf/Shared/profileL4
+                snat: none
+                translateServerAddress: false
+                translateServerPort: false
+                virtualAddresses:
+                - use: /f5vnf/Shared/serviceAddress
+                virtualPort: 0

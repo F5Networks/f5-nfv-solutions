@@ -4,7 +4,7 @@ This version contains the following changes:
 - Support for the VMware vSphere ESXi version 6.5 VIM
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2020 F5 Networks Inc.
 
 #### License
 
