@@ -12,13 +12,13 @@ In this folder you have YAML file format for use with the F5 VNFM web console an
 
 This version contains support for following new features:
 
-* **DNS blueprint PREVIEW** - A PREVIEW version of the standalone F5 DNS solution blueprint that queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org.
-* **Upgraded to AS3 extension v3.16.0** - The Gi LAN, Gi Firewall, DNS-enabled, and CGNAT-enabled blueprints now use an updated F5 AS3 Extension. A sample AS3 declaration is included in the supported NFV solution inputs files on GitHub. 
-* **Support a dark environment for Nagios** - You can now run F5 VNF Manager with a prebuilt Nagios image NOT connected to the Internet. You must upload the prebuilt Nagios image directly into your VIM environment instead of a CentOS image. Obtain this prebuilt Nagios image with your F5 VNF Manager purchase confirmation email.
-* **Support for OpenStack without DHCP** - You can now provision F5 VNF Manager in your OpenStack VIM implemented without DHCP when NOT using security groups.
-* **Support for BIG-IP VE 14.1.X** - You can now download BIG-IP VE 14.1.X for use with all F5 NFV solution blueprints.
-* **Management network MTU value (OpenStack)** - If the OpenStack/VIO API does not set the **MTU** value for your management network, then VNF Manager will use **1500** as the default value.
-* **Renamed and added secrets** - Renamed all existing VIM-specific secrets appending ``_default`` to distinguish the VNFM’s secret from other similar secrets added to accommodate multi-VIM configurations. Added two new OpenStack, keystone secrets; ``keystone_allow_insecure_default`` and ``keystone_ca_cert_default``.
+* **DNS blueprint** - Tested and release-ready version of the standalone F5 DNS solution blueprint that queries and translates names for client requests. This DNS solution translates top-level Internet domains, such as .com, .net, .gov, .edu, and .org.
+* **DNS Security VNF Service** - A single-purpose, DNS Security VNF Service blueprint, specifically designed to clean DNS queries. This security solution also includes a Standalone DNS service layer.
+* **Support for OpenStack without DHCP** - You can now provision F5 VNF Manager and deploy Gi LAN, Firewall, and Base blueprints in your OpenStack VIM that is implemented without DHCP. However, to deploy a BIG-IQ blueprint without DHCP, you must disable security groups for the VNFM MGMT port. To disable security groups, use the CLI command, ``openstack port set``.
+* **The ``security_groups`` input for VNF-BIG-IQ blueprint** - Set the ``security_groups`` input for the VNF-BIG-IQ blueprint solution ONLY to a number value that enables/disables security groups. Setting this value to 1 (default value), enables the appropriate security groups for the BIG-IQ solution. Setting this value to 0, disables the default security group created by OpenStack for the BIG-IQ instance, as well as all other security groups that may exist. Allowed values include: 0 (disable), 1 (enable).
+* **Updated the ric_plugin** - A new ric_plugin version 0.5 generates usage reporting for the DNS and DNS Security VNF Service blueprints.
+* **Blueprint solutions deployed in a dark environment** - You can now deploy Gi LAN and Gi Firewall in a dark environment (without connection to the Internet).
+
 
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
