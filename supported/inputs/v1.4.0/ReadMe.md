@@ -1,4 +1,4 @@
-## Inputs for VNFM version 1.4.01.4.0
+## Inputs for VNFM version 1.4.0
 
 In this folder you have YAML file format for use with the F5 VNFM web console and the JSON files with the REST API.  
 
