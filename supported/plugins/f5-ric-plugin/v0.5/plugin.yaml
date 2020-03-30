@@ -1,0 +1,85 @@
+plugins:
+  ric:
+    package_name: f5-ric-plugin
+    package_version: '0.4'
+    executor: central_deployment_agent
+
+node_types:
+
+  f5.ric.nodes.master_information_collector:
+    derived_from: cloudify.nodes.Root
+    properties:
+      vnf_group_throughput:
+        type: string
+      ric_purchasing_model:
+        type: string
+      ric_licensing:
+        type: string
+      big_iq_lic_pool:
+        type: string
+      big_iq_host:
+        type: string
+    interfaces:
+      f5.ric.interfaces.lifecycle:
+        set_output: ric.plugin.tasks.set_output
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: ric.plugin.tasks.configure_runtime_properties
+
+
+  f5.ric.nodes.layer_information_collector:
+    derived_from: cloudify.nodes.Root
+    properties:
+      layer_name:
+        type: string
+      sku:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create: ric.plugin.tasks.establish_layer
+        delete: ric.plugin.tasks.unlink_layer
+
+  f5.ric.nodes.ve_information_collector:
+    derived_from: cloudify.nodes.Root
+    properties:
+      layer_deployment_uuid:
+        type: string
+      hostname:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create: ric.plugin.tasks.establish_ve
+
+
+  f5.ric.nodes.uuid:
+    derived_from: cloudify.nodes.Root
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: ric.plugin.tasks.populate_uuid
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
