@@ -1,6 +1,6 @@
-## About the F5-VNF-Service-Layer-CGNAT-Offering_v2.0.0 solution blueprint
+## About the F5-VNF-Service-Layer-CGNAT-Offering solution blueprint
 
-Use this the initial release of the CGNAT-Offering blueprint solution for implementing CGNAT VNFs in environments with VNFs homed on different networks, not connected to DAG layers, but instead connected to the packet gateway and the provider network.
+Use this new blueprint solution for implementing CGNAT VNFs in environments with VNFs homed on different networks, not connected to DAG layers, but instead connected to the packet gateway and the provider network.
 
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
