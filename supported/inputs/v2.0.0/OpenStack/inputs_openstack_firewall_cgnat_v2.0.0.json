@@ -70,6 +70,12 @@
    "default_gateway": "10.5.0.1",
    "ntp_server": "pool.ntp.org",
    "timezone": "America/Los_Angeles",
+   "cgnat_ip_ranges": [
+      "10.9.0.32-10.9.0.64"
+   ],
+   "cgnat_resource_id": "/f5vnf/firewall_fastL4/natSourceTranslation/addresses",
+   "starting_ip_number": "5",
+   "increment_ip_number": "2",
    "vnf_as3_nsd_payload": {
       "class": "AS3",
       "action": "deploy",
@@ -327,7 +333,96 @@
                      {
                         "use": "/f5vnf/Shared/fwSecurityLogProfile"
                      }
+                  ],
+                  "policyNAT": {
+                     "use": "/f5vnf/firewall_fastL4/natPolicy"
+                  }
+               },
+               "natDestinationAddressList": {
+                  "addresses": [
+                     "0.0.0.0/0"
+                  ],
+                  "class": "Firewall_Address_List"
+               },
+               "natDestinationPortList": {
+                  "class": "Firewall_Port_List",
+                  "ports": [
+                     "1-65535"
                   ]
+               },
+               "natPolicy": {
+                  "class": "NAT_Policy",
+                  "rules": [
+                     {
+                        "destination": {
+                           "addressLists": [
+                              {
+                                 "use": "/f5vnf/firewall_fastL4/natDestinationAddressList"
+                              }
+                           ],
+                           "portLists": [
+                              {
+                                 "use": "/f5vnf/firewall_fastL4/natDestinationPortList"
+                              }
+                           ]
+                        },
+                        "name": "nat_tcp",
+                        "protocol": "tcp",
+                        "source": {
+                           "addressLists": [
+                              {
+                                 "use": "/f5vnf/firewall_fastL4/natSourceAddressList"
+                              }
+                           ],
+                           "portLists": [
+                              {
+                                 "use": "/f5vnf/firewall_fastL4/natSourcePortList"
+                              }
+                           ]
+                        },
+                        "sourceTranslation": {
+                           "use": "/f5vnf/firewall_fastL4/natSourceTranslation"
+                        }
+                     }
+                  ]
+               },
+               "natSourceAddressList": {
+                  "addresses": [
+                     "10.8.0.0/24"
+                  ],
+                  "class": "Firewall_Address_List"
+               },
+               "natSourcePortList": {
+                  "class": "Firewall_Port_List",
+                  "ports": [
+                     "1-65535"
+                  ]
+               },
+               "natSourceTranslation": {
+                  "addresses": [
+                     "255.255.255.255/32"
+                  ],
+                  "class": "NAT_Source_Translation",
+                  "clientConnectionLimit": 0,
+                  "hairpinModeEnabled": false,
+                  "inboundMode": "explicit",
+                  "mapping": {
+                     "mode": "address-pooling-paired",
+                     "timeout": 300
+                  },
+                  "patMode": "pba",
+                  "portBlockAllocation": {
+                     "blockIdleTimeout": 3600,
+                     "blockLifetime": 0,
+                     "blockSize": 64,
+                     "clientBlockLimit": 1,
+                     "zombieTimeout": 0
+                  },
+                  "ports": [
+                     "1-65535"
+                  ],
+                  "routeAdvertisement": false,
+                  "type": "dynamic-pat"
                }
             },
             "firewall_inbound": {

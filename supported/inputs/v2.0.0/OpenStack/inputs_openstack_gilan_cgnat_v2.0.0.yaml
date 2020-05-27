@@ -63,7 +63,7 @@ big_iq_lic_pool: BIGIP_4
 ctrl_sg_name: control_sg
 mgmt_sg_name: mgmt_sg
 pgw_sg_name: pgw_sg
-pdn_sg_name: pgw_sg
+pdn_sg_name: pdn_sg
 snmp_sg_name: snmp_sg
 
 mgmt_net: mgmt
@@ -87,8 +87,14 @@ bgp_dag_egw_peer_ip: 10.3.0.1
 bgp_egw_peer_as: '65002'
 default_gateway: 10.5.0.1 #PDN_DAG Default Gateway
 
-ntp_server: pool.ntp.org
+ntp_server: 10.0.0.106
 timezone: America/Los_Angeles
+
+cgnat_ip_ranges:
+  - '10.9.0.32-10.9.0.64'
+cgnat_resource_id: '/f5vnf/gilan_http/natSourceTranslation/addresses'
+starting_ip_number: '5'
+increment_ip_number: '2'
 
 vnf_as3_nsd_payload:
   class: ADC
@@ -265,7 +271,9 @@ vnf_as3_nsd_payload:
       serviceAddress:
         class: Service_Address
         arpEnabled: False
+        icmpEcho: disable
         spanningEnabled: True
+        trafficGroup: /Common/traffic-group-local-only
         virtualAddress: 0.0.0.0
     gilan_any:
       class: Application
@@ -279,68 +287,12 @@ vnf_as3_nsd_payload:
         layer4: any
         profileClassification:
           use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
         profileIPOther:
           use: /f5vnf/Shared/profileIPOther
         profileL4:
           use: /f5vnf/Shared/profileL4
         profileSubscriberManagement:
           use: /f5vnf/Shared/profileSubscriberManagement
-        snat: none
-        lastHop: disable
-        translateServerAddress: False
-        translateServerPort: False
-        virtualAddresses:
-        - use: /f5vnf/Shared/serviceAddress
-        virtualPort: 0
-    gilan_tcp:
-      class: Application
-      template: tcp
-      serviceMain:
-        allowVlans:
-        - bigip: /Common/pgw_dag
-        class: Service_TCP
-        iRules:
-        - /f5vnf/Shared/lbSelectedRule
-        layer4: tcp
-        profileClassification:
-          use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
-        profileL4:
-          use: /f5vnf/Shared/profileL4
-        profileTCP:
-          bigip: /Common/f5-tcp-mobile
-        profileSubscriberManagement:
-          use: /f5vnf/Shared/profileSubscriberManagement
-        snat: none
-        lastHop: disable
-        translateServerAddress: False
-        translateServerPort: False
-        virtualAddresses:
-        - use: /f5vnf/Shared/serviceAddress
-        virtualPort: 0
-    gilan_udp:
-      class: Application
-      template: udp
-      serviceMain:
-        allowVlans:
-        - bigip: /Common/pgw_dag
-        class: Service_UDP
-        iRules:
-        - /f5vnf/Shared/lbSelectedRule
-        layer4: udp
-        profileClassification:
-          use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
-        profileL4:
-          use: /f5vnf/Shared/profileL4
-        profileSubscriberManagement:
-          use: /f5vnf/Shared/profileSubscriberManagement
-        profileUDP:
-          bigip: /Common/udp_decrement_ttl
         snat: none
         lastHop: disable
         translateServerAddress: False
@@ -360,8 +312,6 @@ vnf_as3_nsd_payload:
         layer4: tcp
         profileClassification:
           use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
         profileHTTP:
           bigip: /Common/http-transparent
         profileL4:
@@ -377,23 +327,59 @@ vnf_as3_nsd_payload:
         virtualAddresses:
         - use: /f5vnf/Shared/serviceAddress
         virtualPort: 80
-    gilan_inbound:
-      class: Application
-      template: generic
-      serviceMain:
-        allowVlans:
-        - bigip: /Common/pdn_dag
-        class: Service_Generic
-        iRules:
-        - /f5vnf/Shared/lbSelectedRule
-        layer4: any
-        profileL4:
-          use: /f5vnf/Shared/profileL4
-        profileSubscriberManagement:
-          use: /f5vnf/Shared/profileSubscriberManagement
-        snat: none
-        translateServerAddress: False
-        translateServerPort: False
-        virtualAddresses:
-        - use: /f5vnf/Shared/serviceAddress
-        virtualPort: 0
+        policyNAT:
+          use: /f5vnf/gilan_http/natPolicy
+      natDestinationAddressList:
+        addresses:
+        - 0.0.0.0/0
+        class: Firewall_Address_List
+      natDestinationPortList:
+        class: Firewall_Port_List
+        ports:
+        - 1-65535
+      natPolicy:
+        class: NAT_Policy
+        rules:
+        - destination:
+            addressLists:
+            - use: /f5vnf/gilan_http/natDestinationAddressList
+            portLists:
+            - use: /f5vnf/gilan_http/natDestinationPortList
+          name: nat_tcp
+          protocol: tcp
+          source:
+            addressLists:
+            - use: /f5vnf/gilan_http/natSourceAddressList
+            portLists:
+            - use: /f5vnf/gilan_http/natSourcePortList
+          sourceTranslation:
+            use: /f5vnf/gilan_http/natSourceTranslation
+      natSourceAddressList:
+        addresses:
+        - 10.8.0.0/24
+        class: Firewall_Address_List
+      natSourcePortList:
+        class: Firewall_Port_List
+        ports:
+        - 1-65535
+      natSourceTranslation:
+        addresses:
+        - 255.255.255.255/32
+        class: NAT_Source_Translation
+        clientConnectionLimit: 0
+        hairpinModeEnabled: false
+        inboundMode: explicit
+        mapping:
+          mode: address-pooling-paired
+          timeout: 300
+        patMode: pba
+        portBlockAllocation:
+          blockIdleTimeout: 3600
+          blockLifetime: 0
+          blockSize: 64
+          clientBlockLimit: 1
+          zombieTimeout: 0
+        ports:
+        - 1-65535
+        routeAdvertisement: true
+        type: dynamic-pat

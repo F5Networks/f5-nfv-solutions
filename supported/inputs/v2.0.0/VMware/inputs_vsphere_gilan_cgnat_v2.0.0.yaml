@@ -1,84 +1,49 @@
-# VNF Resource Information Collector inputs
-ric_purchasing_model: subscription
-ric_vnfm_serial: "12345"
-auto_last_hop: "disabled"
+## NETWORKING CONFIG ##
+mgmt_net: network_MGMT
+mgmt_subnet_cidr: 10.0.0.0/24
+mgmt_default_gw: 10.0.0.254
+mgmt_dns: 8.8.8.8
+mgmt_ip_range:
+  - '10.0.0.128-10.0.0.191'
+mgmt_net_sw_dist: true
 
-# VNF inputs
-ctrl_net: control
-ctrl_subnet: control-subnet
-ha_net: ha_net
-ha_subnet: ha-subnet
+ctrl_net: network_CTRL
+ctrl_subnet_cidr: 10.1.0.0/24
+ctrl_ip_range:
+  - '10.1.0.128-10.1.0.191'
+ctrl_net_sw_dist: true
 
-# Max number of 'instances' that can be created during scale out
-# Max instances of DAG VE
-max_scale_dag_group: '10'
-# Max instances of VNF Layers
-max_scale_vnf_group: '10'
+ha_net: network_HA
+ha_subnet_cidr: 10.2.0.0/24
+#ha_ip_range: 10.2.0.128/26
+ha_ip_range:
+  - '10.2.0.128-10.2.0.191'
+ha_net_sw_dist: true
 
-# Max number of 'instances' that can be created during heal
-max_heal_vnfd_dag_ve: '10'
-max_heal_vnf_layer: '10'
-max_heal_vnf_slave_ve: '10'
+pdn_net: network_PDN
+pdn_subnet_cidr: 10.3.0.0/24
+pdn_ip_range:
+  - '10.3.0.128-10.3.0.191'
+pdn_net_sw_dist: true
 
-# Nagios inputs
-floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41
+pgw_net: network_PGW
+pgw_subnet_cidr: 10.4.0.0/24
+pgw_ip_range:
+  - '10.4.0.128-10.4.0.191'
+pgw_net_sw_dist: true
 
-# VNF Layer scaling inputs
-vnf_layer_cpu_threshold: '85'
-vnf_layer_cpu_threshold_check_interval: '1'
-# VNF Group scaling inputs
-vnf_group_throughput: 20
-vnf_group_throughput_threshold: 75
-vnf_group_throughput_check_interval: 1
-# DAG Group scaling inputs
-dag_group_cpu_threshold: '89'
-dag_group_cpu_threshold_check_interval: '1'
+pdn_dag_net: network_PDN_DAG
+pdn_dag_subnet_cidr: 10.5.0.0/24
+pdn_dag_ip_range:
+  - '10.5.0.128-10.5.0.191'
+pdn_dag_net_sw_dist: true
 
-# Common inputs
-manager_mgmt_host: 10.0.0.106
+pgw_dag_net: network_PGW_DAG
+pgw_dag_subnet_cidr: 10.6.0.0/24
+pgw_dag_ip_range:
+  - '10.6.0.128-10.6.0.191'
+pgw_dag_net_sw_dist: true
 
-sw_ref_nagios:
-  data:
-    image: CentOS-7-x86_64-GenericCloud
-    flavor: m1.medium
-    availability_zone: nova
-  revision: 0
-sw_ref_dag:
-  data:
-    image: BIGIP-13.1.0.5-0.0.5.ALL_1SLOT
-    flavor: f5.cloudify_small
-    availability_zone: nova
-  revision: 0
-sw_ref_vnf:
-  data:
-    image: BIGIP-13.1.0.5-0.0.5.ALL_1SLOT
-    flavor: f5.cloudify_medium
-    availability_zone: nova
-  revision: 0
-bigip_ssh_key: key_name
-
-big_iq_host: 10.0.0.121
-big_iq_lic_pool: BIGIP_4
-
-ctrl_sg_name: control_sg
-mgmt_sg_name: mgmt_sg
-pgw_sg_name: pgw_sg
-pdn_sg_name: pgw_sg
-snmp_sg_name: snmp_sg
-
-mgmt_net: mgmt
-mgmt_subnet: mgmt-subnet
-
-pgw_net: pgw
-pgw_subnet: pgw-subnet
-pdn_net: pdn
-pdn_subnet: pdn-subnet
-
-pgw_dag_net: pgw_dag
-pgw_dag_subnet: pgw_dag-subnet
-
-pdn_dag_net: pdn_dag
-pdn_dag_subnet: pdn_dag-subnet
 
 bgp_dag_pgw_peer_ip: 10.4.0.1
 bgp_vnf_pgw_peer_ip: 10.6.0.1
@@ -87,8 +52,71 @@ bgp_dag_egw_peer_ip: 10.3.0.1
 bgp_egw_peer_as: '65002'
 default_gateway: 10.5.0.1 #PDN_DAG Default Gateway
 
-ntp_server: pool.ntp.org
+## ACCESS CONFIG ##
+manager_mgmt_host: 10.0.0.106
+
+## DEVICE CONFIG ##
+sw_ref_nagios:
+  data:
+    template: Centos7-GenericCloud
+    configuration: dualcpu
+  revision: 0
+sw_ref_dag:
+  data:
+    #template: BIGIP-13.1.0.5-0.0.5
+    template: BIGIP-13.1.0.7-0.0.1
+    configuration: dualcpu
+  revision: 0
+sw_ref_vnf:
+  data:
+    #template: BIGIP-13.1.0.5-0.0.5
+    template: BIGIP-13.1.0.7-0.0.1
+    configuration: quadcpu
+  revision: 0
+
+
+## BIGIP LICENSING ##
+big_iq_host: 10.0.0.105
+big_iq_lic_pool: BIGIP_1
+
+
+# VNF Resource Information Collector
+ric_purchasing_model: subscription
+ric_vnfm_serial: "12345"
+auto_last_hop: "disabled"
+
+## GiLAN SETTINGS (MAY IMPACT VNFM PERFORMANCE)##
+max_scale_dag_group: '10' # Max instances of DAG VE
+max_scale_vnf_group: '10' # Max instances of VNF Layers
+max_heal_vnfd_dag_ve: '10' # Max number of 'instances' that can be created during heal
+max_heal_vnf_layer: '10'
+max_heal_vnf_slave_ve: '10'
+
+vnf_layer_cpu_threshold: '85'
+vnf_layer_cpu_threshold_check_interval: '1'
+
+vnf_group_throughput: 20
+vnf_group_throughput_threshold: 75
+vnf_group_throughput_check_interval: 1
+
+dag_group_cpu_threshold: '89'
+dag_group_cpu_threshold_check_interval: '1'
+
+# Common inputs
+bigip_ssh_key: key_name
+
+# CGNAT Inputs
+cgnat_ip_ranges:
+  - '10.5.0.32-10.5.0.64'
+cgnat_resource_id: '/f5vnf/gilan_http/natSourceTranslation/addresses'
+starting_ip_number: '5'
+increment_ip_number: '2'
+
+
+ntp_server: 10.0.0.106
 timezone: America/Los_Angeles
+
+# AS3 declaration
 
 vnf_as3_nsd_payload:
   class: ADC
@@ -139,7 +167,7 @@ vnf_as3_nsd_payload:
             use: endpointForwarding
           name: myServiceEndpoint
           sourceVLAN:
-            bigip: /Common/pgw_dag
+            bigip: /Common/network_PGW_DAG
           steeringPolicy:
             use: policyEnforcement
       poolForwarding:
@@ -265,6 +293,7 @@ vnf_as3_nsd_payload:
       serviceAddress:
         class: Service_Address
         arpEnabled: False
+        icmpEcho: disable
         spanningEnabled: True
         virtualAddress: 0.0.0.0
     gilan_any:
@@ -272,15 +301,13 @@ vnf_as3_nsd_payload:
       template: generic
       serviceMain:
         allowVlans:
-        - bigip: /Common/pgw_dag
+        - bigip: /Common/network_PGW_DAG
         class: Service_Generic
         iRules:
         - /f5vnf/Shared/lbSelectedRule
         layer4: any
         profileClassification:
           use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
         profileIPOther:
           use: /f5vnf/Shared/profileIPOther
         profileL4:
@@ -294,74 +321,18 @@ vnf_as3_nsd_payload:
         virtualAddresses:
         - use: /f5vnf/Shared/serviceAddress
         virtualPort: 0
-    gilan_tcp:
-      class: Application
-      template: tcp
-      serviceMain:
-        allowVlans:
-        - bigip: /Common/pgw_dag
-        class: Service_TCP
-        iRules:
-        - /f5vnf/Shared/lbSelectedRule
-        layer4: tcp
-        profileClassification:
-          use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
-        profileL4:
-          use: /f5vnf/Shared/profileL4
-        profileTCP:
-          bigip: /Common/f5-tcp-mobile
-        profileSubscriberManagement:
-          use: /f5vnf/Shared/profileSubscriberManagement
-        snat: none
-        lastHop: disable
-        translateServerAddress: False
-        translateServerPort: False
-        virtualAddresses:
-        - use: /f5vnf/Shared/serviceAddress
-        virtualPort: 0
-    gilan_udp:
-      class: Application
-      template: udp
-      serviceMain:
-        allowVlans:
-        - bigip: /Common/pgw_dag
-        class: Service_UDP
-        iRules:
-        - /f5vnf/Shared/lbSelectedRule
-        layer4: udp
-        profileClassification:
-          use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
-        profileL4:
-          use: /f5vnf/Shared/profileL4
-        profileSubscriberManagement:
-          use: /f5vnf/Shared/profileSubscriberManagement
-        profileUDP:
-          bigip: /Common/udp_decrement_ttl
-        snat: none
-        lastHop: disable
-        translateServerAddress: False
-        translateServerPort: False
-        virtualAddresses:
-        - use: /f5vnf/Shared/serviceAddress
-        virtualPort: 0
     gilan_http:
       class: Application
       template: http
       serviceMain:
         allowVlans:
-        - bigip: /Common/pgw_dag
+        - bigip: /Common/network_PGW_DAG
         class: Service_HTTP
         iRules:
         - /f5vnf/Shared/lbSelectedRule
         layer4: tcp
         profileClassification:
           use: /f5vnf/Shared/profileClassification
-        profileEnforcement:
-          use: /f5vnf/Shared/profileSpm
         profileHTTP:
           bigip: /Common/http-transparent
         profileL4:
@@ -377,12 +348,68 @@ vnf_as3_nsd_payload:
         virtualAddresses:
         - use: /f5vnf/Shared/serviceAddress
         virtualPort: 80
+        policyNAT:
+          use: /f5vnf/gilan_http/natPolicy
+      natDestinationAddressList:
+        addresses:
+        - 0.0.0.0/0
+        class: Firewall_Address_List
+      natDestinationPortList:
+        class: Firewall_Port_List
+        ports:
+        - 1-65535
+      natPolicy:
+        class: NAT_Policy
+        rules:
+        - destination:
+            addressLists:
+            - use: /f5vnf/gilan_http/natDestinationAddressList
+            portLists:
+            - use: /f5vnf/gilan_http/natDestinationPortList
+          name: nat_tcp
+          protocol: tcp
+          source:
+            addressLists:
+            - use: /f5vnf/gilan_http/natSourceAddressList
+            portLists:
+            - use: /f5vnf/gilan_http/natSourcePortList
+          sourceTranslation:
+            use: /f5vnf/gilan_http/natSourceTranslation
+      natSourceAddressList:
+        addresses:
+        - 10.8.0.0/24
+        class: Firewall_Address_List
+      natSourcePortList:
+        class: Firewall_Port_List
+        ports:
+        - 1-65535
+      natSourceTranslation:
+        addresses:
+        - 255.255.255.255/32
+        class: NAT_Source_Translation
+        clientConnectionLimit: 0
+        hairpinModeEnabled: false
+        inboundMode: explicit
+        mapping:
+          mode: address-pooling-paired
+          timeout: 300
+        patMode: pba
+        portBlockAllocation:
+          blockIdleTimeout: 3600
+          blockLifetime: 0
+          blockSize: 64
+          clientBlockLimit: 1
+          zombieTimeout: 0
+        ports:
+        - 2000-65535
+        routeAdvertisement: true
+        type: dynamic-pat
     gilan_inbound:
       class: Application
       template: generic
       serviceMain:
         allowVlans:
-        - bigip: /Common/pdn_dag
+        - bigip: /Common/network_PDN_DAG
         class: Service_Generic
         iRules:
         - /f5vnf/Shared/lbSelectedRule
