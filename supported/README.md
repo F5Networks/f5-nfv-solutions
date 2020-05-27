@@ -25,16 +25,16 @@ The following table describes the supported plugin versions available in this re
 | f5-gilan-plugin 0.2.52    | F5-VNF-Service-Layer-GiLAN_v1.3              | inputs_gilan_v1.3         |
 |                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.3      | inputs_firewall_v1.3      |
 |                           | F5-VNF-Service-Layer-Firewall_v1.3           | inputs_base_v1.3          |
-|                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.3   | inputs_base_v1.3          | 
-|                           | F5-VNF-Service-Layer-Base_v1.3               | inputs_dns_v1.3.1         |
+|                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.3   | inputs_dns_v1.3.1         | 
+|                           | F5-VNF-Service-Layer-Base_v1.3               |                           |
 |                           | F5-VNF-Service-Layer-DNS_v1.3.1              |                           |
 |                           |                                              |                           |                                               
 | f5-gilan-plugin 0.2.53    | F5-VNF-Service-Layer-GiLAN_v1.4.X and later            | inputs_gilan_v1.4.X and later     |
 |                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.4.X and later    | inputs_firewall_v1.4.X and later  |
 |                           | F5-VNF-Service-Layer-Firewall_v1.4.0 and later         | inputs_base_v1.4.X and later      |
 |                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.4.X and later | inputs_dns_v1.4.X and later       | 
-|                           | F5-VNF-Service-Layer-Base_v1.4.X and later             | inputs_dns_v1.4.X and later       |
-|                           | vSphere-F5-VNF-Service-Layer-Base_v1.4.X and later     | inputs_cgnat_v2.0.0 and later     |
+|                           | F5-VNF-Service-Layer-Base_v1.4.X and later             | inputs_gilan_cgnat_v2.0.0 and later       |
+|                           | vSphere-F5-VNF-Service-Layer-Base_v1.4.X and later     | inputs_firewall_cgnat_v2.0.0 and later     |
 |                           | F5-VNF-Service-Layer-DNS_v1.4.X and later              |                                   |
 |                           | vSphere-F5-VNF-Service-Layer-DNS_v1.4.X and later      |                                   |
 |                           | F5-VNF-Service-Layer-CGNAT_v2.0.0 and later            |                                   |
@@ -42,8 +42,8 @@ The following table describes the supported plugin versions available in this re
 | f5-ric-plugin 0.4         | F5-VNF-Service-Layer-GiLAN_v1.X and later             | inputs_gilan_v1.X  and later        |
 |                           | F5-VNF-Service-Layer-Firewall_v1.X and later          | inputs_firewall_v1.X  and later     |
 |                           | F5-VNF-Service-Layer-Base_v1.X and later              | inputs_base_v1.X  and later         |
-|                           | F5-VNF-Service-Layer-DNS_v1.3.1 and later             | inputs_dns_v1.3.1.X  and later      |
-|                           | F5-VNF-Service-Layer-CGNAT_v2.0.0 and later           | inputs_cgnat_v2.0.0 and later       |
+|                           | F5-VNF-Service-Layer-DNS_v1.3.1 and later             | inputs_dns_v1.3.1 and later         |
+|                           | F5-VNF-Service-Layer-CGNAT_v2.0.0 and later           |                                     |
 |                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.4.X and later   |                                     |
 |                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.4.X and later|                                     | 
 |                           | vSphere-F5-VNF-Service-Layer-Base_v1.X and later      |                                     |
@@ -54,8 +54,8 @@ The following table describes the supported plugin versions available in this re
 |                           | F5-VNF-Service-Layer-Firewall_v1.4.X and later         | inputs_firewall_v1.4.X and later    |
 |                           | F5-VNF-Service-Layer-Base_v1.4.X and later             | inputs_base_v1.4.X and later        |
 |                           | F5-VNF-Service-Layer-DNS_v1.4.X and later              | inputs_dns_v1.4.X and later         |
-|                           | F5-VNF-Service-Layer-CGNAT_v2.0.0 and later            | inputs_cgnat_v2.0.0 and later       |      
-|                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.4.X and later   |                                     |
+|                           | F5-VNF-Service-Layer-CGNAT_v2.0.0 and later            | inputs_firewall_cgnat_v2.0.0 and later       |      
+|                           | vSphere-F5-VNF-Service-Layer-GiLAN_v1.4.X and later   |  inputs_gilan_cgnat_v2.0.0 and later          |
 |                           | vSphere-F5-VNF-Service-Layer-Firewall_v1.4.X and later|                                     | 
 |                           | vSphere-F5-VNF-Service-Layer-Base_v1.X and later      |                                     |
 |                           | vSphere-F5-VNF-Service-Layer-DNS_v1.3.1 and later     |                                     |
