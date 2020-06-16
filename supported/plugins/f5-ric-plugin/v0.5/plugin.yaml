@@ -1,7 +1,7 @@
 plugins:
   ric:
     package_name: f5-ric-plugin
-    package_version: '0.4'
+    package_version: '0.5'
     executor: central_deployment_agent
 
 node_types:
@@ -11,6 +11,9 @@ node_types:
     properties:
       vnf_group_throughput:
         type: string
+      vnf_layer_throughput:
+        type: string
+        default: 0
       ric_purchasing_model:
         type: string
       ric_licensing:
@@ -57,29 +60,3 @@ node_types:
       cloudify.interfaces.lifecycle:
         configure:
           implementation: ric.plugin.tasks.populate_uuid
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
