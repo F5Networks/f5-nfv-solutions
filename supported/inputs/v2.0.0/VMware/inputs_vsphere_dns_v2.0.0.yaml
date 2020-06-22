@@ -84,18 +84,18 @@ ric_vnfm_serial: "12345"
 auto_last_hop: "disabled"
 
 ## GiLAN SETTINGS (MAY IMPACT VNFM PERFORMANCE)##
-max_scale_dag_group: '10' # Max instances of DAG VE
-max_scale_vnf_group: '10' # Max instances of VNF Layers
-max_heal_vnfd_dag_ve: '10' # Max number of 'instances' that can be created during heal
+max_scale_dag_group: 10 # Max instances of DAG VE
+max_scale_vnf_group: 10 # Max instances of VNF Layers
+max_heal_vnfd_dag_ve: 10 # Max number of 'instances' that can be created during heal
 max_heal_vnf_layer: 10
-max_heal_vnf_slave_ve: '10'
+max_heal_vnf_slave_ve: 10
 
 vnf_layer_cpu_threshold: '85'
 vnf_layer_cpu_threshold_check_interval: '1'
 
 vnf_group_throughput: '20'
-vnf_group_throughput_threshold: '75'
-vnf_group_throughput_check_interval: '1'
+vnf_group_throughput_threshold: 75
+vnf_group_throughput_check_interval: 1
 
 dag_group_cpu_threshold: '89'
 dag_group_cpu_threshold_check_interval: '1'
@@ -135,7 +135,6 @@ vnf_as3_nsd_payload:
         dnsExpressEnabled: true
         localBindServerEnabled: false
         zoneTransferEnabled: true
-        localBindServerEnabled: false
         cacheEnabled: true
         cache:
           use: /DNS_Test/Shared/dnsCache

@@ -25,14 +25,14 @@ auto_last_hop: "disabled"
 
 # Max number of 'instances' that can be created during scale out
 # Max instances of DAG VE
-max_scale_dag_group: '10'
+max_scale_dag_group: 10
 # Max instances of VNF Layers
-max_scale_vnf_group: '10'
+max_scale_vnf_group: 10
 
 # Max number of 'instances' that can be created during heal
-max_heal_vnfd_dag_ve: '10'
+max_heal_vnfd_dag_ve: 10
 max_heal_vnf_layer: 10
-max_heal_vnf_slave_ve: '10'
+max_heal_vnf_slave_ve: 10
 
 # Nagios inputs
 floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41
@@ -118,7 +118,6 @@ vnf_as3_nsd_payload:
         dnsExpressEnabled: true
         localBindServerEnabled: false
         zoneTransferEnabled: true
-        localBindServerEnabled: false
         cacheEnabled: true
         cache:
           use: /DNS_Test/Shared/dnsCache
