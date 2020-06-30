@@ -7,7 +7,9 @@ The following list provides a brief description of each solution blueprint:
 - **F5-VNF-Service-Layer-Base_v1.X** - Enables you to deploy BIG-IP VEs in an open configuration model. This blueprint enables you to execute workflows manually.
 - **F5-VNF-Service-Layer-GiLAN_v1.X** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
 - **F5-VNF-Service-Layer-Firewall_v1.X** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
-- **F5-VNF-DNS_v1.3.1** - A preview of plugins, inputs, and blueprints enabling you to query and translate names for client requests. Use this preview DNS solution with VNFM v1.3.1 and later to translate top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
+- **F5-VNF-DNS_v1.3.1** - Plugins, inputs, and blueprints enabling you to query and translate names for client requests. Use this preview DNS solution with VNFM v1.3.1 and later to translate top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
+- **F5-VNF-Service-Layer-DNS-Security_v1.4.0** - Single-purpose solution specifically designed to clean DNS queries, and includes a standalone DNS security service layer.
+- **F5-VNF-Service-Layer-CGNAT-Offering_v2.0.0** - Plugins, inputs, and blueprints enabling you to implement CGNAT VNFs on environments with VNFs homed on different networks, not connected to DAG layers, but instead connected to the packet gateway and the provider network.
 
 
 ### Prerequisites and system requirements

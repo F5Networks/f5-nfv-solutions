@@ -57,7 +57,7 @@ node_types:
           type: string
       interfaces:
         cloudify.interfaces.lifecycle:
-          create: gilan.gilan_plugin.tasks.calculate_mask
+          create: bigiq.plugin.tasks.calculate_mask
 
 relationships:
   f5.bigiq.relationships.set_runtime_properties:
