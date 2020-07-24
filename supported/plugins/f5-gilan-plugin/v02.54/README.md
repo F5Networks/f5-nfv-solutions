@@ -1,11 +1,11 @@
 F5 Gi-LAN plugin
 ========================
 
-Use this plugin to create supported, custom blueprints for an original Cloudify v5.0.5 environment.
+% Use this plugin to create supported, custom blueprints for an original Cloudify v5.0.5 environment. %
 
 # Node types
 
-* f5.gilan.nodes.[ConnectionParameters](#connectionparameters)
+* [f5.gilan.nodes.ConnectionParameters](#f5.gilan.nodes.connectionparameters)
 * [f5.gilan.nodes.CGNATvnfdProxy](#f5.gilan.nodes.CGNATvnfdProxy)
 * [f5.gilan.nodes.CGNATAssigner](#f5.gilan.nodes.CGNATAssigner)
 * [f5.gilan.nodes.CGNATConfiguration](#f5.gilan.nodes.CGNATConfiguration)
@@ -38,6 +38,7 @@ Use this plugin to create supported, custom blueprints for an original Cloudify 
 * [f5.gilan.nodes.NagiosRestMonitoring](#f5.gilan.nodes.NagiosRestMonitoring)
 * [f5.gilan.nodes.ExternalDbDeploymentProxy](#f5.gilan.nodes.ExternalDbDeploymentProxy)
 
+
 # Relationship types
 
 * [f5.gilan.relationships.set_runtime_properties](#f5.gilan.relationships.set_runtime_properties)
@@ -49,6 +50,7 @@ Use this plugin to create supported, custom blueprints for an original Cloudify 
 * [f5.gilan.relationships.as3declaration.load_from_config](#f5.gilan.relationships.as3declaration.load_from_config)
 * [f5.gilan.relationships.set_source_runtime_property_to_instance_id](#f5.gilan.relationships.set_source_runtime_property_to_instance_id)
 * [f5.gilan.relationships.register_slave_to_arbiter](#f5.gilan.relationships.register_slave_to_arbiter)
+
 
 ## f5.gilan.nodes.ConnectionParameters
 
