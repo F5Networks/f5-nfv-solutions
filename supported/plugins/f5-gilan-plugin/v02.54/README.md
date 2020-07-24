@@ -50,7 +50,7 @@ Use this plugin to create supported, custom blueprints for an original Cloudify 
 * [f5.gilan.relationships.set_source_runtime_property_to_instance_id](#f5.gilan.relationships.set_source_runtime_property_to_instance_id)
 * [f5.gilan.relationships.register_slave_to_arbiter](#f5.gilan.relationships.register_slave_to_arbiter)
 
-## f5.gilan.nodes.ConnectionParameters [6]
+## f5.gilan.nodes.ConnectionParameters
 
 Transfer secrets between deployments.
 
