@@ -5,7 +5,7 @@ Use this plugin to create supported, custom blueprints for an original Cloudify 
 
 # Node types
 
-* [f5.gilan.nodes.ConnectionParameters](#f5.gilan.nodes.connectionparameters)
+* [f5.gilan.nodes.ConnectionParameters](#6)
 * [f5.gilan.nodes.CGNATvnfdProxy](#f5.gilan.nodes.CGNATvnfdProxy)
 * [f5.gilan.nodes.CGNATAssigner](#f5.gilan.nodes.CGNATAssigner)
 * [f5.gilan.nodes.CGNATConfiguration](#f5.gilan.nodes.CGNATConfiguration)
@@ -50,7 +50,7 @@ Use this plugin to create supported, custom blueprints for an original Cloudify 
 * [f5.gilan.relationships.set_source_runtime_property_to_instance_id](#f5.gilan.relationships.set_source_runtime_property_to_instance_id)
 * [f5.gilan.relationships.register_slave_to_arbiter](#f5.gilan.relationships.register_slave_to_arbiter)
 
-## f5.gilan.nodes.ConnectionParameters
+## f5.gilan.nodes.ConnectionParameters [6]
 
 Transfer secrets between deployments.
 
