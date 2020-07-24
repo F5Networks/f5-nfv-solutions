@@ -5,7 +5,7 @@ Use this plugin to create supported, custom blueprints for an original Cloudify 
 
 # Node types
 
-* [f5.gilan.nodes.ConnectionParameters](#f5.-gilan.-nodes.-connectionparameters)
+* f5.gilan.nodes.[ConnectionParameters](#connectionparameters)
 * [f5.gilan.nodes.CGNATvnfdProxy](#f5.gilan.nodes.CGNATvnfdProxy)
 * [f5.gilan.nodes.CGNATAssigner](#f5.gilan.nodes.CGNATAssigner)
 * [f5.gilan.nodes.CGNATConfiguration](#f5.gilan.nodes.CGNATConfiguration)
