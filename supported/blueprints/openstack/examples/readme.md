@@ -36,7 +36,7 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
 
 5. To deploy the demo blueprint, click the Rocket icon next to the **5-bigip-demo-cloud-libs** blueprint in the list.
 6. In the **Deploy Blueprint** dialog, click **Load Values**, and navigate to the sample **openstack_bigip_demo_inputs_cloud_libs.yaml** inputs file found in the  ``F5-bigip-demo-cloud-libs/inputs`` directory.
-7. In the left menu, click the **Deployments** blade, in the list next to the **F5-bigip-demo-cloud-libs** blueprint you uploaded in the previous steps, expand **more** icon, click **Install**, and then click **Execute**. 
+7. In the left menu, click the **Deployments** blade, in the list next to the **F5-bigip-demo-cloud-libs** blueprint you uploaded in the previous steps, expand the **more** icon, click **Install**, and then click **Execute**. 
 8. Wait for the installation to complete (approx. 15 minutes). A successful deployment installation turns green.
 9. To test the deployment, do the following:
 
