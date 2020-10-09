@@ -16,10 +16,10 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
 2.	Open your Cloudify 5.0.5 web application, and in the left menu click **System Resources**.
 3.	Do the following to upload the plugin files:
 
-   * Above the **Plugins table** click **Upload**.
-   * Either enter the URL of the wagon or select the .wgn file from your local file repository.
-   * Either enter the URL of the plugin .yaml file or select the plugin .yaml file from your local file repository.
-   * Click **Upload**. The F5 Gilan plugin details appear in the **Plugins** table.
+     * Above the **Plugins table** click **Upload**.
+     * Either enter the URL of the wagon or select the .wgn file from your local file repository.
+     * Either enter the URL of the plugin .yaml file or select the plugin .yaml file from your local file repository.
+     * Click **Upload**. The F5 Gilan plugin details appear in the **Plugins** table.
 
 **NOTE:** Plugins are tenant-specific, so a blueprint on one tenant cannot use/access a plugin uploaded to a different tenant.
 
@@ -31,8 +31,8 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
 3. Click **Upload**, in the **Upload Blueprint** dialog, navigate to the local blueprint zip file you created in step 1.
 4. Complete the following, and then click **Upload**:
 
-   * Blueprint name: F5-bigip-demo-cloud-libs
-   * Blueprint YAML file: F5-bigip-demo-cloud-libs.yaml
+     * Blueprint name: F5-bigip-demo-cloud-libs
+     * Blueprint YAML file: F5-bigip-demo-cloud-libs.yaml
 
 5. To deploy the demo blueprint, click the Rocket icon next ot the 5-bigip-demo-cloud-libs blueprint in the list.
 6. At the Deploy Blueprint dialog, click **Load Values**, and navigate to the sample **openstack_bigip_demo_inputs_cloud_libs.yaml** inputs file found in the  ``F5-bigip-demo-cloud-libs/inputs`` directory.
@@ -40,8 +40,8 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
 8. Wait for the installation to complete (approx. 15 minutes). A successful deployment installation turns green.
 9. To test the deployment, do the following:
 
-   * Click the **Deployments** blade, click the **F5-bigip-demo-cloud-libs** deployment to open it, and then scroll to the **Deployment Outputs** pane.
-   * Click the **http_endpoint**, and if you see something similar to ``Not secure | http://10.190.55.102:8080`` and a directory listing, then the client machine with the web_server was successfully configured and installed. 
+     * Click the **Deployments** blade, click the **F5-bigip-demo-cloud-libs** deployment to open it, and then scroll to the **Deployment Outputs** pane.
+     * Click the **http_endpoint**, and if you see something similar to ``Not secure | http://10.190.55.102:8080`` and a directory listing, then the client machine with the web_server was successfully configured and installed. 
 
 10. To test the entire blueprint (BIG IP and your environment), connect using ``ssh`` to the client/web_server machine, and then run the following from Deployment Outputs:
 
