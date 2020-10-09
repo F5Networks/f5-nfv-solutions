@@ -1,0 +1,25 @@
+floating_network_id: fa541932-4156-4185-8344-a961cf4c8e41
+ntp_server: time.google.com
+manager_mgmt_host: 10.10.10.7
+big_iq_host: 10.10.10.18
+big_iq_lic_pool: pool_vnfm
+timezone: UTC
+client_net: client
+client_subnet: client
+server_net: server
+server_subnet: server
+key_name: vnfm_key12
+mgmt_net: mgmt_vnfm
+mgmt_subnet: mgmt_vnfm_subnet
+mgmt_sg_name: mgmt_sg
+sw_ref_vm:
+  data: {availability_zone: nova, flavor: f5.cloudify_small, image: CentOS-7-x86_64-GenericCloud}
+  revision: 0
+datacenter: default
+webserver_port: 8080
+agent_user: centos
+sw_ref_bigip:
+  data: {availability_zone: nova, flavor: f5.cloudify, image: BIGIP-15.1.0.3-0.0.12.ALL_1SLOT}
+  revision: 0
+vs_virtualAddress: 10.10.11.100
+vs_virtualPort: 80
