@@ -153,7 +153,7 @@ sudo sed -i "s+#ssl_key_file = 'server.key'+ssl_key_file = '/var/lib/pgsql/data/
 sudo sed -i "s+#port = 5432+port = ${db_port}+g" /var/lib/pgsql/data/postgresql.conf
 sudo sed -i "s+#listen_addresses = 'localhost'+listen_addresses = '*'+g" /var/lib/pgsql/data/postgresql.conf
 
-# Modify connection restrictions in pg_hba.conf
+# Modify connection restrictions in pg_hba.conf 
 echo "# TYPE     DATABASE  USER  CIDR-ADDRESS  METHOD
 local      all       all   password
 hostnossl  all       all   0.0.0.0/0  password

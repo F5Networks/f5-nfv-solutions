@@ -12,3 +12,4 @@ ntpdate -s ${ntp}
 bigstart start ntpd
 
 echo '*****NTP_CONFIG FINISHED******' >> /var/log/cloud/f5-vnf/cloud_config.log
+ 

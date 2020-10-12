@@ -6,7 +6,7 @@ ntp_sync_interval=${2:-10}
 function log() {
   message=${1}
 
-  printf "%s awaitNtpSync:  %s\n" "$(date --utc '+%FT%T.%3NZ')" "${message}" >> /var/log/cloud/f5-vnf/cloud_config.log
+  printf "%s awaitNtpSync:  %s\n" "$(date --utc '+%FT%T.%3NZ')" "${message}" >> /var/log/cloud/f5-vnf/cloud_config.log  
 }
 
 

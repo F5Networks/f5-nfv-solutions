@@ -1,17 +1,17 @@
 rest_calls:
-- path: /mgmt/shared/authn/login
-  method: POST
-  headers:
-    Content-type: application/json
-  payload:
-    username: '{{ username }}'
-    password: '{{ password }}'
-  response_format: json
-  recoverable_codes: [400, 401, 404, 502, 503]
-  response_translation:
-    token:
-     token: [token]
-  response_expectation:
-    - ['username', '{{ username }}']
-  retry_on_connection_error: true
-  host: '{{host}}'
+  - path: /mgmt/shared/authn/login
+    method: POST
+    headers:
+      Content-type: application/json
+    payload:
+      username: '{{ username }}'
+      password: '{{ password }}'
+    response_format: json
+    recoverable_codes: [400, 401, 404, 502, 503]
+    response_translation:
+      token:
+       token: [token]
+    response_expectation:
+      - ['username', '{{ username }}']
+    retry_on_connection_error: true
+    host: '{{host}}'

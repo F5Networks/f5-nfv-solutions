@@ -96,3 +96,4 @@ fi
 
 msg="$msg *** Instance: $deviceName"
 echo "$msg" >> /var/log/cloud/f5-vnf/cloud_config.log
+

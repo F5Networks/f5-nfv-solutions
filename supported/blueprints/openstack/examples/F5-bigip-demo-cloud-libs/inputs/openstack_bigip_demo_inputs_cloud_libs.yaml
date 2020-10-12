@@ -13,7 +13,7 @@ mgmt_net: mgmt_vnfm
 mgmt_subnet: mgmt_vnfm_subnet
 mgmt_sg_name: mgmt_sg
 sw_ref_vm:
-  data: {availability_zone: nova, flavor: f5.cloudify_small, image: CentOS-7-x86_64-GenericCloud}
+  data: {availability_zone: nova, flavor: f5.cloudify_small, image: CentOS-7-x86_64-GenericCloud}     
   revision: 0
 datacenter: default
 webserver_port: 8080

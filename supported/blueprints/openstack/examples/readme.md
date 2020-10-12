@@ -4,16 +4,16 @@ In this directory you will find the following example blueprints that will help 
 
 ### Using the F5-bigip-demo-cloud-libs example blueprint
 
-In this directory you will find a blueprint solution that you can upload to Cloudify 5.0.5 and use with the F5 Gilan Plugin 2.1.0 file for instantiating a pair of BIG-IP VEs for HA purposes.
+In this directory you will find a blueprint solution that you can upload to Cloudify 5.05 and use with the F5 Gilan Plugin 2.1.0 file for instantiating a pair of BIG-IP VEs for HA purposes.
 
 This blueprint will onboard BIG-IP VE using F5 Cloud-libs and will configure the VEs using F5 AS3 declaration. 
 
-#### To upload the F5 Gilan Plugin to your Cloudify 5.0.5 Web app 
+#### To upload the F5 Gilan Plugin to your Cloudify 5.05 Web app 
 
 Upon purchasing the F5 Gilan Plugin, you will receive an email with a download link and a license key. 
 
 1.	Download the F5 Gilan Plugin .ova/.zip file and extract the file locally. You will have one .wgn file and one .yaml file.
-2.	Open your Cloudify 5.0.5 web application, and in the left menu click the **System Resources** blade.
+2.	Open your Cloudify 5.05 web application, and in the left menu click the **System Resources** blade.
 3.	Do the following to upload the plugin files:
 
      * Above the **Plugins table** click **Upload**.
@@ -27,7 +27,7 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
 #### To deploy the F5-bigip-demo-cloud-libs example blueprint 
 
 1. Create a local zip file of the **F5-bigip-demo-cloud-libs** directory.
-2. Open Cloudify 5.0.5 Web app, in the left pane click the **Local Blueprints** blade.
+2. Open Cloudify 5.05 Web app, in the left pane click the **Local Blueprints** blade.
 3. Click **Upload**, in the **Upload Blueprint** dialog, navigate to the local blueprint zip file you created in step 1.
 4. Complete the following, and then click **Upload**:
 
