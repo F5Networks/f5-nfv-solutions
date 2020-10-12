@@ -53,7 +53,7 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
     
 In this F5-bigip-demo-cloud-libs example, the onboarding processes are done by two nodes: 
 
-* ``cloud_config_runcmds`` – license, configuration, and other similar tasks that define the following to onboarding variables:
+* ``cloud_config_runcmds`` – license, configuration, and other similar tasks that define the following onboarding variables:
 
     *  ``custom_ltm_level``
     *  ``custom_afm_level``
