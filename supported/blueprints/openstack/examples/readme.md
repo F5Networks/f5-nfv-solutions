@@ -55,17 +55,17 @@ In this F5-bigip-demo-cloud-libs example, the onboarding processes are done by t
 
 * ``cloud_config_runcmds`` – license, configuration, and other similar tasks that define the following to onboarding variables:
 
-    *  custom_ltm_level
-    *  custom_afm_leve
-    *  custom_pem_level
-    *  custom_gtm_leve
+    *  ``custom_ltm_level``
+    *  ``custom_afm_level``
+    *  ``custom_pem_level``
+    *  ``custom_gtm_level``
  
 * ``onboard_network_nnic`` – network configuration tasks that define the following variables for onboarding nnic configuration:
 
-    * bgp_pgw_peer_ip
-    * bgp_pgw_peer_as
-    * bgp_egw_peer_ip
-    * bgp_egw_peer_as
+    * ``bgp_pgw_peer_ip``
+    * ``bgp_pgw_peer_as``
+    * ``bgp_egw_peer_ip``
+    * ``bgp_egw_peer_as``
 
 
 
