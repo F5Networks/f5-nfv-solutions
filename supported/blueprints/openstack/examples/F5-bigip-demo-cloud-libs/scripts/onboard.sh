@@ -86,6 +86,7 @@ function set_vars() {
             afm_level="$custom_afm_level"
             pem_level="$custom_pem_level"
             gtm_level="$custom_gtm_level"
+        fi
     else
         sku="F5-BIG-MSP-LTM-DAG08"
         ltm_level="nominal"
