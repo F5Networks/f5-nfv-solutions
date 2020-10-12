@@ -4,7 +4,7 @@ In this directory you will find the following example blueprints that will help 
 
 ### Using the F5-bigip-demo-cloud-libs example blueprint
 
-In this directory you will find a blueprint solution that you can upload to Cloudify 5.05 and use with the F5 Gilan Plugin 2.1.0 file for instantiating a pair of BIG-IP VEs for HA purposes.
+In this example directory you will find a blueprint solution that you can upload to Cloudify 5.05 and use with the F5 Gilan Plugin 2.1.0 file for instantiating a pair of BIG-IP VEs for HA purposes.
 
 This blueprint will onboard BIG-IP VE using F5 Cloud-libs and will configure the VEs using F5 AS3 declaration. 
 
@@ -51,6 +51,23 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
     
     ```
     
+In this F5-bigip-demo-cloud-libs example, the onboarding processes are done by two nodes: 
+
+* ``cloud_config_runcmds`` – license, configuration, and other similar tasks that define the following to onboarding variables:
+
+    *  custom_ltm_level
+    *  custom_afm_leve
+    *  custom_pem_level
+    *  custom_gtm_leve
+ 
+* ``onboard_network_nnic`` – network configuration tasks that define the following variables for onboarding nnic configuration:
+
+    * bgp_pgw_peer_ip
+    * bgp_pgw_peer_as
+    * bgp_egw_peer_ip
+    * bgp_egw_peer_as
+
+
 
 
 
