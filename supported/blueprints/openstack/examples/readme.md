@@ -31,19 +31,19 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
 3. Click **Upload**, in the **Upload Blueprint** dialog, navigate to the local blueprint zip file you created in step 1.
 4. Complete the following, and then click **Upload**:
 
-     * Blueprint name: F5-bigip-demo-cloud-libs
-     * Blueprint YAML file: F5-bigip-demo-cloud-libs.yaml
+     * **Blueprint name**: F5-bigip-demo-cloud-libs
+     * **Blueprint YAML file**: F5-bigip-demo-cloud-libs.yaml
 
-5. To deploy the demo blueprint, click the Rocket icon next to the **5-bigip-demo-cloud-libs** blueprint in the list.
+5. To deploy the demo blueprint, click the **Rocket** icon next to the **5-bigip-demo-cloud-libs** blueprint in the list.
 6. In the **Deploy Blueprint** dialog, click **Load Values**, and navigate to the sample **openstack_bigip_demo_inputs_cloud_libs.yaml** inputs file found in the  ``F5-bigip-demo-cloud-libs/inputs`` directory.
 7. In the left menu, click the **Deployments** blade, in the list next to the **F5-bigip-demo-cloud-libs** blueprint you uploaded in the previous steps, expand the **more** icon, click **Install**, and then click **Execute**. 
-8. Wait for the installation to complete (approx. 15 minutes). A successful deployment installation turns green.
+8. Wait for the installation to complete (approx. 15 minutes). A successful deployment installation will turn green.
 9. To test the deployment, do the following:
 
      * Click the **Deployments** blade, click the **F5-bigip-demo-cloud-libs** deployment to open it, and then scroll to the **Deployment Outputs** pane.
-     * Click the **http_endpoint**, and if you see something similar to ``Not secure | http://10.190.55.102:8080`` and a directory listing, then the client machine with the web_server was successfully configured and installed. 
+     * Click the **http_endpoint**, and if you see something similar to ``Not secure | http://10.190.55.102:8080`` and a directory listing, then the client machine with the ``web_server`` was successfully configured and installed. 
 
-10. To test the entire blueprint (BIG IP and your environment), connect using ``ssh`` to the client/web_server machine, and then run the following from Deployment Outputs:
+10. To test the entire blueprint (BIG IP and your environment), connect using ``ssh`` to the client/web_server machine, and then run the following from **Deployment Outputs**:
 
     ```
     
@@ -51,7 +51,7 @@ Upon purchasing the F5 Gilan Plugin, you will receive an email with a download l
     
     ```
     
-In this F5-bigip-demo-cloud-libs example, the onboarding processes are done by two nodes: 
+In this *F5-bigip-demo-cloud-libs* example, the onboarding processes are done by two nodes: 
 
 * ``cloud_config_runcmds`` – license, configuration, and other similar tasks that define the following onboarding variables:
 
