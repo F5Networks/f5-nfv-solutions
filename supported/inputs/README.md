@@ -20,7 +20,7 @@ Visit the F5 VNFM product documentation for more details about:
 3. Save the file locally, and then upload this file when [deploying blueprints in VNFM](https://clouddocs.f5.com/cloud/nfv/latest/deploy.html#deployblueprint).
 
 #### Copyright
-Copyright 2014-2020 F5 Networks Inc.
+Copyright 2014-2021 F5 Networks Inc.
 
 #### License
 
