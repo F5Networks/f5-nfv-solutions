@@ -40,7 +40,7 @@ The following table describes the supported plugin versions available in this re
 |                           | F5-VNF-Service-Layer-CGNAT_v2.0.0 and later            |                                   |
 |                           | vSphere-F5-VNF-Service-Layer-CGNAT_v2.0.0 and later    |                                   |
 |                           |                                                        |                                   |                                    
-|f5-gilan-plugin 0.2.54     | F5-VNF-Service-Layer-GiLAN_v2.0.0.1.                  | inputs_gilan_v2.0.0.1              |
+|f5-gilan-plugin 0.2.60     | F5-VNF-Service-Layer-GiLAN_v2.0.0.1.                  | inputs_gilan_v2.0.0.1              |
 |                           | vSphere-F5-VNF-Service-Layer-GiLAN_v2.0.0.1           | inputs_firewall_v2.0.0.1           |
 |                           | F5-VNF-Service-Layer-Firewall_v2.0.0.1                | inputs_base_v2.0.0.1               |
 |                           | vSphere-F5-VNF-Service-Layer-Firewall_v2.0.0.1        | inputs_dns_v2.0.0.1                |
