@@ -12,7 +12,6 @@
    "mgmt_net": "mgmt_vnfm",
    "mgmt_sg_name": "mgmt_sg",
    "mgmt_subnet": "mgmt_vnfm_subnet",
-   "security_groups": "enable",
    "ntp_server": "time.google.com",
    "timezone": "UTC",
    "sw_ref_ltm": {

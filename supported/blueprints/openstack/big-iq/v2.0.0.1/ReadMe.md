@@ -1,6 +1,6 @@
 ## About the F5-VNF-BIG-IQ_v2.0.0.1 solution blueprint
 
-This release provides the following fixes ONLY for known issues, and is used with the f5-gilan-plugin_0.2.54 version ONLY: 
+This release provides the following fixes ONLY for known issues, and is used with the f5-gilan-plugin_0.2.60 version ONLY: 
 
 * The **Update declaration** workflow is now synchronizing across all VEs in the VNF layer, as the AS3 declaration is sent to the Primary node, and
 then propagated to the secondary nodes using sync only. Also added verification ``Declaration result: success`` messaging, when the AS3 declaration is accepted by the AS3 API.
