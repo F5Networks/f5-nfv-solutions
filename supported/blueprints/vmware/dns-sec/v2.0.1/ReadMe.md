@@ -1,6 +1,4 @@
-## About the F5-VNF-Service-Layer-CGNAT-Offering_v2.0.1 solution blueprint
-
-Use this new blueprint solution for implementing CGNAT VNFs in VNFM 2.0.X and later environments with VNFs homed on different networks, not connected to DAG layers, but instead connected to the packet gateway and the provider network.
+## About the vSphere-F5-VNF-Service-Layer-DNS-Security_v2.0.1 solution blueprint
 
 This release provides the following fixes for known issues and preview functionlality changes. Use with the f5-gilan-plugin_0.2.60 version ONLY: 
 
@@ -32,7 +30,7 @@ This release provides the following fixes for known issues and preview functionl
 
   * PREVIEW FEATURE: Supplemented all VNFM blueprint solutions with the new ``additional_commands`` input  for executing TMSH/BASH commands for configuration purposes. The default setting for this input is an empty list (of commands).
   * Added python-openstackclient 3.14.4, which is a command-line client tool for OpenStack Queens. You can execute the OpenStack command set from VNF Manager for Compute, Identity, Image, Network, Object Store, and Block Storage APIs.
-  
+
 
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
