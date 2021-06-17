@@ -12,7 +12,7 @@ The inputs files for OpenStack virtualization infrastructure manager (VIM) suppo
 Use the .yaml file with the [F5 VNFM web console](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html) and the .json files with the [REST API](https://clouddocs.f5.com/cloud/nfv/latest/CM-REST-API.html).
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2021 F5 Networks Inc.
 
 #### License
 

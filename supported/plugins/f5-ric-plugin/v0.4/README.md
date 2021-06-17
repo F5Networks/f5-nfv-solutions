@@ -6,7 +6,7 @@ This is the initial version of the Resource Information Collector plugin, enabli
  - F5 VNF Service Layer DNS 1.3.1 (standalone PREVIEW)
 
 #### Copyright
-Copyright 2014-2020 F5 Networks Inc.
+Copyright 2014-2021 F5 Networks Inc.
 
 #### License
 

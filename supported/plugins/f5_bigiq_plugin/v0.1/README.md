@@ -5,7 +5,7 @@ This is the initial version of the F5 BIG-IQ plugin, enabling autoconfiguration 
 
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2021 F5 Networks Inc.
 
 #### License
 
