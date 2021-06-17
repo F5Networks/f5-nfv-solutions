@@ -2,7 +2,7 @@
 The inputs in this directory are new to F5 VNFM in version 1.2. Use these inputs when launching F5 VNFM 1.2 from a VMware vSphere ESXi version 6.5 virtualization infrastructure manager (VIM). Use the .yaml files with the [F5 VNFM web console](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html) and the .json files with the [REST API](https://clouddocs.f5.com/cloud/nfv/latest/CM-REST-API.html).
 
 #### Copyright
-Copyright 2014-2019 F5 Networks Inc.
+Copyright 2014-2021 F5 Networks Inc.
 
 #### License
 
