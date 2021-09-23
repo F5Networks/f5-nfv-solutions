@@ -74,12 +74,6 @@ pgw_subnet: subnet_PGW
 pdn_net: network_PDN
 pdn_subnet: subnet_PDN
 
-pgw_dag_net: network_PGW_DAG
-pgw_dag_subnet: subnet_PGW_DAG
-
-pdn_dag_net: network_PDN_DAG
-pdn_dag_subnet: subnet_PDN_DAG
-
 bgp_dag_pgw_peer_ip: 10.4.0.1
 bgp_vnf_pgw_peer_ip: 10.6.0.1
 bgp_pgw_peer_as: '65001'
