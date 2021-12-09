@@ -13,7 +13,7 @@ then propagated to the secondary nodes using sync only. Also added verification 
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
 #### Copyright
-Copyright 2014-2021 F5 Networks Inc.
+Copyright 2014-2022 F5 Networks Inc.
 
 #### License
 

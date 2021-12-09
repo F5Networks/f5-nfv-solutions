@@ -3,7 +3,7 @@
 Use the F5 Base solution blueprint for implementing components enabling you to deploy BIG-IP VEs in an open configuration model. No auto-scale and auto-heal functionality exists, but you can run scale and heal workflows, manually. Select this blueprint to create a set of standalone, CGNAT devices in your VIM.
 
 #### Copyright
-Copyright 2014-2021 F5 Networks Inc.
+Copyright 2014-2022 F5 Networks Inc.
 
 #### License
 
