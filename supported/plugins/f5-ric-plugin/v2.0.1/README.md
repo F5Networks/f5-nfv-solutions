@@ -1,4 +1,4 @@
-## Use F5-ric-plugin-2.0.1 
+## Use F5 RIC Plugin 2.0.1 
 This is the 2.0.1 version of the Resource Information Collector plugin, enabling utility resource collection and usage report generation for the following deployed blueprints:
  
  - Gi LAN version 1.4.X

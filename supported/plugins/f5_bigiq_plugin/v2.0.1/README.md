@@ -1,4 +1,4 @@
-## Use f5_bigiq_plugin-2.0.1 
+## Use F5 BIG-IQ Plugin 2.0.1 
 The F5 BIG-IQ plugin v 2.0.1 enables autoconfiguration of the license manager associated with the BIG-IQ Version 6.0.1. This version was updated for naming purposes only. The 2.0.1 release has no new changes/updates since the inital v0.1. 
 
 This version of the plugin deploys the following blueprint versions:
