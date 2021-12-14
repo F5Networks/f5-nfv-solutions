@@ -19,7 +19,7 @@ This version contains support for following new features:
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
 #### Copyright
-Copyright 2014-2020 F5 Networks Inc.
+Copyright 2014-2021 F5 Networks Inc.
 
 #### License
 

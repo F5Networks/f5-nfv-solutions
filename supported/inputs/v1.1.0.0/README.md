@@ -8,7 +8,7 @@ In this folder you have YAML file format for use with the [F5 VNFM web console](
 
 
 #### Copyright
-Copyright 2014-2021 F5 Networks Inc.
+Copyright 2014-2022 F5 Networks Inc.
 
 #### License
 

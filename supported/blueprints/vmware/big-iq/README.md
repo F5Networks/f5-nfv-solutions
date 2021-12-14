@@ -2,7 +2,7 @@
 This blueprint automates the configuration of the BIG-IQ license manager utility and automatically returns all the required license names and BIG-IQ address information required by the other main, blueprint solutions (Gi LAN, Gi Firewall, and Base). You can still manually configure your BIG-IQ license manager; however, if you do use this blueprint, you must deploy this blueprint first, BEFORE deploying another solution blueprint.
 
 #### Copyright
-Copyright 2014-2020 F5 Networks Inc.
+Copyright 2014-2022 F5 Networks Inc.
 
 #### License
 

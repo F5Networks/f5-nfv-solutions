@@ -1,15 +1,15 @@
 ## Use F5 VNFM solution blueprints
-In this directory you will find blueprints for each VNFM solution for both OpenStack and vSpere VIMs; Gi LAN, Gi Firewall, DNS (PREVIEW), and Base, as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution directory you will find supported versions of each blueprint released with each version of VNFM, adn for all supported VIMs.
+In this directory you will find blueprints for each VNFM solution for both OpenStack and vSpere VIMs; Gi LAN, Gi Firewall, DNS, and Base, as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution directory you will find supported versions of each blueprint released with each version of VNFM, and for all supported VIMs.
 
 The following list provides a brief description of each solution blueprint:
 
-- **F5-VNF-BIG-IQ_v1.2.1** - Enables you to auto-configure the BIG-IQ license manager utility. You can deploy this solution when launching an F5 VNF Manager version 1.2.1 and later.
-- **F5-VNF-Service-Layer-Base_v1.X** - Enables you to deploy BIG-IP VEs in an open configuration model. This blueprint enables you to execute workflows manually.
-- **F5-VNF-Service-Layer-GiLAN_v1.X** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
-- **F5-VNF-Service-Layer-Firewall_v1.X** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
-- **F5-VNF-DNS_v1.3.1** - Plugins, inputs, and blueprints enabling you to query and translate names for client requests. Use this preview DNS solution with VNFM v1.3.1 and later to translate top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
-- **F5-VNF-Service-Layer-DNS-Security_v1.4.0** - Single-purpose solution specifically designed to clean DNS queries, and includes a standalone DNS security service layer.
-- **F5-VNF-Service-Layer-CGNAT-Offering_v2.0.0** - Plugins, inputs, and blueprints enabling you to implement CGNAT VNFs on environments with VNFs homed on different networks, not connected to DAG layers, but instead connected to the packet gateway and the provider network.
+- **F5-VNF-BIG-IQ** - Enables you to auto-configure the BIG-IQ license manager utility. You can deploy this solution when launching an F5 VNF Manager version 1.2.1 and later.
+- **F5-VNF-Service-Layer-Base** - Enables you to deploy BIG-IP VEs in an open configuration model. This blueprint enables you to execute workflows manually.
+- **F5-VNF-Service-Layer-GiLAN** - Enables you to deploy BIG-IP VEs that utilize automated service layers that auto-scale virtual machines and services to provide a complete and fully configured set of lifecycle management workflows. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
+- **F5-VNF-Service-Layer-Firewall** - Enables you to deploy BIG-IP VEs that utilize firewall protection services only like, DDoS mitigation, DNS security, and intrusion protection. For setting up an intergrated CGNAT solution in an OpenStack VIM, refer to [CGNAT-specific AS3 declaration][1].
+- **F5-VNF-DNS** - Plugins, inputs, and blueprints enabling you to query and translate names for client requests. Use this preview DNS solution with VNFM v1.3.1 and later to translate top-level Internet domains, such as .com, /net, .gov, .edu, and .org.
+- **F5-VNF-Service-Layer-DNS-Security** - Single-purpose solution specifically designed to clean DNS queries, and includes a standalone DNS security service layer.
+- **F5-VNF-Service-Layer-CGNAT-Offering** - Plugins, inputs, and blueprints enabling you to implement CGNAT VNFs on environments with VNFs homed on different networks, not connected to DAG layers, but instead connected to the packet gateway and the provider network.
 
 
 ### Prerequisites and system requirements
@@ -35,7 +35,7 @@ Visit the F5 VNFM product documentation for more details about:
 For complete blueprint descriptions, consult the [F5 VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html).
 
 #### Copyright
-Copyright 2014-2021 F5 Networks Inc.
+Copyright 2014-2022 F5 Networks Inc.
 
 #### License
 

@@ -3,7 +3,7 @@ This is the initial version of the F5VNF BIG-IQ solution blueprint. This bluepri
 
 
 #### Copyright
-Copyright 2014-2020 F5 Networks Inc.
+Copyright 2014-2022 F5 Networks Inc.
 
 #### License
 

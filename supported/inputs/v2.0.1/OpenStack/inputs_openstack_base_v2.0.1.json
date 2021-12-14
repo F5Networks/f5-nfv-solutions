@@ -1,0 +1,25 @@
+{
+   "bigip_ssh_key": "my-key",
+   "default_gateway": "10.10.10.1",
+   "default_ltm_number": 2,
+   "external_net": "pdn_dag_net",
+   "external_sg_name": "pgw_sg",
+   "external_subnet": "pdn_dag_net_subnet",
+   "internal_net": "pgw_dag_net",
+   "internal_sg_name": "pdn_sg",
+   "internal_subnet": "pgw_dag_net_subnet",
+   "manager_mgmt_host": "10.10.10.6",
+   "mgmt_net": "mgmt_vnfm",
+   "mgmt_sg_name": "mgmt_sg",
+   "mgmt_subnet": "mgmt_vnfm_subnet",
+   "ntp_server": "time.google.com",
+   "timezone": "UTC",
+   "sw_ref_ltm": {
+      "data": {
+         "availability_zone": "nova",
+         "flavor": "f5.cloudify",
+         "image": "BIGIP-13.1.0.7-0.0.1.ALL_1SLOT"
+      },
+      "revision": 0
+   }
+}
