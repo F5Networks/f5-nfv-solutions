@@ -1,11 +1,11 @@
-## Inputs for VNFM version 2.0.1
+## Inputs for VNFM version 2.0.2
 
 In this folder you have YAML file format for use with the F5 VNFM web console and the JSON files with the REST API.  
 
 | VIM                       | New Inputs File                              | New Blueprint Solution         |
 | :-------------------------| :--------------------------------------------| :------------------------------| 
-| OpenStack (Newton 10) <br>  OpenStack (Queens 13)   | inputs_openstack_bigiq_v2.0.1.yaml<br>inputs_openstack_bigiq_v2.0.1.json<br>inputs_openstack_base_v2.0.1.yaml<br>inputs_openstack_base_v2.0.1.json <br> inputs_openstack_firewall_v2.0.1.yaml <br>  inputs_openstack_firewall_v2.0.1.json <br> inputs_openstack_gilan_v2.0.1.json <br> inputs_openstack_gilan_v2.0.1.yaml <br> inputs_openstack_dns_v2.0.1.yaml<br> inputs_openstack_dns_security_v2.0.1.yaml<br>inputs_openstack_dns_security_v2.0.1.json<br>inputs_openstack_cgnat_v2.0.1.yaml<br>inputs_openstack_cgnat_v2.0.1.json<br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v2.0.1  <br> F5-VNF-Service-Layer-Firewall_v2.0.1<br> F5-VNF-Service-Layer-GiLAN_v2.0.1<br> F5-VNF-Service-Layer-DNS_v2.0.1<br> F5-VNF-Service-Layer-DNS_Security_v2.0.1<br> F5-VNF-Service-Layer-CGNAT-Offering_v2.0.1|
-| VMware vSphere ESXi 6.5   | inputs_vsphere_base_v1.3.yaml<br>inputs_vsphere_base_v1.3.json<br>inputs_vsphere_bigiq_v1.3.yaml<br>inputs_vsphere_bigiq_v2.0.1.json<br>inputs_vsphere_firewall_v2.0.1.yaml<br>inputs_vsphere_firewall_v2.0.1.json<br>inputs_vsphere_gilan_v2.0.1.yaml<br>inputs_vsphere_gilan_v2.0.1.json<br>inputs_vsphere_dns_v2.0.1.json<br>inputs_vsphere_dns_security_v2.0.1.json<br>inputs_vsphere_dns_security_v2.0.1.yaml<br>inputs_vsphere_cgnat_v2.0.1.json<br>inputs_vsphere_cgnat_v2.0.1.yaml  | vSphere-F5-VNF-BIG-IQ.yaml <br> vSphere-F5-VNF-Service-Layer-Base_v2.0.1  <br> vSphere-F5-VNF-Service-Layer-Firewall_v2.0.1<br> vSphere-F5-VNF-Service-Layer-GiLAN_v2.0.1<br> vSphere-F5-VNF-Service-Layer-DNS_v2.0.1<br> vSphere-F5-VNF-Service-Layer-DNS-Security_v2.0.1<br> vSphere-F5-VNF-Service-Layer-CGNAT-Offering_v2.0.1.|
+| OpenStack (Newton 10) <br>  OpenStack (Queens 13)   | inputs_openstack_bigiq_v2.0.2.yaml<br>inputs_openstack_bigiq_v2.0.2.json<br>inputs_openstack_base_v2.0.2.yaml<br>inputs_openstack_base_v2.0.2.json <br> inputs_openstack_firewall_v2.0.2.yaml <br>  inputs_openstack_firewall_v2.0.2.json <br> inputs_openstack_gilan_v2.0.2.json <br> inputs_openstack_gilan_v2.0.2.yaml <br> inputs_openstack_dns_v2.0.2.yaml<br> inputs_openstack_dns_security_v2.0.2.yaml<br>inputs_openstack_dns_security_v2.0.2.json<br>inputs_openstack_cgnat_v2.0.2.yaml<br>inputs_openstack_cgnat_v2.0.2.json<br>| F5-VNF-BIG-IQ.yaml <br> F5-VNF-Service-Layer-Base_v2.0.2  <br> F5-VNF-Service-Layer-Firewall_v2.0.2<br> F5-VNF-Service-Layer-GiLAN_v2.0.2<br> F5-VNF-Service-Layer-DNS_v2.0.2<br> F5-VNF-Service-Layer-DNS_Security_v2.0.2<br> F5-VNF-Service-Layer-CGNAT-Offering_v2.0.2|
+| VMware vSphere ESXi 6.5   | inputs_vsphere_base_v1.3.yaml<br>inputs_vsphere_base_v1.3.json<br>inputs_vsphere_bigiq_v1.3.yaml<br>inputs_vsphere_bigiq_v2.0.2.json<br>inputs_vsphere_firewall_v2.0.2.yaml<br>inputs_vsphere_firewall_v2.0.2.json<br>inputs_vsphere_gilan_v2.0.2.yaml<br>inputs_vsphere_gilan_v2.0.2.json<br>inputs_vsphere_dns_v2.0.2.json<br>inputs_vsphere_dns_security_v2.0.2.json<br>inputs_vsphere_dns_security_v2.0.2.yaml<br>inputs_vsphere_cgnat_v2.0.2.json<br>inputs_vsphere_cgnat_v2.0.2.yaml  | vSphere-F5-VNF-BIG-IQ.yaml <br> vSphere-F5-VNF-Service-Layer-Base_v2.0.2  <br> vSphere-F5-VNF-Service-Layer-Firewall_v2.0.2<br> vSphere-F5-VNF-Service-Layer-GiLAN_v2.0.2<br> vSphere-F5-VNF-Service-Layer-DNS_v2.0.2<br> vSphere-F5-VNF-Service-Layer-DNS-Security_v2.0.2<br> vSphere-F5-VNF-Service-Layer-CGNAT-Offering_v2.0.2.|
  
 
 ### Fixed issues
@@ -14,31 +14,26 @@ This release provides the following fixes ONLY for known issues, and is used wit
 
 * Bug fixes:   
 
-  * You can now restore a snapshot (with the exception of VNFM 2.0.0), and you will no longer encounter the following error: "Restoring snapshot from version 0.0.0 is not supported." Be aware, you may need to make repeated attempts at a snapshot before success.
-  * For GiLAN or Gi Firewall + CGNAT deployments, you can now make changes to the CGNAT configuration, post deployment.
-  * The Update declaration workflow now synchronizes across all VEs in the VNF layer; therefore, you no longer need to manually push the changes using a ``curl`` command.
-  * The Upgrade workflow no longer automatically admin-disables the old layer. Perform this step manually, as designed.
-  * The Heal workflow no longer returns an error on the ``vnf_layer`` for Gi LAN blueprint deployments.
-  * The telemetry AS3 declaration now propagates as expected, after executing ``sync-to-device`` group.
-  * Zooming the map view in the new Site Management widget now works as expected.
-  * You will no longer receive a ``404`` error message when trying to deploy any blueprint on vSphere VIM with a setting of ``switch_distributed=False``.
-  * Device configuration groups now sync with the master node after executing a Scale out workflow for a ``vnf_layer`` deployment.
-  * When upgrading your BIG-IP VEs, you no longer encounter an error while executing the Upgrade Start workflow for a `VNF Group.
-  * New deployments created during a Scale out workflow or a Heal workflow are now created with updated inputs.
-  * When you select one type of declaration (AS3, Telemetry Streaming, or Syslog), VNFM no longer triggers all three declaration types, during an update, and the declaration no longer breaks the configuration services on the VNFs.
-  * You will no longer receive an error in NSD node-telemetry_declaration, when running a configuration_update workflow.
-  * The Cloud-libs is no longer stuck on ``/tm/sys/available``, and will no longer cause BIG-IP deployment failures on the node.
-  * If the ``vlan_ip_map`` key has not been defined, you can now scale out resources without failure.
-  * Nagios no longer fails during installation.
-  * In the case of the Scale out workflow failing (you receive an error message while creating a VE on OpenStack); the Scale out workflow will revert/roll back all modifications made. When scaling out multiple VEs simultaneously,
-  the ``ip_assigner node-instances`` is not initialized at the start of the roll-back; for example, ``ip_assigner`` nodes do not have the ``vlan_ip_map`` runtime property defined yet, causing the roll-back procedure to fail. The fix now detects this
-  situation and enables the roll-back procedure to complete, correctly.
-  * When launching the Gi LAN blueprint solution, the ``increment_ips_proxy`` workflow is now blocked when CGNAT is NOT enabled. This is the intended behavior.
-
-* Functionality changes:
-
-  * PREVIEW FEATURE: Supplemented all VNFM blueprint solutions with the new ``additional_commands`` input  for executing TMSH/BASH commands for configuration purposes. The default setting for this input is an empty list (of commands).
-  * Added python-openstackclient 3.14.4, which is a command-line client tool for OpenStack Queens. You can execute the OpenStack command set from VNF Manager for Compute, Identity, Image, Network, Object Store, and Block Storage APIs.
+  * Running the Heal and Purge workflows for VNF layers no longer causes the slave node to fail in VMware Vsphere environment and executes as expected in both OpenStack and VMware.
+  * Fixed the controller task, so you no longer get the Task failed ``cloudify_vsphere.devices.create_contoller`` -> ``cloudify_vsphere.devices`` has no function named ``create_contoller`` error in Vsphere.
+  * Socket no longer hangs causing an error; therefore, AS3 no longer fails to start.
+  * The ``default_page_size`` limit is now 20000 to accommodate scaling large deployments with a high number of node-instances.
+  * VNFM components are syncing as expected with the internal VNFM NTP service.
+  * The default naming convention used for all BIG-IP VEs is no longer preassigned with an environment prefix; for example, openstacklocal hostnames. The hostname uses a generic naming convention.
+  * You no longer receive a permissions error when taking a snapshot for restoring OpenStack and vSphere images (found after running a series of automated tests). Taking a snapshot works as designed. See the Backup and restore guide for details.
+  * When installing a Gi-LAN+CGNAT blueprint, the Heal workflow no longer fails with an ``UnboundLocalError: local variable check_sync_status_id`` referenced before assignment error message.
+  * The CGNAT-Offering blueprint solution for vSphere are now advertising the BGP prefixes, as designed, and is persisting the correct NIC order.
+  * NIC ordering fix for vSphere no longer causes the Client action _upload failed error in OpenStack.
+  * When deploying the CGNAT-Offering blueprint, two Control NICs are no longer created unintentionally. Only one Control NIC is created.
+  * When executing the Configuration update workflow on vSphere GiLAN (non-CGNAT) deployments, you no longer get an error on the additional NSD layers.
+  * Updated the inputs_openstack_base.yaml inputs file correcting (swapping) the example values for ``external_sg_name`` (correct value is ``pdn_sg``) and ``internal_sg_name`` (correct value is ``pgw_sg``) inputs.
+  * The Heal workflow executed on a DAG VE, now triggers consistently as designed.
+  * The Base blueprint solution no longer fails in vSphere with a TypeError on LTM group installation.
+  * Cloud-libs no longer results in errors like MCP unavailable and ECONNRESET.
+  * Revised the Backup and restore process with new procedures that restore snapshots of F5 VNF Manager version 2.0.2.
+  * CGNAT-Offering and Base blueprint solutions for OpenStack no longer return an invalid blueprint error.
+  * Broadened the rabbitmq-key.pem privileges, enabling you to create VNFM snapshots without errors or failures (see the Backup and restore guide).
+  * When the Heal workflow is running on VNF layer the ``synchronize_layer`` task no longer attempts to sync with wrong master.
 
 
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
