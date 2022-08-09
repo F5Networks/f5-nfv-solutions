@@ -1,0 +1,49 @@
+default_gateway: 10.0.0.254            # The next hop IP address for outbound traffic egressing the VNF.
+
+mgmt_default_gw: 10.0.0.254            # IP address of the default gateway for the Management network.
+
+manager_mgmt_host: 10.0.0.108          # The internal IP address of the VNF Manager instance.
+
+bigip_ssh_key: key_name                # The name of the SSH key that you will import into the BIG-IP VE instances.
+
+default_ltm_number: '1'                # The default number of BIG-IPs that will get deployed by this blueprint.
+
+sw_ref_ltm:                            # dictionary that defines the image/template name, flavor/configuration name, availability zone (OpenStack only), and revision number to use for the BIG-IP VE instances.
+  data:
+    template: BIGIP-13.1.0.5-0.0.5
+    configuration: quadcpu
+  revision: 0
+
+mgmt_net: network_MGMT                 # The name of the pre-existing management OpenStack network  or VMware port group, connecting the BIG-IQ licensing utility, VNFM, and related blueprints that orchestrate BIG-IP VE service layers.
+
+mgmt_subnet_cidr: 10.0.0.0/24          # The network ID and subnet mask for the applicable network; for example, 10.6.149.0/24.
+
+mgmt_dns: 8.8.8.8                      # DNS server address used for management network.
+
+mgmt_ip_range:                         # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.50.50.2-10.50.50.100, enabling you to assign 98 addresses.
+  - '10.0.0.128-10.0.0.191'
+
+mgmt_net_sw_dist: true                 # The vSphere setting (true/false) of the switch distributed flag for the management network.  
+  
+internal_net: network_PGW              # The name of the pre-existing internal network that connects to your servers.
+
+internal_subnet_cidr: 10.4.0.0/24      # The network ID and subnet mask for the applicable network; for example, 10.6.149.0/24.
+
+internal_ip_range:                     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses.
+  - '10.4.0.128-10.4.0.191'
+
+internal_net_sw_dist: true             # The vSphere switch distributed flag for internal network.
+
+external_net: network_PDN              # The vSphere switch distributed flag for external network.
+
+external_subnet_cidr: 10.3.0.0/24      # The network ID and subnet mask for the applicable network; for example, 10.6.149.0/24.
+
+external_ip_range:                     # The range of host IP addresses you will use to assign to BIG-IP VEs; for example, 10.0.0.2-10.0.0.100, enabling you to assign 98 addresses.
+  - '10.3.0.128-10.3.0.191'
+
+external_net_sw_dist: true             # The vSphere switch distributed flag for external network.
+
+ntp_server: pool.ntp.org               # The IP address or DNS name of the NTP server.
+
+timezone: America/Los_Angeles          # Enter the local timezone for the location of your application server; for example, Pacific/Pago_Pago.
+

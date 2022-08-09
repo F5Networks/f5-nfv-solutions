@@ -87,6 +87,20 @@ The following table describes the supported plugin versions available in this re
 |                           | vSphere-F5-VNF-Service-Layer-CGNAT_v2.0.1 and later   |                                     | 
 |                           |                                                       |                                     |
 | f5-bigiq-plugin 0.1       | F5-VNF-BIG-IQ_v1.2.1.X and later                      | inputs_bigiq.yaml_v1.2.1.X and later |
+|                           |                                                       |                                     |
+| f5-bigiq-plugin 2.0.2       | F5-VNF-BIG-IQ_v2.0.2 and later                      | inputs_bigiq.yaml_v1.2.0.2 and later |
+|                           |                                                       |                                     |
+| f5-ric-plugin 2.0.1       | F5-VNF-Service-Layer-GiLAN_v2.0.2 and later            | inputs_gilan_v2.0.2 and later       |
+|                           | F5-VNF-Service-Layer-Firewall_v2.0.2 and later         | inputs_firewall_v2.0.2 and later    |
+|                           | F5-VNF-Service-Layer-Base_v2.0.2 and later             | inputs_base_v2.0.2 and later        |
+|                           | F5-VNF-Service-Layer-DNS_v2.0.2 and later              | inputs_dns_v2.0.2 and later         |
+|                           | F5-VNF-Service-Layer-CGNAT-Offering_v2.0.2 and later   | inputs_cgnat__Offering_v2.0.2 and later       
+|                           | vSphere-F5-VNF-Service-Layer-GiLAN_v2.0.2 and later   |  inputs_dns_security_v2.0.2 and later |
+|                           | vSphere-F5-VNF-Service-Layer-Firewall_v2.0.2 and later|                                       | 
+|                           | vSphere-F5-VNF-Service-Layer-Base_v2.0.2 and later    |                                       | 
+|                           | vSphere-F5-VNF-Service-Layer-DNS_v2.0.2 and later     |                                       |
+|                           | vSphere-F5-VNF-Service-Layer-CGNAT-Offering_v2.0.2 and later   |                              | 
+
 
 
 
