@@ -1,0 +1,316 @@
+
+dsl_definitions:
+  openstack_config: &openstack_config
+    username: { get_attribute: [connection_params, data, keystone_username, value] }
+    password: { get_attribute: [connection_params, data, keystone_password, value] }
+    tenant_name: { get_attribute: [connection_params, data, keystone_tenant_name, value] }
+    insecure: { get_attribute: [connection_params, data, keystone_allow_insecure, value] }
+    ca_cert: { get_attribute: [connection_params, data, keystone_ca_cert, value] }
+    auth_url: { get_attribute: [connection_params, data, keystone_url, value] }
+    region: { get_attribute: [connection_params, data, region, value] }
+
+node_templates:
+
+##########################################################################################
+### Client part
+
+  sw_ref_vm:
+    type: f5.gilan.nodes.SoftwareReference
+    properties:
+      sw_ref: { get_input: sw_ref_vm }
+
+  mgmt_net:
+    type: cloudify.openstack.nodes.Network
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: mgmt_net }
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  mgmt_subnet:
+    type: cloudify.openstack.nodes.Subnet
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: mgmt_subnet }
+    relationships:
+      - target: mgmt_net
+        type: cloudify.relationships.contained_in
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  client_net:
+    type: cloudify.openstack.nodes.Network
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: client_net }
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  client_subnet:
+    type: cloudify.openstack.nodes.Subnet
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: client_subnet }
+    relationships:
+      - target: client_net
+        type: cloudify.relationships.contained_in
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  server_net:
+    type: cloudify.openstack.nodes.Network
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: server_net }
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  server_subnet:
+    type: cloudify.openstack.nodes.Subnet
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: server_subnet }
+    relationships:
+      - target: server_net
+        type: cloudify.relationships.contained_in
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  mgmt_sg:
+    type: cloudify.openstack.nodes.SecurityGroup
+    properties:
+      openstack_config: *openstack_config
+      use_external_resource: true
+      resource_id: { get_input: mgmt_sg_name }
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  virtual_ip_vm:
+    type: cloudify.openstack.nodes.FloatingIP
+    properties:
+      floatingip:
+        floating_network_id: { get_input: floating_network_id }
+      openstack_config: *openstack_config
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+
+  mgmt_port_vm:
+    type: cloudify.openstack.nodes.Port
+    properties:
+      openstack_config: *openstack_config
+    relationships:
+    - type: cloudify.relationships.connected_to
+      target: mgmt_net
+    - type: cloudify.relationships.depends_on
+      target: mgmt_subnet
+    - type: cloudify.openstack.port_connected_to_security_group
+      target: mgmt_sg
+    - type: cloudify.relationships.depends_on
+      target: connection_params
+
+  client_port_vm:
+    type: cloudify.openstack.nodes.Port
+    properties:
+      openstack_config: *openstack_config
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create:
+          inputs:
+            args:
+              allowed_address_pairs:
+                - ip_address: "0.0.0.0/0"
+    relationships:
+    - type: cloudify.relationships.connected_to
+      target: client_net
+    - type: cloudify.relationships.depends_on
+      target: client_subnet
+    - type: cloudify.openstack.port_connected_to_security_group
+      target: mgmt_sg
+    - type: cloudify.relationships.depends_on
+      target: connection_params
+
+  server_port_vm:
+    type: cloudify.openstack.nodes.Port
+    properties:
+      openstack_config: *openstack_config
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create:
+          inputs:
+            args:
+              allowed_address_pairs:
+                - ip_address: "0.0.0.0/0"
+    relationships:
+    - type: cloudify.relationships.connected_to
+      target: server_net
+    - type: cloudify.relationships.depends_on
+      target: server_subnet
+    - type: cloudify.openstack.port_connected_to_security_group
+      target: mgmt_sg
+    - type: cloudify.relationships.depends_on
+      target: connection_params
+
+  vm:
+    type: cloudify.openstack.nodes.Server
+    properties:
+      management_network_name: { get_input: mgmt_net }
+      agent_config:
+        user: { get_input: agent_user }
+        port: 22
+        key: { get_secret: agent_key_private }
+      install_agent: true
+      server:
+        userdata: { get_attribute: [cloudify_host_cloud_config, cloud_config] }
+      openstack_config: *openstack_config
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create:
+          inputs:
+            args:
+              availability_zone: { get_attribute: [sw_ref_vm, sw_ref, data, availability_zone]}
+              key_name: { get_input: key_name }
+              image_name: { get_attribute: [sw_ref_vm, sw_ref, data, image] }
+              flavor_name: { get_attribute: [sw_ref_vm, sw_ref, data, flavor] }
+        delete:
+          inputs:
+            args:
+              availability_zone: { get_attribute: [sw_ref_vm, sw_ref, data, availability_zone]}
+              key_name: { get_input: key_name }
+              image_name: { get_attribute: [sw_ref_vm, sw_ref, data, image] }
+              flavor_name: { get_attribute: [sw_ref_vm, sw_ref, data, flavor] }
+    relationships:
+      - type: cloudify.openstack.server_connected_to_port
+        target: mgmt_port_vm
+      - type: cloudify.openstack.server_connected_to_port
+        target: client_port_vm
+      - type: cloudify.openstack.server_connected_to_port
+        target: server_port_vm
+      - type: cloudify.openstack.server_connected_to_floating_ip
+        target: virtual_ip_vm
+      - type: cloudify.relationships.depends_on
+        target: connection_params
+      - type: cloudify.relationships.depends_on
+        target: cloudify_host_cloud_config
+
+  networking_vm:
+    type: cloudify.nodes.Root
+    relationships:
+      - type: f5.gilan.relationships.set_runtime_properties
+        target: server_port_vm
+        source_interfaces:
+          cloudify.interfaces.relationship_lifecycle:
+            preconfigure:
+              inputs:
+                runtime_properties:
+                  - name: server_port_vm
+                    value:
+                      ip: { get_attribute: [TARGET, fixed_ip_address] }
+                      id: { get_attribute: [TARGET, external_id] }
+                      mac: { get_attribute: [TARGET, mac_address] }
+      - type: f5.gilan.relationships.set_runtime_properties
+        target: client_port_vm
+        source_interfaces:
+          cloudify.interfaces.relationship_lifecycle:
+            preconfigure:
+              inputs:
+                runtime_properties:
+                  - name: client_port_vm
+                    value:
+                      ip: { get_attribute: [TARGET, fixed_ip_address] }
+                      id: { get_attribute: [TARGET, external_id] }
+                      mac: { get_attribute: [TARGET, mac_address] }
+      - type: f5.gilan.relationships.set_runtime_properties
+        target: client_subnet
+        source_interfaces:
+          cloudify.interfaces.relationship_lifecycle:
+            preconfigure:
+              inputs:
+                runtime_properties:
+                  - name: client_subnet_cidr
+                    value: { get_attribute: [TARGET, external_resource, cidr] }
+      - type: f5.gilan.relationships.set_runtime_properties
+        target: server_subnet
+        source_interfaces:
+          cloudify.interfaces.relationship_lifecycle:
+            preconfigure:
+              inputs:
+                runtime_properties:
+                  - name: server_subnet_cidr
+                    value: { get_attribute: [TARGET, external_resource, cidr] }
+
+  mask_client:
+    type: f5.gilan.nodes.NetworkMaskCalculator
+    properties:
+      cidr: {get_attribute: [networking_vm, client_subnet_cidr]}
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: networking_vm
+
+  mask_server:
+    type: f5.gilan.nodes.NetworkMaskCalculator
+    properties:
+      cidr: {get_attribute: [networking_vm, client_subnet_cidr]}
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: networking_vm
+
+  cloudify_host_cloud_config:
+    type: cloudify.nodes.CloudInit.CloudConfig
+    properties:
+      resource_config:
+        runcmd:
+          - { concat: [ 'interface=`ip -o link | awk ','''$2 != "lo',':',"\"",
+              " {print $2, $(NF-2)}' | grep \"",
+              { get_attribute: [networking_vm, client_port_vm, mac] },
+              "\" | awk -F':' '{print $1}'` && sudo ifconfig $interface ",
+              { get_attribute: [networking_vm, client_port_vm, ip] },
+              "/",
+              { get_attribute: [mask_client, mask] },
+              " up"
+          ]}
+          - { concat: [ 'interface=`ip -o link | awk ','''$2 != "lo',':',"\"",
+                        " {print $2, $(NF-2)}' | grep \"",
+                        { get_attribute: [networking_vm, server_port_vm, mac] },
+                        "\" | awk -F':' '{print $1}'` && sudo ifconfig $interface ",
+                        { get_attribute: [networking_vm, server_port_vm, ip] },
+                        "/",
+                        { get_attribute: [mask_server, mask] },
+                        " up"
+          ]}
+    relationships:
+      - type: cloudify.relationships.depends_on
+        target: client_port_vm
+      - type: cloudify.relationships.depends_on
+        target: server_port_vm
+      - type: cloudify.relationships.depends_on
+        target: networking_vm
+      - type: cloudify.relationships.depends_on
+        target: mask_client
+      - type: cloudify.relationships.depends_on
+        target: mask_server
+
+
+  client_and_http_web_server:
+    type: cloudify.nodes.WebServer
+    properties:
+      port: { get_input: webserver_port }
+    relationships:
+      - type: cloudify.relationships.contained_in
+        target: vm
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        start:
+          implementation: scripts/start.sh
+          inputs:
+            port: { get_property: [SELF, port] }
