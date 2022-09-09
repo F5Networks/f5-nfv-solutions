@@ -21,14 +21,15 @@ You can download and install the following supported plugins:
 
 ### Manually upload plugins to VNF Manager
 
-1. Open your VNF Manager, and do one of the following:
+1. Open your VNF Manager, in the left menu expand **Resources**, click **Plugins**, click **Upload**,and then click **Upload Package**.
+2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded **.wgn file**, and then click **Open**.
+3. In the middle row, click :open_file_folder: browse for the downloaded **.yaml file**, and then click **Open**.
+4. In the **Plugin title** text box, enter a name specifying that this is an EHF version.
+5. Click **Upload**.
 
-   - On the **Dashboard** click **Upload Plugin**.
-   - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
-   
-2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded .wgn file, and then click **Open**.
-3. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
-4. Click **Upload**.
+
+
+
 
 <!---### <a name="multiversions">Maintain multiple versions of plugins</a>)
 [comment]: <> (Blueprints are programmed to use a specific plugin version, or later. Do the following to program the) [comment]: <> (blueprint to use a specific plugin:)

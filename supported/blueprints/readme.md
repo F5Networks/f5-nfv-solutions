@@ -24,13 +24,14 @@ Visit the F5 VNFM product documentation for more details about:
 1. Download the zip file in this repository.
 2. Unzip the file, locally. 
 
-### Manually upload plugins to VNF Manager
+### Manually upload blueprints to VNF Manager
 
-1. On the **Dashboard** click **Upload Blueprint**.      
-2. In the **Upload blueprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
-3. In the **Blueprint name** text box, enter a descriptive name.  This is typically auto-populated for you.
-4. In the **Blueprint YAML file** text box, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**. This is typically auto-populated for you.
-5. Click **Upload**.
+1. On the **VNFM Dashboard** in the left menu, click **Blueprints**.
+2. In the **Blueprints** pane, click **Upload**, and then select **Upload blueprint package**.      
+3. In the **Upload blueprint** dialog on the top row click :open_file_folder: browse for the downloaded .zip file, and then click **Open**.
+4. In the **Blueprint name** text box, enter a descriptive name identifying the EHF.
+5. In the **Blueprint YAML file** text box, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**. 
+6. Click **Upload**.
 
 For complete blueprint descriptions, consult the [F5 VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html).
 
