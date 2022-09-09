@@ -1,6 +1,6 @@
 ## About the EHF for F5-VNF-BIG-IQ_v2.0.2 solution blueprint
 
-This engineering hotfix (EHF) release provides the following fixes and new funtionality for using the f5-bigiq-plugin_2.0.2_ehf version ONLY with the F5® VNF Manager® v2.0.2 ONLY: 
+This engineering hot fix (EHF) release provides the following fixes and new funtionality for using the f5-bigiq-plugin_2.0.2_ehf version ONLY with the F5® VNF Manager® v2.0.2 ONLY: 
 
 * For use with the updated f5-ric-plugin_2.0.2_ehf plugin package
 * Deploying the f5-bigiq-plugin_2.0.2_ehf blueprint installs F5® BIG-IQ® v8.2
