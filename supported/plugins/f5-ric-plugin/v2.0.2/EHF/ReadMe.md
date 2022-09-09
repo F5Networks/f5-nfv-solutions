@@ -24,7 +24,7 @@ The EHF plugin requires the following available system resources
 
 ### Manually upload plugins to VNF Manager
 
-1. Open your VNF Manager, in the left menu expand **Resources**, click **Plugins**, click **Upload**,and then click **Upload Package**.
+1. Open your VNF Manager, in the left menu expand **Resources**, click **Plugins**, click **Upload**, and then click **Upload Package**.
 2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded **.wgn file**, and then click **Open**.
 3. In the middle row, click :open_file_folder: browse for the downloaded **.yaml file**, and then click **Open**.
 4. In the **Plugin title** text box, enter a name specifying that this is an EHF version.
