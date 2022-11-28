@@ -1,19 +1,21 @@
 ## Example blueprints
 
+**PREVIEW ONLY**
+
 In this directory you will find the following example blueprints and inputs that will help demonstrate how to use F5 solution blueprints, or use your own or other vendor blueprint solutions with the Gi LAN plugin and your Cloudify 5.1.2 Web console. 
 
 ### Using the F5-bigip-demo-cloud-libs example blueprint
 
-In this example directory you will find a blueprint solution that you can upload to Cloudify 5.05 and use with the F5 Gilan Plugin 2.1.0 file for instantiating a pair of BIG-IP VEs for HA purposes.
+In this example directory you will find a blueprint solution that you can upload to Cloudify 5.1.2 and use with the F5 Gilan Plugin 3.0.0 file for instantiating a pair of BIG-IP VEs for HA purposes.
 
 This blueprint will onboard BIG-IP VE using F5 Cloud-libs and will configure the VEs using F5 AS3 declaration. 
 
-#### To upload the F5 Gilan Plugin to your Cloudify 5.05 Web app 
+#### To upload the F5 Gilan Plugin to your Cloudify 5.1.2 Web app 
 
 Upon purchasing the F5 Gilan Plugin, you will receive an email with a download link and a license key. 
 
 1.	Download the F5 Gilan Plugin .ova/.zip file and extract the file locally. You will have one .wgn file and one .yaml file.
-2.	Open your Cloudify 5.05 web application, and in the left menu click the **System Resources** blade.
+2.	Open your Cloudify 5.1.2 web application, and in the left menu click the **System Resources** blade.
 3.	Do the following to upload the plugin files:
 
      * Above the **Plugins table** click **Upload**.
@@ -76,7 +78,7 @@ Define the following inputs in your blueprint solution to read/write to an exter
 **IMPORTANT:** External database is supported for Centos7 and Centos8 environments ONLY.
 
 
-| Input.                    | Description                                                     |                                                      
+| Input                     | Description                                                     |                                                      
 |---------------------------| :---------------------------------------------------------------| 
 | db_port                   | Integer to identify the external database port number. Value must be greater than zero.          |                                                   
 | db_sslmode                | String identifying the SSL mode used for connecting with the PostgreSQL database. Examples include, 'disable' 'allow', 'prefer', 'require', 'verify-ca', 'verify-full'. |
