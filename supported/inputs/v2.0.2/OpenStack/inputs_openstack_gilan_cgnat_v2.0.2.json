@@ -1,4 +1,5 @@
 {
+   "datacenter": "default",
    "ric_purchasing_model": "subscription",
    "ric_vnfm_serial": "12345",
    "auto_last_hop": "disabled",
