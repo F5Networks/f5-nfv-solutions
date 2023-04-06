@@ -1,4 +1,5 @@
 {
+   "datacenter": "default",
    "mgmt_net": "network_MGMT",
    "mgmt_subnet_cidr": "10.0.0.0/24",
    "mgmt_default_gw": "10.0.0.254",
@@ -89,6 +90,8 @@
    "dag_group_cpu_threshold": "89",
    "dag_group_cpu_threshold_check_interval": "1",
    "bigip_ssh_key": "key_name",
+   "ntp_server": "10.0.0.106",
+   "timezone": "UTC",
    "vnf_as3_nsd_payload": {
       "class": "AS3",
       "action": "deploy",
