@@ -1,3 +1,5 @@
+datacenter: default
+
 default_gateway: 10.0.0.254            # The next hop IP address for outbound traffic egressing the VNF.
 
 mgmt_default_gw: 10.0.0.254            # IP address of the default gateway for the Management network.

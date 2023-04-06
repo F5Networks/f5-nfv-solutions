@@ -1,4 +1,5 @@
 {
+   "datacenter": "default",
    "big_iq_passphrase": "Test1234567890!?",
    "big_iq_pool_license": "A7384-73903-90940-77131-5050602",
    "big_iq_pool_name": "regkeys",
@@ -12,12 +13,11 @@
    "mgmt_subnet_cidr": null,
    "sw_ref_bigiq": {
       "data": {
-         "image": "BIG-IQ-6.0.1.0.0.813",
-         "flavor": "f5.large",
-         "availability_zone": "nova"
+         "configuration": "quadcpu",
+         "template": "BIG-IQ-6.1.0.0.0.1224"
       },
       "revision": 0
    },
    "ntp_server": "0.north-america.pool.ntp.org",
-   "timezone": "America/Los_Angeles",
+   "timezone": "America/Los_Angeles"
 }

@@ -26,6 +26,8 @@ This release provides the following fixes for known issues and preview functionl
   * Broadened the rabbitmq-key.pem privileges, enabling you to create VNFM snapshots without errors or failures (see the Backup and restore guide).
   * When the Heal workflow is running on VNF layer the ``synchronize_layer`` task no longer attempts to sync with wrong master.
 
+
+
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
 #### Copyright

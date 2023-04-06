@@ -1,4 +1,5 @@
 {
+   "datacenter": "default",
    "bigip_ssh_key": "openstack-key",
    "default_gateway": "10.0.0.254",
    "default_ltm_number": 1,

@@ -1,3 +1,4 @@
+datacenter: default
 big_iq_primary_host_license: H4506-500317-221-7034997-5602771                          # Base registration key used to license the primary BIG-IQ system of an HA-pair. You received this key in email from F5 Networks after purchase.
 
 big_iq_secondary_host_license: S3326-667683-640-3947832-4241547                        # Base registration key used to license the secondary BIG-IQ system of an HA-pair. You received this key in email from F5 Networks after purchase.

@@ -1,4 +1,5 @@
 {
+   "datacenter": "default",
    "big_iq_primary_host_license": "H4506-500317-221-7034997-5602771",
    "big_iq_secondary_host_license": "S3326-667683-640-3947832-4241547",
    "big_iq_pool_license": "A7384-73903-90940-77131-5050602",
@@ -19,5 +20,5 @@
    "mgmt_sg_name": "mgmt_sg",
    "mgmt_subnet": "mgmt",
    "ntp_server": "0.north-america.pool.ntp.org",
-   "timezone": "America/Los_Angeles",
+   "timezone": "America/Los_Angeles"
 }
