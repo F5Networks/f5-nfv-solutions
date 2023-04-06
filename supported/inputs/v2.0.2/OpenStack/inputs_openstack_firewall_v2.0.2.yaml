@@ -1,3 +1,4 @@
+datacenter: default
 # VNF Resource Information Collector inputs
 ric_purchasing_model: subscription
 ric_vnfm_serial: "12345"
