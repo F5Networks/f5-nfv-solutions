@@ -1,3 +1,5 @@
+datacenter: default
+
 big_iq_passphrase: Test1234567890!?                                                    # The passphrase value that BIG-IQ uses to generate a Master Key (minimum of 16-characters, 1 or more capital letters 1 or more lowercase letters, 1 or more numbers, and 1 or more special characters).
 
 big_iq_pool_license: A7384-73903-90940-77131-5050602                                   # The base registration key code provided by F5 Networks after Purchase. Used to create RegKey Pool on the F5 BIG-IP system. You received this key in email from F5 Networks after purchase.
