@@ -1,3 +1,4 @@
+datacenter: default
 ## NETWORKING CONFIG ##
 mgmt_net: network_MGMT
 mgmt_subnet_cidr: 10.0.0.0/24
@@ -101,6 +102,9 @@ dag_group_cpu_threshold_check_interval: '1'
 
 # Common inputs
 bigip_ssh_key: key_name
+
+ntp_server: 10.0.0.106
+timezone: UTC
 
 # AS3 declaration
 
