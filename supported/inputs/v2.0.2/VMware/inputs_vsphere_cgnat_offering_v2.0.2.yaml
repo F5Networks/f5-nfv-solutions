@@ -1,3 +1,4 @@
+datacenter: default
 max_heal_vnf_layer: 10
 max_heal_vnf_slave_ve: 10
 
