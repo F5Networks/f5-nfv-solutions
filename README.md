@@ -28,7 +28,7 @@ Across all branches in this repository, there are two directories: *supported* a
 You can find descriptions and deployment instructions for each plugin, inputs file, and blueprint in the README file on the individual plugin, inputs, and blueprint pages in this repository. Consult the [F5 VNFM plugin-blueprint-inputs matrix](https://github.com/F5Networks/f5-nfv-solutions/tree/master/supported#plugin-blueprint-inputs-matrix), describing which plugin version can deploy which blueprint, and which inputs file customizes which blueprint.
 
 #### Copyright
-Copyright 2014-2022 F5 Networks Inc.
+Copyright 2014-2023 F5 Networks Inc.
 
 #### License
 

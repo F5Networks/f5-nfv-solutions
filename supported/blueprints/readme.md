@@ -1,5 +1,5 @@
 ## Use F5 VNFM solution blueprints
-In this directory you will find blueprints for each VNFM solution for both OpenStack and vSpere VIMs; Gi LAN, Gi Firewall, DNS, and Base, as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution directory you will find supported versions of each blueprint released with each version of VNFM, and for all supported VIMs.
+In this directory you will find blueprints for each VNFM solution for both OpenStack and vShpere VIMs; Gi LAN, Gi Firewall, DNS, and Base, as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution directory you will find supported versions of each blueprint released with each version of VNFM, and for all supported VIMs.
 
 The following list provides a brief description of each solution blueprint:
 
@@ -36,7 +36,7 @@ Visit the F5 VNFM product documentation for more details about:
 For complete blueprint descriptions, consult the [F5 VNF Manager documentation](https://clouddocs.f5.com/cloud/nfv/latest/vnfm_index.html).
 
 #### Copyright
-Copyright 2014-2022 F5 Networks Inc.
+Copyright 2014-2023 F5 Networks Inc.
 
 #### License
 

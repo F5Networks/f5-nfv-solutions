@@ -29,7 +29,7 @@ This release provides the following fixes for known issues and preview functionl
 Consult the [latest release notes](https://clouddocs.f5.com/cloud/nfv/latest/release-notes-1.html) for complete details.
 
 #### Copyright
-Copyright 2014-2022 F5 Networks Inc.
+Copyright 2014-2023 F5 Networks Inc.
 
 #### License
 
