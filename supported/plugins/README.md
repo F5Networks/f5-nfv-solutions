@@ -21,15 +21,14 @@ You can download and install the following supported plugins:
 
 ### Manually upload plugins to VNF Manager
 
-1. Open your VNF Manager, in the left menu expand **Resources**, click **Plugins**, click **Upload**,and then click **Upload Package**.
-2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded **.wgn file**, and then click **Open**.
-3. In the middle row, click :open_file_folder: browse for the downloaded **.yaml file**, and then click **Open**.
-4. In the **Plugin title** text box, enter a name specifying that this is an EHF version.
-5. Click **Upload**.
+1. Open your VNF Manager, and do one of the following:
 
-
-
-
+   - On the **Dashboard** click **Upload Plugin**.
+   - In the left menu click **System Resources**, and then in the **Plugins** pane, click **Upload**.
+   
+2. In the **Upload plugin** dialog on the top row click :open_file_folder: browse for the downloaded .wgn file, and then click **Open**.
+3. In the bottom row, click :open_file_folder: browse for the downloaded .yaml file, and then click **Open**.
+4. Click **Upload**.
 
 <!---### <a name="multiversions">Maintain multiple versions of plugins</a>)
 [comment]: <> (Blueprints are programmed to use a specific plugin version, or later. Do the following to program the) [comment]: <> (blueprint to use a specific plugin:)
@@ -40,11 +39,11 @@ You can download and install the following supported plugins:
 
 
 #### Copyright
-Copyright 2014-2022 F5 Networks Inc.
+Copyright 2014-2023 F5 Networks Inc.
 
 #### License
 
-##### Apache V2.1 
+##### Apache V2.0 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at: [http://www.apache.org/licenses/LICENSE-2.0](http://www.apache.org/licenses/LICENSE-2.0).
 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

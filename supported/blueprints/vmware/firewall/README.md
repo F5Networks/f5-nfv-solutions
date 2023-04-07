@@ -4,7 +4,7 @@ Use the F5 Gi Firewall solution blueprint for implementing components enabling y
 
 
 #### Copyright
-Copyright 2014-2022 F5 Networks Inc.
+Copyright 2014-2023 F5 Networks Inc.
 
 #### License
 
