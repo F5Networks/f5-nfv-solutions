@@ -1,5 +1,5 @@
 ## Use F5 VNFM solution blueprints
-In this directory you will find blueprints for each VNFM solution for both OpenStack and vShpere VIMs; Gi LAN, Gi Firewall, DNS, and Base, as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution directory you will find supported versions of each blueprint released with each version of VNFM, and for all supported VIMs.
+In this directory you will find blueprints for each VNFM solution for both OpenStack and vSpere VIMs; Gi LAN, Gi Firewall, DNS, and Base, as well as an F5 VNF BIG-IQ blueprint for automating the license manager configuration. Within each solution directory you will find supported versions of each blueprint released with each version of VNFM, and for all supported VIMs.
 
 The following list provides a brief description of each solution blueprint:
 
@@ -16,8 +16,9 @@ The following list provides a brief description of each solution blueprint:
 Visit the F5 VNFM product documentation for more details about:
 
 - Required [prerequisites](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites)  
-- OpenStack system requirements for [Newton v10](https://clouddocs.f5.com/cloud/nfv/latest/openstack-setup.html) and [Queens v13](https://docs.openstack.org/releasenotes/openstack-manuals/queens.html) (for F5 VNFM 1.3.X)
-- VMware vSphere ESXi [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
+- OpenStack system requirements for [Queens v13](https://docs.openstack.org/releasenotes/openstack-manuals/queens.html) and [Red Hat OpenStack 16.2](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.2/html/release_notes/index)
+- VMware vSphere ESXi 6.5-7.0.3 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
+- VMware Cloud Director 10.3 [system requirements](https://docs.vmware.com/en/VMware-Cloud-Director/10.3.3.3/rn/vmware-cloud-director-10333-release-notes/index.html)
 
 ### Download blueprints
 

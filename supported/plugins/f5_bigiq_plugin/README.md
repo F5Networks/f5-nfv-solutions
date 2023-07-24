@@ -1,5 +1,5 @@
 ## Use the f5_bigiq_plugin
-This plugin runs blueprints and functions that auto-configure the BIG-IQ license manager utility. This plugin is new for VNFM version 1.2.1.
+This plugin runs blueprints and functions that auto-configure the BIG-IQ license manager utility. 
 
 ### Install f5_bigiq_pluginc
 
