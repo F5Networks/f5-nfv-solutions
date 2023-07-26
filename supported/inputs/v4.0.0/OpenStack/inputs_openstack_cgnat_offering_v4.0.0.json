@@ -1,0 +1,279 @@
+{
+   "datacenter": "default",
+   "ric_purchasing_model": "subscription",
+   "ric_vnfm_serial": "12345",
+   "ctrl_net": "control_net",
+   "ctrl_sg_name": "control_sg",
+   "ctrl_subnet": "control_net_subnet",
+   "mgmt_net": "mgmt_vnfm",
+   "mgmt_sg_name": "mgmt_sg",
+   "mgmt_subnet": "mgmt_vnfm_subnet",
+   "pdn_net": "pdn_net",
+   "pdn_sg_name": "pdn_sg",
+   "pdn_subnet": "pdn_net_subnet",
+   "pgw_net": "pgw_net",
+   "pgw_sg_name": "pgw_sg",
+   "pgw_subnet": "pgw_net_subnet",
+   "snmp_sg_name": "snmp_sg",
+   "vnic_binding_type": {
+      "mgmt_port": "normal",
+      "pgw_port": "normal",
+      "ctrl_port": "normal",
+      "pdn_port": "normal"
+   },
+   "bgp_vnf_egw_peer_ip": "10.10.3.1",
+   "bgp_vnf_pgw_peer_ip": "10.10.1.1",
+   "bgp_egw_peer_as": 65500,
+   "bgp_pgw_peer_as": 65501,
+   "default_gateway": "10.10.3.1",
+   "big_iq_host": "10.0.0.121",
+   "big_iq_lic_pool": "BIGIP_4",
+   "manager_mgmt_host": "10.10.10.13",
+   "bigip_ssh_key": "key_name",
+   "ntp_server": "pool.ntp.org",
+   "timezone": "UTC",
+   "cgnat_ve_default_instances": 1,
+   "floating_network_id": "fa541932-4156-4185-8344-a961cf4c8e41",
+   "max_heal_vnf_slave_ve": 10,
+   "sw_ref_nagios": {
+      "data": {
+         "availability_zone": "nova",
+         "flavor": "f5.cloudify_small",
+         "image": "CentOS-7-x86_64-GenericCloud"
+      },
+      "revision": 0
+   },
+   "sw_ref_vnf": {
+      "data": {
+         "availability_zone": "nova",
+         "flavor": "f5.cloudify",
+         "image": "BIGIP-13.1.0.7-0.0.1.ALL_1SLOT"
+      },
+      "revision": 0
+   },
+   "db_host": "localhost",
+   "db_name": "f5_db",
+   "db_user": "postgres",
+   "db_password": "postgres",
+   "db_port": 5432,
+   "db_sslmode": "disable",
+   "sw_ref_external_db": {},
+   "mgmt_external_db_ip": "",
+   "vnf_layer_throughput": 5,
+   "vnf_layer_throughput_check_interval": 1,
+   "vnf_layer_throughput_threshold": 1,
+   "vnf_layer_cpu_threshold": 85,
+   "vnf_layer_cpu_threshold_check_interval": 1,
+   "cgnat_ip_ranges": [
+      "10.10.200.2-10.10.200.253"
+   ],
+   "cgnat_resource_id": "/f5vnf/Shared/natSourceTranslation/addresses",
+   "starting_ip_number": 5,
+   "increment_ip_number": 2,
+   "vnf_as3_nsd_payload": {
+      "class": "ADC",
+      "remark": "VNF",
+      "schemaVersion": "3.0.0",
+      "id": "cfy_vnf_01",
+      "label": "vnf",
+      "f5vnf": {
+         "class": "Tenant",
+         "Shared": {
+            "class": "Application",
+            "template": "shared",
+            "lbSelectedRule": {
+               "class": "iRule",
+               "iRule": "when LB_SELECTED {log local0. \"Selected server [LB::server]\"}"
+            },
+            "ServiceMain_TCP": {
+               "remark": "VS TCP",
+               "layer4": "tcp",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "class": "Service_L4",
+               "profileL4": {
+                  "bigip": "/Common/fastL4"
+               },
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0,
+               "persistenceMethods": [
+                  {
+                     "use": "/f5vnf/Shared/persistenceSourceCarp"
+                  }
+               ],
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "snat": "none",
+               "lastHop": "disable",
+               "arpEnabled": true,
+               "icmpEcho": "disable",
+               "spanningEnabled": true,
+               "allowVlans": [
+                  {
+                     "use": "/Common/pgw_net"
+                  }
+               ],
+               "policyNAT": {
+                  "use": "/f5vnf/Shared/natPolicy"
+               }
+            },
+            "ServiceMain_UDP": {
+               "remark": "VS UDP",
+               "layer4": "udp",
+               "translateServerAddress": false,
+               "translateServerPort": false,
+               "class": "Service_L4",
+               "profileL4": {
+                  "bigip": "/Common/fastL4"
+               },
+               "virtualAddresses": [
+                  {
+                     "use": "/f5vnf/Shared/serviceAddress"
+                  }
+               ],
+               "virtualPort": 0,
+               "persistenceMethods": [
+                  {
+                     "use": "/f5vnf/Shared/persistenceSourceCarp"
+                  }
+               ],
+               "iRules": [
+                  "/f5vnf/Shared/lbSelectedRule"
+               ],
+               "snat": "none",
+               "lastHop": "disable",
+               "arpEnabled": false,
+               "icmpEcho": "disable",
+               "spanningEnabled": true,
+               "allowVlans": [
+                  {
+                     "use": "/Common/pgw_net"
+                  }
+               ],
+               "policyNAT": {
+                  "use": "/f5vnf/Shared/natPolicy"
+               }
+            },
+            "serviceAddress": {
+               "class": "Service_Address",
+               "arpEnabled": false,
+               "icmpEcho": "disable",
+               "spanningEnabled": true,
+               "routeAdvertisement": "enable",
+               "virtualAddress": "0.0.0.0",
+               "trafficGroup": "/Common/traffic-group-local-only"
+            },
+            "profileL4": {
+               "clientTimeout": 30,
+               "idleTimeout": 300,
+               "looseClose": false,
+               "looseInitialization": false,
+               "maxSegmentSize": 0,
+               "resetOnTimeout": true,
+               "tcpCloseTimeout": 5,
+               "tcpHandshakeTimeout": 5,
+               "class": "L4_Profile"
+            },
+            "profileL4Loose": {
+               "clientTimeout": 30,
+               "idleTimeout": 300,
+               "looseClose": true,
+               "looseInitialization": true,
+               "maxSegmentSize": 0,
+               "resetOnTimeout": true,
+               "tcpCloseTimeout": 5,
+               "tcpHandshakeTimeout": 5,
+               "class": "L4_Profile",
+               "remark": "Log load balanced server"
+            },
+            "persistenceDestinationCarp": {
+               "class": "Persist",
+               "persistenceMethod": "destination-address",
+               "hashAlgorithm": "carp"
+            },
+            "persistenceSourceCarp": {
+               "class": "Persist",
+               "persistenceMethod": "source-address",
+               "hashAlgorithm": "carp"
+            },
+            "natDestinationAddressList": {
+               "addresses": [
+                  "0.0.0.0/0"
+               ],
+               "class": "Firewall_Address_List"
+            },
+            "natSourceAddressList": {
+               "addresses": [
+                  "10.10.11.0/24"
+               ],
+               "class": "Firewall_Address_List"
+            },
+            "natDestinationPortList": {
+               "ports": [
+                  "1-65535"
+               ],
+               "class": "Firewall_Port_List"
+            },
+            "natSourcePortList": {
+               "ports": [
+                  "1-65535"
+               ],
+               "class": "Firewall_Port_List"
+            },
+            "natPolicy": {
+               "class": "NAT_Policy",
+               "rules": [
+                  {
+                     "destination": {
+                        "addressLists": [
+                           {
+                              "use": "/f5vnf/Shared/natDestinationAddressList"
+                           }
+                        ],
+                        "portLists": [
+                           {
+                              "use": "/f5vnf/Shared/natDestinationPortList"
+                           }
+                        ]
+                     },
+                     "name": "nat_tcp",
+                     "protocol": "tcp",
+                     "source": {
+                        "addressLists": [
+                           {
+                              "use": "/f5vnf/Shared/natSourceAddressList"
+                           }
+                        ],
+                        "portLists": [
+                           {
+                              "use": "/f5vnf/Shared/natSourcePortList"
+                           }
+                        ]
+                     },
+                     "sourceTranslation": {
+                        "use": "/f5vnf/Shared/natSourceTranslation"
+                     }
+                  }
+               ]
+            },
+            "natSourceTranslation": {
+               "addresses": [
+                  "10.10.200.101/32"
+               ],
+               "patMode": "pba",
+               "ports": [
+                  "1-65535"
+               ],
+               "routeAdvertisement": true,
+               "type": "dynamic-pat",
+               "class": "NAT_Source_Translation"
+            }
+         }
+      }
+   }
+}

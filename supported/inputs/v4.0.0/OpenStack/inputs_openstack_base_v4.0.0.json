@@ -1,0 +1,33 @@
+datacenter: default
+bigip_ssh_key: openstack-key
+default_gateway: 10.0.0.254
+default_ltm_number: 1
+external_net: pdn_dag_net
+external_sg_name: pdn_sg
+external_subnet: pdn_dag_net_subnet
+internal_net: pgw_dag_net
+internal_sg_name: pgw_sg
+internal_subnet: pgw_dag_net_subnet
+manager_mgmt_host: 10.10.10.6
+mgmt_net: mgmt_vnfm
+mgmt_sg_name: mgmt_sg
+mgmt_subnet: mgmt_vnfm_subnet
+ntp_server: pool.ntp.org
+timezone: UTC
+
+sw_ref_ltm:
+    data:
+        image: BIGIP-13.1.0.5-0.0.5.ALL_1SLOT
+        flavor: f5.cloudify_medium
+        availability_zone: nova
+    revision: 0
+
+# External Database
+db_host: localhost
+db_name: f5_db
+db_user: postgres
+db_password: postgres
+db_port: 5432
+db_sslmode: disable
+sw_ref_external_db: {}
+mgmt_external_db_ip: ''
