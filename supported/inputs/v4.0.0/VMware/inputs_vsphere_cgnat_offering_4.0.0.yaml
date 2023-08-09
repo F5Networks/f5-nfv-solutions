@@ -1,118 +1,43 @@
 datacenter: default
-
-## NETWORKING CONFIG ##
-gw_id: vCloud97-Edges
-
-mgmt_net: Test
-mgmt_subnet_cidr: 10.2.3.0/24
-mgmt_net_mtu: 1500
-mgmt_default_gw: 10.2.3.1
-mgmt_dns: 8.8.8.8
-mgmt_ip_range:
-  - '10.2.3.85-10.2.3.95'
-mgmt_net_dist_int: false
-
-ctrl_net: network_CTRL
-ctrl_subnet_cidr: 10.1.0.0/24
-ctrl_net_mtu: 1500
-ctrl_ip_range:
-  - '10.1.0.85-10.1.0.95'
-
-ha_net: network_HA
-ha_subnet_cidr: 10.2.0.0/24
-ha_net_mtu: 1500
-ha_ip_range:
-  - '10.2.0.85-10.2.0.95'
-
-pdn_net: network_PDN
-pdn_subnet_cidr: 10.3.0.0/24
-pdn_net_mtu: 1500
-pdn_ip_range:
-  - '10.3.0.85-10.3.0.95'
-pdn_net_dist_int: false
-
-pgw_net: network_PGW
-pgw_subnet_cidr: 10.4.0.0/24
-pgw_net_mtu: 1500
-pgw_ip_range:
-  - '10.4.0.85-10.4.0.95'
-pgw_net_dist_int: false
-
-pdn_dag_net: network_PDN_DAG
-pdn_dag_subnet_cidr: 10.5.0.0/24
-pdn_dag_net_mtu: 1500
-pdn_dag_ip_range:
-  - '10.5.0.85-10.5.0.95'
-pdn_dag_net_dist_int: false
-
-pgw_dag_net: network_PGW_DAG
-pgw_dag_subnet_cidr: 10.6.0.0/24
-pgw_dag_net_mtu: 1500
-pgw_dag_ip_range:
-  - '10.6.0.85-10.6.0.95'
-pgw_dag_net_dist_int: false
-
-
-bgp_dag_pgw_peer_ip: 10.4.0.1
-bgp_vnf_pgw_peer_ip: 10.6.0.1
-bgp_pgw_peer_as: 65001
-bgp_dag_egw_peer_ip: 10.3.0.1
-bgp_egw_peer_as: 65002
-default_gateway: 10.5.0.1 #PDN_DAG Default Gateway
-
-## ACCESS CONFIG ##
-manager_mgmt_host: 10.2.3.100
-
-## DEVICE CONFIG ##
-sw_ref_nagios:
-  data:
-    template: CentOS-7.9.2009-CloudInit-Py3-tmpl
-    catalogue: testcatalogue
-    cpu: 2
-    memory: 2048
-  revision: 0
-sw_ref_dag:
-  data:
-    template: BIG-IP VE 14.1.3.0.0.7 nonet cd
-    catalogue: testcatalogue
-    cpu: 4
-    memory: 8192
-  revision: 0
-sw_ref_vnf:
-  data:
-    template: BIG-IP VE 14.1.3.0.0.7 nonet cd
-    catalogue: testcatalogue
-    cpu: 4
-    memory: 8192
-  revision: 0
-
-
-## BIGIP LICENSING ##
-big_iq_host: 10.2.3.101
-big_iq_lic_pool: LOAD1
-
-
-# VNF Resource Information Collector
+# VNF Resource Information Collector 
 ric_purchasing_model: subscription
 ric_vnfm_serial: "12345"
-auto_last_hop: "disabled"
 
-## GiLAN SETTINGS (MAY IMPACT VNFM PERFORMANCE)##
-max_scale_dag_group: 10 # Max instances of DAG VE
-max_scale_vnf_group: 10 # Max instances of VNF Layers
-max_heal_vnfd_dag_ve: 10 # Max number of 'instances' that can be created during heal
-max_heal_vnf_layer: 10
-max_heal_vnf_slave_ve: 10
+# VNF inputs
+manager_mgmt_host: 10.100.0.230
+mgmt_net: mgmt
+mgmt_subnet_cidr: 10.100.0.0/24
+mgmt_default_gw: 10.100.0.1
+mgmt_dns: 8.8.8.8
+mgmt_ip_range:
+  - '10.100.0.128-10.100.0.240'
+mgmt_net_sw_dist: true
+ctrl_net: control
+ctrl_subnet_cidr: 10.100.1.0/24
+ctrl_ip_range:
+  - '10.100.1.128-10.100.1.240'
+ctrl_net_sw_dist: true
+pdn_net: pdn
+pdn_subnet_cidr: 10.100.3.0/24
+pdn_ip_range:
+  - '10.100.3.128-10.100.3.240'
+pdn_net_sw_dist: true
+pgw_net: pgw
+pgw_subnet_cidr: 10.100.4.0/24
+pgw_ip_range:
+  - '10.100.4.128-10.100.4.240'
+pgw_net_sw_dist: true
+bgp_dag_egw_peer_ip: 10.100.3.1
+bgp_dag_pgw_peer_ip: 10.100.4.1
+bgp_egw_peer_as: 65000
+bgp_pgw_peer_as: 65001
+bgp_vnf_egw_peer_ip: 10.100.3.1  # egw pdn_net
+bgp_vnf_pgw_peer_ip: 10.100.4.1  # pgw pgw_net
+default_gateway: 10.100.3.1
 
-vnf_layer_cpu_threshold: 85
-vnf_layer_cpu_threshold_check_interval: 1
-
-vnf_group_throughput: 20
-vnf_group_throughput_threshold: 75
-vnf_group_throughput_check_interval: 1
-
-dag_group_cpu_threshold: 89
-dag_group_cpu_threshold_check_interval: 1
+## BIGIP LICENSING ##
+big_iq_lic_pool: BIGIP_1
+big_iq_host: 10.100.0.202
 
 # Common inputs
 bigip_ssh_key: key_name
@@ -120,9 +45,34 @@ bigip_ssh_key: key_name
 ntp_server: pool.ntp.org
 timezone: UTC
 
+# The number of CGNAT instances that will be created during the first deployment
+cgnat_ve_default_instances: 1
+
+# CGNAT VNF layer scaling inputs
+vnf_layer_throughput: 5
+vnf_layer_throughput_check_interval: 1
+vnf_layer_throughput_threshold: 1
+vnf_layer_cpu_threshold: 85
+vnf_layer_cpu_threshold_check_interval: 1
+
+# Max number of 'instances' that can be created during heal
+max_heal_vnf_slave_ve: 10
+
+# Images for instances: CGNAT VE and Nagios
+sw_ref_nagios:
+  data:
+    template: Centos7-GenericCloud
+    configuration: dualcpu
+  revision: 0
+sw_ref_vnf:
+  data:
+    template: BIGIP-15.1.0.5-0.0.8.ALL_1SLOT-vmware
+    configuration: quadcpu
+  revision: 0
+
 # CGNAT Inputs
 cgnat_ip_ranges:
-  - '10.85.0.32-10.85.0.254'
+  - '10.10.201.10-10.10.201.200'
 cgnat_resource_id: '/f5vnf/Shared/natSourceTranslation/addresses'
 starting_ip_number: 5
 increment_ip_number: 2
@@ -137,7 +87,7 @@ db_sslmode: disable
 sw_ref_external_db: {}
 mgmt_external_db_ip: ''
 
-
+# CGNAT instance configuration
 vnf_as3_nsd_payload:
   class: ADC
   remark: VNF
@@ -169,13 +119,11 @@ vnf_as3_nsd_payload:
         - /f5vnf/Shared/lbSelectedRule
         snat: none
         lastHop: disable
-#        translateServerAddress: False
-#        translateServerPort: False
         arpEnabled: True
         icmpEcho: disable
         spanningEnabled: True
         allowVlans:
-        - use: "/Common/network_PGW_DAG"
+        - use: "/Common/pgw"
         policyNAT:
           use: "/f5vnf/Shared/natPolicy"
       ServiceMain_UDP:
@@ -195,19 +143,17 @@ vnf_as3_nsd_payload:
         - /f5vnf/Shared/lbSelectedRule
         snat: none
         lastHop: disable
-#        translateServerAddress: False
-#        translateServerPort: False
         arpEnabled: False
         icmpEcho: disable
         spanningEnabled: True
         allowVlans:
-        - use: "/Common/network_PGW_DAG"
+        - use: "/Common/pgw"
         policyNAT:
           use: "/f5vnf/Shared/natPolicy"
       serviceAddress:
         class: Service_Address
         arpEnabled: False
-        icmpEcho: disable
+        icmpEcho: disable 
         spanningEnabled: True
         routeAdvertisement: "enable"
         virtualAddress: 0.0.0.0
@@ -232,20 +178,7 @@ vnf_as3_nsd_payload:
         tcpCloseTimeout: 5
         tcpHandshakeTimeout: 5
         class: L4_Profile
-#      lbSelectedRule:
-#        class: iRule
-#        iRule: when LB_SELECTED {log local0. "Selected server [LB::server]"}
         remark: Log load balanced server
-#      vnfmapRule:
-#        class: iRule
-#        iRule: |-
-#            when LB_SELECTED {
-#              if {[info exists myflag] && $myflag} {return}
-#              set carp_selection [LB::server addr]
-#              set returned_IP [class lookup $carp_selection /Common/vnf_map]
-#              LB::reselect nexthop $returned_IP
-#              set myflag 1
-#            }
       persistenceDestinationCarp:
         class: Persist
         persistenceMethod: destination-address
@@ -287,7 +220,6 @@ vnf_as3_nsd_payload:
             - use: /f5vnf/Shared/natSourcePortList
           sourceTranslation:
             use: /f5vnf/Shared/natSourceTranslation
-#        class: NAT_Policy
       natSourceTranslation:
         addresses:
         - 10.10.200.101/32

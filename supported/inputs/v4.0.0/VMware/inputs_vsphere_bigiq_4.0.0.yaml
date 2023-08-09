@@ -1,0 +1,26 @@
+datacenter: default
+big_iq_passphrase: Test1234567890!?
+big_iq_pool_license: W1708-AAA-BBB-CCC
+big_iq_pool_name: pool_vnfm
+big_iq_primary_host_license: O0485-AAA-BBB-CCC
+big_iq_secondary_host_license: O0487-AAA-BBB-CCC
+mgmt_default_gw: 10.10.131.254
+mgmt_dns: 8.8.8.8
+mgmt_ip_range:
+  - '10.10.130.5-10.10.130.20'
+mgmt_net: external
+mgmt_net_sw_dist: true
+mgmt_subnet_cidr: 10.10.130.0/23
+sw_ref_bigiq: {"data":{"configuration":"quadcpu","template":"BIG-IQ-6.1.0.0.0.1224"},"revision":0}
+ntp_server: pool.ntp.org
+timezone: UTC
+
+# External Database
+db_host: localhost
+db_name: f5_db
+db_user: postgres
+db_password: postgres
+db_port: 5432
+db_sslmode: disable
+sw_ref_external_db: {}
+mgmt_external_db_ip: ''
