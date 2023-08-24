@@ -151,8 +151,7 @@ Visit the F5 VNFM product documentation for [more prerequisite details](https://
 
 - Required [prerequisites](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites)  
 - Red Hat OpenStack Queens version 13 and Trains version 16 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#private-cloud-environment-setup)
-- VMware vSphere ESXi 6.5 - 7.0.3 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
-- vCloud Director (vCD) v10.3 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vCloud-setup.html) 
+- VMware vSphere ESXi 6.5 - 7.0.3 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html) 
 - VNFM serial number (ric_vnfm_serial) received in an email upon purchase (required when acquiring support from F5 Networks).
 - [CentOS-7-x86_64-GenericCloud-1503](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.1810?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
 

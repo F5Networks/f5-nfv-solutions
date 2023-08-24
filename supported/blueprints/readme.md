@@ -18,7 +18,6 @@ Visit the F5 VNFM product documentation for more details about:
 - Required [prerequisites](https://clouddocs.f5.com/cloud/nfv/latest/setup.html#prerequisites)  
 - OpenStack system requirements for [Queens v13](https://docs.openstack.org/releasenotes/openstack-manuals/queens.html) and [Red Hat OpenStack 16.2](https://access.redhat.com/documentation/en-us/red_hat_openstack_platform/16.2/html/release_notes/index)
 - VMware vSphere ESXi 6.5-7.0.3 [system requirements](https://clouddocs.f5.com/cloud/nfv/latest/vmware-setup.html)
-- VMware Cloud Director 10.3 [system requirements](https://docs.vmware.com/en/VMware-Cloud-Director/10.3.3.3/rn/vmware-cloud-director-10333-release-notes/index.html)
 
 ### Download blueprints
 
