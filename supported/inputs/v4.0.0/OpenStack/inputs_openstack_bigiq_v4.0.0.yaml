@@ -1,0 +1,15 @@
+datacenter: default
+big_iq_primary_host_license: O0485-AAA-BBB-CCC
+big_iq_secondary_host_license: O0485-AAA-BBB-CCC
+big_iq_pool_license: W1708-AAA-BBB-CCC
+sw_ref_bigiq: {"data":{"image":"BIG-IQ-6.0.1.0.0.813", "flavor":"f5.large", "availability_zone":"nova"}, "revision":0}
+big_iq_passphrase: Test1234567890!?
+big_iq_pool_name: pool_vnfm
+default_sg_name: default
+floating_network_id: fa541932-4156-4185-8344-a961czzz8e41
+key_name: vnfm_key
+mgmt_net: mgmt_vnfm
+mgmt_sg_name: mgmt_sg
+mgmt_subnet: mgmt_vnfm_subnet
+ntp_server: pool.ntp.org
+timezone: UTC

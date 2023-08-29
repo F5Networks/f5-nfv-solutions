@@ -1,0 +1,110 @@
+plugins:
+  ric:
+    package_name: f5-ric-plugin
+    package_version: '4.0.0'
+    executor: central_deployment_agent
+
+node_types:
+
+  f5.ric.nodes.Db:
+    derived_from: cloudify.nodes.Root
+    properties:
+      
+
+  f5.ric.nodes.master_information_collector:
+    derived_from: cloudify.nodes.Root
+    properties:
+      ric_purchasing_model:
+        type: string
+      ric_licensing:
+        type: string
+      big_iq_lic_pool:
+        type: string
+      vnf_layer_throughput:
+        type: string
+        default: ""
+      vnf_group_throughput:
+        type: string
+        default: ""
+      big_iq_host:
+        type: string
+    interfaces:
+      f5.ric.interfaces.lifecycle:
+        set_output: ric.plugin.tasks.set_output
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: ric.plugin.tasks.configure_runtime_properties
+
+
+  f5.ric.nodes.layer_information_collector:
+    derived_from: cloudify.nodes.Root
+    properties:
+      layer_name:
+        type: string
+      sku:
+        type: string
+      db_name:
+        type: string
+      db_user:
+        type: string
+      db_password:
+        type: string
+      db_host:
+        type: string
+      db_port:
+        type: string
+      db_sslmode:
+        type: string
+      db_sslkey:
+        type: string
+      db_sslcert:
+        type: string
+      db_sslrootcert:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        start: ric.plugin.tasks.establish_layer
+        delete: ric.plugin.tasks.unlink_layer
+      f5.ric.interfaces.lifecycle:
+        update_cgnat_sublayers_counter:
+          implementation: ric.plugin.tasks.set_runtime_properties
+          inputs:
+            runtime_properties:
+              default: []
+
+  f5.ric.nodes.ve_information_collector:
+    derived_from: cloudify.nodes.Root
+    properties:
+      layer_deployment_uuid:
+        type: string
+      hostname:
+        type: string
+      db_name:
+        type: string
+      db_user:
+        type: string
+      db_password:
+        type: string
+      db_host:
+        type: string
+      db_port:
+        type: integer
+      db_sslmode:
+        type: string
+      db_sslkey:
+        type: string
+      db_sslcert:
+        type: string
+      db_sslrootcert:
+        type: string
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        create: ric.plugin.tasks.establish_ve
+
+
+  f5.ric.nodes.uuid:
+    derived_from: cloudify.nodes.Root
+    interfaces:
+      cloudify.interfaces.lifecycle:
+        configure:
+          implementation: ric.plugin.tasks.populate_uuid
